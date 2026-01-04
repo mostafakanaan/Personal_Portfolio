@@ -1,0 +1,9 @@
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .heroGrid { grid-template-columns: 1fr; }
+  .photo { height: 320px; }
+  .twoCol { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr; }
+  .contact { grid-template-columns: 1fr; }
+  .navLinks { display: none; }
+}

@@ -1,0 +1,7 @@
+/* RTL SUPPORT */
+html[dir="rtl"] {
+  .row { flex-direction: row-reverse; }
+  .nav { flex-direction: row-reverse; }
+  .navRight { flex-direction: row-reverse; }
+  .langMenu { right: auto; left: 0; }
+}

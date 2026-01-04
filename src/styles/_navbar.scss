@@ -1,0 +1,263 @@
+/* =========================
+   Navbar
+========================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1120px, calc(100% - 32px));
+  z-index: 1000;
+
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 14, 28, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+
+  &Inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  .navBrand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navBrandBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(20, 24, 40, 0.75);
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .navDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3bdcff;
+  }
+
+  .navActions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+/* Language button (emoji flags) */
+.lang { position: relative; }
+
+.langBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(20, 24, 40, 0.55);
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+
+  &:hover {
+    background: rgba(124, 92, 255, 0.18);
+    border-color: rgba(124, 92, 255, 0.35);
+  }
+}
+
+.langFlag {
+  font-size: 16px;
+  line-height: 1;
+  transform: translateY(1px);
+}
+
+.langLabel {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.chev { opacity: 0.7; }
+
+.langSelectOverlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Icon buttons */
+.iconBtn {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(20, 24, 40, 0.55);
+  color: #fff;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    background: rgba(124, 92, 255, 0.18);
+    border-color: rgba(124, 92, 255, 0.35);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+}
+
+/* Contact button */
+.navBtn {
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(20, 24, 40, 0.55);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 160ms ease, border-color 160ms ease;
+
+  &:hover {
+    background: rgba(124, 92, 255, 0.18);
+    border-color: rgba(124, 92, 255, 0.35);
+  }
+}
+
+.navBtnFull {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Burger (mobile) */
+.navBurger {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(20, 24, 40, 0.55);
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(124, 92, 255, 0.18);
+    border-color: rgba(124, 92, 255, 0.35);
+  }
+
+  svg { fill: currentColor; }
+}
+
+/* Mobile panel */
+.navPanel {
+  display: none;
+  padding: 0 14px 14px;
+
+  &Inner {
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(20, 24, 40, 0.55);
+    padding: 12px;
+  }
+
+  &Top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &Lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  &Select {
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    padding: 10px 12px;
+  }
+
+  &Row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+
+    .iconBtn {
+      flex: 1;
+      width: auto;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .navActions { display: none; }
+
+  .navBurger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar.open .navPanel { display: block; }
+
+  .navbar {
+    top: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .page { padding-top: 88px; }
+}
+
+/* Old Vite template leftovers */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+
+  &:hover { filter: drop-shadow(0 0 2em #646cffaa); }
+
+  &.react:hover { filter: drop-shadow(0 0 2em #61dafbaa); }
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card { padding: 2em; }
+.read-the-docs { color: #888; }
