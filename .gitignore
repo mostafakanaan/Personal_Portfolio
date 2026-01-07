@@ -23,3 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 /.vs
+pi_deploy_key
+pi_deploy_key.pub

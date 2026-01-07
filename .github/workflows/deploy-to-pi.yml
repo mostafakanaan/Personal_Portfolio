@@ -1,0 +1,76 @@
+name: Build & Deploy to Raspberry Pi (Cloudflare Access SSH)
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Install cloudflared
+        run: |
+          curl -fsSL https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 \
+            -o /usr/local/bin/cloudflared
+          sudo chmod +x /usr/local/bin/cloudflared
+          cloudflared --version
+
+      - name: Prepare SSH (Cloudflare Access)
+        env:
+          PI_HOST: ${{ secrets.PI_HOST }}
+          PI_USER: ${{ secrets.PI_USER }}
+          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
+          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          # Private key for deploy user on the Pi
+          echo "${{ secrets.PI_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+          # SSH config using Cloudflare Access as ProxyCommand
+          cat > ~/.ssh/config <<EOF
+          Host pi-over-cf
+            HostName ${PI_HOST}
+            User ${PI_USER}
+            IdentityFile ~/.ssh/id_ed25519
+            IdentitiesOnly yes
+            ServerAliveInterval 30
+            ServerAliveCountMax 6
+            StrictHostKeyChecking no
+            ProxyCommand env CF_ACCESS_CLIENT_ID=${CF_ACCESS_CLIENT_ID} CF_ACCESS_CLIENT_SECRET=${CF_ACCESS_CLIENT_SECRET} cloudflared access ssh --hostname %h
+          EOF
+          chmod 600 ~/.ssh/config
+
+      # Quick connectivity check before deploying
+      - name: Test SSH
+        run: |
+          ssh -F ~/.ssh/config pi-over-cf "echo connected && hostname && whoami"
+
+      - name: Deploy dist to Pi
+        env:
+          PI_TARGET_DIR: ${{ secrets.PI_TARGET_DIR }}
+        run: |
+          rsync -avz --delete -e "ssh -F ~/.ssh/config" ./dist/ "pi-over-cf:${PI_TARGET_DIR}/"
+
+      - name: Reload Nginx
+        if: always()
+        run: |
+          ssh -F ~/.ssh/config pi-over-cf "sudo nginx -t && sudo systemctl reload nginx || true"
