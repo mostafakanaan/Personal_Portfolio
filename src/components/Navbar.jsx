@@ -42,7 +42,7 @@ export default function Navbar({ t, lang, setLang }) {
         </div>
 
         <div className="navRight">
-          {/* <LanguageSwitcher lang={lang} setLang={setLang} /> */}
+          <LanguageSwitcher lang={lang} setLang={setLang} />
           <a
             className="navCta"
             href="#contact"
