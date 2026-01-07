@@ -4,9 +4,14 @@ on:
   push:
     branches: [ "main" ]
 
+concurrency:
+  group: deploy-portfolio
+  cancel-in-progress: true
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout
@@ -53,26 +58,21 @@ jobs:
             ServerAliveInterval 30
             ServerAliveCountMax 6
             StrictHostKeyChecking no
-            ProxyCommand cloudflared access ssh \
-              --hostname %h \
-              --service-token-id ${CF_ACCESS_CLIENT_ID} \
-              --service-token-secret ${CF_ACCESS_CLIENT_SECRET}
+            ProxyCommand cloudflared access ssh --hostname %h --id ${CF_ACCESS_CLIENT_ID} --secret ${CF_ACCESS_CLIENT_SECRET}
           EOF
           chmod 600 ~/.ssh/config
 
-
-      # Quick connectivity check before deploying
       - name: Test SSH
         run: |
-          ssh -F ~/.ssh/config pi-over-cf "echo connected && hostname && whoami"
+          ssh -o ConnectTimeout=15 -o ServerAliveInterval=10 -o ServerAliveCountMax=3 -F ~/.ssh/config pi-over-cf "echo connected && hostname && whoami"
 
       - name: Deploy dist to Pi
         env:
           PI_TARGET_DIR: ${{ secrets.PI_TARGET_DIR }}
         run: |
-          rsync -avz --delete -e "ssh -F ~/.ssh/config" ./dist/ "pi-over-cf:${PI_TARGET_DIR}/"
+          rsync --timeout=30 -avz --delete -e "ssh -F ~/.ssh/config" ./dist/ "pi-over-cf:${PI_TARGET_DIR}/"
 
       - name: Reload Nginx
         if: always()
         run: |
-          ssh -F ~/.ssh/config pi-over-cf "sudo nginx -t && sudo systemctl reload nginx || true"
+          ssh -o ConnectTimeout=15 -o ServerAliveInterval=10 -o ServerAliveCountMax=3 -F ~/.ssh/config pi-over-cf "sudo nginx -t && sudo systemctl reload nginx || true"
