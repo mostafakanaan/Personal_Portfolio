@@ -1,4 +1,4 @@
-name: Build & Deploy to Raspberry Pi (Cloudflare Access SSH)
+name: Build & Deploy (Self-hosted Pi)
 
 on:
   push:
@@ -10,7 +10,7 @@ concurrency:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     timeout-minutes: 10
 
     steps:
@@ -29,50 +29,13 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Install cloudflared
-        run: |
-          curl -fsSL https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 \
-            -o /usr/local/bin/cloudflared
-          sudo chmod +x /usr/local/bin/cloudflared
-          cloudflared --version
-
-      - name: Prepare SSH (Cloudflare Access)
+      - name: Deploy dist to web root
         env:
-          PI_HOST: ${{ secrets.PI_HOST }}
-          PI_USER: ${{ secrets.PI_USER }}
-          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
-          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+          PI_TARGET_DIR: /var/www/portfolio
         run: |
-          mkdir -p ~/.ssh
-          chmod 700 ~/.ssh
-
-          echo "${{ secrets.PI_SSH_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-
-          cat > ~/.ssh/config <<EOF
-          Host pi-over-cf
-            HostName ${PI_HOST}
-            User ${PI_USER}
-            IdentityFile ~/.ssh/id_ed25519
-            IdentitiesOnly yes
-            ServerAliveInterval 30
-            ServerAliveCountMax 6
-            StrictHostKeyChecking no
-            ProxyCommand env TUNNEL_SERVICE_TOKEN_ID=${CF_ACCESS_CLIENT_ID} TUNNEL_SERVICE_TOKEN_SECRET=${CF_ACCESS_CLIENT_SECRET} cloudflared access ssh --hostname %h
-          EOF
-          chmod 600 ~/.ssh/config
-
-      - name: Test SSH
-        run: |
-          ssh -o ConnectTimeout=15 -o ServerAliveInterval=10 -o ServerAliveCountMax=3 -F ~/.ssh/config pi-over-cf "echo connected && hostname && whoami"
-
-      - name: Deploy dist to Pi
-        env:
-          PI_TARGET_DIR: ${{ secrets.PI_TARGET_DIR }}
-        run: |
-          rsync --timeout=30 -avz --delete -e "ssh -F ~/.ssh/config" ./dist/ "pi-over-cf:${PI_TARGET_DIR}/"
+          rsync --timeout=30 -avz --delete ./dist/ "${PI_TARGET_DIR}/"
 
       - name: Reload Nginx
         if: always()
         run: |
-          ssh -o ConnectTimeout=15 -o ServerAliveInterval=10 -o ServerAliveCountMax=3 -F ~/.ssh/config pi-over-cf "sudo nginx -t && sudo systemctl reload nginx || true"
+          sudo nginx -t && sudo systemctl reload nginx
