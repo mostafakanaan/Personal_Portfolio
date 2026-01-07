@@ -31,9 +31,10 @@ jobs:
 
       - name: Deploy dist to web root
         env:
-          PI_TARGET_DIR: /var/www/portfolio
+          PI_TARGET_DIR: /var/www/portfolio/dist
         run: |
-          rsync --timeout=30 -avz --delete ./dist/ "${PI_TARGET_DIR}/"
+          sudo mkdir -p "${PI_TARGET_DIR}"
+          sudo rsync -a --delete --timeout=30 ./dist/. "${PI_TARGET_DIR}/"
 
       - name: Reload Nginx
         if: always()
