@@ -41,11 +41,9 @@ jobs:
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
 
-          # Private key for deploy user on the Pi
           echo "${{ secrets.PI_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
 
-          # SSH config using Cloudflare Access as ProxyCommand
           cat > ~/.ssh/config <<EOF
           Host pi-over-cf
             HostName ${PI_HOST}
@@ -55,9 +53,13 @@ jobs:
             ServerAliveInterval 30
             ServerAliveCountMax 6
             StrictHostKeyChecking no
-            ProxyCommand env CF_ACCESS_CLIENT_ID=${CF_ACCESS_CLIENT_ID} CF_ACCESS_CLIENT_SECRET=${CF_ACCESS_CLIENT_SECRET} cloudflared access ssh --hostname %h
+            ProxyCommand cloudflared access ssh \
+              --hostname %h \
+              --service-token-id ${CF_ACCESS_CLIENT_ID} \
+              --service-token-secret ${CF_ACCESS_CLIENT_SECRET}
           EOF
           chmod 600 ~/.ssh/config
+
 
       # Quick connectivity check before deploying
       - name: Test SSH
