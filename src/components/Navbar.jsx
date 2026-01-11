@@ -53,6 +53,7 @@ export default function Navbar({ t, lang, setLang }) {
           >
             {t.nav.contact}
           </a>
+          <a href="/chat">Chat</a>
         </div>
       </nav>
     </div>

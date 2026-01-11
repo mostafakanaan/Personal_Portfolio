@@ -1,8 +1,12 @@
 // src/App.jsx
 import { useEffect, useMemo, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Section from "./components/Section";
 import ProjectCard from "./components/ProjectCard";
+import ChatPage from "./pages/ChatPage";
+
 import { profile } from "./data/portfolio";
 import photo from "./assets/cv-photo.jpg";
 import heroBg from "./assets/hero-bg.png";
@@ -12,35 +16,7 @@ function getLangMeta(code) {
   return LANGS.find((x) => x.code === code) || LANGS[0];
 }
 
-export default function App() {
-  const [lang, setLang] = useState(function () {
-    return localStorage.getItem("lang") || "en";
-  });
-
-  useEffect(
-    function () {
-      localStorage.setItem("lang", lang);
-    },
-    [lang]
-  );
-
-  const meta = useMemo(
-    function () {
-      return getLangMeta(lang);
-    },
-    [lang]
-  );
-
-  const t = T[lang] || T.en;
-
-  useEffect(
-    function () {
-      document.documentElement.lang = lang;
-      document.documentElement.dir = meta.dir;
-    },
-    [lang, meta.dir]
-  );
-
+function PortfolioPage({ t, lang, setLang, meta }) {
   const year = new Date().getFullYear();
 
   return (
@@ -167,7 +143,6 @@ export default function App() {
               <div key={x.company + x.period} className="panel">
                 <div className="row">
                   <div>
-                    {/* If you want experience translated, switch to keys and use tr(lang, x.roleKey) */}
                     <h3 className="h3">{x.role}</h3>
                     <div className="muted">
                       {x.company} · {x.location}
@@ -176,7 +151,6 @@ export default function App() {
                   <div className="muted">{x.period}</div>
                 </div>
                 <ul className="list">
-                  {/* If you want bullets translated, switch to bulletKeys and use tr(lang, k) */}
                   {x.bullets.map((b) => (
                     <li key={b}>{b}</li>
                   ))}
@@ -190,7 +164,6 @@ export default function App() {
           <div className="stack">
             {profile.education.map((e) => (
               <div key={e.school + e.period} className="panel">
-                {/* If you want education translated, use degreeKey + tr(lang, e.degreeKey) */}
                 <h3 className="h3">{e.degree}</h3>
                 <div className="muted">{e.school}</div>
                 <div className="muted">{e.period}</div>
@@ -263,9 +236,7 @@ export default function App() {
 
             <div className="contactHint muted">{t.contact.note}</div>
           </div>
-
         </Section>
-
 
         <footer className="footer">
           <div className="muted">© {year} {profile.name}</div>
@@ -273,5 +244,45 @@ export default function App() {
         </footer>
       </main>
     </div>
+  );
+}
+
+export default function App() {
+  const [lang, setLang] = useState(function () {
+    return localStorage.getItem("lang") || "en";
+  });
+
+  useEffect(
+    function () {
+      localStorage.setItem("lang", lang);
+    },
+    [lang]
+  );
+
+  const meta = useMemo(
+    function () {
+      return getLangMeta(lang);
+    },
+    [lang]
+  );
+
+  const t = T[lang] || T.en;
+
+  useEffect(
+    function () {
+      document.documentElement.lang = lang;
+      document.documentElement.dir = meta.dir;
+    },
+    [lang, meta.dir]
+  );
+
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={<PortfolioPage t={t} lang={lang} setLang={setLang} meta={meta} />}
+      />
+      <Route path="/chat" element={<ChatPage />} />
+    </Routes>
   );
 }

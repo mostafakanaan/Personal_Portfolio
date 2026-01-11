@@ -2,7 +2,7 @@ name: Build & Deploy (Self-hosted Pi)
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 concurrency:
   group: deploy-portfolio
@@ -27,6 +27,8 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          VITE_LLM_KEY: ${{ secrets.LLM_KEY }}
         run: npm run build
 
       - name: Deploy dist to web root
@@ -36,7 +38,14 @@ jobs:
           sudo mkdir -p "${PI_TARGET_DIR}"
           sudo rsync -a --delete --timeout=30 ./dist/. "${PI_TARGET_DIR}/"
 
-      - name: Reload Nginx
-        if: always()
+      - name: Write nginx LLM key snippet
         run: |
-          sudo nginx -t && sudo systemctl reload nginx
+          sudo mkdir -p /etc/nginx/snippets
+          sudo tee /etc/nginx/snippets/llm_key.conf > /dev/null <<EOF
+          set \$llm_key "${{ secrets.LLM_KEY }}";
+          EOF
+
+      - name: Reload Nginx
+        run: |
+          sudo nginx -t
+          sudo systemctl reload nginx
