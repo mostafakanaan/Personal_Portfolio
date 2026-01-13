@@ -20,20 +20,19 @@ html[dir="rtl"] {
   .typingName {
     border-right: 0;
     border-left: 2px solid var(--accent2);
-    clip-path: inset(0 0 0 100%);
-    -webkit-clip-path: inset(0 0 0 100%);
     animation:
-      typing-rtl 2.8s steps(var(--typing-steps, 18)) .2s both,
+      typing-width 4.5s steps(var(--typing-steps, 18)) .2s both,
       caret 0.9s step-end infinite;
   }
-  @supports not ((clip-path: inset(0 100% 0 0)) or (-webkit-clip-path: inset(0 100% 0 0))) {
+
+  /* Ensure typing animation works in RTL even with reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
     .typingName {
-      clip-path: none;
-      -webkit-clip-path: none;
-      width: 0;
       animation:
-        typing-width-rtl 2.8s steps(var(--typing-steps, 18)) .2s both,
-        caret 0.9s step-end infinite;
+        typing-width 4.5s steps(var(--typing-steps, 18)) .2s both,
+        caret 0.9s step-end infinite !important;
+      animation-duration: 4.5s !important;
+      animation-iteration-count: 1 !important;
     }
   }
   .chatTitle,

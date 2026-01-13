@@ -1,16 +1,6 @@
 import { useMemo, useRef, useState } from "react";
 import { tr } from "../i18n/translations.js";
 
-function buildPrompt(history, userText, systemHint) {
-  // Wrapper injects system rules + Mustafa profile.
-  // Client sends only a small language hint + chat turns.
-  const turns = history
-    .map((m) => `${m.role === "user" ? "User" : "Assistant"}: ${m.content}`)
-    .join("\n");
-
-  return `${systemHint}\n\n${turns}${turns ? "\n" : ""}User: ${userText}\n`;
-}
-
 function getInitialLang() {
   const stored = localStorage.getItem("lang");
   if (stored) return stored;
@@ -32,6 +22,38 @@ const headers = {
   ...(LLM_KEY ? { "X-LLM-Key": LLM_KEY } : {}),
 };
 
+function buildUserPrompt(messages, userText, systemHint) {
+  // IMPORTANT:
+  // Do NOT use "User:" / "Assistant:" markers.
+  // Wrapper already injects system + facts + QUESTION/ANSWER format.
+  const recent = messages
+    .filter((m) => m && typeof m.content === "string")
+    .slice(-8)
+    .map((m) => {
+      const role = m.role === "user" ? "User" : "Assistant";
+      // no "User:" labels, just lightweight context lines
+      return `${role} said: ${m.content}`;
+    })
+    .join("\n");
+
+  // Keep this small: language hint + optional recent context + current question
+  return [
+    systemHint ? `Language hint: ${systemHint}` : "",
+    recent ? `Recent context:\n${recent}` : "",
+    `Question: ${userText}`,
+  ]
+    .filter(Boolean)
+    .join("\n\n");
+}
+
+function cleanAnswer(text) {
+  if (!text) return "";
+  return text
+    .replace(/^\s*(assistant:)\s*/i, "")
+    .replace(/^\s*\(assistant\)\s*/i, "")
+    .trim();
+}
+
 export default function ChatPage() {
   const lang = useMemo(() => getInitialLang(), []);
   const [messages, setMessages] = useState([
@@ -51,19 +73,12 @@ export default function ChatPage() {
     setText("");
     setBusy(true);
 
-    // Append user message immediately
     const nextMessages = [...messages, { role: "user", content: userText }];
     setMessages(nextMessages);
 
     try {
       const systemHint = tr(lang, "chat.system");
-
-      // IMPORTANT:
-      // - history passed to buildPrompt should be the previous messages (without re-adding userText twice)
-      // - we already added the user message to nextMessages, so pass nextMessages slice WITHOUT adding userText again
-      const history = nextMessages.slice(-10);
-
-      const prompt = buildPrompt(history, userText, systemHint);
+      const prompt = buildUserPrompt(nextMessages, userText, systemHint);
 
       const res = await fetch("/api/llm/v1/completions", {
         method: "POST",
@@ -71,9 +86,10 @@ export default function ChatPage() {
         body: JSON.stringify({
           model: "local",
           prompt,
-          temperature: 0.5,
-          max_tokens: 220,
-          stop: ["\nUser:", "\nAssistant:", "\n###"],
+          temperature: 0.45,
+          n_predict: 220, // llama.cpp native field; wrapper accepts it too
+          // IMPORTANT: don't stop on User/Assistant markers (we are not using them)
+          stop: [],
         }),
       });
 
@@ -83,7 +99,8 @@ export default function ChatPage() {
       }
 
       const data = await res.json();
-      const answer = (data?.choices?.[0]?.text ?? "").trim();
+      const raw = (data?.choices?.[0]?.text ?? "").trim();
+      const answer = cleanAnswer(raw);
 
       setMessages((prev) => [
         ...prev,
@@ -186,7 +203,6 @@ export default function ChatPage() {
           </button>
         </div>
       </div>
-
       <style>{`
         :root {
           --chat-bg: #0f172a;
@@ -538,3 +554,5 @@ export default function ChatPage() {
     </div>
   );
 }
+
+      

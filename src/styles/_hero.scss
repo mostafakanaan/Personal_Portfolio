@@ -86,16 +86,26 @@
 
 .typingName {
   display: inline-block;
-  max-width: 100%;
+  max-width: 0;
   overflow: hidden;
   white-space: nowrap;
   border-right: 2px solid var(--accent2);
   padding-right: 0;
-  clip-path: inset(0 100% 0 0);
-  -webkit-clip-path: inset(0 100% 0 0);
+  will-change: max-width;
   animation:
-    typing 2.8s steps(var(--typing-steps, 18)) .2s both,
+    typing-width 4.5s steps(var(--typing-steps, 18)) .2s both,
     caret 0.9s step-end infinite;
+}
+
+/* Ensure typing animation works even with reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .typingName {
+    animation:
+      typing-width 4.5s steps(var(--typing-steps, 18)) .2s both,
+      caret 0.9s step-end infinite !important;
+    animation-duration: 4.5s !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
 .accent { color: var(--accent2); }
@@ -212,47 +222,9 @@
   }
 }
 
-@keyframes typing {
-  from {
-    clip-path: inset(0 100% 0 0);
-    -webkit-clip-path: inset(0 100% 0 0);
-  }
-  to {
-    clip-path: inset(0 0 0 0);
-    -webkit-clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes typing-rtl {
-  from {
-    clip-path: inset(0 0 0 100%);
-    -webkit-clip-path: inset(0 0 0 100%);
-  }
-  to {
-    clip-path: inset(0 0 0 0);
-    -webkit-clip-path: inset(0 0 0 0);
-  }
-}
-
-@supports not ((clip-path: inset(0 100% 0 0)) or (-webkit-clip-path: inset(0 100% 0 0))) {
-  .typingName {
-    clip-path: none;
-    -webkit-clip-path: none;
-    width: 0;
-    animation:
-      typing-width 2.8s steps(var(--typing-steps, 18)) .2s both,
-      caret 0.9s step-end infinite;
-  }
-}
-
 @keyframes typing-width {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes typing-width-rtl {
-  from { width: 0; }
-  to { width: 100%; }
+  from { max-width: 0; }
+  to { max-width: 100%; }
 }
 
 @keyframes caret {
