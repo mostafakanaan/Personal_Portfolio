@@ -17,7 +17,7 @@
 
   .kicker {
     color: rgba(255,255,255,.78);
-    background: rgba(255,255,255,.04);
+    background: rgba(255,255,255,.06);
     border-color: rgba(255,255,255,.12);
   }
 
@@ -47,8 +47,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(900px 600px at 20% 0%, rgba(124,92,255,.18), transparent 60%),
-    radial-gradient(900px 600px at 95% 10%, rgba(34,211,238,.14), transparent 55%),
+    radial-gradient(900px 600px at 20% 0%, rgba(255,122,24,.18), transparent 60%),
+    radial-gradient(900px 600px at 95% 10%, rgba(33,212,180,.16), transparent 55%),
     linear-gradient(to bottom, rgba(7,10,18,.35), rgba(7,10,18,.78));
 }
 
@@ -65,7 +65,7 @@
   align-items: center;
   color: var(--muted);
   border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
+  background: rgba(255,255,255,.04);
   padding: 8px 12px;
   border-radius: 999px;
 }
@@ -75,13 +75,26 @@
   height: 10px;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
-  box-shadow: 0 0 0 4px rgba(124,92,255,.12);
+  box-shadow: 0 0 0 4px rgba(255,122,24,.14);
 }
 
 .h1 {
   font-size: clamp(40px, 4.2vw, 56px);
   letter-spacing: -0.02em;
   margin: 14px 0 10px;
+}
+
+.typingName {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--accent2);
+  padding-right: 0;
+  clip-path: inset(0 100% 0 0);
+  animation:
+    typing 2.8s steps(var(--typing-steps, 18)) .2s both,
+    caret 0.9s step-end infinite;
 }
 
 .accent { color: var(--accent2); }
@@ -108,6 +121,7 @@
   border: 1px solid rgba(255,255,255,.10);
   backdrop-filter: blur(10px);
   box-shadow: 0 18px 60px rgba(0,0,0,.35);
+  animation: heroFloat .8s ease both;
 }
 
 /* Buttons */
@@ -123,13 +137,13 @@
   cursor: pointer;
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
 
-  &:hover { transform: translateY(-1px); }
+  &:hover { transform: translateY(-2px); }
 }
 
 .btnPrimary {
-  border-color: rgba(124,92,255,.45);
-  background: linear-gradient(135deg, rgba(124,92,255,.22), rgba(34,211,238,.12));
-  box-shadow: 0 0 0 4px rgba(124,92,255,.12);
+  border-color: rgba(255,122,24,.45);
+  background: linear-gradient(135deg, rgba(255,122,24,.22), rgba(33,212,180,.16));
+  box-shadow: 0 0 0 4px rgba(255,122,24,.12);
 }
 
 .btnGhost {
@@ -148,6 +162,7 @@
   background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
   box-shadow: var(--shadow);
   overflow: hidden;
+  animation: heroRise .9s ease both;
 }
 
 .photo {
@@ -163,8 +178,8 @@
   position: absolute;
   inset: -40px;
   background:
-    radial-gradient(circle at 30% 20%, rgba(124,92,255,.20), transparent 55%),
-    radial-gradient(circle at 70% 30%, rgba(34,211,238,.16), transparent 60%);
+    radial-gradient(circle at 30% 20%, rgba(255,122,24,.20), transparent 55%),
+    radial-gradient(circle at 70% 30%, rgba(33,212,180,.16), transparent 60%);
   filter: blur(30px);
   opacity: .9;
   pointer-events: none;
@@ -173,3 +188,40 @@
 .photoMeta { margin-top: 12px; }
 .photoName { font-weight: 700; }
 .muted { color: var(--muted); }
+
+@keyframes heroFloat {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes typing {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes typing-rtl {
+  from { clip-path: inset(0 0 0 100%); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes caret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--accent2); }
+}

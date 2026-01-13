@@ -11,11 +11,12 @@
   z-index: 1000;
 
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(10, 14, 28, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(8, 12, 22, 0.72);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 18px 60px rgba(2, 8, 20, 0.55);
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
 
   &Inner {
     display: flex;
@@ -39,7 +40,7 @@
     padding: 10px 12px;
     border-radius: 14px;
     border: 1px solid rgba(255, 255, 255, 0.14);
-    background: rgba(20, 24, 40, 0.75);
+    background: rgba(20, 24, 40, 0.8);
     color: #fff;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -49,7 +50,8 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #3bdcff;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    box-shadow: 0 0 14px rgba(255,122,24,.55);
   }
 
   .navActions {
@@ -69,15 +71,15 @@
   padding: 10px 12px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(20, 24, 40, 0.55);
+  background: rgba(20, 24, 40, 0.6);
   color: #fff;
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
 
   &:hover {
-    background: rgba(124, 92, 255, 0.18);
-    border-color: rgba(124, 92, 255, 0.35);
+    background: rgba(255, 122, 24, 0.16);
+    border-color: rgba(255, 122, 24, 0.35);
   }
 }
 
@@ -111,14 +113,14 @@
 
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(20, 24, 40, 0.55);
+  background: rgba(20, 24, 40, 0.6);
   color: #fff;
   transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
 
   &:hover {
     transform: translateY(-1px);
-    background: rgba(124, 92, 255, 0.18);
-    border-color: rgba(124, 92, 255, 0.35);
+    background: rgba(255, 122, 24, 0.16);
+    border-color: rgba(255, 122, 24, 0.35);
   }
 
   svg {
@@ -133,15 +135,15 @@
   padding: 10px 14px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(20, 24, 40, 0.55);
+  background: rgba(20, 24, 40, 0.6);
   color: #fff;
   cursor: pointer;
   font-weight: 600;
   transition: background 160ms ease, border-color 160ms ease;
 
   &:hover {
-    background: rgba(124, 92, 255, 0.18);
-    border-color: rgba(124, 92, 255, 0.35);
+    background: rgba(255, 122, 24, 0.16);
+    border-color: rgba(255, 122, 24, 0.35);
   }
 }
 
@@ -157,13 +159,13 @@
   height: 42px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(20, 24, 40, 0.55);
+  background: rgba(20, 24, 40, 0.6);
   color: #fff;
   cursor: pointer;
 
   &:hover {
-    background: rgba(124, 92, 255, 0.18);
-    border-color: rgba(124, 92, 255, 0.35);
+    background: rgba(255, 122, 24, 0.16);
+    border-color: rgba(255, 122, 24, 0.35);
   }
 
   svg { fill: currentColor; }
@@ -233,7 +235,6 @@
     width: calc(100% - 20px);
   }
 
-  .page { padding-top: 88px; }
 }
 
 /* Old Vite template leftovers */

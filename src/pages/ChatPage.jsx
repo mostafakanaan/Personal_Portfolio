@@ -1,40 +1,160 @@
 import { useMemo, useRef, useState } from "react";
 
-const SYSTEM = [
-  "You are Mustafa's assistant running locally on his Raspberry Pi.",
-  "Answer briefly and directly.",
-  "If you are unsure, say you are unsure.",
-  "Prefer Germanunless the user asks otherwise.",
-].join("\n");
+const UI = {
+  en: {
+    title: "KanaanChat",
+    subtitle: "Hosted on Raspberry Pi 5",
+    statusReady: "Ready",
+    statusBusy: "Thinking",
+    badgeLocal: "Local only",
+    badgeTone: "Short answers",
+    badgeLang: "English",
+    greeting: "Hi! I'm your local assistant. What would you like to test?",
+    placeholderIdle: "Write a message...",
+    placeholderBusy: "Thinking...",
+    send: "Send",
+    userAvatar: "U",
+    assistantAvatar: "🥧",
+    quickPrompts: [
+      "Give me a short summary of this project.",
+      "Write a friendly email to a customer.",
+      "Explain RAG in 3 sentences.",
+      "Help me structure a weekly plan.",
+    ],
+    system: [
+      "You are Mustafa's assistant running locally on his Raspberry Pi.",
+      "Answer briefly and directly.",
+      "If you are unsure, say you are unsure.",
+      "Prefer English unless the user asks otherwise.",
+    ].join("\n"),
+  },
+  de: {
+    title: "KanaanChat",
+    subtitle: "Gehostet auf Raspberry Pi 5",
+    statusReady: "Bereit",
+    statusBusy: "Denkt nach",
+    badgeLocal: "Nur lokal",
+    badgeTone: "Kurz & direkt",
+    badgeLang: "Deutsch",
+    greeting: "Hoi! Ich bin dein lokaler Assistant. Was moechtest du testen?",
+    typing: "Assistant denkt nach...",
+    placeholderIdle: "Nachricht schreiben...",
+    placeholderBusy: "Denkt nach...",
+    send: "Senden",
+    userAvatar: "U",
+    assistantAvatar: "🥧",
+    quickPrompts: [
+      "Gib mir eine kurze Zusammenfassung dieses Projekts.",
+      "Schreibe eine freundliche E-Mail an einen Kunden.",
+      "Erklaer mir in 3 Saetzen, wie RAG funktioniert.",
+      "Hilf mir, einen Wochenplan zu strukturieren.",
+    ],
+    system: [
+      "You are Mustafa's assistant running locally on his Raspberry Pi.",
+      "Answer briefly and directly.",
+      "If you are unsure, say you are unsure.",
+      "Prefer German (Schweizer Hochdeutsch) unless the user asks otherwise.",
+    ].join("\n"),
+  },
+  ar: {
+    title: "KanaanChat",
+    subtitle: "مستضاف على Raspberry Pi 5",
+    statusReady: "جاهز",
+    statusBusy: "يفكر",
+    badgeLocal: "محلي فقط",
+    badgeTone: "إجابات قصيرة",
+    badgeLang: "العربية",
+    greeting: "مرحبا! أنا مساعدك المحلي. ماذا تريد أن نجرب؟",
+    typing: "المساعد يفكر...",
+    placeholderIdle: "اكتب رسالة...",
+    placeholderBusy: "يفكر...",
+    send: "إرسال",
+    userAvatar: "أ",
+    assistantAvatar: "🥧",
+    quickPrompts: [
+      "اعطني ملخصا قصيرا عن هذا المشروع.",
+      "اكتب بريدا ودودا للعميل.",
+      "اشرح RAG في ثلاث جمل.",
+      "ساعدني في تنظيم خطة أسبوعية.",
+    ],
+    system: [
+      "You are Mustafa's assistant running locally on his Raspberry Pi.",
+      "Answer briefly and directly.",
+      "If you are unsure, say you are unsure.",
+      "Prefer Arabic unless the user asks otherwise.",
+    ].join("\n"),
+  },
+  tr: {
+    title: "KanaanChat",
+    subtitle: "Raspberry Pi 5 uzerinde",
+    statusReady: "Hazir",
+    statusBusy: "Dusunuyor",
+    badgeLocal: "Yalnizca yerel",
+    badgeTone: "Kisa cevaplar",
+    badgeLang: "Turkce",
+    greeting: "Merhaba! Ben yerel asistaninim. Neyi test etmek istersin?",
+    typing: "Asistan dusunuyor...",
+    placeholderIdle: "Bir mesaj yaz...",
+    placeholderBusy: "Dusunuyor...",
+    send: "Gonder",
+    userAvatar: "K",
+    assistantAvatar: "🥧",
+    quickPrompts: [
+      "Bu projenin kisa bir ozetini ver.",
+      "Bir musteriye nazik bir e-posta yaz.",
+      "RAG'i 3 cumlede acikla.",
+      "Haftalik planimi duzenlememe yardim et.",
+    ],
+    system: [
+      "You are Mustafa's assistant running locally on his Raspberry Pi.",
+      "Answer briefly and directly.",
+      "If you are unsure, say you are unsure.",
+      "Prefer Turkish unless the user asks otherwise.",
+    ].join("\n"),
+  },
+};
+
 const LLM_KEY = import.meta.env.VITE_LLM_KEY;
 const headers = {
   "Content-Type": "application/json",
   ...(LLM_KEY ? { "X-LLM-Key": LLM_KEY } : {}),
 };
 
-function buildPrompt(history, userText) {
+function buildPrompt(history, userText, system) {
   // Simple prompt template for /v1/completions
   const turns = history
     .map((m) => `${m.role === "user" ? "User" : "Assistant"}: ${m.content}`)
     .join("\n");
 
-  return `${SYSTEM}\n\n${turns}${turns ? "\n" : ""}User: ${userText}\nAssistant:`;
+  return `${system}\n\n${turns}${turns ? "\n" : ""}User: ${userText}\nAssistant:`;
+}
+
+function getInitialLang() {
+  const stored = localStorage.getItem("lang");
+  if (stored && UI[stored]) return stored;
+
+  const browserLangs = navigator?.languages?.length
+    ? navigator.languages
+    : [navigator?.language];
+
+  const match = browserLangs
+    .map((code) => (code || "").toLowerCase().split("-")[0])
+    .find((code) => UI[code]);
+
+  return match || "en";
 }
 
 export default function ChatPage() {
+  const lang = useMemo(() => getInitialLang(), []);
+  const ui = UI[lang] || UI.en;
   const [messages, setMessages] = useState([
-    { role: "assistant", content: "Hoi! Ich bin dein lokaler Assistant. Was möchtest du testen?" },
+    { role: "assistant", content: ui.greeting },
   ]);
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
   const endRef = useRef(null);
-  const quickPrompts = [
-    "Gib mir eine kurze Zusammenfassung dieses Projekts.",
-    "Schreibe eine freundliche E-Mail an einen Kunden.",
-    "Erkläre mir in 3 Sätzen, wie RAG funktioniert.",
-    "Hilf mir, einen Wochenplan zu strukturieren.",
-  ];
 
+  const quickPrompts = ui.quickPrompts;
   const canSend = useMemo(() => text.trim().length > 0 && !busy, [text, busy]);
 
   async function send(overrideText) {
@@ -48,7 +168,7 @@ export default function ChatPage() {
     setMessages(nextHistory);
 
     try {
-      const prompt = buildPrompt(nextHistory.slice(-10), userText); // keep it light
+      const prompt = buildPrompt(nextHistory.slice(-10), userText, ui.system);
 
       const res = await fetch("/api/llm/v1/completions", {
         method: "POST",
@@ -77,7 +197,7 @@ export default function ChatPage() {
     } catch (e) {
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: `Error: ${e.message}` },
+        { role: "assistant", content: `Error: ${e?.message ?? String(e)}` },
       ]);
     } finally {
       setBusy(false);
@@ -93,36 +213,43 @@ export default function ChatPage() {
         <div className="chatHeader">
           <div className="chatTitleRow">
             <div>
-              <div className="chatTitle">KanaanChat</div>
-              <div className="chatSub">Raspberry Pi 5 hosted 😉</div>
+              <div className="chatTitle">{ui.title}</div>
+              <div className="chatSub">{ui.subtitle}</div>
             </div>
             <div className={"chatStatus " + (busy ? "busy" : "idle")}>
               <span className="statusDot" />
-              {busy ? "Thinking" : "Ready"}
+              {busy ? ui.statusBusy : ui.statusReady}
             </div>
           </div>
           <div className="chatMeta">
-            <span className="chatBadge">Local only</span>
-            <span className="chatBadge">Short answers</span>
-            <span className="chatBadge">Deutsch</span>
+            <span className="chatBadge">{ui.badgeLocal}</span>
+            <span className="chatBadge">{ui.badgeTone}</span>
+            <span className="chatBadge">{ui.badgeLang}</span>
           </div>
         </div>
 
         <div className="chatBody" aria-live="polite">
           {messages.map((m, idx) => (
-            <div key={idx} className={"chatMsg " + (m.role === "user" ? "user" : "assistant")}>
-              <div className="chatAvatar">{m.role === "user" ? "U" : "🥧"}</div>
+            <div
+              key={idx}
+              className={"chatMsg " + (m.role === "user" ? "user" : "assistant")}
+            >
+              <div className="chatAvatar">
+                {m.role === "user" ? ui.userAvatar : ui.assistantAvatar}
+              </div>
               <div className="chatBubble">{m.content}</div>
             </div>
           ))}
+
           {busy && (
             <div className="chatTyping">
               <span className="dot" />
               <span className="dot" />
               <span className="dot" />
-              <span className="typingText">Assistant is thinking...</span>
+              <span className="typingText">{ui.typing}</span>
             </div>
           )}
+
           <div ref={endRef} />
         </div>
 
@@ -151,15 +278,16 @@ export default function ChatPage() {
                 send();
               }
             }}
-            placeholder={busy ? "Thinking..." : "Write a message."}
+            placeholder={busy ? ui.placeholderBusy : ui.placeholderIdle}
             disabled={busy}
             rows={1}
           />
-          <button className="chatSend" onClick={send} disabled={!canSend}>
-            Send
+          <button className="chatSend" onClick={() => send()} disabled={!canSend}>
+            {ui.send}
           </button>
         </div>
       </div>
+
       <style>{`
         :root {
           --chat-bg: #0f172a;
@@ -339,6 +467,7 @@ export default function ChatPage() {
           max-width: 70%;
           line-height: 1.5;
           font-size: 15px;
+          white-space: pre-wrap;
         }
 
         .chatMsg.user .chatBubble {

@@ -1,5 +1,6 @@
 /* RESPONSIVE */
 @media (max-width: 900px) {
+  .hero { padding-top: 36px; }
   .heroGrid { grid-template-columns: 1fr; }
   .photo { height: 320px; }
   .twoCol { grid-template-columns: 1fr; }

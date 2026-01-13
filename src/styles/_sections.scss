@@ -1,9 +1,27 @@
 /* SECTIONS */
-.section { padding: 46px 0; }
+.section {
+  padding: 52px 0;
+  position: relative;
+  scroll-margin-top: 120px;
+}
+
+.section.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.section.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
 .sectionHead { margin-bottom: 16px; }
 
 .eyebrow {
-  color: var(--muted2);
+  color: transparent;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
   font-size: 12px;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -11,8 +29,8 @@
 
 .h2 {
   margin: 8px 0 0;
-  font-size: 28px;
-  letter-spacing: -0.02em;
+  font-size: 30px;
+  letter-spacing: -0.03em;
 }
 
 .h3 {
@@ -26,14 +44,15 @@
 .twoCol {
   display: grid;
   grid-template-columns: 1.2fr .8fr;
-  gap: 14px;
+  gap: 16px;
 }
 
 .panel {
   border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
   border-radius: var(--radius);
-  padding: 16px;
+  padding: 18px;
+  box-shadow: 0 16px 40px rgba(2,8,20,.25);
 }
 
 .panelAlt { background: rgba(255,255,255,.02); }
@@ -72,10 +91,12 @@
   border-radius: 14px;
   padding: 12px;
   text-align: center;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 
   &:hover {
-    border-color: rgba(124,92,255,.45);
-    box-shadow: 0 0 0 4px rgba(124,92,255,.10);
+    transform: translateY(-4px);
+    border-color: rgba(255,122,24,.45);
+    box-shadow: 0 16px 30px rgba(2,8,20,.30);
   }
 }
 
@@ -95,3 +116,33 @@
 
 .chipBig { font-size: 13px; padding: 8px 12px; }
 .chipsBig { gap: 12px; }
+
+.section.in-view .panel,
+.section.in-view .linkCard,
+.section.in-view .chip,
+.section.in-view .list li {
+  animation: rise .65s ease both;
+}
+
+.section.in-view .panel:nth-child(2),
+.section.in-view .linkCard:nth-child(2),
+.section.in-view .chip:nth-child(2) {
+  animation-delay: .08s;
+}
+
+.section.in-view .panel:nth-child(3),
+.section.in-view .linkCard:nth-child(3),
+.section.in-view .chip:nth-child(3) {
+  animation-delay: .16s;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

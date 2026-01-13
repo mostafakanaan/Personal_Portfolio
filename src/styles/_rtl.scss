@@ -4,4 +4,30 @@ html[dir="rtl"] {
   .nav { flex-direction: row-reverse; }
   .navRight { flex-direction: row-reverse; }
   .langMenu { right: auto; left: 0; }
+  .heroContent,
+  .sectionHead,
+  .h1,
+  .h2,
+  .h3,
+  .lead,
+  .body,
+  .miniTitle,
+  .kicker {
+    text-align: right;
+  }
+  .typingName {
+    border-right: 0;
+    border-left: 2px solid var(--accent2);
+    clip-path: inset(0 0 0 100%);
+    animation:
+      typing-rtl 2.8s steps(var(--typing-steps, 18)) .2s both,
+      caret 0.9s step-end infinite;
+  }
+  .chatTitle,
+  .chatSub,
+  .chatBubble,
+  .typingText,
+  .chatInput {
+    text-align: right;
+  }
 }

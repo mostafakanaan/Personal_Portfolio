@@ -16,8 +16,24 @@ function getLangMeta(code) {
   return LANGS.find((x) => x.code === code) || LANGS[0];
 }
 
+function getInitialLang() {
+  const stored = localStorage.getItem("lang");
+  if (stored && LANGS.some((l) => l.code === stored)) return stored;
+
+  const browserLangs = navigator?.languages?.length
+    ? navigator.languages
+    : [navigator?.language];
+
+  const match = browserLangs
+    .map((code) => (code || "").toLowerCase().split("-")[0])
+    .find((code) => LANGS.some((l) => l.code === code));
+
+  return match || "en";
+}
+
 function PortfolioPage({ t, lang, setLang, meta }) {
   const year = new Date().getFullYear();
+  const displayName = lang === "ar" ? "مصطفى كنعان" : profile.name;
 
   return (
     <div id="top" className="page">
@@ -39,7 +55,12 @@ function PortfolioPage({ t, lang, setLang, meta }) {
               </div>
 
               <h1 className="h1">
-                {profile.name}
+                <span
+                  className="typingName"
+                  style={{ "--typing-steps": displayName.length }}
+                >
+                  {displayName}
+                </span>
                 <span className="accent">.</span>
               </h1>
 
@@ -64,10 +85,10 @@ function PortfolioPage({ t, lang, setLang, meta }) {
 
           <div className="heroRight">
             <div className="photoCard">
-              <img src={photo} alt={`${profile.name} portrait`} className="photo" />
+              <img src={photo} alt={`${displayName} portrait`} className="photo" />
               <div className="photoGlow" aria-hidden="true" />
               <div className="photoMeta">
-                <div className="photoName">{profile.name}</div>
+                <div className="photoName">{displayName}</div>
                 <div className="photoRole muted">{profile.title}</div>
               </div>
             </div>
@@ -239,7 +260,7 @@ function PortfolioPage({ t, lang, setLang, meta }) {
         </Section>
 
         <footer className="footer">
-          <div className="muted">© {year} {profile.name}</div>
+          <div className="muted">© {year} {displayName}</div>
           <div className="muted">{t.footer.right}</div>
         </footer>
       </main>
@@ -249,7 +270,7 @@ function PortfolioPage({ t, lang, setLang, meta }) {
 
 export default function App() {
   const [lang, setLang] = useState(function () {
-    return localStorage.getItem("lang") || "en";
+    return getInitialLang();
   });
 
   useEffect(

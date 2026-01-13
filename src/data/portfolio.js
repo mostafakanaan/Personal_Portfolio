@@ -1,7 +1,7 @@
 export const profile = {
-  name: "Mostafa Kanaan",
+  name: "Mustafa Kanaan",
   title: "Software Developer (B.Sc. Computer Science)",
-  location: "Egg b. Zürich, Switzerland",
+  location: "Zürich, Switzerland",
   email: "mos.kan@hotmail.com",
   phone: "+49 ",
   website: "https://mkanaan.de",

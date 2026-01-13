@@ -4,16 +4,44 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background:
-    radial-gradient(1200px 700px at 20% -10%, rgba(124,92,255,.25), transparent 60%),
-    radial-gradient(1000px 600px at 90% 0%, rgba(34,211,238,.18), transparent 55%),
+    radial-gradient(900px 600px at 10% -10%, rgba(255,122,24,.18), transparent 60%),
+    radial-gradient(900px 650px at 95% -5%, rgba(33,212,180,.20), transparent 60%),
+    radial-gradient(900px 700px at 50% 110%, rgba(59,130,246,.16), transparent 60%),
     var(--bg);
   color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  font-family: "Space Grotesk", "Outfit", "Segoe UI", sans-serif;
   line-height: 1.5;
 }
 
 a { color: inherit; text-decoration: none; }
 button { font: inherit; }
+
+::selection {
+  background: rgba(255,122,24,.3);
+  color: #fff;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(700px 450px at 15% 20%, rgba(255,122,24,.12), transparent 60%),
+    radial-gradient(700px 450px at 85% 30%, rgba(33,212,180,.10), transparent 60%);
+  mix-blend-mode: screen;
+  opacity: 0.7;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 100% 32px;
+  opacity: 0.04;
+}
 
 /* Base / Root */
 #root {
@@ -21,4 +49,13 @@ button { font: inherit; }
   margin: 0;
   padding: 0;
   text-align: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
