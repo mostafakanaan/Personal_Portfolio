@@ -404,6 +404,8 @@ export default function ChatPage() {
         }
 
         .chatInputRow {
+          position: relative;
+          z-index: 1;
           display: grid;
           grid-template-columns: 1fr auto;
           gap: 12px;
@@ -411,6 +413,8 @@ export default function ChatPage() {
         }
 
         .chatInput {
+          position: relative;
+          z-index: 1;
           resize: none;
           background: rgba(2, 6, 23, 0.4);
           border: 1px solid rgba(148, 163, 184, 0.3);
@@ -429,6 +433,9 @@ export default function ChatPage() {
         }
 
         .chatSend {
+          position: relative;
+          z-index: 2;
+          touch-action: manipulation;
           background: linear-gradient(135deg, #38bdf8, #22d3ee);
           border: none;
           color: #0f172a;
