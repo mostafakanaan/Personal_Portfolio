@@ -8,7 +8,7 @@ function buildPrompt(history, userText, systemHint) {
     .map((m) => `${m.role === "user" ? "User" : "Assistant"}: ${m.content}`)
     .join("\n");
 
-  return `${systemHint}\n\n${turns}${turns ? "\n" : ""}User: ${userText}\nAssistant:`;
+  return `${systemHint}\n\n${turns}${turns ? "\n" : ""}User: ${userText}\n`;
 }
 
 function getInitialLang() {
@@ -51,12 +51,19 @@ export default function ChatPage() {
     setText("");
     setBusy(true);
 
-    const nextHistory = [...messages, { role: "user", content: userText }];
-    setMessages(nextHistory);
+    // Append user message immediately
+    const nextMessages = [...messages, { role: "user", content: userText }];
+    setMessages(nextMessages);
 
     try {
       const systemHint = tr(lang, "chat.system");
-      const prompt = buildPrompt(nextHistory.slice(-10), userText, systemHint);
+
+      // IMPORTANT:
+      // - history passed to buildPrompt should be the previous messages (without re-adding userText twice)
+      // - we already added the user message to nextMessages, so pass nextMessages slice WITHOUT adding userText again
+      const history = nextMessages.slice(-10);
+
+      const prompt = buildPrompt(history, userText, systemHint);
 
       const res = await fetch("/api/llm/v1/completions", {
         method: "POST",
@@ -66,7 +73,7 @@ export default function ChatPage() {
           prompt,
           temperature: 0.5,
           max_tokens: 220,
-          stop: ["User:", "Assistant:"],
+          stop: ["\nUser:", "\nAssistant:", "\n###"],
         }),
       });
 

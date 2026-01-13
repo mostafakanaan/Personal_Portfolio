@@ -21,9 +21,20 @@ html[dir="rtl"] {
     border-right: 0;
     border-left: 2px solid var(--accent2);
     clip-path: inset(0 0 0 100%);
+    -webkit-clip-path: inset(0 0 0 100%);
     animation:
       typing-rtl 2.8s steps(var(--typing-steps, 18)) .2s both,
       caret 0.9s step-end infinite;
+  }
+  @supports not ((clip-path: inset(0 100% 0 0)) or (-webkit-clip-path: inset(0 100% 0 0))) {
+    .typingName {
+      clip-path: none;
+      -webkit-clip-path: none;
+      width: 0;
+      animation:
+        typing-width-rtl 2.8s steps(var(--typing-steps, 18)) .2s both,
+        caret 0.9s step-end infinite;
+    }
   }
   .chatTitle,
   .chatSub,

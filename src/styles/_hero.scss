@@ -92,6 +92,7 @@
   border-right: 2px solid var(--accent2);
   padding-right: 0;
   clip-path: inset(0 100% 0 0);
+  -webkit-clip-path: inset(0 100% 0 0);
   animation:
     typing 2.8s steps(var(--typing-steps, 18)) .2s both,
     caret 0.9s step-end infinite;
@@ -212,13 +213,46 @@
 }
 
 @keyframes typing {
-  from { clip-path: inset(0 100% 0 0); }
-  to { clip-path: inset(0 0 0 0); }
+  from {
+    clip-path: inset(0 100% 0 0);
+    -webkit-clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    -webkit-clip-path: inset(0 0 0 0);
+  }
 }
 
 @keyframes typing-rtl {
-  from { clip-path: inset(0 0 0 100%); }
-  to { clip-path: inset(0 0 0 0); }
+  from {
+    clip-path: inset(0 0 0 100%);
+    -webkit-clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    -webkit-clip-path: inset(0 0 0 0);
+  }
+}
+
+@supports not ((clip-path: inset(0 100% 0 0)) or (-webkit-clip-path: inset(0 100% 0 0))) {
+  .typingName {
+    clip-path: none;
+    -webkit-clip-path: none;
+    width: 0;
+    animation:
+      typing-width 2.8s steps(var(--typing-steps, 18)) .2s both,
+      caret 0.9s step-end infinite;
+  }
+}
+
+@keyframes typing-width {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes typing-width-rtl {
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 @keyframes caret {
