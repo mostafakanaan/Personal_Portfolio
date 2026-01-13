@@ -1,5 +1,7 @@
 /* RTL SUPPORT */
 html[dir="rtl"] {
+  direction: rtl;
+
   .row { flex-direction: row-reverse; }
   .nav { flex-direction: row-reverse; }
   .navRight { flex-direction: row-reverse; }
@@ -27,7 +29,15 @@ html[dir="rtl"] {
   .chatSub,
   .chatBubble,
   .typingText,
-  .chatInput {
+  .chatInput,
+  .cardBody,
+  .cardImageOverlay,
+  .list,
+  .panel,
+  .section,
+  .kicker,
+  .photoMeta,
+  .hint {
     text-align: right;
   }
 }

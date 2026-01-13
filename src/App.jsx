@@ -31,9 +31,23 @@ function getInitialLang() {
   return match || "en";
 }
 
-function PortfolioPage({ t, lang, setLang, meta }) {
+function getProfileForLang(lang) {
+  const override = profile.i18n?.[lang];
+  if (!override) return profile;
+
+  return {
+    ...profile,
+    ...override,
+    experience: override.experience || profile.experience,
+    education: override.education || profile.education,
+    projects: override.projects || profile.projects,
+    spokenLanguages: override.spokenLanguages || profile.spokenLanguages,
+  };
+}
+
+function PortfolioPage({ t, lang, setLang, meta, profileView }) {
   const year = new Date().getFullYear();
-  const displayName = lang === "ar" ? "مصطفى كنعان" : profile.name;
+  const displayName = profileView.name;
 
   return (
     <div id="top" className="page">
@@ -51,7 +65,7 @@ function PortfolioPage({ t, lang, setLang, meta }) {
             <div className="heroContent">
               <div className="kicker">
                 <span className="dot" />
-                {profile.title} · {profile.location}
+                {profileView.title} · {profileView.location}
               </div>
 
               <h1 className="h1">
@@ -70,13 +84,13 @@ function PortfolioPage({ t, lang, setLang, meta }) {
                 <a className="btn btnPrimary" href="#projects">
                   {t.hero.ctaProjects}
                 </a>
-                <a className="btn btnGhost" href={profile.links.email}>
+                <a className="btn btnGhost" href={profileView.links.email}>
                   {t.contact.emailMe}
                 </a>
-                <a className="btn btnGhost" href={profile.links.github} target="_blank" rel="noreferrer">
+                <a className="btn btnGhost" href={profileView.links.github} target="_blank" rel="noreferrer">
                   GitHub
                 </a>
-                <a className="btn btnGhost" href={profile.links.linkedin} target="_blank" rel="noreferrer">
+                <a className="btn btnGhost" href={profileView.links.linkedin} target="_blank" rel="noreferrer">
                   LinkedIn
                 </a>
               </div>
@@ -89,7 +103,7 @@ function PortfolioPage({ t, lang, setLang, meta }) {
               <div className="photoGlow" aria-hidden="true" />
               <div className="photoMeta">
                 <div className="photoName">{displayName}</div>
-                <div className="photoRole muted">{profile.title}</div>
+                <div className="photoRole muted">{profileView.title}</div>
               </div>
             </div>
           </div>
@@ -107,7 +121,7 @@ function PortfolioPage({ t, lang, setLang, meta }) {
           <div className="panel">
             <div className="miniTitle">{t.skills.core}</div>
             <div className="chips chipsBig">
-              {profile.skills.languages.map((s) => (
+              {profileView.skills.languages.map((s) => (
                 <span key={s} className="chip chipBig">
                   {s}
                 </span>
@@ -120,7 +134,7 @@ function PortfolioPage({ t, lang, setLang, meta }) {
               <div>
                 <div className="miniTitle">{t.skills.frontend}</div>
                 <div className="chips">
-                  {profile.skills.frontend.map((s) => (
+                  {profileView.skills.frontend.map((s) => (
                     <span key={s} className="chip">
                       {s}
                     </span>
@@ -131,12 +145,12 @@ function PortfolioPage({ t, lang, setLang, meta }) {
               <div>
                 <div className="miniTitle">{t.skills.devops}</div>
                 <div className="chips">
-                  {profile.skills.devops.map((s) => (
+                  {profileView.skills.devops.map((s) => (
                     <span key={s} className="chip">
                       {s}
                     </span>
                   ))}
-                  {profile.skills.security.map((s) => (
+                  {profileView.skills.security.map((s) => (
                     <span key={s} className="chip">
                       {s}
                     </span>
@@ -149,7 +163,7 @@ function PortfolioPage({ t, lang, setLang, meta }) {
 
             <div className="miniTitle">{t.skills.data}</div>
             <div className="chips">
-              {profile.skills.data.map((s) => (
+              {profileView.skills.data.map((s) => (
                 <span key={s} className="chip">
                   {s}
                 </span>
@@ -160,7 +174,7 @@ function PortfolioPage({ t, lang, setLang, meta }) {
 
         <Section id="experience" eyebrow={t.experience.eyebrow} title={t.experience.title}>
           <div className="stack">
-            {profile.experience.map((x) => (
+            {profileView.experience.map((x) => (
               <div key={x.company + x.period} className="panel">
                 <div className="row">
                   <div>
@@ -183,7 +197,7 @@ function PortfolioPage({ t, lang, setLang, meta }) {
 
         <Section id="education" eyebrow={t.education.eyebrow} title={t.education.title}>
           <div className="stack">
-            {profile.education.map((e) => (
+            {profileView.education.map((e) => (
               <div key={e.school + e.period} className="panel">
                 <h3 className="h3">{e.degree}</h3>
                 <div className="muted">{e.school}</div>
@@ -196,7 +210,7 @@ function PortfolioPage({ t, lang, setLang, meta }) {
         <Section id="languages" eyebrow={t.languages.eyebrow} title={t.languages.title}>
           <div className="panel">
             <div className="chips chipsBig">
-              {profile.spokenLanguages.map((l) => (
+              {profileView.spokenLanguages.map((l) => (
                 <span key={l} className="chip chipBig">
                   {l}
                 </span>
@@ -208,7 +222,7 @@ function PortfolioPage({ t, lang, setLang, meta }) {
 
         <Section id="projects" eyebrow={t.projects.eyebrow} title={t.projects.title}>
           <div className="cards">
-            {profile.projects.map((p) => (
+            {profileView.projects.map((p) => (
               <ProjectCard key={p.name} p={p} />
             ))}
           </div>
@@ -219,7 +233,7 @@ function PortfolioPage({ t, lang, setLang, meta }) {
             <div className="contactIconRow">
               <a
                 className="iconBtn iconBtnPrimary"
-                href={profile.links.email}
+                href={profileView.links.email}
                 aria-label={t.contact.emailMe}
                 title={t.contact.emailMe}
               >
@@ -230,7 +244,7 @@ function PortfolioPage({ t, lang, setLang, meta }) {
 
               <a
                 className="iconBtn"
-                href={profile.links.linkedin}
+                href={profileView.links.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
@@ -243,7 +257,7 @@ function PortfolioPage({ t, lang, setLang, meta }) {
 
               <a
                 className="iconBtn"
-                href={profile.links.github}
+                href={profileView.links.github}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
@@ -287,6 +301,13 @@ export default function App() {
     [lang]
   );
 
+  const profileView = useMemo(
+    function () {
+      return getProfileForLang(lang);
+    },
+    [lang]
+  );
+
   const t = T[lang] || T.en;
 
   useEffect(
@@ -301,7 +322,9 @@ export default function App() {
     <Routes>
       <Route
         path="/"
-        element={<PortfolioPage t={t} lang={lang} setLang={setLang} meta={meta} />}
+        element={
+          <PortfolioPage t={t} lang={lang} setLang={setLang} meta={meta} profileView={profileView} />
+        }
       />
       <Route path="/chat" element={<ChatPage />} />
     </Routes>

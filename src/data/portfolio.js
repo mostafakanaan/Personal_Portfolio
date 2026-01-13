@@ -74,6 +74,89 @@ export const profile = {
   // from CV: languages :contentReference[oaicite:4]{index=4}
   spokenLanguages: ["English", "German", "Arabic", "Turkish"],
 
+  i18n: {
+    ar: {
+      name: "مصطفى كنعان",
+      title: "مطور برمجيات (بكالوريوس علوم الحاسوب)",
+      location: "زيورخ، سويسرا",
+      experience: [
+        {
+          company: "Quality1 AG (Q1)",
+          role: "مطور برمجيات",
+          location: "بوبكون",
+          period: "فبراير 2024 - الحالي",
+          bullets: ["تطوير الواجهة الخلفية والواجهة الأمامية باستخدام C#"],
+        },
+        {
+          company: "Advellence GmbH",
+          role: "تطوير Fullstack",
+          location: "بيليفيلد",
+          period: "أبريل 2021 - أبريل 2023",
+          bullets: [
+            "تطوير واجهات API وتكاملات في .NET 6 (Logic Apps, Functions)",
+            "تطوير واجهات أمامية باستخدام Vue.js",
+            "ترحيل MSSQL وNoSQL/CosmosDB وأنظمة PIM وDAM",
+            "Azure DevOps وخطوط CI/CD",
+          ],
+        },
+        {
+          company: "EUtech Scientific Engineering GmbH & FH Aachen",
+          role: "طالب عامل ومدرس C++",
+          location: "آخن",
+          period: "أكتوبر 2018 - مارس 2021",
+          bullets: [
+            "تطوير الواجهة الخلفية والواجهة الأمامية باستخدام C#",
+            "من ASP.NET Web Forms إلى .NET 5 Blazor WASM",
+            "التدريس والإشراف (أساسيات علوم الحاسوب)",
+          ],
+        },
+      ],
+      education: [
+        {
+          degree: "بكالوريوس علوم الحاسوب (تركيز هندسة البرمجيات)",
+          school: "FH Aachen (University of Applied Sciences)",
+          period: "سبتمبر 2017 - مايو 2021",
+        },
+        {
+          degree: "بكالوريوس علوم الحاسوب",
+          school: "Leibniz Universität Hannover",
+          period: "أكتوبر 2015 - سبتمبر 2017",
+        },
+      ],
+      spokenLanguages: ["الإنجليزية", "الألمانية", "العربية", "التركية"],
+      projects: [
+        {
+          name: "تطبيق التمويل للأعمال",
+          description: "إدارة مالية للشركات الصغيرة مع التقارير والتصدير وأدوار المستخدمين.",
+          tech: ["MAUI", "C#", "SQLite"],
+          status: "قريباً",
+          image: "/img/projects/coming-soon.png",
+        },
+        {
+          name: "عارض فروقات لقطات DEF",
+          description: "مقارنة مرئية للقطات بيانات JSON مع تتبع التغييرات.",
+          tech: ["WPF", "MVVM", "C#"],
+          status: "قريباً",
+          image: "/img/projects/coming-soon.png",
+        },
+        {
+          name: "أتمتة الموافقات الداخلية",
+          description: "سير عمل موافقات آلي مع سجل تدقيق.",
+          tech: [".NET", "SQL Server", "Background Services"],
+          status: "قريباً",
+          image: "/img/projects/coming-soon.png",
+        },
+        {
+          name: "مساهمة مفتوحة المصدر",
+          description: "مشروع مساهمة مفتوحة المصدر قادم.",
+          tech: ["React", "TypeScript"],
+          status: "قريباً",
+          image: "/img/projects/coming-soon.png",
+        },
+      ],
+    },
+  },
+
   // your projects can stay here (edit freely)
  projects: [
   {
