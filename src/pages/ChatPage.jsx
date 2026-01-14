@@ -22,33 +22,20 @@ const headers = {
   ...(LLM_KEY ? { "X-LLM-Key": LLM_KEY } : {}),
 };
 
-function buildUserPrompt(messages, userText, systemHint) {
-  // IMPORTANT:
-  // Do NOT use "User:" / "Assistant:" markers.
-  // Wrapper already injects system + facts + QUESTION/ANSWER format.
-  const recent = messages
-    .filter((m) => m && typeof m.content === "string")
-    .slice(-8)
-    .map((m) => {
-      const role = m.role === "user" ? "User" : "Assistant";
-      // no "User:" labels, just lightweight context lines
-      return `${role} said: ${m.content}`;
-    })
-    .join("\n");
-
-  // Keep this small: language hint + optional recent context + current question
-  return [
-    systemHint ? `Language hint: ${systemHint}` : "",
-    recent ? `Recent context:\n${recent}` : "",
-    `Question: ${userText}`,
-  ]
-    .filter(Boolean)
-    .join("\n\n");
+function buildPrompt(userText, langHint) {
+  // Keep it SIMPLE.
+  // Wrapper already injects: SYSTEM + FACTS + QUESTION/ANSWER anchors.
+  // Sending extra "Recent context" / "Assistant said" causes the 1B model to improvise.
+  const hint = (langHint || "").trim();
+  return hint ? `${hint}\n\n${userText}` : userText;
 }
 
 function cleanAnswer(text) {
   if (!text) return "";
-  return text
+
+  // Strip common leading junk the model sometimes echoes
+  return String(text)
+    .replace(/^\s*\[(.*?)\]\s*/g, "")
     .replace(/^\s*(assistant:)\s*/i, "")
     .replace(/^\s*\(assistant\)\s*/i, "")
     .trim();
@@ -73,12 +60,12 @@ export default function ChatPage() {
     setText("");
     setBusy(true);
 
-    const nextMessages = [...messages, { role: "user", content: userText }];
-    setMessages(nextMessages);
+    // show user message immediately
+    setMessages((prev) => [...prev, { role: "user", content: userText }]);
 
     try {
-      const systemHint = tr(lang, "chat.system");
-      const prompt = buildUserPrompt(nextMessages, userText, systemHint);
+      const langHint = tr(lang, "chat.system"); // keep this short (e.g., "Language: English.")
+      const prompt = buildPrompt(userText, langHint);
 
       const res = await fetch("/api/llm/v1/completions", {
         method: "POST",
@@ -86,9 +73,9 @@ export default function ChatPage() {
         body: JSON.stringify({
           model: "local",
           prompt,
-          temperature: 0.45,
-          n_predict: 220, // llama.cpp native field; wrapper accepts it too
-          // IMPORTANT: don't stop on User/Assistant markers (we are not using them)
+          temperature: 0.35,     // lower = less creative hallucinations
+          n_predict: 120,        // shorter outputs by default
+          // Important: let wrapper guard_stops handle template leakage
           stop: [],
         }),
       });
@@ -99,7 +86,7 @@ export default function ChatPage() {
       }
 
       const data = await res.json();
-      const raw = (data?.choices?.[0]?.text ?? "").trim();
+      const raw = data?.choices?.[0]?.text ?? "";
       const answer = cleanAnswer(raw);
 
       setMessages((prev) => [
@@ -203,6 +190,7 @@ export default function ChatPage() {
           </button>
         </div>
       </div>
+
       <style>{`
         :root {
           --chat-bg: #0f172a;
@@ -555,4 +543,5 @@ export default function ChatPage() {
   );
 }
 
+      
       
