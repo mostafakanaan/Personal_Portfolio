@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Section from "./components/Section";
 import ProjectCard from "./components/ProjectCard";
 import ChatPage from "./pages/ChatPage";
+import Background from "./components/Background";
 
 import { profile } from "./data/portfolio";
 import photo from "./assets/cv-photo.jpg";
@@ -51,6 +52,7 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
 
   return (
     <div id="top" className="page">
+      <Background />
       <Navbar t={t} lang={lang} setLang={setLang} />
 
       {/* HERO */}
@@ -68,7 +70,7 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
                 {profileView.title} · {profileView.location}
               </div>
 
-              <h1 className="h1">
+              <h1 className="h1 nameRow">
                 <span
                   className="typingName"
                   style={{ "--typing-steps": displayName.length }}
@@ -114,6 +116,37 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
         <Section id="about" eyebrow={t.about.eyebrow} title={t.about.title}>
           <div className="panel">
             <p className="body">{t.about.body}</p>
+          </div>
+          <div style={{ marginTop: "16px", textAlign: "center" }}>
+            <a
+              href="/chat"
+              className="btn btnGhost robotCTA"
+              style={{
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                fontSize: "0.95rem",
+              }}
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect x="3" y="11" width="18" height="10" rx="2" />
+                <circle cx="12" cy="5" r="2" />
+                <path d="M12 7v4" />
+                <line x1="8" y1="16" x2="8" y2="16" />
+                <line x1="16" y1="16" x2="16" y2="16" />
+              </svg>
+              {t.about.chatCTA}
+            </a>
           </div>
         </Section>
 

@@ -51,7 +51,7 @@
     height: 8px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent), var(--accent2));
-    box-shadow: 0 0 14px rgba(255,122,24,.55);
+    box-shadow: 0 0 14px rgba(255, 122, 24, .55);
   }
 
   .navActions {
@@ -62,7 +62,9 @@
 }
 
 /* Language button (emoji flags) */
-.lang { position: relative; }
+.lang {
+  position: relative;
+}
 
 .langBtn {
   display: inline-flex;
@@ -94,7 +96,9 @@
   font-weight: 600;
 }
 
-.chev { opacity: 0.7; }
+.chev {
+  opacity: 0.7;
+}
 
 .langSelectOverlay {
   position: absolute;
@@ -130,10 +134,12 @@
   }
 }
 
+.navRobot:hover svg {
+  animation: robotShake 0.4s ease forwards;
+}
+
 /* Contact button */
 .navBtn {
-  padding: 10px 14px;
-  border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(20, 24, 40, 0.6);
   color: #fff;
@@ -168,7 +174,9 @@
     border-color: rgba(255, 122, 24, 0.35);
   }
 
-  svg { fill: currentColor; }
+  svg {
+    fill: currentColor;
+  }
 }
 
 /* Mobile panel */
@@ -220,7 +228,9 @@
 
 /* Responsive */
 @media (max-width: 720px) {
-  .navActions { display: none; }
+  .navActions {
+    display: none;
+  }
 
   .navBurger {
     display: inline-flex;
@@ -228,7 +238,9 @@
     justify-content: center;
   }
 
-  .navbar.open .navPanel { display: block; }
+  .navbar.open .navPanel {
+    display: block;
+  }
 
   .navbar {
     top: 10px;
@@ -244,14 +256,23 @@
   will-change: filter;
   transition: filter 300ms;
 
-  &:hover { filter: drop-shadow(0 0 2em #646cffaa); }
+  &:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
 
-  &.react:hover { filter: drop-shadow(0 0 2em #61dafbaa); }
+  &.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
 }
 
 @keyframes logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -260,5 +281,10 @@
   }
 }
 
-.card { padding: 2em; }
-.read-the-docs { color: #888; }
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

@@ -45,23 +45,26 @@ export default function LanguageSwitcher({ lang, setLang }) {
       </button>
 
       {open && (
-        <div className="langMenu" role="menu">
-          {LANGS.map((l) => (
-            <button
-              key={l.code}
-              type="button"
-              role="menuitem"
-              className={`langItem ${l.code === lang ? "active" : ""}`}
-              onClick={() => {
-                setLang(l.code);
-                setOpen(false);
-              }}
-            >
-              <img src={`/flags/${l.flag}.svg`} alt="" />
-              <span>{l.label}</span>
-            </button>
-          ))}
-        </div>
+        <>
+          <div className="langBackdrop" onClick={() => setOpen(false)} />
+          <div className="langMenu" role="menu">
+            {LANGS.map((l) => (
+              <button
+                key={l.code}
+                type="button"
+                role="menuitem"
+                className={`langItem ${l.code === lang ? "active" : ""}`}
+                onClick={() => {
+                  setLang(l.code);
+                  setOpen(false);
+                }}
+              >
+                <img src={`/flags/${l.flag}.svg`} alt="" />
+                <span>{l.label}</span>
+              </button>
+            ))}
+          </div>
+        </>
       )}
     </div>
   );

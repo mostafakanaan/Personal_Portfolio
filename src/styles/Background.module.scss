@@ -1,0 +1,10 @@
+.backgroundCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Behind everything */
+  pointer-events: none; /* Let clicks pass through, though we might want mousemove */
+  background: var(--bg); /* Fallback or base */
+}
