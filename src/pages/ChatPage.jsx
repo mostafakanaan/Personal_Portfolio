@@ -64,7 +64,7 @@ export default function ChatPage() {
     setMessages((prev) => [...prev, { role: "user", content: userText }]);
 
     try {
-      const langHint = tr(lang, "chat.system"); // keep this short (e.g., "Language: English.")
+      const langHint = tr(lang, "chat.system");
       const prompt = buildPrompt(userText, langHint);
 
       const res = await fetch("/api/llm/v1/completions", {

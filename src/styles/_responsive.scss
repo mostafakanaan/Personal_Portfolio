@@ -5,6 +5,58 @@
   .photo { height: 320px; }
   .twoCol { grid-template-columns: 1fr; }
   .cards { grid-template-columns: 1fr; }
+  .cardsEnhanced { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; }
   .navLinks { display: none; }
+  
+  .timelineStack {
+    padding-left: 20px;
+  }
+  
+  .timelineStack::before {
+    left: 4px;
+  }
+  
+  .timelineDot {
+    left: -22px;
+    width: 12px;
+    height: 12px;
+  }
+  
+  .experienceCard {
+    margin-left: 5px;
+  }
+  
+  .educationCard {
+    padding-left: 50px;
+  }
+  
+  .educationIcon {
+    left: 14px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroContent {
+    padding: 14px;
+  }
+  
+  .heroActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .btn {
+    justify-content: center;
+  }
+  
+  .timelineStack {
+    padding-left: 15px;
+  }
+  
+  .periodBadge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
 }

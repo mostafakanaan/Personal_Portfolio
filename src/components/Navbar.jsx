@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 function scrollToId(id) {
@@ -10,6 +10,7 @@ function scrollToId(id) {
 export default function Navbar({ t, lang, setLang }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navWrapRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -17,6 +18,24 @@ export default function Navbar({ t, lang, setLang }) {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    function handleClickOutside(e) {
+      if (navWrapRef.current && !navWrapRef.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   function handleBrandClick() {
     if (window.innerWidth <= 720) {
@@ -41,7 +60,7 @@ export default function Navbar({ t, lang, setLang }) {
   ];
 
   return (
-    <div className={`navWrap ${scrolled ? "navWrap--scrolled" : ""}`}>
+    <div ref={navWrapRef} className={`navWrap ${scrolled ? "navWrap--scrolled" : ""}`}>
       <nav className="nav">
         <button
           className="brand"

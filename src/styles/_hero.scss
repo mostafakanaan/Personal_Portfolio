@@ -106,10 +106,8 @@
   animation:
     typing-width 4.5s steps(var(--typing-steps, 18)) .2s both,
     caret 0.9s step-end 6 forwards;
-  /* Stops after ~5.4s (6 cycles), ending on transparent */
 }
 
-/* Ensure typing animation works even with reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   .typingName {
     animation:
@@ -122,12 +120,10 @@
 
 .accent {
   color: var(--accent2);
-  opacity: 0;
-  animation: heroPointReveal 0.6s ease 4.6s forwards;
-  /* Starts just after typing finishes */
   display: inline-block;
   vertical-align: baseline;
   margin-left: 2px;
+  font-size: 1.2em;
 }
 
 .lead {

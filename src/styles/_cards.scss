@@ -5,6 +5,135 @@
   gap: 18px;
 }
 
+/* Enhanced Project Cards Grid */
+.cardsEnhanced {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 24px;
+  perspective: 1000px;
+}
+
+/* Enhanced Project Card */
+.cardEnhanced {
+  position: relative;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  cursor: default;
+}
+
+.cardBorderGlow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.cardInner {
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255,255,255,.12);
+  background:
+    radial-gradient(200px 140px at 20% 0%, rgba(255,122,24,.12), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.03) 100%);
+  border-radius: 20px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 
+    0 20px 60px rgba(2,8,20,.35),
+    inset 0 1px 0 rgba(255,255,255,.1);
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+
+.cardEnhanced:hover .cardInner {
+  border-color: rgba(255,122,24,.35);
+  box-shadow: 
+    0 30px 80px rgba(2,8,20,.5),
+    0 0 40px rgba(255,122,24,.15),
+    inset 0 1px 0 rgba(255,255,255,.15);
+}
+
+.cardImageWrapEnhanced {
+  position: relative;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.3);
+}
+
+.cardImageEnhanced {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.1) contrast(1.08);
+}
+
+.cardImageOverlayEnhanced {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(255,255,255,.95);
+  transition: background 0.3s ease;
+}
+
+.lockIconEnhanced { 
+  font-size: 32px; 
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.5));
+}
+
+.lockTextEnhanced {
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0,0,0,.5);
+}
+
+.cardBodyEnhanced { 
+  padding-top: 16px; 
+}
+
+.cardDescription {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 8px 0 12px;
+}
+
+.chipsEnhanced {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chipEnhanced {
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.85);
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+/* Floating particles */
+.cardParticle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 122, 24, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 6px rgba(255, 122, 24, 0.4);
+}
+
 .card {
   border: 1px solid rgba(255,255,255,.10);
   background:

@@ -157,7 +157,6 @@ export const profile = {
     },
   },
 
-  // your projects can stay here (edit freely)
  projects: [
   {
     name: "Business Finance App",
