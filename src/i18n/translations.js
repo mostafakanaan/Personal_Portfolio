@@ -53,7 +53,7 @@ export const T = {
       title: "What I do",
       body:
         "Fullstack developer with experience in C#, .NET, Vue.js, Azure DevOps, CI/CD and database migration work. I care about clean architecture, maintainability, and polished user interfaces.",
-      chatCTA: "Get to know me better, ask my personal assistant questions about me! 😉",
+      chatCTA: "Get to know me better, ask my personal assistant questions about me!",
     },
     skills: {
       eyebrow: "Skills",
@@ -135,7 +135,7 @@ export const T = {
       title: "Was ich mache",
       body:
         "Fullstack-Entwickler mit Erfahrung in C#, .NET, Vue.js, Azure DevOps, CI/CD und Datenbankmigrationen. Mir sind saubere Architektur, Wartbarkeit und hochwertige Benutzeroberflächen wichtig.",
-      chatCTA: "Lerne mich besser kennen, stell meinem persönlichen Assistenten Fragen über mich! 😉",
+      chatCTA: "Lerne mich besser kennen, stell meinem persönlichen Assistenten Fragen über mich!",
     },
     skills: {
       eyebrow: "Skills",
@@ -217,7 +217,7 @@ export const T = {
       title: "ماذا أقدّم",
       body:
         "مطور برمجيات شامل (Fullstack) لدي خبرة في ‎C#‎ و‎.NET‎ وVue.js وAzure DevOps وأنظمة CI/CD وأعمال ترحيل قواعد البيانات. أركّز على هندسة نظيفة، سهولة صيانة، وتجربة مستخدم متقنة.",
-      chatCTA: "تعرف عليّ أكثر، اسأل مساعدي الشخصي أسئلة عني! 😉",
+      chatCTA: "تعرف عليّ أكثر، اسأل مساعدي الشخصي أسئلة عني!",
     },
     skills: {
       eyebrow: "المهارات",
@@ -299,7 +299,7 @@ export const T = {
       title: "Ne yapıyorum",
       body:
         "C#, .NET, Vue.js, Azure DevOps, CI/CD ve veritabanı geçişleri konularında deneyime sahip bir Fullstack geliştiriciyim. Temiz mimari, sürdürülebilirlik ve özenli kullanıcı arayüzlerine önem veririm.",
-      chatCTA: "Beni daha yakından tanı, kişisel asistanıma benim hakkımda sorular sor! 😉",
+      chatCTA: "Beni daha yakından tanı, kişisel asistanıma benim hakkımda sorular sor!",
     },
     skills: {
       eyebrow: "Yetenekler",

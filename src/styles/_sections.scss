@@ -61,8 +61,26 @@
   box-shadow: 0 16px 40px rgba(2, 8, 20, .25);
 }
 
-.robotCTA:hover svg {
-  animation: robotShake 0.4s ease forwards;
+.robotIconLink {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 6px;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+
+  .robotIcon {
+    transition: transform 0.25s ease;
+  }
+
+  &:hover {
+    color: var(--accent2);
+
+    .robotIcon {
+      animation: robotShake 0.4s ease forwards;
+    }
+  }
 }
 
 .panelAlt {
