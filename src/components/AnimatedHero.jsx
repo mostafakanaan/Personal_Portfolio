@@ -17,7 +17,25 @@ export function AnimatedHeroText({ children, delay = 0 }) {
   );
 }
 
-export function AnimatedName({ name }) {
+export function AnimatedName({ name, isRtl = false }) {
+  // For RTL languages (like Arabic), animate the whole name to preserve ligatures
+  if (isRtl) {
+    return (
+      <motion.span
+        className="animatedNameContainer"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0.25, 0.46, 0.45, 0.94],
+        }}
+      >
+        {name}
+      </motion.span>
+    );
+  }
+
   const letters = name.split("");
 
   return (

@@ -72,8 +72,22 @@ export const profile = {
     },
   ],
 
-  // from CV: languages :contentReference[oaicite:4]{index=4}
-  spokenLanguages: ["English", "German", "Arabic", "Turkish"],
+  // Structured language proficiency data
+  spokenLanguages: {
+    fluent: [
+      { code: "ar", name: "(Syrian) Arabic", level: "native", percent: 100 },
+      { code: "de", name: "German", level: "C2", percent: 95 },
+      { code: "en", name: "English", level: "C1", percent: 85 },
+      { code: "tr", name: "Turkish", level: "B2", percent: 70 },
+    ],
+    learning: [
+      { code: "fr", name: "French", level: "A1", percent: 15, note: "school" },
+    ],
+    wantToLearn: [
+      { code: "es", name: "Spanish" },
+      { code: "ru", name: "Russian" },
+    ],
+  },
 
   i18n: {
     ar: {
@@ -124,7 +138,6 @@ export const profile = {
           period: "أكتوبر 2015 - سبتمبر 2017",
         },
       ],
-      spokenLanguages: ["الإنجليزية", "الألمانية", "العربية", "التركية"],
       projects: [
         {
           name: "تطبيق التمويل للأعمال",

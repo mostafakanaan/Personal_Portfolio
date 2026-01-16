@@ -59,7 +59,7 @@
 
 .navLinks {
   display: flex;
-  gap: 8px;
+  gap: 4px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -69,9 +69,11 @@
   border: 1px solid transparent;
   background: transparent;
   color: var(--muted);
-  padding: 10px 10px;
+  padding: 10px 8px;
   border-radius: 12px;
   cursor: pointer;
+  white-space: nowrap;
+  font-size: 14px;
 
   &:hover {
     color: var(--text);
@@ -102,12 +104,12 @@
 }
 
 .aiSparkle1 {
-  margin-right: 4px;
+  margin-right: 3px;
   animation-delay: 0s;
 }
 
 .aiSparkle2 {
-  margin-left: 4px;
+  margin-left: 3px;
   animation-delay: 0.75s;
 }
 
@@ -274,9 +276,16 @@
   border-radius: 14px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, .45);
   overflow: hidden;
-  z-index: 100;
+  z-index: 10001;
   backdrop-filter: blur(10px);
   padding: 6px;
+}
+
+.langBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: transparent;
 }
 
 .langItem {

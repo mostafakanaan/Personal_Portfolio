@@ -51,10 +51,12 @@ export const T = {
 
     about: {
       eyebrow: "About",
-      title: "What I do",
+      title: "whoami",
+      titleIcon: ">",
       body:
-        "Fullstack developer with experience in C#, .NET, Vue.js, Azure DevOps, CI/CD and database migration work. I care about clean architecture, maintainability, and polished user interfaces.",
-      chatCTA: "Get to know me better, ask my personal assistant questions about me!",
+        "Fullstack developer with experience in C#, .NET, Vue.js, Azure DevOps, CI/CD and database migrations. I value clean architecture, maintainability, and polished user interfaces.",
+      languages: "I speak multiple languages",
+      chatCTA: "Ask my assistant about me!",
     },
     skills: {
       eyebrow: "Skills",
@@ -76,14 +78,26 @@ export const T = {
     languages: {
       eyebrow: "Languages",
       title: "Languages I speak",
-      note: "You can switch the site language from the dropdown.",
+      native: "Native",
+      fluent: "Fluent",
+      learning: "Learning",
+      wantToLearn: "Want to learn",
+      schoolNote: "Had at school, forgot most of it",
+      names: {
+        ar: "Arabic (Syrian)",
+        de: "German",
+        en: "English",
+        tr: "Turkish",
+        fr: "French",
+        es: "Spanish",
+        ru: "Russian",
+      },
     },
     projects: { eyebrow: "Work", title: "Selected projects", comingSoon: "Coming soon" },
     contact: {
       eyebrow: "Contact",
-      title: "Let’s build something",
+      title: "Make the first move",
       emailMe: "Email me",
-      note: "Prefer email for inquiries. I reply quickly.",
     },
     footer: {
       right: "React + Vite · i18n",
@@ -141,10 +155,11 @@ export const T = {
 
     about: {
       eyebrow: "Profil",
-      title: "Was ich mache",
+      title: "Wer bin ich",
       body:
         "Fullstack-Entwickler mit Erfahrung in C#, .NET, Vue.js, Azure DevOps, CI/CD und Datenbankmigrationen. Mir sind saubere Architektur, Wartbarkeit und hochwertige Benutzeroberflächen wichtig.",
-      chatCTA: "Lerne mich besser kennen, stell meinem persönlichen Assistenten Fragen über mich!",
+      languages: "Ich spreche mehrere Sprachen",
+      chatCTA: "Frag meinen Assistenten!",
     },
     skills: {
       eyebrow: "Skills",
@@ -166,14 +181,26 @@ export const T = {
     languages: {
       eyebrow: "Sprachen",
       title: "Sprachen, die ich spreche",
-      note: "Du kannst die Sprache der Webseite oben im Menü wechseln.",
+      native: "Muttersprache",
+      fluent: "Fließend",
+      learning: "Lerne ich",
+      wantToLearn: "Möchte lernen",
+      schoolNote: "In der Schule gelernt, das meiste vergessen",
+      names: {
+        ar: "Arabisch (Syrisch)",
+        de: "Deutsch",
+        en: "Englisch",
+        tr: "Türkisch",
+        fr: "Französisch",
+        es: "Spanisch",
+        ru: "Russisch",
+      },
     },
     projects: { eyebrow: "Arbeit", title: "Ausgewählte Projekte", comingSoon: "Kommt bald" },
     contact: {
       eyebrow: "Kontakt",
-      title: "Lass uns etwas bauen",
+      title: "Mach den ersten Schritt",
       emailMe: "E-Mail senden",
-      note: "Am besten per E-Mail. Ich antworte schnell.",
     },
     footer: {
       right: "React + Vite · i18n",
@@ -231,10 +258,11 @@ export const T = {
 
     about: {
       eyebrow: "نبذة",
-      title: "ماذا أقدّم",
+      title: "من أنا",
       body:
         "مطور برمجيات شامل (Fullstack) لدي خبرة في ‎C#‎ و‎.NET‎ وVue.js وAzure DevOps وأنظمة CI/CD وأعمال ترحيل قواعد البيانات. أركّز على هندسة نظيفة، سهولة صيانة، وتجربة مستخدم متقنة.",
-      chatCTA: "تعرف عليّ أكثر، اسأل مساعدي الشخصي أسئلة عني!",
+      languages: "أتحدث عدة لغات",
+      chatCTA: "اسأل مساعدي عني!",
     },
     skills: {
       eyebrow: "المهارات",
@@ -256,14 +284,26 @@ export const T = {
     languages: {
       eyebrow: "اللغات",
       title: "اللغات التي أتحدثها",
-      note: "يمكنك تغيير لغة الموقع من القائمة العلوية.",
+      native: "اللغة الأم",
+      fluent: "بطلاقة",
+      learning: "أتعلمها",
+      wantToLearn: "أريد تعلمها",
+      schoolNote: "درستها في المدرسة، نسيت معظمها",
+      names: {
+        ar: "العربية (السورية)",
+        de: "الألمانية",
+        en: "الإنجليزية",
+        tr: "التركية",
+        fr: "الفرنسية",
+        es: "الإسبانية",
+        ru: "الروسية",
+      },
     },
     projects: { eyebrow: "العمل", title: "مشاريع مختارة", comingSoon: "قريبًا" },
     contact: {
       eyebrow: "تواصل",
-      title: "خلّينا نعمل شيء قوي",
+      title: "خذ الخطوة الأولى",
       emailMe: "راسلني",
-      note: "يفضل التواصل عبر البريد الإلكتروني. أرد بسرعة."
     },
     footer: {
       right: "React + Vite · i18n",
@@ -321,10 +361,11 @@ export const T = {
 
     about: {
       eyebrow: "Hakkımda",
-      title: "Ne yapıyorum",
+      title: "Ben kimim",
       body:
         "C#, .NET, Vue.js, Azure DevOps, CI/CD ve veritabanı geçişleri konularında deneyime sahip bir Fullstack geliştiriciyim. Temiz mimari, sürdürülebilirlik ve özenli kullanıcı arayüzlerine önem veririm.",
-      chatCTA: "Beni daha yakından tanı, kişisel asistanıma benim hakkımda sorular sor!",
+      languages: "Birden fazla dil konuşurum",
+      chatCTA: "Asistanıma sor!",
     },
     skills: {
       eyebrow: "Yetenekler",
@@ -346,14 +387,26 @@ export const T = {
     languages: {
       eyebrow: "Diller",
       title: "Konuştuğum diller",
-      note: "Üst menüden site dilini değiştirebilirsin.",
+      native: "Ana dil",
+      fluent: "Akıcı",
+      learning: "Öğreniyorum",
+      wantToLearn: "Öğrenmek istiyorum",
+      schoolNote: "Okulda öğrendim, çoğunu unuttum",
+      names: {
+        ar: "Arapça (Suriye)",
+        de: "Almanca",
+        en: "İngilizce",
+        tr: "Türkçe",
+        fr: "Fransızca",
+        es: "İspanyolca",
+        ru: "Rusça",
+      },
     },
     projects: { eyebrow: "Çalışmalar", title: "Seçilmiş projeler", comingSoon: "Yakında" },
     contact: {
       eyebrow: "İletişim",
-      title: "Bir şeyler inşa edelim",
+      title: "İlk adımı sen at",
       emailMe: "E-posta gönder",
-      note: "İletişim için e-posta tercih edilir. Hızlı cevap veririm."
     },
     footer: {
       right: "React + Vite · i18n",

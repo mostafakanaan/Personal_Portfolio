@@ -112,7 +112,7 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
               </AnimatedHeroText>
 
               <h1 className="h1 nameRow">
-                <AnimatedName name={displayName} />
+                <AnimatedName name={displayName} isRtl={meta.dir === 'rtl'} />
                 <motion.span
                   className="accent"
                   initial={{ opacity: 0, scale: 0 }}
@@ -160,7 +160,16 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
       </header>
 
       <main className="container">
-        <AnimatedSection id="about" eyebrow={t.about.eyebrow} title={t.about.title}>
+        <AnimatedSection 
+          id="about" 
+          eyebrow={t.about.eyebrow} 
+          title={lang === 'en' ? (
+            <span className="terminalTitle">
+              <span className="terminalPrompt">$</span> {t.about.title}
+              <span className="terminalCursor">_</span>
+            </span>
+          ) : t.about.title}
+        >
           <motion.div
             className="panel aboutPanel glassPanel"
             initial={{ opacity: 0, y: 30 }}
@@ -173,8 +182,17 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
             }}
           >
             <div className="aboutContent">
-              <p className="body">
-                {t.about.body} {t.about.chatCTA}
+              <p className="body">{t.about.body}</p>
+              <p className="body aboutLanguages">
+                {t.about.languages}
+                <a href="#languages" className="languagesArrowLink" aria-label="Go to Languages section">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </p>
+              <p className="body aboutCTA">
+                {t.about.chatCTA}
                 <a
                   href="/chat"
                   className="robotIconLink"
@@ -332,24 +350,142 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
         </AnimatedSection>
 
         <AnimatedSection id="languages" eyebrow={t.languages.eyebrow} title={t.languages.title}>
-          <motion.div
-            className="panel glassPanel"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <AnimatedSkillGroup skills={profileView.spokenLanguages} big={true} staggerDelay={0.1} />
+          <div className="languagesGrid">
+            {/* Fluent Languages */}
             <motion.div
-              className="hint muted"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              className="languageGroup"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
+              transition={{ duration: 0.6 }}
             >
-              {t.languages.note}
+              <div className="languageGroupTitle">{t.languages.fluent}</div>
+              <div className="languageCards">
+                {profileView.spokenLanguages.fluent.map((lang, index) => (
+                  <motion.div
+                    key={lang.code}
+                    className="languageCard"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.03, y: -5 }}
+                  >
+                    <div className="languageCardHeader">
+                      {lang.code === 'ar' ? (
+                        <div className="dualFlags">
+                          <img src="/flags/sy.svg" alt="Syrian" className="languageFlag" />
+                          <img src="/flags/sa.svg" alt="Saudi" className="languageFlag" />
+                        </div>
+                      ) : (
+                        <img 
+                          src={`/flags/${lang.code === 'en' ? 'gb' : lang.code}.svg`} 
+                          alt={lang.name}
+                          className="languageFlag"
+                        />
+                      )}
+                      <div className="languageInfo">
+                        <span className="languageName">{t.languages.names[lang.code] || lang.name}</span>
+                        <span className={`languageLevel ${lang.level === 'native' ? 'native' : ''}`}>
+                          {lang.level === 'native' ? t.languages.native : lang.level}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="languageProgressWrapper">
+                      <motion.div 
+                        className="languageProgressBar"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${lang.percent}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: index * 0.1 + 0.3, ease: "easeOut" }}
+                      />
+                      <div className="languageProgressGlow" style={{ width: `${lang.percent}%` }} />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
-          </motion.div>
+
+            {/* Learning Languages */}
+            <motion.div
+              className="languageGroup learningGroup"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="languageGroupTitle">{t.languages.learning}</div>
+              <div className="languageCards">
+                {profileView.spokenLanguages.learning.map((lang, index) => (
+                  <motion.div
+                    key={lang.code}
+                    className="languageCard learningCard"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.03, y: -5 }}
+                  >
+                    <div className="languageCardHeader">
+                      <img 
+                        src={`/flags/${lang.code}.svg`} 
+                        alt={lang.name}
+                        className="languageFlag"
+                      />
+                      <div className="languageInfo">
+                        <span className="languageName">{t.languages.names[lang.code] || lang.name}</span>
+                        <span className="languageLevel">{lang.level}</span>
+                      </div>
+                    </div>
+                    <div className="languageProgressWrapper">
+                      <motion.div 
+                        className="languageProgressBar learningProgress"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${lang.percent}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+                      />
+                    </div>
+                    {lang.note === 'school' && (
+                      <div className="languageNote">{t.languages.schoolNote}</div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Want to Learn */}
+            <motion.div
+              className="languageGroup wantToLearnGroup"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="languageGroupTitle">{t.languages.wantToLearn}</div>
+              <div className="languageWishlist">
+                {profileView.spokenLanguages.wantToLearn.map((lang, index) => (
+                  <motion.div
+                    key={lang.code}
+                    className="languageWishItem"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.15 }}
+                    whileHover={{ scale: 1.05, x: 5 }}
+                  >
+                    <img 
+                      src={`/flags/${lang.code}.svg`} 
+                      alt={lang.name}
+                      className="languageFlagSmall"
+                    />
+                    <span className="languageName">{t.languages.names[lang.code] || lang.name}</span>
+                    <span className="wishlistIcon">✨</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </AnimatedSection>
 
         <AnimatedSection id="projects" eyebrow={t.projects.eyebrow} title={t.projects.title}>
@@ -430,15 +566,6 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
               </motion.a>
             </div>
 
-            <motion.div
-              className="contactHint muted"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-            >
-              {t.contact.note}
-            </motion.div>
           </motion.div>
         </AnimatedSection>
 
