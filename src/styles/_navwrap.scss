@@ -23,16 +23,23 @@
 }
 
 .brand {
-  border: 1px solid rgba(255, 255, 255, .14);
-  background: rgba(255, 255, 255, .04);
+  border: none;
+  background: transparent;
   color: var(--text);
-  padding: 10px 12px;
+  padding: 6px;
   border-radius: 14px;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+  box-shadow: none;
+}
+
+.brandLogo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 6px;
 }
 
 .brandDot {

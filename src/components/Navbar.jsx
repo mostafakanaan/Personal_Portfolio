@@ -71,8 +71,7 @@ export default function Navbar({ t, lang, setLang }) {
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
         >
-          MK
-          <span className="brandDot" />
+          <img src="/img/logo.png" alt="Logo" className="brandLogo" />
           <span className="brandMenu" aria-hidden="true">
             <span />
             <span />
