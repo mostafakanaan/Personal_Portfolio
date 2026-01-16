@@ -49,6 +49,7 @@ function getProfileForLang(lang) {
 function PortfolioPage({ t, lang, setLang, meta, profileView }) {
   const year = new Date().getFullYear();
   const displayName = profileView.name;
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   return (
     <div id="top" className="page">
@@ -114,33 +115,52 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
 
       <main className="container">
         <Section id="about" eyebrow={t.about.eyebrow} title={t.about.title}>
-          <div className="panel">
-            <p className="body">
-              {t.about.body} {t.about.chatCTA}
-              <a
-                href="/chat"
-                className="robotIconLink"
-                aria-label="Chat with my assistant"
-              >
-                <svg
-                  className="robotIcon"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+          <div className="panel aboutPanel">
+            <div className="aboutContent">
+              <p className="body">
+                {t.about.body} {t.about.chatCTA}
+                <a
+                  href="/chat"
+                  className="robotIconLink"
+                  aria-label="Chat with my assistant"
                 >
-                  <rect x="3" y="11" width="18" height="10" rx="2" />
-                  <circle cx="12" cy="5" r="2" />
-                  <path d="M12 7v4" />
-                  <line x1="8" y1="16" x2="8" y2="16" />
-                  <line x1="16" y1="16" x2="16" y2="16" />
+                  <svg
+                    className="robotIcon"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="3" y="11" width="18" height="10" rx="2" />
+                    <circle cx="12" cy="5" r="2" />
+                    <path d="M12 7v4" />
+                    <line x1="8" y1="16" x2="8" y2="16" />
+                    <line x1="16" y1="16" x2="16" y2="16" />
+                  </svg>
+                </a>
+              </p>
+            </div>
+            <button
+              className="aiStackPreview"
+              onClick={() => setLightboxOpen(true)}
+              aria-label={t.aiStack.viewFull}
+            >
+              <img
+                src="/img/myaistack.png"
+                alt="My AI Stack Preview"
+                className="aiStackPreviewImg"
+              />
+              <div className="aiStackPreviewOverlay">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1" />
                 </svg>
-              </a>
-            </p>
+                <span>{t.aiStack.viewFull}</span>
+              </div>
+            </button>
           </div>
         </Section>
 
@@ -196,6 +216,29 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
                 </span>
               ))}
             </div>
+          </div>
+        </Section>
+
+        <Section id="ai-stack" eyebrow={t.aiStack.eyebrow} title={t.aiStack.title}>
+          <div className="panel aiStackPanel">
+            <p className="body aiStackDesc">{t.aiStack.description}</p>
+            <button
+              className="aiStackImageWrapper"
+              onClick={() => setLightboxOpen(true)}
+              aria-label={t.aiStack.viewFull}
+            >
+              <img
+                src="/img/myaistack.png"
+                alt="My AI Stack - AI workflow diagram"
+                className="aiStackImage"
+              />
+              <div className="aiStackHoverOverlay">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M15 3h6v6M14 10l6.1-6.1M9 21H3v-6M10 14l-6.1 6.1" />
+                </svg>
+                <span>{t.aiStack.viewFull}</span>
+              </div>
+            </button>
           </div>
         </Section>
 
@@ -305,6 +348,36 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
           <div className="muted">{t.footer.right}</div>
         </footer>
       </main>
+
+      {/* Lightbox Modal */}
+      {lightboxOpen && (
+        <div
+          className="lightboxOverlay"
+          onClick={() => setLightboxOpen(false)}
+          onKeyDown={(e) => e.key === "Escape" && setLightboxOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="AI Stack full view"
+          tabIndex={-1}
+        >
+          <button
+            className="lightboxClose"
+            onClick={() => setLightboxOpen(false)}
+            aria-label={t.aiStack.close}
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <img
+            src="/img/myaistack.png"
+            alt="My AI Stack - Full workflow diagram"
+            className="lightboxImage"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }

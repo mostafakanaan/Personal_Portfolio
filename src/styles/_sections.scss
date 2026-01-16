@@ -191,3 +191,232 @@
     transform: translateY(0);
   }
 }
+
+/* ABOUT SECTION WITH AI STACK PREVIEW */
+.aboutPanel {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.aboutContent {
+  flex: 1;
+}
+
+.aiStackPreview {
+  flex-shrink: 0;
+  width: 140px;
+  height: auto;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+    .aiStackPreviewOverlay {
+      opacity: 1;
+    }
+  }
+}
+
+.aiStackPreviewImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.aiStackPreviewOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 11px;
+  text-align: center;
+  padding: 8px;
+
+  svg {
+    stroke: var(--accent);
+  }
+}
+
+/* AI STACK DEDICATED SECTION */
+.aiStackPanel {
+  text-align: center;
+}
+
+.aiStackDesc {
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aiStackImageWrapper {
+  display: inline-block;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  max-width: 100%;
+
+  &:hover {
+    transform: scale(1.02) translateY(-4px);
+    box-shadow: 0 20px 50px rgba(255, 122, 24, 0.15), 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    .aiStackHoverOverlay {
+      opacity: 1;
+    }
+
+    .aiStackImage {
+      border-color: rgba(255, 122, 24, 0.4);
+    }
+  }
+}
+
+.aiStackImage {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.35s ease;
+}
+
+.aiStackHoverOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+
+  svg {
+    stroke: var(--accent);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  }
+}
+
+/* LIGHTBOX MODAL */
+.lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  animation: fadeIn 0.25s ease;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  color: #fff;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: rotate(90deg);
+  }
+}
+
+.lightboxImage {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 16px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .aboutPanel {
+    flex-direction: column;
+  }
+
+  .aiStackPreview {
+    width: 100%;
+    max-width: 200px;
+    margin: 16px auto 0;
+  }
+
+  .lightboxOverlay {
+    padding: 20px;
+  }
+
+  .lightboxClose {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .lightboxImage {
+    max-width: 95vw;
+    max-height: 80vh;
+  }
+}
