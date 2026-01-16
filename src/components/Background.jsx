@@ -14,9 +14,9 @@ export default function Background() {
     const mouse = { x: null, y: null, radius: 150 };
 
     // Configuration
-    const particleCount = Math.min(window.innerWidth / 10, 100); // Responsive count
+    const particleCount = Math.min(window.innerWidth / 10, 100);
     const connectionDistance = 120;
-    const particleSpeed = 0.4;
+    const particleSpeed = 0.15;
     const particleSize = 1.8;
 
 

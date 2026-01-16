@@ -13,7 +13,9 @@ export default function Navbar({ t, lang, setLang }) {
   const navWrapRef = useRef(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 8);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -51,9 +53,9 @@ export default function Navbar({ t, lang, setLang }) {
   }
 
   const items = [
-    { id: "top", label: t.nav.home },
     { id: "about", label: t.nav.about },
     { id: "skills", label: t.nav.skills },
+    { id: "ai-stack", label: t.nav.ai },
     { id: "experience", label: t.nav.experience },
     { id: "projects", label: t.nav.projects },
     { id: "contact", label: t.nav.contact },
@@ -80,8 +82,14 @@ export default function Navbar({ t, lang, setLang }) {
 
         <div className="navLinks">
           {items.map((x) => (
-            <button key={x.id} className="navLink" onClick={() => handleNavClick(x.id)}>
+            <button 
+              key={x.id} 
+              className={`navLink ${x.id === 'ai-stack' ? 'navLinkAI' : ''}`} 
+              onClick={() => handleNavClick(x.id)}
+            >
+              {x.id === 'ai-stack' && <span className="aiSparkle aiSparkle1">✦</span>}
               {x.label}
+              {x.id === 'ai-stack' && <span className="aiSparkle aiSparkle2">✦</span>}
             </button>
           ))}
         </div>
@@ -112,8 +120,14 @@ export default function Navbar({ t, lang, setLang }) {
       <div id="mobile-nav" className={`navMobile ${menuOpen ? "open" : ""}`}>
         <div className="navMobileInner">
           {items.map((x) => (
-            <button key={x.id} className="navMobileLink" onClick={() => handleNavClick(x.id)}>
+            <button 
+              key={x.id} 
+              className={`navMobileLink ${x.id === 'ai-stack' ? 'navMobileLinkAI' : ''}`} 
+              onClick={() => handleNavClick(x.id)}
+            >
+              {x.id === 'ai-stack' && <span className="aiSparkle aiSparkle1">✦</span>}
               {x.label}
+              {x.id === 'ai-stack' && <span className="aiSparkle aiSparkle2">✦</span>}
             </button>
           ))}
           <p className="navMobileText">

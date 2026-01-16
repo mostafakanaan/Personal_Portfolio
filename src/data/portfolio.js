@@ -10,6 +10,7 @@ export const profile = {
     linkedin: "https://linkedin.com/in/mos-kan",
     email: "mailto:mos.kan@hotmail.com",
     website: "https://mkanaan.de",
+    instagram: "https://www.instagram.com/_mkanaan_/",
   },
   quote: "“Das Geheimnis des Könnens liegt im Wollen.” — Giuseppe Mazzini",
 

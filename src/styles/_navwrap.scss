@@ -80,6 +80,48 @@
   }
 }
 
+/* AI Nav Link with sparkles */
+.navLinkAI {
+  position: relative;
+  color: var(--accent) !important;
+  background: linear-gradient(135deg, rgba(255, 122, 24, 0.08), rgba(255, 122, 24, 0.02)) !important;
+  border-color: rgba(255, 122, 24, 0.2) !important;
+  
+  &:hover {
+    color: var(--accent) !important;
+    border-color: rgba(255, 122, 24, 0.4) !important;
+    background: linear-gradient(135deg, rgba(255, 122, 24, 0.15), rgba(255, 122, 24, 0.05)) !important;
+    box-shadow: 0 0 20px rgba(255, 122, 24, 0.2);
+  }
+}
+
+.aiSparkle {
+  font-size: 8px;
+  color: var(--accent);
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.aiSparkle1 {
+  margin-right: 4px;
+  animation-delay: 0s;
+}
+
+.aiSparkle2 {
+  margin-left: 4px;
+  animation-delay: 0.75s;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
 .navRight {
   display: flex;
   align-items: center;
@@ -150,6 +192,22 @@
   &:hover {
     border-color: rgba(255, 122, 24, .45);
     transform: translateY(-1px);
+  }
+}
+
+/* AI Mobile Nav Link with sparkles */
+.navMobileLinkAI {
+  color: var(--accent) !important;
+  background: linear-gradient(135deg, rgba(255, 122, 24, 0.12), rgba(255, 122, 24, 0.04)) !important;
+  border-color: rgba(255, 122, 24, 0.25) !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2px;
+  
+  &:hover {
+    border-color: rgba(255, 122, 24, 0.5) !important;
+    box-shadow: 0 0 20px rgba(255, 122, 24, 0.15);
   }
 }
 
@@ -350,5 +408,47 @@
     inset: 0;
     background: rgba(0, 0, 0, 0.6);
     z-index: 150;
+  }
+}
+
+/* SCROLL TO TOP BUTTON */
+.scrollToTop {
+  position: fixed !important;
+  bottom: 32px !important;
+  right: 32px !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 122, 24, 0.4);
+  background: linear-gradient(135deg, rgba(255, 122, 24, 0.2), rgba(33, 212, 180, 0.15));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(2, 8, 20, 0.4), 0 0 20px rgba(255, 122, 24, 0.2);
+  transform: none !important;
+  will-change: opacity;
+
+  &:hover {
+    border-color: rgba(255, 122, 24, 0.7);
+  }
+
+  svg {
+    stroke: rgba(255, 255, 255, 0.9);
+  }
+}
+
+@media (max-width: 720px) {
+  .scrollToTop {
+    bottom: 20px !important;
+    right: 16px !important;
+    width: 46px;
+    height: 46px;
   }
 }
