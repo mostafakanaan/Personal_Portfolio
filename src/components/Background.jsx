@@ -41,7 +41,7 @@ class Particle {
   }
 
   draw(ctx, color) {
-    ctx.fillStyle = `${color} 0.5)`;
+    ctx.fillStyle = `${color} 0.5)`;  // color is "rgba(33, 212, 180," - complete it with opacity
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fill();

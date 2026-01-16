@@ -41,7 +41,9 @@ function cleanAnswer(text) {
     .trim();
 }
 
-// Input sanitization - limit length and remove potentially harmful content
+// Input sanitization - limit length to prevent abuse
+// Note: React automatically escapes content, preventing XSS attacks
+// This function primarily limits input length and removes control characters
 function sanitizeInput(text) {
   if (!text || typeof text !== 'string') return "";
   
@@ -49,8 +51,9 @@ function sanitizeInput(text) {
   const maxLength = 500;
   let sanitized = text.trim().slice(0, maxLength);
   
-  // Remove any potential script tags or HTML (just in case)
-  sanitized = sanitized.replace(/<[^>]*>/g, '');
+  // Remove control characters and zero-width characters that could be used for obfuscation
+  // eslint-disable-next-line no-control-regex
+  sanitized = sanitized.replace(/[\u0000-\u001F\u007F-\u009F\u200B-\u200D\uFEFF]/g, '');
   
   return sanitized;
 }
@@ -112,9 +115,10 @@ export default function ChatPage() {
       ]);
     } catch {
       // Don't expose detailed error messages that might leak system info
+      // res may be undefined if fetch threw before assignment (e.g., network error)
       const errorMsg = res?.status === 429 
         ? "Too many requests. Please try again later."
-        : res?.status >= 500
+        : res?.status && res.status >= 500
         ? "Service temporarily unavailable. Please try again."
         : "Unable to process request. Please try again.";
       
