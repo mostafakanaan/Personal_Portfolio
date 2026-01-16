@@ -1,15 +1,17 @@
 // src/App.jsx
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import Navbar from "./components/Navbar";
 import AnimatedSection from "./components/AnimatedSection";
 import ProjectCardEnhanced from "./components/ProjectCardEnhanced";
-import ChatPage from "./pages/ChatPage";
 import Background from "./components/Background";
 import { AnimatedSkillGroup } from "./components/AnimatedSkillChip";
 import AnimatedExperienceCard from "./components/AnimatedExperienceCard";
+
+// Lazy load ChatPage for better performance
+const ChatPage = lazy(() => import("./pages/ChatPage"));
 import {
   AnimatedHeroText,
   AnimatedName,
@@ -694,14 +696,16 @@ export default function App() {
   );
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <PortfolioPage t={t} lang={lang} setLang={setLang} meta={meta} profileView={profileView} />
-        }
-      />
-      <Route path="/chat" element={<ChatPage />} />
-    </Routes>
+    <Suspense fallback={<div style={{ minHeight: '100vh', background: '#020617', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#e2e8f0' }}>Loading...</div>}>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <PortfolioPage t={t} lang={lang} setLang={setLang} meta={meta} profileView={profileView} />
+          }
+        />
+        <Route path="/chat" element={<ChatPage />} />
+      </Routes>
+    </Suspense>
   );
 }

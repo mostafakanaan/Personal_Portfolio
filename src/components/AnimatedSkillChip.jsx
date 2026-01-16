@@ -40,7 +40,7 @@ export function AnimatedSkillGroup({ skills, big = false, staggerDelay = 0 }) {
         },
       }}
     >
-      {skills.map((skill, index) => (
+      {skills.map((skill) => (
         <motion.span
           key={skill}
           className={big ? "chip chipBig chipAnimated" : "chip chipAnimated"}

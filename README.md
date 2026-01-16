@@ -37,13 +37,49 @@ npm install
 
 # run locally
 npm run dev
-```
 
-Build for production:
+# lint code
+npm run lint
 
-```bash
+# build for production
 npm run build
+
+# preview production build
+npm run preview
 ```
+
+### Environment Variables
+
+For local development with the chat feature:
+
+1. Copy `.env.example` to `.env.local`
+2. Add your configuration (if needed)
+3. Never commit `.env.local` - it's already in `.gitignore`
+
+See [SECURITY.md](./SECURITY.md) for security best practices.
+
+---
+
+## 🔒 Security
+
+This project follows security best practices:
+
+- ✅ Input sanitization for user inputs
+- ✅ Secure external link handling (`rel="noreferrer"`)
+- ✅ Environment variables properly managed
+- ✅ Regular dependency updates
+- ✅ Content Security Policy ready
+
+See [SECURITY.md](./SECURITY.md) for detailed security information.
+
+---
+
+## ⚡ Performance Optimizations
+
+- **Code Splitting**: Routes are lazy-loaded for faster initial load
+- **Optimized Animations**: Using `useMemo` to prevent unnecessary recalculations
+- **Efficient Rendering**: React components optimized with proper memo usage
+- **Production Builds**: Minified and optimized with Vite
 
 ---
 

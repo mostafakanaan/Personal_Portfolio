@@ -1,6 +1,53 @@
 import { useEffect, useRef } from "react";
 import styles from "../styles/Background.module.scss";
 
+// Particle class moved outside component to avoid React hooks lint issues
+class Particle {
+  constructor(canvas, particleSpeed, particleSize) {
+    this.canvas = canvas;
+    this.particleSpeed = particleSpeed;
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.vx = (Math.random() - 0.5) * particleSpeed;
+    this.vy = (Math.random() - 0.5) * particleSpeed;
+    this.size = Math.random() * particleSize + 0.5;
+  }
+
+  update(mouse) {
+    this.x += this.vx;
+    this.y += this.vy;
+
+    // Bounce off edges
+    if (this.x < 0 || this.x > this.canvas.width) this.vx *= -1;
+    if (this.y < 0 || this.y > this.canvas.height) this.vy *= -1;
+
+    // Mouse interaction
+    if (mouse.x != null) {
+      const dx = mouse.x - this.x;
+      const dy = mouse.y - this.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < mouse.radius) {
+        const forceDirectionX = dx / distance;
+        const forceDirectionY = dy / distance;
+        const force = (mouse.radius - distance) / mouse.radius;
+        const directionX = forceDirectionX * force * 3;
+        const directionY = forceDirectionY * force * 3;
+
+        this.vx -= directionX * 0.05;
+        this.vy -= directionY * 0.05;
+      }
+    }
+  }
+
+  draw(ctx, color) {
+    ctx.fillStyle = `${color} 0.5)`;  // color is "rgba(33, 212, 180," - complete it with opacity
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
 export default function Background() {
   const canvasRef = useRef(null);
 
@@ -14,11 +61,9 @@ export default function Background() {
     const mouse = { x: null, y: null, radius: 150 };
 
     // Configuration
-    const particleCount = Math.min(window.innerWidth / 10, 100);
     const connectionDistance = 120;
     const particleSpeed = 0.15;
     const particleSize = 1.8;
-
 
     const color = "rgba(33, 212, 180,"; // matches --accent2 somewhat
 
@@ -38,55 +83,11 @@ export default function Background() {
       mouse.y = null;
     };
 
-    class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * particleSpeed;
-        this.vy = (Math.random() - 0.5) * particleSpeed;
-        this.size = Math.random() * particleSize + 0.5;
-      }
-
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        // Bounce details
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-
-        // Mouse interaction
-        if (mouse.x != null) {
-          const dx = mouse.x - this.x;
-          const dy = mouse.y - this.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < mouse.radius) {
-            const forceDirectionX = dx / distance;
-            const forceDirectionY = dy / distance;
-            const force = (mouse.radius - distance) / mouse.radius;
-            const directionX = forceDirectionX * force * 3; // Push strength
-            const directionY = forceDirectionY * force * 3;
-
-            this.vx -= directionX * 0.05; // Gentle push away
-            this.vy -= directionY * 0.05;
-          }
-        }
-      }
-
-      draw() {
-        ctx.fillStyle = `${color} 0.5)`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
     function initParticles() {
       particles = [];
       const count = (canvas.width * canvas.height) / 14000; // Density based
       for (let i = 0; i < count; i++) {
-        particles.push(new Particle());
+        particles.push(new Particle(canvas, particleSpeed, particleSize));
       }
     }
 
@@ -94,8 +95,8 @@ export default function Background() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
+        particles[i].update(mouse);
+        particles[i].draw(ctx, color);
 
         // Draw connections
         for (let j = i; j < particles.length; j++) {
