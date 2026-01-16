@@ -41,6 +41,20 @@ function cleanAnswer(text) {
     .trim();
 }
 
+// Input sanitization - limit length and remove potentially harmful content
+function sanitizeInput(text) {
+  if (!text || typeof text !== 'string') return "";
+  
+  // Limit input length to prevent abuse
+  const maxLength = 500;
+  let sanitized = text.trim().slice(0, maxLength);
+  
+  // Remove any potential script tags or HTML (just in case)
+  sanitized = sanitized.replace(/<[^>]*>/g, '');
+  
+  return sanitized;
+}
+
 export default function ChatPage() {
   const lang = useMemo(() => getInitialLang(), []);
   const [messages, setMessages] = useState([
@@ -54,7 +68,9 @@ export default function ChatPage() {
   const canSend = useMemo(() => text.trim().length > 0 && !busy, [text, busy]);
 
   async function send(overrideText) {
-    const userText = (overrideText ?? text).trim();
+    const rawText = (overrideText ?? text).trim();
+    const userText = sanitizeInput(rawText);
+    
     if (!userText || busy) return;
 
     setText("");
@@ -63,11 +79,12 @@ export default function ChatPage() {
     // show user message immediately
     setMessages((prev) => [...prev, { role: "user", content: userText }]);
 
+    let res;
     try {
       const langHint = tr(lang, "chat.system");
       const prompt = buildPrompt(userText, langHint);
 
-      const res = await fetch("/api/llm/v1/completions", {
+      res = await fetch("/api/llm/v1/completions", {
         method: "POST",
         headers,
         body: JSON.stringify({
@@ -93,10 +110,17 @@ export default function ChatPage() {
         ...prev,
         { role: "assistant", content: answer || "(no output)" },
       ]);
-    } catch (e) {
+    } catch {
+      // Don't expose detailed error messages that might leak system info
+      const errorMsg = res?.status === 429 
+        ? "Too many requests. Please try again later."
+        : res?.status >= 500
+        ? "Service temporarily unavailable. Please try again."
+        : "Unable to process request. Please try again.";
+      
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: `Error: ${e?.message ?? String(e)}` },
+        { role: "assistant", content: errorMsg },
       ]);
     } finally {
       setBusy(false);

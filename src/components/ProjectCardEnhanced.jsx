@@ -1,9 +1,21 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo } from "react";
 
 export default function ProjectCardEnhanced({ p, index = 0 }) {
   const ref = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
+
+  // Generate particle data once using useMemo to avoid Math.random() in render
+  const particleData = useMemo(
+    () =>
+      Array.from({ length: 5 }, () => ({
+        initialX: Math.random() * 100,
+        initialY: 100 + Math.random() * 20,
+        animateX: Math.random() * 100,
+        duration: 1.5 + Math.random(),
+      })),
+    []
+  );
 
   // Mouse position for 3D tilt effect
   const x = useMotionValue(0.5);
@@ -113,22 +125,22 @@ export default function ProjectCardEnhanced({ p, index = 0 }) {
           {/* Floating particles on hover */}
           {isHovered && (
             <>
-              {[...Array(5)].map((_, i) => (
+              {particleData.map((particle, i) => (
                 <motion.div
                   key={i}
                   className="cardParticle"
                   initial={{ 
-                    x: Math.random() * 100, 
-                    y: 100 + Math.random() * 20,
+                    x: particle.initialX, 
+                    y: particle.initialY,
                     opacity: 0 
                   }}
                   animate={{
                     y: -20,
                     opacity: [0, 1, 0],
-                    x: Math.random() * 100,
+                    x: particle.animateX,
                   }}
                   transition={{
-                    duration: 1.5 + Math.random(),
+                    duration: particle.duration,
                     repeat: Infinity,
                     delay: i * 0.2,
                   }}

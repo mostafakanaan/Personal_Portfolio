@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 
 export function AnimatedHeroText({ children, delay = 0 }) {
   return (
@@ -155,14 +155,19 @@ export function AnimatedButton({ children, href, className, target, rel, delay =
 }
 
 export function FloatingParticles() {
-  const particles = Array.from({ length: 20 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: 2 + Math.random() * 4,
-    duration: 15 + Math.random() * 20,
-    delay: Math.random() * 5,
-  }));
+  // Use useMemo to generate particles only once to avoid calling Math.random() on each render
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 20 }, (_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: 2 + Math.random() * 4,
+        duration: 15 + Math.random() * 20,
+        delay: Math.random() * 5,
+      })),
+    []
+  );
 
   return (
     <div className="floatingParticles" aria-hidden="true">
