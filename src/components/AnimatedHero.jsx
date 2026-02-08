@@ -94,19 +94,7 @@ export function AnimatedPhotoCard({ photo, name, title }) {
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.4 }}
       />
-      <motion.div
-        className="photoGlow"
-        aria-hidden="true"
-        animate={{
-          opacity: [0.5, 0.8, 0.5],
-          scale: [1, 1.05, 1],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+      <div className="photoGlow" aria-hidden="true" />
       <div className="photoMeta">
         <motion.div
           className="photoName"
@@ -155,12 +143,12 @@ export function AnimatedButton({ children, href, className, target, rel, delay =
 }
 
 export function FloatingParticles() {
-  const particles = Array.from({ length: 20 }, (_, i) => ({
+  const particles = Array.from({ length: 8 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     y: Math.random() * 100,
-    size: 2 + Math.random() * 4,
-    duration: 15 + Math.random() * 20,
+    size: 2 + Math.random() * 3,
+    duration: 20 + Math.random() * 15,
     delay: Math.random() * 5,
   }));
 

@@ -7,20 +7,17 @@ export default function Background() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d", { alpha: true });
     let animationFrameId;
-
     let particles = [];
     const mouse = { x: null, y: null, radius: 150 };
 
-    // Configuration
-    const particleCount = Math.min(window.innerWidth / 10, 100);
-    const connectionDistance = 120;
+    // Reduced density & connection distance for much lighter load
+    const connectionDistanceSq = 100 * 100; // squared — skip sqrt
     const particleSpeed = 0.15;
     const particleSize = 1.8;
 
-
-    const color = "rgba(33, 212, 180,"; // matches --accent2 somewhat
+    const color = "rgba(33, 212, 180,";
 
     const handleResize = () => {
       canvas.width = window.innerWidth;
@@ -28,7 +25,12 @@ export default function Background() {
       initParticles();
     };
 
+    // Throttle mousemove to ~60fps max
+    let lastMouseTime = 0;
     const handleMouseMove = (e) => {
+      const now = performance.now();
+      if (now - lastMouseTime < 16) return;
+      lastMouseTime = now;
       mouse.x = e.x;
       mouse.y = e.y;
     };
@@ -51,40 +53,29 @@ export default function Background() {
         this.x += this.vx;
         this.y += this.vy;
 
-        // Bounce details
         if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
         if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
 
-        // Mouse interaction
         if (mouse.x != null) {
           const dx = mouse.x - this.x;
           const dy = mouse.y - this.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+          const distSq = dx * dx + dy * dy;
+          const radiusSq = mouse.radius * mouse.radius;
 
-          if (distance < mouse.radius) {
-            const forceDirectionX = dx / distance;
-            const forceDirectionY = dy / distance;
+          if (distSq < radiusSq) {
+            const distance = Math.sqrt(distSq);
             const force = (mouse.radius - distance) / mouse.radius;
-            const directionX = forceDirectionX * force * 3; // Push strength
-            const directionY = forceDirectionY * force * 3;
-
-            this.vx -= directionX * 0.05; // Gentle push away
-            this.vy -= directionY * 0.05;
+            this.vx -= (dx / distance) * force * 0.15;
+            this.vy -= (dy / distance) * force * 0.15;
           }
         }
-      }
-
-      draw() {
-        ctx.fillStyle = `${color} 0.5)`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
       }
     }
 
     function initParticles() {
       particles = [];
-      const count = (canvas.width * canvas.height) / 14000; // Density based
+      // Much lower density: ~50 particles on 1080p instead of ~138
+      const count = Math.min((canvas.width * canvas.height) / 30000, 60);
       for (let i = 0; i < count; i++) {
         particles.push(new Particle());
       }
@@ -93,34 +84,62 @@ export default function Background() {
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      for (let i = 0; i < particles.length; i++) {
+      const len = particles.length;
+
+      // Batch all particle dots into one path
+      ctx.fillStyle = `${color} 0.5)`;
+      ctx.beginPath();
+      for (let i = 0; i < len; i++) {
         particles[i].update();
-        particles[i].draw();
+        const p = particles[i];
+        ctx.moveTo(p.x + p.size, p.y);
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      }
+      ctx.fill();
 
-        // Draw connections
-        for (let j = i; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+      // Batch all connection lines into one path per opacity bucket
+      // Use 3 opacity buckets to avoid per-line strokeStyle changes
+      const buckets = [
+        { paths: [], style: `${color} 0.12)` },
+        { paths: [], style: `${color} 0.08)` },
+        { paths: [], style: `${color} 0.04)` },
+      ];
 
-          if (distance < connectionDistance) {
-            ctx.beginPath();
-            const opacity = 1 - distance / connectionDistance;
-            ctx.strokeStyle = `${color} ${opacity * 0.15})`; // Very faint lines
-            ctx.lineWidth = 1;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
+      for (let i = 0; i < len; i++) {
+        const pi = particles[i];
+        for (let j = i + 1; j < len; j++) {
+          const pj = particles[j];
+          const dx = pi.x - pj.x;
+          const dy = pi.y - pj.y;
+          const distSq = dx * dx + dy * dy;
+
+          if (distSq < connectionDistanceSq) {
+            // Approximate opacity bucket (no sqrt needed)
+            const ratio = distSq / connectionDistanceSq;
+            const bucket = ratio < 0.33 ? 0 : ratio < 0.66 ? 1 : 2;
+            buckets[bucket].paths.push(pi.x, pi.y, pj.x, pj.y);
           }
         }
       }
+
+      ctx.lineWidth = 0.5;
+      for (const bucket of buckets) {
+        if (bucket.paths.length === 0) continue;
+        ctx.strokeStyle = bucket.style;
+        ctx.beginPath();
+        for (let k = 0; k < bucket.paths.length; k += 4) {
+          ctx.moveTo(bucket.paths[k], bucket.paths[k + 1]);
+          ctx.lineTo(bucket.paths[k + 2], bucket.paths[k + 3]);
+        }
+        ctx.stroke();
+      }
+
       animationFrameId = requestAnimationFrame(animate);
     }
 
-    // Init
     handleResize();
     window.addEventListener("resize", handleResize);
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     window.addEventListener("mouseleave", handleMouseLeave);
 
     animate();

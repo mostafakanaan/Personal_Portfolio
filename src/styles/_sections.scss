@@ -641,13 +641,9 @@
 
 .floatingParticle {
   position: absolute;
-  background: linear-gradient(135deg, 
-    rgba(255,122,24,0.6), 
-    rgba(33,212,180,0.4)
-  );
+  background: rgba(255,122,24,0.5);
   border-radius: 50%;
-  filter: blur(1px);
-  box-shadow: 0 0 8px rgba(255,122,24,0.3);
+  will-change: transform, opacity;
 }
 
 /* LANGUAGES SECTION */
