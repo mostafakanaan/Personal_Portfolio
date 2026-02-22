@@ -99,69 +99,73 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <div className="heroCardContent">
-              <AnimatedHeroText delay={0.2}>
-                <div className="kicker">
-                  <span className="kickerLeft">
-                    <motion.span
-                      className="dot"
-                      animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [1, 0.7, 1],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    />
-                    {profileView.title}
-                  </span>
-                  <span className="kickerRight">
-                    📍 {profileView.location} <img src="/flags/ch.svg" alt="Switzerland" className="inlineFlag" />
-                  </span>
-                </div>
-              </AnimatedHeroText>
+              <div className="heroCardKicker">
+                <AnimatedHeroText delay={0.2}>
+                  <div className="kicker">
+                    <span className="kickerLeft">
+                      <motion.span
+                        className="dot"
+                        animate={{
+                          scale: [1, 1.2, 1],
+                          opacity: [1, 0.7, 1],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      />
+                      {profileView.title}
+                    </span>
+                    <span className="kickerRight">
+                      📍 <a href="https://www.zuerich.com/" target="_blank" rel="noopener noreferrer" className="kickerLink">{profileView.location}</a> <a href="https://www.myswitzerland.com/" target="_blank" rel="noopener noreferrer" className="kickerLink"><img src="/flags/ch.svg" alt="Switzerland" className="inlineFlag" /></a>
+                    </span>
+                  </div>
+                </AnimatedHeroText>
+              </div>
 
-              <h1 className="h1 nameRow">
-                <AnimatedName name={displayName} isRtl={meta.dir === 'rtl'} />
-                <motion.span
-                  className="accent"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.2, type: "spring", stiffness: 300 }}
+              <div className="heroCardNameAndRest">
+                <h1 className="h1 nameRow">
+                  <AnimatedName name={displayName} isRtl={meta.dir === 'rtl'} />
+                  <motion.span
+                    className="accent"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 1.2, type: "spring", stiffness: 300 }}
+                  >
+                    .
+                  </motion.span>
+                </h1>
+
+                <AnimatedHeroText delay={0.8}>
+                  <blockquote className="heroQuote">
+                    <span className="heroQuoteMark">&ldquo;</span>
+                    {t.hero.quote}
+                    <span className="heroQuoteMark">&rdquo;</span>
+                    <cite className="heroQuoteAuthor">— Giuseppe Mazzini</cite>
+                  </blockquote>
+                </AnimatedHeroText>
+
+                <motion.div
+                  className="heroActions"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1, duration: 0.6 }}
                 >
-                  .
-                </motion.span>
-              </h1>
-
-              <AnimatedHeroText delay={0.8}>
-                <blockquote className="heroQuote">
-                  <span className="heroQuoteMark">&ldquo;</span>
-                  {t.hero.quote}
-                  <span className="heroQuoteMark">&rdquo;</span>
-                  <cite className="heroQuoteAuthor">— Giuseppe Mazzini</cite>
-                </blockquote>
-              </AnimatedHeroText>
-
-              <motion.div
-                className="heroActions"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: 0.6 }}
-              >
-                <AnimatedButton className="btn btnPrimary" href="#projects" delay={1.1}>
-                  {t.hero.ctaProjects}
-                </AnimatedButton>
-                <AnimatedButton className="btn btnGhost" href={profileView.links.email} delay={1.2}>
-                  {t.contact.emailMe}
-                </AnimatedButton>
-                <AnimatedButton className="btn btnGhost" href={profileView.links.github} target="_blank" rel="noreferrer" delay={1.3}>
-                  GitHub
-                </AnimatedButton>
-                <AnimatedButton className="btn btnGhost" href={profileView.links.linkedin} target="_blank" rel="noreferrer" delay={1.4}>
-                  LinkedIn
-                </AnimatedButton>
-              </motion.div>
+                  <AnimatedButton className="btn btnPrimary" href="#projects" delay={1.1}>
+                    {t.hero.ctaProjects}
+                  </AnimatedButton>
+                  <AnimatedButton className="btn btnGhost" href={profileView.links.email} delay={1.2}>
+                    {t.contact.emailMe}
+                  </AnimatedButton>
+                  <AnimatedButton className="btn btnGhost" href={profileView.links.github} target="_blank" rel="noreferrer" delay={1.3}>
+                    GitHub
+                  </AnimatedButton>
+                  <AnimatedButton className="btn btnGhost" href={profileView.links.linkedin} target="_blank" rel="noreferrer" delay={1.4}>
+                    LinkedIn
+                  </AnimatedButton>
+                </motion.div>
+              </div>
             </div>
 
             <div className="heroCardPhoto">

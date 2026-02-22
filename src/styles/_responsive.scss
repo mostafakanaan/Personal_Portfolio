@@ -1,8 +1,15 @@
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .hero { padding-top: 36px; }
-  .heroCard { grid-template-columns: 1fr; }
-  .heroCardPhoto { max-height: 350px; }
+  .hero { padding-top: 5px; }
+  .heroCard {
+    grid-template-columns: 1fr;
+  }
+  .heroCardContent {
+    display: contents;
+  }
+  .heroCardKicker { display: block; order: 1; padding: 24px 24px 0; margin-bottom: 16px; }
+  .heroCardPhoto { order: 2; max-height: 350px; }
+  .heroCardNameAndRest { display: block; order: 3; padding: 16px 24px 24px; }
   .photo { min-height: 320px; height: 350px; }
   .twoCol { grid-template-columns: 1fr; }
   .cards { grid-template-columns: 1fr; }
@@ -39,9 +46,8 @@
 }
 
 @media (max-width: 600px) {
-  .heroCardContent {
-    padding: 14px;
-  }
+  .heroCardKicker { padding: 14px 14px 0; }
+  .heroCardNameAndRest { padding: 10px 14px 14px; }
   
   .heroActions {
     flex-direction: column;
