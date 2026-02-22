@@ -1,8 +1,9 @@
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .hero { padding-top: 36px; }
-  .heroGrid { grid-template-columns: 1fr; }
-  .photo { height: 320px; }
+  .heroCard { grid-template-columns: 1fr; }
+  .heroCardPhoto { max-height: 350px; }
+  .photo { min-height: 320px; height: 350px; }
   .twoCol { grid-template-columns: 1fr; }
   .cards { grid-template-columns: 1fr; }
   .cardsEnhanced { grid-template-columns: 1fr; }
@@ -38,7 +39,7 @@
 }
 
 @media (max-width: 600px) {
-  .heroContent {
+  .heroCardContent {
     padding: 14px;
   }
   

@@ -7,6 +7,7 @@ html[dir="rtl"] {
   .navRight { flex-direction: row-reverse; }
   .langMenu { right: auto; left: 0; }
   .heroContent,
+  .heroCardContent,
   .sectionHead,
   .h1,
   .h2,
@@ -48,5 +49,26 @@ html[dir="rtl"] {
   .photoMeta,
   .hint {
     text-align: right;
+  }
+
+  .heroCard {
+    direction: rtl;
+  }
+
+  .heroQuote {
+    border: none;
+    padding: 0;
+  }
+
+  .heroQuoteAuthor {
+    text-align: left;
+  }
+
+  .aiStackPanel {
+    text-align: center;
+  }
+
+  .aiStackIncoming {
+    direction: rtl;
   }
 }

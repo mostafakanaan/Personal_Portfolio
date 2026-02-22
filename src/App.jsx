@@ -91,24 +91,34 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
           <div className="heroOverlay" />
         </div>
 
-        <div className="container heroGrid">
-          <div className="heroLeft">
-            <div className="heroContent">
+        <div className="container">
+          <motion.div
+            className="heroCard"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            <div className="heroCardContent">
               <AnimatedHeroText delay={0.2}>
                 <div className="kicker">
-                  <motion.span
-                    className="dot"
-                    animate={{
-                      scale: [1, 1.2, 1],
-                      opacity: [1, 0.7, 1],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  />
-                  {profileView.title} · {profileView.location}
+                  <span className="kickerLeft">
+                    <motion.span
+                      className="dot"
+                      animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [1, 0.7, 1],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
+                    {profileView.title}
+                  </span>
+                  <span className="kickerRight">
+                    📍 {profileView.location} <img src="/flags/ch.svg" alt="Switzerland" className="inlineFlag" />
+                  </span>
                 </div>
               </AnimatedHeroText>
 
@@ -125,7 +135,12 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
               </h1>
 
               <AnimatedHeroText delay={0.8}>
-                <p className="lead">{t.hero.quote}</p>
+                <blockquote className="heroQuote">
+                  <span className="heroQuoteMark">&ldquo;</span>
+                  {t.hero.quote}
+                  <span className="heroQuoteMark">&rdquo;</span>
+                  <cite className="heroQuoteAuthor">— Giuseppe Mazzini</cite>
+                </blockquote>
               </AnimatedHeroText>
 
               <motion.div
@@ -148,15 +163,21 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
                 </AnimatedButton>
               </motion.div>
             </div>
-          </div>
 
-          <div className="heroRight">
-            <AnimatedPhotoCard
-              photo={photo}
-              name={displayName}
-              title={profileView.title}
-            />
-          </div>
+            <div className="heroCardPhoto">
+              <div className="photoWrapper">
+                <motion.img
+                  src={photo}
+                  alt={`${displayName} portrait`}
+                  className="photo"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                />
+              </div>
+              <div className="photoGlow" aria-hidden="true" />
+            </div>
+          </motion.div>
         </div>
       </header>
 
@@ -312,6 +333,10 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
                 <span>{t.aiStack.viewFull}</span>
               </div>
             </motion.button>
+            <div className="aiStackIncoming">
+              <span className="aiStackIncomingIcon">🚀</span>
+              <span className="aiStackIncomingText">{t.aiStack.incoming}</span>
+            </div>
           </motion.div>
         </AnimatedSection>
 

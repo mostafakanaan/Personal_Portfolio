@@ -399,6 +399,30 @@
   }
 }
 
+.aiStackIncoming {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 122, 24, 0.08), rgba(255, 122, 24, 0.03));
+  border: 1px dashed rgba(255, 122, 24, 0.35);
+}
+
+.aiStackIncomingIcon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.aiStackIncomingText {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--accent);
+}
+
 /* LIGHTBOX MODAL */
 .lightboxOverlay {
   position: fixed;

@@ -1,7 +1,7 @@
 export const profile = {
   name: "Mustafa Kanaan",
-  title: "Software Developer (B.Sc. Computer Science)",
-  location: "Zürich, Switzerland",
+  title: "Senior Software Engineer",
+  location: "Zürich",
   email: "mos.kan@hotmail.com",
   phone: "+49 ",
   website: "https://mkanaan.de",
@@ -194,8 +194,8 @@ export const profile = {
     },
     ar: {
       name: "مصطفى كنعان",
-      title: "مطور برمجيات (بكالوريوس علوم الحاسوب)",
-      location: "زيورخ، سويسرا",
+      title: "مهندس برمجيات أول",
+      location: "زيورخ",
       experience: [
         {
           company: "Quality1 AG",
