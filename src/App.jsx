@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import AnimatedSection from "./components/AnimatedSection";
 import ProjectCardEnhanced from "./components/ProjectCardEnhanced";
 import ChatPage from "./pages/ChatPage";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
 import Background from "./components/Background";
 import { AnimatedSkillGroup } from "./components/AnimatedSkillChip";
 import AnimatedExperienceCard from "./components/AnimatedExperienceCard";
@@ -243,38 +244,44 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
         </AnimatedSection>
 
         <AnimatedSection id="skills" eyebrow={t.skills.eyebrow} title={t.skills.title}>
-          <motion.div
-            className="panel glassPanel"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="miniTitle">{t.skills.core}</div>
-            <AnimatedSkillGroup skills={profileView.skills.languages} big={true} staggerDelay={0.1} />
-
-            <div className="divider" />
-
-            <div className="twoCol">
-              <div>
-                <div className="miniTitle">{t.skills.frontend}</div>
-                <AnimatedSkillGroup skills={profileView.skills.frontend} staggerDelay={0.2} />
+          {/* Skill Area Cards */}
+          {profileView.skillAreas && (
+              <div className="skillAreasGrid">
+                {Object.entries(profileView.skillAreas).map(([key, area], index) => {
+                  const areaT = t.skillAreas?.[key] || {};
+                  return (
+                    <motion.div
+                      key={key}
+                      className="panel glassPanel skillAreaCard"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      whileHover={{
+                        borderColor: "rgba(255, 122, 24, 0.3)",
+                        boxShadow: "0 20px 60px rgba(2, 8, 20, 0.4), 0 0 30px rgba(255, 122, 24, 0.1)",
+                      }}
+                    >
+                      <h4 className="skillAreaName">{areaT.title || key}</h4>
+                      <p className="skillAreaDesc">{areaT.description || ""}</p>
+                      <div className="skillAreaChips">
+                        {area.skills.map((s) => (
+                          <span key={s} className="chipEnhanced">{s}</span>
+                        ))}
+                      </div>
+                      {areaT.focus && (
+                        <div className="skillAreaFocus">
+                          <span className="skillAreaFocusLabel">{t.skillAreas?.focusLabel || "Focus"}:</span>
+                          {areaT.focus.map((f) => (
+                            <span key={f} className="skillAreaFocusTag">{f}</span>
+                          ))}
+                        </div>
+                      )}
+                    </motion.div>
+                  );
+                })}
               </div>
-
-              <div>
-                <div className="miniTitle">{t.skills.devops}</div>
-                <AnimatedSkillGroup 
-                  skills={[...profileView.skills.devops, ...profileView.skills.security]} 
-                  staggerDelay={0.25} 
-                />
-              </div>
-            </div>
-
-            <div className="divider" />
-
-            <div className="miniTitle">{t.skills.data}</div>
-            <AnimatedSkillGroup skills={profileView.skills.data} staggerDelay={0.3} />
-          </motion.div>
+          )}
         </AnimatedSection>
 
         <AnimatedSection id="ai-stack" eyebrow={t.aiStack.eyebrow} title={t.aiStack.title}>
@@ -490,10 +497,28 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
 
         <AnimatedSection id="projects" eyebrow={t.projects.eyebrow} title={t.projects.title}>
           <div className="cardsEnhanced">
-            {profileView.projects.map((p, index) => (
-              <ProjectCardEnhanced key={p.name} p={p} index={index} />
-            ))}
+            {profileView.projects
+              .filter((p) => p.featured || p.category === "main")
+              .map((p, index) => (
+                <ProjectCardEnhanced key={p.name} p={p} index={index} />
+              ))}
           </div>
+
+          {/* Academic & Learning Projects */}
+          {profileView.projects.some((p) => p.category === "academic" || p.category === "learning") && (
+            <div className="projectsSubsection">
+              <h3 className="h3 projectsSubTitle">
+                {t.projects.academicTitle}
+              </h3>
+              <div className="cardsEnhanced cardsSmall">
+                {profileView.projects
+                  .filter((p) => p.category === "academic" || p.category === "learning")
+                  .map((p, index) => (
+                    <ProjectCardEnhanced key={p.name} p={p} index={index} />
+                  ))}
+              </div>
+            </div>
+          )}
         </AnimatedSection>
 
         <AnimatedSection id="contact" eyebrow={t.contact.eyebrow} title={t.contact.title}>
@@ -699,6 +724,12 @@ export default function App() {
         path="/"
         element={
           <PortfolioPage t={t} lang={lang} setLang={setLang} meta={meta} profileView={profileView} />
+        }
+      />
+      <Route
+        path="/project/:slug"
+        element={
+          <ProjectDetailPage t={t} lang={lang} setLang={setLang} meta={meta} profileView={profileView} />
         }
       />
       <Route path="/chat" element={<ChatPage />} />

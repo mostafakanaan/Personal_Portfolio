@@ -87,13 +87,15 @@ export function AnimatedPhotoCard({ photo, name, title }) {
         boxShadow: "0 30px 80px rgba(2, 8, 20, 0.5), 0 0 40px rgba(255, 122, 24, 0.2)",
       }}
     >
-      <motion.img
-        src={photo}
-        alt={`${name} portrait`}
-        className="photo"
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.4 }}
-      />
+      <div className="photoWrapper">
+        <motion.img
+          src={photo}
+          alt={`${name} portrait`}
+          className="photo"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.4 }}
+        />
+      </div>
       <div className="photoGlow" aria-hidden="true" />
       <div className="photoMeta">
         <motion.div

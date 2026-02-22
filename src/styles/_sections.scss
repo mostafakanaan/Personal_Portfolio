@@ -352,7 +352,7 @@
   border-radius: 16px;
   overflow: hidden;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
-  max-width: 100%;
+  max-width: 600px;
 
   &:hover {
     transform: scale(1.02) translateY(-4px);

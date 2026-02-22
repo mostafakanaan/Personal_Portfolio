@@ -61,10 +61,9 @@ export const T = {
     skills: {
       eyebrow: "Skills",
       title: "Toolbox",
-      core: "Core",
+      backendCloud: "Backend & Cloud",
       frontend: "Frontend",
-      devops: "DevOps & Platform",
-      data: "Data",
+      devops: "DevOps & Tools",
     },
     aiStack: {
       eyebrow: "AI Workflow",
@@ -93,7 +92,44 @@ export const T = {
         ru: "Russian",
       },
     },
-    projects: { eyebrow: "Work", title: "Selected projects", comingSoon: "Coming soon" },
+    projects: { eyebrow: "Work", title: "Selected projects", comingSoon: "Coming soon", viewDetails: "View Details", academicTitle: "Academic & Learning Projects" },
+    projectDetail: {
+      techStack: "Technology Stack",
+      why: "Why this stack:",
+      problem: "Problem Statement",
+      architecture: "Architecture & Solution",
+      role: "My Role & Contribution",
+      highlights: "Technical Highlights",
+      challenges: "Challenges & Learnings",
+      result: "Result & Impact",
+      ctaTitle: "Interested in collaboration or technical details?",
+      ctaDesc: "Let's connect — I'm happy to discuss architecture decisions, technical challenges, or potential collaboration.",
+      backToProjects: "Back to all projects",
+    },
+    skillAreas: {
+      areasTitle: "Expertise Areas",
+      focusLabel: "Focus",
+      backend: {
+        title: "Backend & Cloud",
+        description: "Building scalable, maintainable APIs and services with clean architecture. Focus on layered design, dependency injection, and high-performance endpoints.",
+        focus: ["Clean Architecture", "API Design", "Performance Optimization"],
+      },
+      frontend: {
+        title: "Frontend",
+        description: "Component-driven UI development with focus on performance, accessibility, and responsive design. Experience with both SPA frameworks and desktop UI.",
+        focus: ["Component Architecture", "Performance", "UI/UX"],
+      },
+      devops: {
+        title: "DevOps & Tools",
+        description: "Automated deployment pipelines, infrastructure management, and CI/CD. Experience with Azure DevOps and Git-based workflows in production.",
+        focus: ["Deployment Automation", "CI/CD", "Monitoring"],
+      },
+      security: {
+        title: "Security",
+        description: "Authentication and authorization implementation following industry standards. Focus on token-based auth flows, secure password handling, and API security hardening.",
+        focus: ["Auth Flows", "Token Management", "Security Best Practices"],
+      },
+    },
     contact: {
       eyebrow: "Contact",
       title: "Make the first move",
@@ -102,13 +138,8 @@ export const T = {
     footer: {
       right: "React + Vite · i18n",
     },
-    exp: {
-      // "q1.role": "Software Engineer",
-      // "q1.b1": "Built internal tools and services in .NET and SQL Server.",
-    },
-    edu: {
-      // "bsc.cs": "B.Sc. Computer Science",
-    },
+    exp: {},
+    edu: {},
   },
 
   de: {
@@ -164,10 +195,9 @@ export const T = {
     skills: {
       eyebrow: "Skills",
       title: "Werkzeugkasten",
-      core: "Kern",
+      backendCloud: "Backend & Cloud",
       frontend: "Frontend",
-      devops: "DevOps & Plattform",
-      data: "Daten",
+      devops: "DevOps & Tools",
     },
     aiStack: {
       eyebrow: "KI-Workflow",
@@ -196,7 +226,44 @@ export const T = {
         ru: "Russisch",
       },
     },
-    projects: { eyebrow: "Arbeit", title: "Ausgewählte Projekte", comingSoon: "Kommt bald" },
+    projects: { eyebrow: "Arbeit", title: "Ausgewählte Projekte", comingSoon: "Kommt bald", viewDetails: "Details ansehen", academicTitle: "Akademische & Lernprojekte" },
+    projectDetail: {
+      techStack: "Technologie-Stack",
+      why: "Warum dieser Stack:",
+      problem: "Problemstellung",
+      architecture: "Architektur & Lösung",
+      role: "Meine Rolle & Beitrag",
+      highlights: "Technische Highlights",
+      challenges: "Herausforderungen & Learnings",
+      result: "Ergebnis & Mehrwert",
+      ctaTitle: "Interesse an Zusammenarbeit oder technischen Details?",
+      ctaDesc: "Lass uns vernetzen — ich freue mich über Austausch zu Architektur-Entscheidungen, technischen Herausforderungen oder möglicher Zusammenarbeit.",
+      backToProjects: "Zurück zu allen Projekten",
+    },
+    skillAreas: {
+      areasTitle: "Fachbereiche",
+      focusLabel: "Fokus",
+      backend: {
+        title: "Backend & Cloud",
+        description: "Entwicklung skalierbarer, wartbarer APIs und Services mit sauberer Architektur. Fokus auf Schichtendesign, Dependency Injection und performante Endpunkte.",
+        focus: ["Saubere Architektur", "API-Design", "Performance-Optimierung"],
+      },
+      frontend: {
+        title: "Frontend",
+        description: "Komponentenbasierte UI-Entwicklung mit Fokus auf Performance, Barrierefreiheit und responsives Design. Erfahrung mit SPA-Frameworks und Desktop-UI.",
+        focus: ["Komponenten-Architektur", "Performance", "UI/UX"],
+      },
+      devops: {
+        title: "DevOps & Tools",
+        description: "Automatisierte Deployment-Pipelines, Infrastruktur-Management und CI/CD. Erfahrung mit Azure DevOps und Git-basierten Workflows in Produktion.",
+        focus: ["Deployment-Automatisierung", "CI/CD", "Monitoring"],
+      },
+      security: {
+        title: "Security",
+        description: "Implementierung von Authentifizierung und Autorisierung nach Industriestandards. Fokus auf token-basierte Auth-Flows, sichere Passwort-Handhabung und API-Sicherheit.",
+        focus: ["Auth-Flows", "Token-Management", "Security Best Practices"],
+      },
+    },
     contact: {
       eyebrow: "Kontakt",
       title: "Mach den ersten Schritt",
@@ -205,13 +272,8 @@ export const T = {
     footer: {
       right: "React + Vite · i18n",
     },
-    exp: {
-      // "q1.role": "Softwareentwickler",
-      // "q1.b1": "Entwicklung interner Tools und Services mit .NET und SQL Server.",
-    },
-    edu: {
-      // "bsc.cs": "B.Sc. Informatik",
-    },
+    exp: {},
+    edu: {},
   },
 
   ar: {
@@ -267,10 +329,9 @@ export const T = {
     skills: {
       eyebrow: "المهارات",
       title: "الأدوات",
-      core: "الأساسيات",
+      backendCloud: "Backend & Cloud",
       frontend: "واجهة المستخدم",
-      devops: "DevOps والمنصة",
-      data: "البيانات",
+      devops: "DevOps & Tools",
     },
     aiStack: {
       eyebrow: "سير العمل بالذكاء الاصطناعي",
@@ -299,7 +360,44 @@ export const T = {
         ru: "الروسية",
       },
     },
-    projects: { eyebrow: "العمل", title: "مشاريع مختارة", comingSoon: "قريبًا" },
+    projects: { eyebrow: "العمل", title: "مشاريع مختارة", comingSoon: "قريبًا", viewDetails: "عرض التفاصيل", academicTitle: "مشاريع أكاديمية وتعليمية" },
+    projectDetail: {
+      techStack: "التقنيات المستخدمة",
+      why: "لماذا هذه التقنيات:",
+      problem: "المشكلة",
+      architecture: "الهندسة والحل",
+      role: "دوري ومساهمتي",
+      highlights: "أبرز النقاط التقنية",
+      challenges: "التحديات والدروس المستفادة",
+      result: "النتيجة والأثر",
+      ctaTitle: "مهتم بالتعاون أو التفاصيل التقنية؟",
+      ctaDesc: "تواصل معي — يسعدني مناقشة قرارات الهندسة والتحديات التقنية أو التعاون المحتمل.",
+      backToProjects: "العودة لجميع المشاريع",
+    },
+    skillAreas: {
+      areasTitle: "مجالات الخبرة",
+      focusLabel: "التركيز",
+      backend: {
+        title: "Backend & Cloud",
+        description: "بناء واجهات برمجية وخدمات قابلة للتوسع وسهلة الصيانة بهندسة نظيفة. التركيز على التصميم الطبقي وحقن الاعتماديات ونقاط النهاية عالية الأداء.",
+        focus: ["هندسة نظيفة", "تصميم API", "تحسين الأداء"],
+      },
+      frontend: {
+        title: "واجهة المستخدم",
+        description: "تطوير واجهات مستخدم قائمة على المكونات مع التركيز على الأداء والوصولية والتصميم المتجاوب. خبرة في أطر SPA وواجهات سطح المكتب.",
+        focus: ["هندسة المكونات", "الأداء", "UI/UX"],
+      },
+      devops: {
+        title: "DevOps & Tools",
+        description: "خطوط نشر مؤتمتة، إدارة البنية التحتية وCI/CD. خبرة في Azure DevOps وسير عمل Git في بيئات الإنتاج.",
+        focus: ["أتمتة النشر", "CI/CD", "المراقبة"],
+      },
+      security: {
+        title: "الأمان",
+        description: "تنفيذ المصادقة والتفويض وفقاً لمعايير الصناعة. التركيز على تدفقات المصادقة القائمة على الرموز، والتعامل الآمن مع كلمات المرور، وتقوية أمان الـAPI.",
+        focus: ["تدفقات المصادقة", "إدارة الرموز", "أفضل ممارسات الأمان"],
+      },
+    },
     contact: {
       eyebrow: "تواصل",
       title: "خذ الخطوة الأولى",
@@ -308,13 +406,8 @@ export const T = {
     footer: {
       right: "React + Vite · i18n",
     },
-    exp: {
-      // "q1.role": "مهندس برمجيات",
-      // "q1.b1": "تطوير أدوات وخدمات داخلية باستخدام .NET و SQL Server.",
-    },
-    edu: {
-      // "bsc.cs": "بكالوريوس علوم الحاسوب",
-    },
+    exp: {},
+    edu: {},
   },
 
   tr: {
@@ -370,10 +463,9 @@ export const T = {
     skills: {
       eyebrow: "Yetenekler",
       title: "Araç kutusu",
-      core: "Temel",
+      backendCloud: "Backend & Cloud",
       frontend: "Frontend",
-      devops: "DevOps & Platform",
-      data: "Veri",
+      devops: "DevOps & Araçlar",
     },
     aiStack: {
       eyebrow: "Yapay Zeka İş Akışı",
@@ -402,7 +494,44 @@ export const T = {
         ru: "Rusça",
       },
     },
-    projects: { eyebrow: "Çalışmalar", title: "Seçilmiş projeler", comingSoon: "Yakında" },
+    projects: { eyebrow: "Çalışmalar", title: "Seçilmiş projeler", comingSoon: "Yakında", viewDetails: "Detayları gör", academicTitle: "Akademik & Öğrenme Projeleri" },
+    projectDetail: {
+      techStack: "Teknoloji Stack",
+      why: "Neden bu stack:",
+      problem: "Problem Tanımı",
+      architecture: "Mimari & Çözüm",
+      role: "Rolüm & Katkım",
+      highlights: "Teknik Öne Çıkanlar",
+      challenges: "Zorluklar & Öğrenilenler",
+      result: "Sonuç & Etki",
+      ctaTitle: "İşbirliği veya teknik detaylarla ilgileniyor musunuz?",
+      ctaDesc: "Bağlanalım — mimari kararlar, teknik zorluklar veya potansiyel işbirliğini tartışmaktan memnuniyet duyarım.",
+      backToProjects: "Tüm projelere dön",
+    },
+    skillAreas: {
+      areasTitle: "Uzmanlık Alanları",
+      focusLabel: "Odak",
+      backend: {
+        title: "Backend & Cloud",
+        description: "Temiz mimariyle ölçeklenebilir, bakımı kolay API'ler ve servisler geliştirme. Katmanlı tasarım, bağımlılık enjeksiyonu ve yüksek performanslı uç noktalarına odaklanma.",
+        focus: ["Temiz Mimari", "API Tasarımı", "Performans Optimizasyonu"],
+      },
+      frontend: {
+        title: "Frontend",
+        description: "Performans, erişilebilirlik ve duyarlı tasarıma odaklanan bileşen tabanlı UI geliştirme. SPA çerçeveleri ve masaüstü UI deneyimi.",
+        focus: ["Bileşen Mimarisi", "Performans", "UI/UX"],
+      },
+      devops: {
+        title: "DevOps & Araçlar",
+        description: "Otomatik dağıtım hatları, altyapı yönetimi ve CI/CD. Üretimde Azure DevOps ve Git tabanlı iş akışları deneyimi.",
+        focus: ["Dağıtım Otomasyonu", "CI/CD", "İzleme"],
+      },
+      security: {
+        title: "Güvenlik",
+        description: "Endüstri standartlarına uygun kimlik doğrulama ve yetkilendirme uygulaması. Token tabanlı kimlik doğrulama akışları, güvenli parola yönetimi ve API güvenlik sağlamlaştırmasına odaklanma.",
+        focus: ["Kimlik Doğrulama Akışları", "Token Yönetimi", "Güvenlik En İyi Uygulamaları"],
+      },
+    },
     contact: {
       eyebrow: "İletişim",
       title: "İlk adımı sen at",
@@ -411,13 +540,8 @@ export const T = {
     footer: {
       right: "React + Vite · i18n",
     },
-    exp: {
-      // "q1.role": "Yazılım Mühendisi",
-      // "q1.b1": ".NET ve SQL Server ile dahili araçlar ve servisler geliştirdim.",
-    },
-    edu: {
-      // "bsc.cs": "Bilgisayar Bilimleri Lisans",
-    },
+    exp: {},
+    edu: {},
   },
 };
 

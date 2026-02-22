@@ -1,5 +1,6 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function ProjectCardEnhanced({ p, index = 0 }) {
   const ref = useRef(null);
@@ -73,7 +74,7 @@ export default function ProjectCardEnhanced({ p, index = 0 }) {
       />
 
       {/* Inner card content */}
-      <div className="cardInner">
+      <CardWrapper slug={p.slug}>
         <div className="cardImageWrapEnhanced">
           <motion.img
             src={p.image}
@@ -166,8 +167,29 @@ export default function ProjectCardEnhanced({ p, index = 0 }) {
               </motion.span>
             ))}
           </div>
+
+          {p.slug && (
+            <motion.span
+              className="cardViewDetails"
+              animate={{ x: isHovered ? 5 : 0, opacity: isHovered ? 1 : 0.6 }}
+              transition={{ duration: 0.3 }}
+            >
+              View Details →
+            </motion.span>
+          )}
         </div>
-      </div>
+      </CardWrapper>
     </motion.div>
   );
+}
+
+function CardWrapper({ slug, children }) {
+  if (slug) {
+    return (
+      <Link to={`/project/${slug}`} className="cardInner cardInnerLink">
+        {children}
+      </Link>
+    );
+  }
+  return <div className="cardInner">{children}</div>;
 }
