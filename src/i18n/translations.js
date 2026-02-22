@@ -54,7 +54,7 @@ export const T = {
       title: "whoami",
       titleIcon: ">",
       body:
-        "Fullstack developer with experience in C#, .NET, Vue.js, Azure DevOps, CI/CD and database migrations. I value clean architecture, maintainability, and polished user interfaces.",
+        "Fullstack Software Engineer with a backend focus (.NET / Azure), specializing in API design, system integration, and automation of business-critical processes. Experienced in building scalable architectures with technical ownership in production-facing systems.",
       languages: "I speak multiple languages",
       chatCTA: "Ask my assistant about me!",
     },
@@ -189,7 +189,7 @@ export const T = {
       eyebrow: "Profil",
       title: "Wer bin ich",
       body:
-        "Fullstack-Entwickler mit Erfahrung in C#, .NET, Vue.js, Azure DevOps, CI/CD und Datenbankmigrationen. Mir sind saubere Architektur, Wartbarkeit und hochwertige Benutzeroberflächen wichtig.",
+        "Fullstack Software Engineer mit Backend-Fokus (.NET / Azure), spezialisiert auf API-Design, Systemintegration und Automatisierung geschäftskritischer Prozesse. Erfahrung in der Umsetzung skalierbarer Architekturen mit technischer Verantwortung in produktnahen Systemen.",
       languages: "Ich spreche mehrere Sprachen",
       chatCTA: "Frag meinen Assistenten!",
     },
@@ -324,7 +324,7 @@ export const T = {
       eyebrow: "نبذة",
       title: "من أنا",
       body:
-        "مطور برمجيات شامل (Fullstack) لدي خبرة في ‎C#‎ و‎.NET‎ وVue.js وAzure DevOps وأنظمة CI/CD وأعمال ترحيل قواعد البيانات. أركّز على هندسة نظيفة، سهولة صيانة، وتجربة مستخدم متقنة.",
+        "مهندس برمجيات Fullstack بتركيز على الـ Backend (.NET / Azure)، متخصص في تصميم الـ API وتكامل الأنظمة وأتمتة العمليات الحرجة. خبرة في بناء بنيات قابلة للتوسع مع مسؤولية تقنية في أنظمة الإنتاج.",
       languages: "أتحدث عدة لغات",
       chatCTA: "اسأل مساعدي عني!",
     },
@@ -459,7 +459,7 @@ export const T = {
       eyebrow: "Hakkımda",
       title: "Ben kimim",
       body:
-        "C#, .NET, Vue.js, Azure DevOps, CI/CD ve veritabanı geçişleri konularında deneyime sahip bir Fullstack geliştiriciyim. Temiz mimari, sürdürülebilirlik ve özenli kullanıcı arayüzlerine önem veririm.",
+        "Backend odaklı (.NET / Azure) Fullstack Yazılım Mühendisi; API tasarımı, sistem entegrasyonu ve iş açısından kritik süreçlerin otomasyonu konularında uzmanlaşmıştır. Ürün odaklı sistemlerde teknik sorumlulukla ölçeklenebilir mimarilerin hayata geçirilmesinde deneyimlidir.",
       languages: "Birden fazla dil konuşurum",
       chatCTA: "Asistanıma sor!",
     },

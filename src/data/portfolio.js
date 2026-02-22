@@ -1,6 +1,6 @@
 export const profile = {
   name: "Mustafa Kanaan",
-  title: "Senior Software Engineer",
+  title: "Fullstack Software Engineer",
   location: "Zürich",
   email: "mos.kan@hotmail.com",
   phone: "+49 ",
@@ -45,12 +45,12 @@ export const profile = {
       location: "Bubikon, Switzerland",
       period: "Feb 2024 – Present",
       bullets: [
-        "Technical conceptualization and architecture decisions for internal core systems in the .NET/Azure environment",
-        "Responsible for API standards, integration architecture, and interface design",
-        "Design and implementation of REST APIs for process-critical workflows (several hundred transactions/day)",
-        "Definition of deployment strategies including logging, monitoring, and versioning concepts",
-        "Automation of recurring workflows and reduction of manual process steps by approx. 30%",
-        "Further development of internal WPF applications with a focus on performance and usability",
+        "Architecture and further development of internal core systems in the .NET/Azure environment",
+        "Definition of API standards and integration architecture across multiple systems",
+        "Development of performant REST APIs for process-critical workflows (several hundred transactions/day)",
+        "Conception of deployment, logging, and monitoring strategies",
+        "Automation of recurring workflows (−30% manual process steps)",
+        "Technical coordination with business departments to translate complex requirements into maintainable system solutions",
       ],
     },
     {
@@ -59,10 +59,10 @@ export const profile = {
       location: "Bielefeld, Germany",
       period: "Apr 2021 – Apr 2023",
       bullets: [
-        "Implementation of integration projects using .NET 6, Azure Functions, and Azure Logic Apps",
-        "Design and implementation of REST APIs and Azure Data Factory pipelines",
-        "Contribution to distributed system architectures (MSSQL, CosmosDB) including CI/CD with Azure DevOps",
-        "Migration and integration in the PIM and DAM environment (Sharedien, Syndigo)",
+        "Implementation of integration projects in enterprise environments (.NET, Azure)",
+        "Development of REST APIs and data pipelines (Azure Data Factory)",
+        "Contribution to distributed system architectures (MSSQL, CosmosDB) including CI/CD",
+        "Migration and integration of PIM/DAM systems (Sharedien, Syndigo)",
       ],
     },
     {
@@ -118,12 +118,12 @@ export const profile = {
           location: "Bubikon",
           period: "Feb 2024 – heute",
           bullets: [
-            "Technische Konzeption und Architekturentscheidungen für interne Kernsysteme im .NET-/Azure-Umfeld",
-            "Verantwortlich für API-Standards, Integrationsarchitektur und Schnittstellen-Design",
-            "Design und Implementierung von REST APIs für prozesskritische Workflows (mehrere hundert Transaktionen/Tag)",
-            "Definition von Deployment-Strategien inkl. Logging-, Monitoring- und Versionierungskonzepten",
-            "Automatisierung wiederkehrender Abläufe und Reduktion manueller Prozessschritte um ca. 30%",
-            "Weiterentwicklung interner WPF-Anwendungen mit Fokus auf Performance und Usability",
+            "Architektur und Weiterentwicklung interner Kernsysteme im .NET-/Azure-Umfeld",
+            "Definition von API-Standards und Integrationsarchitektur über mehrere Systeme hinweg",
+            "Entwicklung performanter REST APIs für prozesskritische Workflows (mehrere hundert Transaktionen/Tag)",
+            "Konzeption von Deployment-, Logging- und Monitoring-Strategien",
+            "Automatisierung wiederkehrender Abläufe (−30 % manuelle Prozessschritte)",
+            "Technische Abstimmung mit Fachbereichen zur Übersetzung komplexer Anforderungen in wartbare Systemlösungen",
           ],
         },
         {
@@ -132,10 +132,10 @@ export const profile = {
           location: "Bielefeld",
           period: "Apr 2021 – Apr 2023",
           bullets: [
-            "Umsetzung von Integrationsprojekten mit .NET 6, Azure Functions und Azure Logic Apps",
-            "Design und Implementierung von REST APIs sowie Azure Data Factory Pipelines",
-            "Mitarbeit an verteilten Systemarchitekturen (MSSQL, CosmosDB) inkl. CI/CD mit Azure DevOps",
-            "Migration und Integration im PIM- und DAM-Umfeld (Sharedien, Syndigo)",
+            "Umsetzung von Integrationsprojekten im Enterprise-Umfeld (.NET, Azure)",
+            "Entwicklung von REST APIs und Data Pipelines (Azure Data Factory)",
+            "Mitarbeit an verteilten Systemarchitekturen (MSSQL, CosmosDB) inkl. CI/CD",
+            "Migration und Integration von PIM-/DAM-Systemen (Sharedien, Syndigo)",
           ],
         },
         {
@@ -150,6 +150,18 @@ export const profile = {
           ],
         },
       ],
+      education: [
+        {
+          degree: "B.Sc. Informatik (Schwerpunkt Software Engineering)",
+          school: "FH Aachen (Fachhochschule)",
+          period: "Sep 2017 – Mai 2021",
+        },
+        {
+          degree: "B.Sc. Informatik",
+          school: "Leibniz Universität Hannover",
+          period: "Okt 2015 – Sep 2017",
+        },
+      ],
     },
     tr: {
       experience: [
@@ -159,12 +171,12 @@ export const profile = {
           location: "Bubikon, İsviçre",
           period: "Şub 2024 – Günümüz",
           bullets: [
-            ".NET/Azure ortamında dahili çekirdek sistemler için teknik konsept ve mimari kararlar",
-            "API standartları, entegrasyon mimarisi ve arayüz tasarımından sorumlu",
-            "Süreç kritik iş akışları için REST API tasarımı ve uygulaması (günde yüzlerce işlem)",
-            "Loglama, izleme ve sürümleme konseptleri dahil dağıtım stratejilerinin tanımlanması",
-            "Tekrarlayan iş akışlarının otomasyonu ve manuel süreç adımlarının yaklaşık %30 azaltılması",
-            "Performans ve kullanılabilirlik odaklı dahili WPF uygulamalarının geliştirilmesi",
+            ".NET/Azure ortamında dahili çekirdek sistemlerin mimarisi ve geliştirilmesi",
+            "Birden fazla sistem genelinde API standartları ve entegrasyon mimarisinin tanımlanması",
+            "Süreç kritik iş akışları için yüksek performanslı REST API geliştirme (günde yüzlerce işlem)",
+            "Dağıtım, loglama ve izleme stratejilerinin tasarlanması",
+            "Tekrarlayan iş akışlarının otomasyonu (−%30 manuel süreç adımı)",
+            "Karmaşık gereksinimlerin sürdürülebilir sistem çözümlerine dönüştürülmesi için iş birimleriyle teknik koordinasyon",
           ],
         },
         {
@@ -173,10 +185,10 @@ export const profile = {
           location: "Bielefeld, Almanya",
           period: "Nis 2021 – Nis 2023",
           bullets: [
-            ".NET 6, Azure Functions ve Azure Logic Apps ile entegrasyon projelerinin uygulanması",
-            "REST API ve Azure Data Factory pipeline tasarımı ve uygulaması",
-            "Azure DevOps ile CI/CD dahil dağıtık sistem mimarilerine katkı (MSSQL, CosmosDB)",
-            "PIM ve DAM ortamında migrasyon ve entegrasyon (Sharedien, Syndigo)",
+            "Kurumsal ortamda entegrasyon projelerinin uygulanması (.NET, Azure)",
+            "REST API ve veri pipeline geliştirme (Azure Data Factory)",
+            "Dağıtık sistem mimarilerine katkı (MSSQL, CosmosDB) dahil CI/CD",
+            "PIM/DAM sistemlerinin migrasyonu ve entegrasyonu (Sharedien, Syndigo)",
           ],
         },
         {
@@ -191,10 +203,22 @@ export const profile = {
           ],
         },
       ],
+      education: [
+        {
+          degree: "B.Sc. Bilgisayar Bilimleri (Yazılım Mühendisliği odaklı)",
+          school: "FH Aachen (Uygulamalı Bilimler Üniversitesi)",
+          period: "Eyl 2017 – May 2021",
+        },
+        {
+          degree: "B.Sc. Bilgisayar Bilimleri",
+          school: "Leibniz Universität Hannover",
+          period: "Eki 2015 – Eyl 2017",
+        },
+      ],
     },
     ar: {
       name: "مصطفى كنعان",
-      title: "مهندس برمجيات أول",
+      title: "مهندس برمجيات Fullstack",
       location: "زيورخ",
       experience: [
         {
@@ -203,12 +227,12 @@ export const profile = {
           location: "بوبيكون، سويسرا",
           period: "فبراير 2024 – الحالي",
           bullets: [
-            "التصميم التقني واتخاذ القرارات المعمارية للأنظمة الأساسية الداخلية في بيئة .NET/Azure",
-            "مسؤول عن معايير API وهندسة التكامل وتصميم الواجهات",
-            "تصميم وتنفيذ REST APIs لسير العمل الحرجة (مئات المعاملات يومياً)",
-            "تحديد استراتيجيات النشر بما في ذلك مفاهيم التسجيل والمراقبة وإدارة الإصدارات",
-            "أتمتة سير العمل المتكررة وتقليل الخطوات اليدوية بنحو 30%",
-            "تطوير تطبيقات WPF الداخلية مع التركيز على الأداء وسهولة الاستخدام",
+            "هندسة وتطوير الأنظمة الأساسية الداخلية في بيئة .NET/Azure",
+            "تحديد معايير API وبنية التكامل عبر أنظمة متعددة",
+            "تطوير REST APIs عالية الأداء لسير العمل الحرجة (مئات المعاملات يومياً)",
+            "تصميم استراتيجيات النشر والتسجيل والمراقبة",
+            "أتمتة سير العمل المتكررة (−30% خطوات يدوية)",
+            "التنسيق التقني مع الأقسام المتخصصة لترجمة المتطلبات المعقدة إلى حلول نظامية قابلة للصيانة",
           ],
         },
         {
@@ -217,10 +241,10 @@ export const profile = {
           location: "بيليفيلد، ألمانيا",
           period: "أبريل 2021 – أبريل 2023",
           bullets: [
-            "تنفيذ مشاريع التكامل باستخدام .NET 6 وAzure Functions وAzure Logic Apps",
-            "تصميم وتنفيذ REST APIs وخطوط Azure Data Factory",
-            "المساهمة في هندسة الأنظمة الموزعة (MSSQL, CosmosDB) بما في ذلك CI/CD مع Azure DevOps",
-            "الترحيل والتكامل في بيئة PIM وDAM (Sharedien, Syndigo)",
+            "تنفيذ مشاريع التكامل في بيئات المؤسسات (.NET، Azure)",
+            "تطوير REST APIs وخطوط بيانات (Azure Data Factory)",
+            "المساهمة في هندسة الأنظمة الموزعة (MSSQL, CosmosDB) بما في ذلك CI/CD",
+            "ترحيل ودمج أنظمة PIM/DAM (Sharedien, Syndigo)",
           ],
         },
         {
