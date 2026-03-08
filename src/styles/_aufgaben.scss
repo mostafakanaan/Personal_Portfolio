@@ -1,0 +1,274 @@
+/* ── Aufgaben Page ── */
+
+.aufgaben-page {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+  color: var(--text);
+}
+
+/* top bar */
+.aufgaben-topbar {
+  position: relative;
+  z-index: 10;
+  padding: 1.25rem 2rem;
+}
+
+.aufgaben-back {
+  color: var(--accent2);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+/* header */
+.aufgaben-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem 1.5rem 3rem;
+
+  h1 {
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent2), var(--accent3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: var(--muted);
+    font-size: 1.1rem;
+  }
+}
+
+/* grid of level cards */
+.aufgaben-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* individual card */
+.aufgaben-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    opacity: 0;
+    transition: opacity 0.3s;
+    background: radial-gradient(
+      circle at 30% 20%,
+      color-mix(in srgb, var(--level-color) 12%, transparent),
+      transparent 70%
+    );
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.aufgaben-card__badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #fff;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+
+  &--dark-text {
+    color: #1a1a1a;
+  }
+}
+
+.aufgaben-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.aufgaben-card__desc {
+  color: var(--muted2);
+  font-size: 0.92rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.aufgaben-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* exercise chip / link */
+.aufgaben-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1rem;
+  border-radius: 12px;
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--level-color);
+    transform: translateX(4px);
+  }
+}
+
+.aufgaben-chip__icon {
+  font-size: 1.1rem;
+}
+
+.aufgaben-chip__arrow {
+  margin-left: auto;
+  color: var(--muted2);
+  transition: color 0.2s;
+
+  .aufgaben-chip:hover & {
+    color: var(--level-color);
+  }
+}
+
+/* detail page tweaks */
+.aufgaben-grid--detail {
+  max-width: 720px;
+}
+
+.aufgaben-card--detail {
+  text-align: center;
+
+  .aufgaben-card__badge {
+    margin: 0 auto 0.75rem;
+  }
+}
+
+.aufgaben-detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 14px;
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--level-color);
+    transform: translateY(-2px);
+  }
+}
+
+/* popup / modal */
+.aufgaben-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 1rem;
+}
+
+.aufgaben-popup {
+  background: linear-gradient(145deg, #1a1f2e, #141822);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
+
+.aufgaben-popup__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.aufgaben-popup__text {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.aufgaben-popup__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 2rem;
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  background: rgba(255, 122, 24, 0.12);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+
+  &:hover {
+    background: rgba(255, 122, 24, 0.25);
+    transform: translateY(-1px);
+  }
+}
+
+/* responsive */
+@media (max-width: 640px) {
+  .aufgaben-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .aufgaben-header {
+    padding: 1.5rem 1rem 2rem;
+  }
+}

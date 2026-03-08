@@ -7,6 +7,8 @@ import Navbar from "./components/Navbar";
 import AnimatedSection from "./components/AnimatedSection";
 import ProjectCardEnhanced from "./components/ProjectCardEnhanced";
 import ChatPage from "./pages/ChatPage";
+import AufgabenPage from "./pages/AufgabenPage";
+import AufgabeDetailPage from "./pages/AufgabeDetailPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import Background from "./components/Background";
 import { AnimatedSkillGroup } from "./components/AnimatedSkillChip";
@@ -762,6 +764,8 @@ export default function App() {
         }
       />
       <Route path="/chat" element={<ChatPage />} />
+      <Route path="/DfA/Aufgaben" element={<AufgabenPage />} />
+      <Route path="/DfA/Aufgaben/:number" element={<AufgabeDetailPage />} />
     </Routes>
   );
 }
