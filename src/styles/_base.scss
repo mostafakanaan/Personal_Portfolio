@@ -8,6 +8,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   background:
     radial-gradient(900px 600px at 10% -10%, rgba(255, 122, 24, .18), transparent 60%),
     radial-gradient(900px 650px at 95% -5%, rgba(33, 212, 180, .20), transparent 60%),
