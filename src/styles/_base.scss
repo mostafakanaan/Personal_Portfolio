@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -56,10 +57,12 @@ body::after {
 
 /* Base / Root */
 #root {
-  max-width: none;
+  max-width: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   text-align: left;
+  overflow-x: hidden;
 }
 
 @media (max-width: 600px) {
