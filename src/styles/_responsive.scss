@@ -3,8 +3,6 @@
   .hero { padding-top: 5px; }
   .heroCard {
     grid-template-columns: 1fr;
-    max-width: calc(100% - 24px);
-    margin: 0 auto;
   }
   .heroCardContent {
     display: contents;
