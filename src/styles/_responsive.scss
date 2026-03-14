@@ -1,8 +1,16 @@
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .hero { padding-top: 5px; }
+  .hero { 
+    padding-top: 5px; 
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
   .heroCard {
     grid-template-columns: 1fr;
+    margin: 0 auto;
+    max-width: 100%;
   }
   .heroCardContent {
     display: contents;
