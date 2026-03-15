@@ -175,6 +175,22 @@ export default function Quiz({ exercise, onBack }) {
 
             {/* Finish button */}
             <div className="quiz__footer">
+              {/* Bottom section tabs */}
+              <div className="quiz__tabs quiz__tabs--bottom">
+                {sections.map((s, i) => {
+                  const sectionAnswered = s.questions.filter((q) => answers[q.id] !== undefined).length;
+                  return (
+                    <button
+                      key={s.id}
+                      className={`quiz__tab ${i === activeSection ? "quiz__tab--active" : ""}`}
+                      onClick={() => { setActiveSection(i); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                    >
+                      {s.title}
+                      <span className="quiz__tab-count">{sectionAnswered}/{s.questions.length}</span>
+                    </button>
+                  );
+                })}
+              </div>
               <button
                 className={`quiz__btn quiz__btn--primary ${!canFinish ? "quiz__btn--disabled" : ""}`}
                 onClick={handleFinish}

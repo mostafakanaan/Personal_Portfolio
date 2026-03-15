@@ -80,7 +80,7 @@ export default function AufgabenPage() {
               {level.aufgaben.map((a, i) => (
                 <motion.li key={i} variants={chipVariants}>
                   <Link
-                    to={`/DfA/Aufgaben/${a.number}`}
+                    to={`/DfA/Aufgaben/${a.number}/${level.id}`}
                     className="aufgaben-chip"
                   >
                     <span className="aufgaben-chip__icon">📝</span>
