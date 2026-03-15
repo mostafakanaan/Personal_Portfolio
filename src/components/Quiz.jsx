@@ -191,8 +191,9 @@ export default function Quiz({ exercise, onBack }) {
                   );
                 })}
               </div>
+
               <button
-                className={`quiz__btn quiz__btn--primary ${!canFinish ? "quiz__btn--disabled" : ""}`}
+                className={`quiz__btn quiz__btn--primary quiz__btn--full ${!canFinish ? "quiz__btn--disabled" : ""}`}
                 onClick={handleFinish}
                 disabled={!canFinish}
               >

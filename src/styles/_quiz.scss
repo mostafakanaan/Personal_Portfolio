@@ -206,7 +206,9 @@
   // Footer
   &__footer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
     margin-top: 2rem;
   }
 
@@ -311,4 +313,14 @@
       font-size: 2rem;
     }
   }
+}
+
+/* Bottom tabs & full-width button */
+.quiz__tabs--bottom {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.quiz__btn--full {
+  width: 100%;
 }
