@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Victor Kanaan",
+  name: "Mustafa Kanaan",
   title: "Fullstack Software Engineer",
   location: "Zürich",
   email: "mos.kan@hotmail.com",
