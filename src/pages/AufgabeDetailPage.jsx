@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Background from "../components/Background";
 import { levels } from "../data/aufgaben";
+import { exercises } from "../data/exercises";
 
 const containerVariants = {
   hidden: {},
@@ -132,19 +133,31 @@ export default function AufgabeDetailPage() {
               <h2 className="aufgaben-card__title">{level.label}</h2>
               <p className="aufgaben-card__desc">{level.description}</p>
 
-              <a
-                href={aufgabe.link !== "#" ? aufgabe.link : undefined}
-                className="aufgaben-detail-link"
-                target={aufgabe.link !== "#" ? "_blank" : undefined}
-                rel={aufgabe.link !== "#" ? "noopener noreferrer" : undefined}
-                style={{ "--level-color": level.color }}
-                onClick={(e) => handleLinkClick(e, aufgabe.link)}
-                role="button"
-              >
-                <span className="aufgaben-chip__icon">📝</span>
-                Aufgabe öffnen
-                <span className="aufgaben-chip__arrow">→</span>
-              </a>
+              {exercises[level.id]?.[num] ? (
+                <Link
+                  to={`/DfA/Aufgaben/${num}/${level.id}`}
+                  className="aufgaben-detail-link"
+                  style={{ "--level-color": level.color }}
+                >
+                  <span className="aufgaben-chip__icon">📝</span>
+                  Aufgabe öffnen
+                  <span className="aufgaben-chip__arrow">→</span>
+                </Link>
+              ) : (
+                <a
+                  href={aufgabe.link !== "#" ? aufgabe.link : undefined}
+                  className="aufgaben-detail-link"
+                  target={aufgabe.link !== "#" ? "_blank" : undefined}
+                  rel={aufgabe.link !== "#" ? "noopener noreferrer" : undefined}
+                  style={{ "--level-color": level.color }}
+                  onClick={(e) => handleLinkClick(e, aufgabe.link)}
+                  role="button"
+                >
+                  <span className="aufgaben-chip__icon">📝</span>
+                  Aufgabe öffnen
+                  <span className="aufgaben-chip__arrow">→</span>
+                </a>
+              )}
             </motion.section>
           ))}
         </motion.main>
