@@ -134,6 +134,8 @@
 
 /* exercise chip / link */
 .aufgaben-chip {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -182,6 +184,8 @@
 }
 
 .aufgaben-detail-link {
+  position: relative;
+  z-index: 2;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
