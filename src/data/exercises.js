@@ -120,6 +120,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    5: {
+      title: "Aufgabe 5",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Katze ist ein interessantes Tier. Sie mag es, zu spielen und zu schlafen. Katzen haben weiches Fell und k\u00f6nnen gut springen. Viele Menschen haben Katzen als Haustiere. Katzen sind auch gute J\u00e4ger.",
+          questions: [
+            { id: "a1-lv-5-1", question: "Was macht die Katze gerne?", options: ["Arbeiten", "Schlafen", "Lernen", "Singen"], correct: 1, points: 10 },
+            { id: "a1-lv-5-2", question: "Wie ist das Fell der Katze?", options: ["Hart", "Weich", "Rau", "Bunt"], correct: 1, points: 10 },
+            { id: "a1-lv-5-3", question: "Was k\u00f6nnen Katzen gut?", options: ["Schwimmen", "Springen", "Laufen", "Fliegen"], correct: 1, points: 10 },
+            { id: "a1-lv-5-4", question: "Haben viele Menschen Katzen?", options: ["Ja", "Nein", "Egal", "Vielleicht"], correct: 0, points: 10 },
+            { id: "a1-lv-5-5", question: "Sind Katzen gute J\u00e4ger?", options: ["Ja", "Nein", "Vielleicht", "Nicht sicher"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a1-gr-5-1", question: "Wie sagt man: 'Ich _____ eine Katze.'?", options: ["haben", "hatte", "habe", "hat"], correct: 2, points: 10 },
+            { id: "a1-gr-5-2", question: "Wie sagt man: 'Die Katze ist _____ Tier.'?", options: ["ein", "eine", "einen", "eines"], correct: 0, points: 10 },
+            { id: "a1-gr-5-3", question: "Wie fragt man: 'Was _____ die Katze?'", options: ["macht", "machtet", "mache", "machst"], correct: 0, points: 10 },
+            { id: "a1-gr-5-4", question: "Wie sagt man: 'Katzen sind _____ Tiere.'?", options: ["sch\u00f6n", "sch\u00f6nen", "sch\u00f6ner", "sch\u00f6neren"], correct: 0, points: 10 },
+            { id: "a1-gr-5-5", question: "Wie fragt man: 'Wo _____ die Katze?'", options: ["ist", "sind", "war", "sei"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   a2: {
     1: {
@@ -237,6 +267,36 @@ export const exercises = {
             { id: "a2-gr-4-3", question: "Wie sagt man: 'Wir ___ gerne Musik.'?", options: ["h\u00f6rst", "h\u00f6ren", "h\u00f6rte", "h\u00f6rte"], correct: 1, points: 10 },
             { id: "a2-gr-4-4", question: "Wie sagt man: 'Du ___ ein gutes Essen.'?", options: ["kochst", "kocht", "koche", "gekocht"], correct: 0, points: 10 },
             { id: "a2-gr-4-5", question: "Was ist die richtige Form: 'Sie ___ nach Hause.'?", options: ["geht", "gehst", "geh", "gehen"], correct: 3, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    5: {
+      title: "Aufgabe 5",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In vielen St\u00e4dten gibt es sogenannte 'B\u00fccherboxen'. Das sind kleine, \u00f6ffentliche Regale, in denen Menschen B\u00fccher kostenlos nehmen oder abgeben k\u00f6nnen. Jeder kann mitmachen, egal ob gro\u00df oder klein. Die Idee ist, das Lesen zu f\u00f6rdern und die Liebe zu B\u00fcchern zu teilen. Viele B\u00fccherboxen sind bunt bemalt und stehen in Parks oder auf Pl\u00e4tzen.",
+          questions: [
+            { id: "a2-lv-5-1", question: "Was sind B\u00fccherboxen?", options: ["Kinos", "Regale f\u00fcr B\u00fccher", "Restaurants", "Schulen"], correct: 1, points: 10 },
+            { id: "a2-lv-5-2", question: "Kann jeder die B\u00fccherboxen benutzen?", options: ["Nein, nur Erwachsene", "Ja, alle k\u00f6nnen mitmachen", "Nur Kinder", "Nur Bibliothekare"], correct: 1, points: 10 },
+            { id: "a2-lv-5-3", question: "Wie f\u00f6rdern B\u00fccherboxen das Lesen?", options: ["Durch Verkauf von B\u00fcchern", "Durch das Teilen von B\u00fcchern", "Durch Lesewettbewerbe", "Durch Schreibkurse"], correct: 1, points: 10 },
+            { id: "a2-lv-5-4", question: "Wo stehen viele B\u00fccherboxen?", options: ["In Bibliotheken", "In Schulen", "In Parks oder auf Pl\u00e4tzen", "In Gesch\u00e4ften"], correct: 2, points: 10 },
+            { id: "a2-lv-5-5", question: "Sind die B\u00fccher in den B\u00fccherboxen kostenlos?", options: ["Ja", "Nein", "Man muss bezahlen", "Nur f\u00fcr Mitglieder"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a2-gr-5-1", question: "Wie sagt man: 'Ich habe ein Buch'? (Richtige Form)?", options: ["Ich habe ein Buch.", "Ich hat ein Buch.", "Ich habe ein B\u00fccher.", "Ich hab ein Buch."], correct: 0, points: 10 },
+            { id: "a2-gr-5-2", question: "Was ist die richtige Frage: 'Wo _____ das Buch?'?", options: ["ist", "sind", "war", "werden"], correct: 0, points: 10 },
+            { id: "a2-gr-5-3", question: "Wie sagt man: 'Wir lesen B\u00fccher'? (Richtige Form)?", options: ["Wir lese B\u00fccher.", "Wir liest B\u00fccher.", "Wir lesen Buch.", "Wir lesen B\u00fccher."], correct: 3, points: 10 },
+            { id: "a2-gr-5-4", question: "Was ist die richtige Frage: 'Hast du _____ Buch?'?", options: ["ein", "eine", "der", "das"], correct: 0, points: 10 },
+            { id: "a2-gr-5-5", question: "Welches Wort passt?: 'Ich finde das Buch _____' (gut)?", options: ["gute", "gut", "guten", "gutem"], correct: 1, points: 10 },
           ],
         },
       ],
@@ -364,6 +424,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    5: {
+      title: "Aufgabe 5",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In der heutigen Zeit gewinnt die Kunst des Geschichtenerz\u00e4hlens, auch bekannt als Storytelling, zunehmend an Bedeutung. Viele Unternehmen nutzen diese Technik, um ihre Markenbotschaften ansprechend zu vermitteln. Storytelling schafft eine emotionale Verbindung zwischen dem Publikum und der Marke, was zu einer besseren Erinnerung und h\u00f6heren Kundenbindung f\u00fchrt. Zudem f\u00f6rdert es Kreativit\u00e4t und Innovation, indem es Menschen dazu anregt, ihre eigenen Erfahrungen und Meinungen in die Geschichten einzubringen. Durch die Kombination von Fakten und Emotionen wird die Kommunikation effektiver und einpr\u00e4gsamer.",
+          questions: [
+            { id: "b1-lv-5-1", question: "Was ist Storytelling?", options: ["Eine Technik zur Markenvermittlung", "Eine Art von Kunst", "Ein Buchgenre", "Ein Filmstil"], correct: 0, points: 10 },
+            { id: "b1-lv-5-2", question: "Warum ist Storytelling wichtig f\u00fcr Unternehmen?", options: ["Es ist g\u00fcnstig", "Es schafft emotionale Verbindungen", "Es ist sehr kompliziert", "Es ersetzt Werbung"], correct: 1, points: 10 },
+            { id: "b1-lv-5-3", question: "Wie tr\u00e4gt Storytelling zur Kreativit\u00e4t bei?", options: ["Indem es Fakten pr\u00e4sentiert", "Indem es Menschen anregt, ihre Erfahrungen zu teilen", "Indem es keine Emotionen zul\u00e4sst", "Indem es nur Geschichten aus der Vergangenheit erz\u00e4hlt"], correct: 1, points: 10 },
+            { id: "b1-lv-5-4", question: "Was verbessert Storytelling in der Kommunikation?", options: ["Die Kosten", "Die Effizienz und das Erinnern", "Die Anzahl der W\u00f6rter", "Die L\u00e4nge der Geschichten"], correct: 1, points: 10 },
+            { id: "b1-lv-5-5", question: "Was verbindet man mit Storytelling?", options: ["Nur negative Erlebnisse", "Fakten und Emotionen", "Nur Daten", "Nur Marketing"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b1-gr-5-1", question: "Welche Form ist korrekt? \"Wenn ich Zeit h\u00e4tte, __________ ich mehr lesen.\"?", options: ["w\u00fcrde", "will", "k\u00f6nnte", "m\u00f6chte"], correct: 0, points: 10 },
+            { id: "b1-gr-5-2", question: "Wie lautet die richtige Pr\u00e4position? \"Ich interessiere mich __________ Kunst.\"?", options: ["f\u00fcr", "an", "in", "zu"], correct: 0, points: 10 },
+            { id: "b1-gr-5-3", question: "Setze den richtigen Artikel ein: \"__________ Mensch ist neugierig.\"?", options: ["Der", "Die", "Das", "Ein"], correct: 0, points: 10 },
+            { id: "b1-gr-5-4", question: "Welches Wort ist ein Synonym f\u00fcr \"wichtig\"?", options: ["unbedeutend", "bedeutend", "einfach", "schwierig"], correct: 1, points: 10 },
+            { id: "b1-gr-5-5", question: "Was ist die korrekte Form? \"Ich habe __________ gegessen.\"?", options: ["ein Apfel", "einen Apfel", "die \u00c4pfel", "\u00c4pfel"], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   b2: {
     1: {
@@ -481,6 +571,36 @@ export const exercises = {
             { id: "b2-gr-4-3", question: "Welcher Satz enth\u00e4lt einen Fehler in der Verwendung des Artikels?", options: ["Die Liebe ist wichtig.", "Das Leben ist kurz.", "Ich habe einen Hund.", "Ich sehe die Katze im Garten."], correct: 2, points: 10 },
             { id: "b2-gr-4-4", question: "W\u00e4hlen Sie die richtige Form des Verbs:", options: ["Er hat gegessen", "Er hat esse", "Er hat essen", "Er hat essend"], correct: 0, points: 10 },
             { id: "b2-gr-4-5", question: "Welcher Satz ist im Passiv formuliert?", options: ["Der Lehrer erkl\u00e4rt die Grammatik.", "Die Grammatik wird vom Lehrer erkl\u00e4rt.", "Die Studenten lernen die Grammatik.", "Die Grammatik erkl\u00e4rt die Studenten."], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    5: {
+      title: "Aufgabe 5",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Quantenmechanik hat in den letzten Jahrzehnten unser Verst\u00e4ndnis der physikalischen Realit\u00e4t revolutioniert. Sie beschreibt das Verhalten von Teilchen auf subatomarer Ebene, wo klassische Physik nicht mehr gilt. In dieser Welt scheinen die Gesetze der Logik und die Vorstellung von Kausalit\u00e4t oft nicht mehr zu gelten. Forscher sind fasziniert von Ph\u00e4nomenen wie Verschr\u00e4nkung und Superposition, die den Versuch, die Natur zu begreifen, weiter verkomplizieren.",
+          questions: [
+            { id: "b2-lv-5-1", question: "Was beschreibt die Quantenmechanik?", options: ["Das Verhalten von Planeten", "Das Verhalten von Teilchen auf subatomarer Ebene", "Die Schwingungen von Wellen", "Die Bewegung von Fahrzeugen"], correct: 1, points: 10 },
+            { id: "b2-lv-5-2", question: "Warum gilt die klassische Physik nicht mehr?", options: ["Weil es keine Gesetze gibt", "Weil sie nur auf gro\u00dfen Objekten funktioniert", "Weil sie nicht genau genug ist", "Weil sie die Quantenmechanik nicht erkl\u00e4ren kann"], correct: 1, points: 10 },
+            { id: "b2-lv-5-3", question: "Was sind zwei Ph\u00e4nomene der Quantenmechanik?", options: ["Verschr\u00e4nkung und Superposition", "Gravitation und Magnetismus", "Energie und Masse", "Kraft und Druck"], correct: 0, points: 10 },
+            { id: "b2-lv-5-4", question: "Wie reagieren Forscher auf die Quantenmechanik?", options: ["Mit Ablehnung", "Mit Faszination", "Mit Gleichg\u00fcltigkeit", "Mit Verwirrung"], correct: 1, points: 10 },
+            { id: "b2-lv-5-5", question: "Was kompliziert den Versuch, die Natur zu begreifen?", options: ["Die Anzahl der Forscher", "Die Komplexit\u00e4t der Quantenmechanik", "Die Menge an Daten", "Die Verwendung von Technologien"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b2-gr-5-1", question: "Welche Form ist hier richtig? \"Es ist wichtig, dass er ___ .\"", options: ["kommt", "kommen", "gekommen", "kamen"], correct: 0, points: 10 },
+            { id: "b2-gr-5-2", question: "Setze den richtigen Artikel ein: \"___ Quantenmechanik ist faszinierend.\"", options: ["Der", "Die", "Das", "Den"], correct: 1, points: 10 },
+            { id: "b2-gr-5-3", question: "W\u00e4hle die korrekte Konjunktivform: \"Ich w\u00fcnschte, ich ___ mehr Zeit.\"", options: ["habe", "h\u00e4tte", "hatte", "h\u00e4tte gehabt"], correct: 1, points: 10 },
+            { id: "b2-gr-5-4", question: "Wie lautet die richtige Pr\u00e4position? \"Interessiert ___ die Quantenmechanik?\"", options: ["an", "f\u00fcr", "\u00fcber", "in"], correct: 0, points: 10 },
+            { id: "b2-gr-5-5", question: "Welcher Satz ist grammatikalisch korrekt?", options: ["Er glaubt, dass die Quantenphysik komplex ist.", "Er glaubte, dass die Quantenphysik komplex ist.", "Er glaubt, die Quantenphysik ist komplex.", "Er glauben, dass die Quantenphysik komplex ist."], correct: 0, points: 10 },
           ],
         },
       ],
