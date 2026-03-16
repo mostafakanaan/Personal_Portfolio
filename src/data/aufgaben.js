@@ -13,7 +13,6 @@ export const levels = [
       { number: 1, title: "Aufgabe 1", link: "#" },
       { number: 2, title: "Aufgabe 2", link: "#" },
       { number: 3, title: "Aufgabe 3", link: "/DfA/Aufgaben/3" },
-      { number: 3, title: "Aufgabe 3", link: "/DfA/Aufgaben/3" },
     ],
   },
   {
@@ -22,10 +21,6 @@ export const levels = [
     color: "#22c55e",
     description: "Häufige Ausdrücke und einfache Gespräche.",
     aufgaben: [
-      { number: 1, title: "Aufgabe 1", link: "#" },
-      { number: 2, title: "Aufgabe 2", link: "#" },
-      { number: 3, title: "Aufgabe 3", link: "/DfA/Aufgaben/3" },
-      { number: 3, title: "Aufgabe 3", link: "/DfA/Aufgaben/3" },
     ],
   },
   {
@@ -34,10 +29,6 @@ export const levels = [
     color: "#3b82f6",
     description: "Zusammenhängende Texte und alltägliche Situationen.",
     aufgaben: [
-      { number: 1, title: "Aufgabe 1", link: "#" },
-      { number: 2, title: "Aufgabe 2", link: "#" },
-      { number: 3, title: "Aufgabe 3", link: "/DfA/Aufgaben/3" },
-      { number: 3, title: "Aufgabe 3", link: "/DfA/Aufgaben/3" },
     ],
   },
   {
@@ -46,10 +37,6 @@ export const levels = [
     color: "#ff7a18",
     description: "Komplexe Texte, fließende Kommunikation.",
     aufgaben: [
-      { number: 1, title: "Aufgabe 1", link: "#" },
-      { number: 2, title: "Aufgabe 2", link: "#" },
-      { number: 3, title: "Aufgabe 3", link: "/DfA/Aufgaben/3" },
-      { number: 3, title: "Aufgabe 3", link: "/DfA/Aufgaben/3" },
     ],
   },
 ];
