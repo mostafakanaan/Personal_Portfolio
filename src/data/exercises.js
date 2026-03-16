@@ -90,6 +90,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    4: {
+      title: "Aufgabe 4",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Heute ist Montag. Lisa geht zum Supermarkt. Sie kauft Milch, Brot, Äpfel und Käse. Der Supermarkt ist nicht weit von ihrem Haus. Lisa bezahlt mit ihrer Karte. Dann geht sie nach Hause und kocht Mittagessen.",
+          questions: [
+            { id: "a1-4-lv-1", question: "Welcher Tag ist heute?", options: ["Dienstag", "Mittwoch", "Montag", "Freitag"], correct: 2, points: 10 },
+            { id: "a1-4-lv-2", question: "Wohin geht Lisa?", options: ["In die Schule", "Zum Supermarkt", "Ins Kino", "Zum Arzt"], correct: 1, points: 10 },
+            { id: "a1-4-lv-3", question: "Was kauft Lisa NICHT?", options: ["Milch", "Brot", "Eier", "Käse"], correct: 2, points: 10 },
+            { id: "a1-4-lv-4", question: "Wie bezahlt Lisa?", options: ["Mit Bargeld", "Mit einer Karte", "Mit einem Gutschein", "Sie bezahlt nicht"], correct: 1, points: 10 },
+            { id: "a1-4-lv-5", question: "Was macht Lisa nach dem Einkauf?", options: ["Sie schläft", "Sie geht spazieren", "Sie kocht Mittagessen", "Sie liest"], correct: 2, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a1-4-gr-1", question: "Welcher Artikel: ___ Apfel ist rot.", options: ["Die", "Das", "Der", "Ein"], correct: 2, points: 10 },
+            { id: "a1-4-gr-2", question: "Welcher Artikel: ___ Milch ist kalt.", options: ["Der", "Die", "Das", "Ein"], correct: 1, points: 10 },
+            { id: "a1-4-gr-3", question: "Verb konjugieren: Wir ___ heute einkaufen. (gehen)", options: ["gehst", "geht", "gehe", "gehen"], correct: 3, points: 10 },
+            { id: "a1-4-gr-4", question: "Präposition: Lisa geht ___ Supermarkt.", options: ["in den", "in dem", "im", "an den"], correct: 0, points: 10 },
+            { id: "a1-4-gr-5", question: "Plural: ein Apfel – viele ___", options: ["Apfels", "Äpfeln", "Äpfel", "Apfel"], correct: 2, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   a2: {
     1: {
@@ -177,6 +207,36 @@ export const exercises = {
             { id: "a2-3-gr-3", question: "Futur I: Morgen ___ wir eine neue Wohnung besichtigen.", options: ["haben", "sind", "werden", "müssen"], correct: 2, points: 10 },
             { id: "a2-3-gr-4", question: "Akkusativ: Ich suche ___ Wohnung.", options: ["eine", "einer", "einem", "ein"], correct: 0, points: 10 },
             { id: "a2-3-gr-5", question: "Superlativ: Diese Wohnung ist ___ in der Stadt. (günstig)", options: ["günstiger", "am günstigsten", "günstigste", "am günstiger"], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    4: {
+      title: "Aufgabe 4",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Lena und Marco suchen eine neue Wohnung. Sie möchten in der Nähe des Stadtzentrums wohnen, aber die Mieten dort sind sehr hoch. Eine Zweizimmerwohnung kostet mindestens 900 Euro pro Monat. Sie haben auch eine Anzeige für eine Wohnung in einem Vorort gesehen. Diese ist günstiger, aber die Fahrt in die Stadt dauert 30 Minuten. Sie müssen bald eine Entscheidung treffen, weil ihr aktueller Mietvertrag im nächsten Monat endet.",
+          questions: [
+            { id: "a2-4-lv-1", question: "Was suchen Lena und Marco?", options: ["Ein Haus", "Eine neue Wohnung", "Ein Büro", "Ein Zimmer"], correct: 1, points: 10 },
+            { id: "a2-4-lv-2", question: "Was ist das Problem in der Stadtmitte?", options: ["Zu laut", "Keine Schulen", "Hohe Mieten", "Schlechte Verkehrsanbindung"], correct: 2, points: 10 },
+            { id: "a2-4-lv-3", question: "Was kostet eine Zweizimmerwohnung mindestens?", options: ["700 Euro", "800 Euro", "1000 Euro", "900 Euro"], correct: 3, points: 10 },
+            { id: "a2-4-lv-4", question: "Wie lange dauert die Fahrt aus dem Vorort?", options: ["15 Minuten", "45 Minuten", "30 Minuten", "Eine Stunde"], correct: 2, points: 10 },
+            { id: "a2-4-lv-5", question: "Wann endet ihr aktueller Mietvertrag?", options: ["In zwei Monaten", "Nächsten Monat", "Nächstes Jahr", "In drei Wochen"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a2-4-gr-1", question: "Wechselpräposition (Ort): Das Buch liegt ___ Tisch.", options: ["auf dem", "auf den", "an dem", "an den"], correct: 0, points: 10 },
+            { id: "a2-4-gr-2", question: "Wechselpräposition (Richtung): Leg das Buch ___ Tisch.", options: ["auf dem", "auf den", "an dem", "an den"], correct: 1, points: 10 },
+            { id: "a2-4-gr-3", question: "Futur I: Morgen ___ wir eine neue Wohnung besichtigen.", options: ["haben", "sind", "werden", "müssen"], correct: 2, points: 10 },
+            { id: "a2-4-gr-4", question: "Akkusativ: Ich suche ___ Wohnung.", options: ["eine", "einer", "einem", "ein"], correct: 0, points: 10 },
+            { id: "a2-4-gr-5", question: "Superlativ: Diese Wohnung ist ___ in der Stadt. (günstig)", options: ["günstiger", "am günstigsten", "günstigste", "am günstiger"], correct: 1, points: 10 },
           ],
         },
       ],
@@ -274,6 +334,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    4: {
+      title: "Aufgabe 4",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Homeoffice hat sich in vielen deutschen Unternehmen nach der Pandemie als feste Arbeitsform etabliert. Eine aktuelle Umfrage zeigt, dass 68 Prozent der Büroangestellten mindestens zwei Tage pro Woche von zu Hause arbeiten möchten. Arbeitgeber berichten von einer höheren Produktivität, gleichzeitig klagen viele Arbeitnehmer über soziale Isolation und fehlende Trennung zwischen Arbeit und Freizeit. Besonders jüngere Mitarbeiter wünschen sich mehr Präsenz im Büro, um von erfahrenen Kollegen zu lernen und soziale Kontakte zu pflegen. Viele Unternehmen entwickeln daher hybride Modelle, die beide Arbeitsformen kombinieren.",
+          questions: [
+            { id: "b1-4-lv-1", question: "Wie viel Prozent möchten mindestens zwei Tage Homeoffice?", options: ["48%", "58%", "68%", "78%"], correct: 2, points: 10 },
+            { id: "b1-4-lv-2", question: "Was berichten Arbeitgeber über Homeoffice?", options: ["Weniger Kosten", "Höhere Produktivität", "Bessere Teamarbeit", "Kürzere Arbeitszeiten"], correct: 1, points: 10 },
+            { id: "b1-4-lv-3", question: "Worüber klagen viele Arbeitnehmer?", options: ["Zu viel Arbeit", "Soziale Isolation", "Schlechtes Internet", "Lärm"], correct: 1, points: 10 },
+            { id: "b1-4-lv-4", question: "Was wünschen sich jüngere Mitarbeiter?", options: ["Mehr Homeoffice", "Mehr Urlaub", "Mehr Präsenz im Büro", "Mehr Gehalt"], correct: 2, points: 10 },
+            { id: "b1-4-lv-5", question: "Was entwickeln viele Unternehmen?", options: ["Neue Apps", "Hybride Modelle", "Mehr Büroflächen", "Neue Arbeitszeiten"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b1-4-gr-1", question: "Passiv Präteritum: Das Projekt ___ letztes Jahr ___.", options: ["wurde … abgeschlossen", "wird … abgeschlossen", "wurde … abschließen", "hat … abgeschlossen"], correct: 0, points: 10 },
+            { id: "b1-4-gr-2", question: "Konzessivsatz: ___ er sehr müde war, arbeitete er weiter.", options: ["Weil", "Obwohl", "Wenn", "Damit"], correct: 1, points: 10 },
+            { id: "b1-4-gr-3", question: "Finalsatz: Er macht Sport, ___ er gesund bleibt.", options: ["obwohl", "weil", "damit", "obwohl"], correct: 2, points: 10 },
+            { id: "b1-4-gr-4", question: "Modalverb Passiv: Der Brief ___ heute noch geschrieben ___.", options: ["muss … werden", "muss … sein", "kann … haben", "soll … haben"], correct: 0, points: 10 },
+            { id: "b1-4-gr-5", question: "Konjunktiv II Höflichkeit: ___ Sie mir bitte helfen?", options: ["Werden", "Können", "Könnten", "Dürfen"], correct: 2, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   b2: {
     1: {
@@ -361,6 +451,36 @@ export const exercises = {
             { id: "b2-3-gr-3", question: "Kausalität (Genitivpräposition): ___ seiner Erfahrung wurde er befördert.", options: ["Trotz", "Wegen", "Aufgrund", "Während"], correct: 2, points: 10 },
             { id: "b2-3-gr-4", question: "Konzessivkonstruktion: ___ aller Bemühungen scheiterte das Projekt.", options: ["Trotz", "Wegen", "Aufgrund", "Infolge"], correct: 0, points: 10 },
             { id: "b2-3-gr-5", question: "Nominalisierung: 'Man diskutiert das Problem' → formal: ___", options: ["die Diskussion des Problems", "das Diskutieren Problem", "diskutieren des Problems", "die diskutierte Problem"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    4: {
+      title: "Aufgabe 4",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Künstliche Intelligenz revolutioniert zunehmend den Bildungssektor. Adaptive Lernsysteme analysieren das individuelle Lernverhalten der Schüler und passen Aufgaben in Echtzeit an deren Kenntnisstand an. Befürworter sehen darin eine Chance zur Individualisierung des Unterrichts, die in überfüllten Klassen bisher kaum möglich war. Kritiker hingegen warnen vor einer zunehmenden Abhängigkeit von algorithmischen Entscheidungen und einer Vernachlässigung sozialer Kompetenzen, die nur im zwischenmenschlichen Austausch erworben werden können. Bildungsökonomen fordern eine differenzierte Debatte darüber, welche Kompetenzen im Zeitalter der KI tatsächlich noch vom Menschen erworben werden müssen.",
+          questions: [
+            { id: "b2-4-lv-1", question: "Was analysieren adaptive Lernsysteme?", options: ["Die Noten der Schüler", "Das individuelle Lernverhalten", "Die Anwesenheit der Schüler", "Den Lehrplan"], correct: 1, points: 10 },
+            { id: "b2-4-lv-2", question: "Welchen Vorteil sehen Befürworter?", options: ["Günstigere Bildung", "Individualisierung des Unterrichts", "Weniger Lehrer nötig", "Schnelleres Lernen"], correct: 1, points: 10 },
+            { id: "b2-4-lv-3", question: "Was kritisieren Skeptiker?", options: ["Die hohen Kosten", "Abhängigkeit von Algorithmen und Vernachlässigung sozialer Kompetenzen", "Zu langsame Systeme", "Fehlende Internetverbindung"], correct: 1, points: 10 },
+            { id: "b2-4-lv-4", question: "Wo werden laut Kritikern soziale Kompetenzen erworben?", options: ["Im Internet", "Durch KI", "Im zwischenmenschlichen Austausch", "In Büchern"], correct: 2, points: 10 },
+            { id: "b2-4-lv-5", question: "Was fordern Bildungsökonomen?", options: ["Mehr KI in Schulen", "Weniger Technologie", "Eine differenzierte Debatte über nötige Kompetenzen", "Abschaffung von Prüfungen"], correct: 2, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b2-4-gr-1", question: "Konjunktiv I (indirekte Rede): Sie behauptete, sie ___ die Aufgabe verstanden.", options: ["hat", "habe", "hätte", "hatte"], correct: 1, points: 10 },
+            { id: "b2-4-gr-2", question: "Erweiterte Partizipialkonstruktion: Der ___ Forscher präsentierte seine Ergebnisse. (renommiert)", options: ["renommierte", "renommierenden", "renommierten", "zu renommierende"], correct: 0, points: 10 },
+            { id: "b2-4-gr-3", question: "Kausalität (Genitivpräposition): ___ seiner Erfahrung wurde er befördert.", options: ["Trotz", "Wegen", "Aufgrund", "Während"], correct: 2, points: 10 },
+            { id: "b2-4-gr-4", question: "Konzessivkonstruktion: ___ aller Bemühungen scheiterte das Projekt.", options: ["Trotz", "Wegen", "Aufgrund", "Infolge"], correct: 0, points: 10 },
+            { id: "b2-4-gr-5", question: "Nominalisierung: 'Man diskutiert das Problem' → formal: ___", options: ["die Diskussion des Problems", "das Diskutieren Problem", "diskutieren des Problems", "die diskutierte Problem"], correct: 0, points: 10 },
           ],
         },
       ],
