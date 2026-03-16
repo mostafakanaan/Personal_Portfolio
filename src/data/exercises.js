@@ -90,6 +90,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    4: {
+      title: "Aufgabe 4",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Stadt hat viele Blumen. Im Park gibt es Rosen, Tulpen und Sonnenblumen. Blumen machen die Stadt sch\u00f6n und freundlich. Viele Menschen kommen in den Park, um die Blumen zu sehen. Kinder spielen und Erwachsene entspannen sich.",
+          questions: [
+            { id: "a1-lv-4-1", question: "Wo sind die Blumen?", options: ["In der Schule", "Im Park", "Zu Hause", "Im Restaurant"], correct: 1, points: 10 },
+            { id: "a1-lv-4-2", question: "Welche Blumen sind im Park?", options: ["Rosen, Tulpen und Sonnenblumen", "Narzissen und Lilien", "Kaktusse und Gr\u00e4ser", "Orchideen und Veilchen"], correct: 0, points: 10 },
+            { id: "a1-lv-4-3", question: "Warum kommen viele Menschen in den Park?", options: ["Um zu arbeiten", "Um die Blumen zu sehen", "Um zu essen", "Um zu joggen"], correct: 1, points: 10 },
+            { id: "a1-lv-4-4", question: "Was machen die Kinder im Park?", options: ["Sie arbeiten", "Sie spielen", "Sie lesen", "Sie schlafen"], correct: 1, points: 10 },
+            { id: "a1-lv-4-5", question: "Wie macht Blumen die Stadt?", options: ["Sch\u00f6n und freundlich", "Langweilig und traurig", "Dunkel und laut", "Sauber und schnell"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a1-gr-4-1", question: "Was ist die richtige Form? Ich ____ ein Buch.", options: ["lese", "lesen", "liest", "liestest"], correct: 0, points: 10 },
+            { id: "a1-gr-4-2", question: "Wie sagt man: 'Das ist mein Freund.'?", options: ["Das sind meine Freund.", "Das ist mein Freunde.", "Das ist mein Freund.", "Das sind meine Freunde."], correct: 2, points: 10 },
+            { id: "a1-gr-4-3", question: "Was passt hier? _____ du essen?", options: ["Ich", "Er", "Sie", "Du"], correct: 3, points: 10 },
+            { id: "a1-gr-4-4", question: "Was ist richtig? Sie _____ im Park.", options: ["spielt", "spielen", "spielst", "spiel"], correct: 1, points: 10 },
+            { id: "a1-gr-4-5", question: "Wie fragt man: 'Wo ist das Buch?'?", options: ["Das Buch ist wo?", "Wo das Buch ist?", "Wo ist das Buch?", "Wo das Buch?"], correct: 2, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   a2: {
     1: {
@@ -177,6 +207,36 @@ export const exercises = {
             { id: "a2-3-gr-3", question: "Futur I: Morgen ___ wir eine neue Wohnung besichtigen.", options: ["haben", "sind", "werden", "müssen"], correct: 2, points: 10 },
             { id: "a2-3-gr-4", question: "Akkusativ: Ich suche ___ Wohnung.", options: ["eine", "einer", "einem", "ein"], correct: 0, points: 10 },
             { id: "a2-3-gr-5", question: "Superlativ: Diese Wohnung ist ___ in der Stadt. (günstig)", options: ["günstiger", "am günstigsten", "günstigste", "am günstiger"], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    4: {
+      title: "Aufgabe 4",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Wusstest du, dass viele Menschen in Deutschland ihre Freizeit mit dem Spielen von Brettspielen verbringen? Brettspiele sind nicht nur f\u00fcr Kinder, sondern auch f\u00fcr Erwachsene sehr beliebt. Es gibt viele verschiedene Arten von Spielen, zum Beispiel Strategiespiele oder Familienspiele. In Deutschland gibt es sogar Wettbewerbe, bei denen die besten Spieler gegeneinander antreten. Brettspiele bringen Menschen zusammen und machen viel Spa\u00df!",
+          questions: [
+            { id: "a2-lv-4-1", question: "Wer spielt Brettspiele in Deutschland?", options: ["Nur Kinder", "Nur Erwachsene", "Kinder und Erwachsene", "Nur Senioren"], correct: 2, points: 10 },
+            { id: "a2-lv-4-2", question: "Was ist ein Beispiel f\u00fcr Brettspiele?", options: ["Sportspiele", "Strategiespiele", "Computerspiele", "Kartenspiele"], correct: 1, points: 10 },
+            { id: "a2-lv-4-3", question: "Was machen die besten Spieler?", options: ["Sie spielen alleine", "Sie spielen gegen andere", "Sie spielen nicht mehr", "Sie spielen nur zu Hause"], correct: 1, points: 10 },
+            { id: "a2-lv-4-4", question: "Was ist ein Vorteil von Brettspielen?", options: ["Sie sind teuer", "Sie sind langweilig", "Sie bringen Menschen zusammen", "Sie dauern lange"], correct: 2, points: 10 },
+            { id: "a2-lv-4-5", question: "Wo gibt es Wettbewerbe f\u00fcr Brettspiele?", options: ["In Schulen", "In St\u00e4dten", "In Deutschland", "In ganzen Europa"], correct: 2, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a2-gr-4-1", question: "Wie sagt man: 'Ich ___ ein Buch.'? (richtiges Verb einsetzen)", options: ["lesen", "liest", "liestet", "lese"], correct: 3, points: 10 },
+            { id: "a2-gr-4-2", question: "Was ist die richtige Form: 'Er ___ ins Kino.'?", options: ["gehst", "geht", "gehe", "gehen"], correct: 1, points: 10 },
+            { id: "a2-gr-4-3", question: "Wie sagt man: 'Wir ___ gerne Musik.'?", options: ["h\u00f6rst", "h\u00f6ren", "h\u00f6rte", "h\u00f6rte"], correct: 1, points: 10 },
+            { id: "a2-gr-4-4", question: "Wie sagt man: 'Du ___ ein gutes Essen.'?", options: ["kochst", "kocht", "koche", "gekocht"], correct: 0, points: 10 },
+            { id: "a2-gr-4-5", question: "Was ist die richtige Form: 'Sie ___ nach Hause.'?", options: ["geht", "gehst", "geh", "gehen"], correct: 3, points: 10 },
           ],
         },
       ],
@@ -274,6 +334,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    4: {
+      title: "Aufgabe 4",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In den letzten Jahren hat sich das Interesse an Urban Gardening stark erh\u00f6ht. Immer mehr Menschen entdecken die Freude am G\u00e4rtnern in der Stadt, sei es auf Balkonen, D\u00e4chern oder in Gemeinschaftsg\u00e4rten. Diese Form des G\u00e4rtnerns bietet nicht nur die M\u00f6glichkeit, frisches Gem\u00fcse anzubauen, sondern f\u00f6rdert auch den sozialen Austausch unter Nachbarn. Urban Gardening ist somit nicht nur eine Antwort auf die Frage der Nahrungsmittelproduktion, sondern tr\u00e4gt auch zur Verbesserung des Stadtklimas bei. Viele St\u00e4dte unterst\u00fctzen diese Initiativen durch F\u00f6rderprogramme und Workshops.",
+          questions: [
+            { id: "b1-lv-4-1", question: "Was ist Urban Gardening?", options: ["Ein Sport", "Eine Form des G\u00e4rtnerns in der Stadt", "Ein Restaurant", "Ein Gartenbaukurs"], correct: 1, points: 10 },
+            { id: "b1-lv-4-2", question: "Was f\u00f6rdert Urban Gardening neben dem Anbau von Gem\u00fcse?", options: ["L\u00e4rm", "Sozialen Austausch", "Verschmutzung", "Wettbewerb"], correct: 1, points: 10 },
+            { id: "b1-lv-4-3", question: "Wie reagieren viele St\u00e4dte auf Urban Gardening?", options: ["Sie ignorieren es", "Sie unterst\u00fctzen es", "Sie verbieten es", "Sie f\u00f6rdern nur den Kauf von Gem\u00fcse"], correct: 1, points: 10 },
+            { id: "b1-lv-4-4", question: "Wo kann man Urban Gardening betreiben?", options: ["Nur in gro\u00dfen G\u00e4rten", "Auf Balkonen, D\u00e4chern und in Gemeinschaftsg\u00e4rten", "Nur im Freien", "In einem Gew\u00e4chshaus"], correct: 1, points: 10 },
+            { id: "b1-lv-4-5", question: "Welchen Vorteil hat Urban Gardening f\u00fcr das Stadtklima?", options: ["Es verschlechtert es", "Es verbessert es", "Es hat keinen Einfluss", "Es macht die Stadt lauter"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b1-gr-4-1", question: "Welches Wort passt in den Satz? 'Wenn ich Zeit h\u00e4tte, _____ ich mehr B\u00fccher lesen.'", options: ["w\u00fcrde", "wird", "hatte", "habe"], correct: 0, points: 10 },
+            { id: "b1-gr-4-2", question: "Wie lautet die korrekte Form? 'Sie _____ (gehen) oft ins Kino.'", options: ["geht", "gehen", "gehst", "geh"], correct: 1, points: 10 },
+            { id: "b1-gr-4-3", question: "Was ist die richtige Verbindung? 'Obwohl es regnete, _____ wir spazieren.'", options: ["gingen", "ging", "gehe", "gehen"], correct: 0, points: 10 },
+            { id: "b1-gr-4-4", question: "Wie wird der Satz abgeschlossen? 'Ich w\u00fcrde gerne, _____ ich keine Zeit habe.'", options: ["obwohl", "weil", "aber", "da"], correct: 0, points: 10 },
+            { id: "b1-gr-4-5", question: "Welche Form ist richtig? 'Es ist wichtig, dass du _____ (kommen).' ", options: ["kommst", "kommen", "kam", "gekommen"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   b2: {
     1: {
@@ -361,6 +451,36 @@ export const exercises = {
             { id: "b2-3-gr-3", question: "Kausalität (Genitivpräposition): ___ seiner Erfahrung wurde er befördert.", options: ["Trotz", "Wegen", "Aufgrund", "Während"], correct: 2, points: 10 },
             { id: "b2-3-gr-4", question: "Konzessivkonstruktion: ___ aller Bemühungen scheiterte das Projekt.", options: ["Trotz", "Wegen", "Aufgrund", "Infolge"], correct: 0, points: 10 },
             { id: "b2-3-gr-5", question: "Nominalisierung: 'Man diskutiert das Problem' → formal: ___", options: ["die Diskussion des Problems", "das Diskutieren Problem", "diskutieren des Problems", "die diskutierte Problem"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    4: {
+      title: "Aufgabe 4",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Philosophie des Unbehagens besch\u00e4ftigt sich mit den inneren Konflikten des modernen Menschen. Sie beleuchtet, wie technologische Fortschritte und gesellschaftliche Ver\u00e4nderungen oft zu einem Gef\u00fchl der Entfremdung f\u00fchren. In einer Welt, die von st\u00e4ndigen Informationen und der Suche nach Effizienz gepr\u00e4gt ist, stellt sich die Frage, ob der Mensch noch in der Lage ist, echte Zufriedenheit zu finden. Viele Philosophen argumentieren, dass das Streben nach individueller Selbstverwirklichung paradoxerweise zu einer tiefen inneren Leere f\u00fchren kann.",
+          questions: [
+            { id: "b2-lv-4-1", question: "Was ist das Hauptthema des Textes?", options: ["Die Vorteile technologischer Fortschritte", "Die Suche nach Zufriedenheit", "Die Rolle der Gesellschaft", "Der Einfluss von Philosophie auf das t\u00e4gliche Leben"], correct: 1, points: 10 },
+            { id: "b2-lv-4-2", question: "Wie beeinflussen technologische Fortschritte den Menschen laut dem Text?", options: ["Sie f\u00fchren zu mehr Zufriedenheit", "Sie verursachen Entfremdung", "Sie verbessern die Kommunikation", "Sie haben keinen Einfluss"], correct: 1, points: 10 },
+            { id: "b2-lv-4-3", question: "Was argumentieren viele Philosophen \u00fcber Selbstverwirklichung?", options: ["Sie ist immer positiv", "Sie f\u00fchrt zu echtem Gl\u00fcck", "Sie kann innere Leere verursachen", "Sie ist nicht relevant f\u00fcr die moderne Gesellschaft"], correct: 2, points: 10 },
+            { id: "b2-lv-4-4", question: "Welches Gef\u00fchl wird im Text als zentrales Problem des modernen Menschen beschrieben?", options: ["Einsamkeit", "Stress", "Unbehagen", "Zufriedenheit"], correct: 2, points: 10 },
+            { id: "b2-lv-4-5", question: "Was k\u00f6nnte eine L\u00f6sung f\u00fcr das im Text beschriebene Unbehagen sein?", options: ["Mehr Technologie nutzen", "Sich auf zwischenmenschliche Beziehungen konzentrieren", "Weniger Informationen konsumieren", "Sich von der Gesellschaft isolieren"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b2-gr-4-1", question: "Welcher Satz ist grammatikalisch korrekt?", options: ["Ich w\u00fcnsche, dass er mehr Zeit hat.", "Ich w\u00fcnscht, dass er mehr Zeit hat.", "Ich w\u00fcnsche, dass er mehr Zeit hatte.", "Ich w\u00fcnscht, dass er mehr Zeit hatte."], correct: 0, points: 10 },
+            { id: "b2-gr-4-2", question: "Welcher Satz verwendet den Konjunktiv II korrekt?", options: ["Wenn ich reich w\u00e4re, w\u00fcrde ich reisen.", "Wenn ich reich bin, w\u00fcrde ich reisen.", "Wenn ich reich gewesen bin, w\u00fcrde ich reisen.", "Wenn ich reicher w\u00e4re, reise ich."], correct: 0, points: 10 },
+            { id: "b2-gr-4-3", question: "Welcher Satz enth\u00e4lt einen Fehler in der Verwendung des Artikels?", options: ["Die Liebe ist wichtig.", "Das Leben ist kurz.", "Ich habe einen Hund.", "Ich sehe die Katze im Garten."], correct: 2, points: 10 },
+            { id: "b2-gr-4-4", question: "W\u00e4hlen Sie die richtige Form des Verbs:", options: ["Er hat gegessen", "Er hat esse", "Er hat essen", "Er hat essend"], correct: 0, points: 10 },
+            { id: "b2-gr-4-5", question: "Welcher Satz ist im Passiv formuliert?", options: ["Der Lehrer erkl\u00e4rt die Grammatik.", "Die Grammatik wird vom Lehrer erkl\u00e4rt.", "Die Studenten lernen die Grammatik.", "Die Grammatik erkl\u00e4rt die Studenten."], correct: 1, points: 10 },
           ],
         },
       ],
