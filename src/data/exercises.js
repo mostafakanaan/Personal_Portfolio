@@ -150,6 +150,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    6: {
+      title: "Aufgabe 6",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Wolken sind sehr wichtig f\u00fcr das Wetter. Sie bringen Regen und Schatten. Viele Tiere leben in den Wolken, zum Beispiel V\u00f6gel. Wenn die Wolken grau sind, wird es oft nass. Aber manchmal sind die Wolken auch wei\u00df und sch\u00f6n.",
+          questions: [
+            { id: "a1-lv-6-1", question: "Was bringen die Wolken?", options: ["Sonne", "Regen", "Wind", "Schnee"], correct: 1, points: 10 },
+            { id: "a1-lv-6-2", question: "Welches Tier lebt in den Wolken?", options: ["Katze", "Hund", "Vogel", "Fisch"], correct: 2, points: 10 },
+            { id: "a1-lv-6-3", question: "Wie sehen graue Wolken aus?", options: ["Sch\u00f6n", "Nass", "Schnell", "Langsam"], correct: 1, points: 10 },
+            { id: "a1-lv-6-4", question: "Wann sind die Wolken sch\u00f6n?", options: ["Wenn sie grau sind", "Wenn sie wei\u00df sind", "Wenn sie schwarz sind", "Wenn sie klein sind"], correct: 1, points: 10 },
+            { id: "a1-lv-6-5", question: "Was ist eine Eigenschaft von Wolken?", options: ["Sie sind hart", "Sie bringen Schatten", "Sie sind eckig", "Sie sind schnell"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a1-gr-6-1", question: "Welches Wort ist richtig? Ich ___ ein Buch.", options: ["haben", "hat", "habe", "hatte"], correct: 2, points: 10 },
+            { id: "a1-gr-6-2", question: "Wie sagt man: 'Der Hund ist klein'? ", options: ["Der Hund ist klein", "Die Hunde sind klein", "Das Hund ist klein", "Die Hund ist klein"], correct: 0, points: 10 },
+            { id: "a1-gr-6-3", question: "Was ist richtig? Sie ___ (essen) eine Pizza.", options: ["essen", "esse", "isst", "e\u00dft"], correct: 0, points: 10 },
+            { id: "a1-gr-6-4", question: "Wie fragt man nach dem Namen? 'Was ist ___ Name?'", options: ["dein", "ihr", "mein", "sein"], correct: 0, points: 10 },
+            { id: "a1-gr-6-5", question: "Vervollst\u00e4ndige den Satz: 'Ich ___ in der Schule.'", options: ["lerne", "lernen", "lernst", "lernt"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   a2: {
     1: {
@@ -297,6 +327,36 @@ export const exercises = {
             { id: "a2-gr-5-3", question: "Wie sagt man: 'Wir lesen B\u00fccher'? (Richtige Form)?", options: ["Wir lese B\u00fccher.", "Wir liest B\u00fccher.", "Wir lesen Buch.", "Wir lesen B\u00fccher."], correct: 3, points: 10 },
             { id: "a2-gr-5-4", question: "Was ist die richtige Frage: 'Hast du _____ Buch?'?", options: ["ein", "eine", "der", "das"], correct: 0, points: 10 },
             { id: "a2-gr-5-5", question: "Welches Wort passt?: 'Ich finde das Buch _____' (gut)?", options: ["gute", "gut", "guten", "gutem"], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    6: {
+      title: "Aufgabe 6",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In vielen L\u00e4ndern gibt es Feste, die die Jahreszeiten feiern. Zum Beispiel feiern die Menschen in Japan das Kirschbl\u00fctenfest, wenn die Blumen bl\u00fchen. In Mexiko gibt es das Fest der Toten, bei dem die Familien ihre verstorbenen Angeh\u00f6rigen ehren. Auch in Deutschland gibt es besondere Feiertage, wie den Erntedankfest, an dem die Menschen f\u00fcr die Ernte danken. Diese Feste bringen die Menschen zusammen und zeigen die Kultur des Landes.",
+          questions: [
+            { id: "a2-lv-6-1", question: "Welches Fest wird in Japan gefeiert?", options: ["A) Erntedankfest", "B) Kirschbl\u00fctenfest", "C) Oktoberfest", "D) Weihnachtsfest"], correct: 1, points: 10 },
+            { id: "a2-lv-6-2", question: "Was wird beim Fest der Toten in Mexiko gemacht?", options: ["A) Man feiert mit Musik.", "B) Man tanzt den ganzen Tag.", "C) Man ehrt die Verstorbenen.", "D) Man isst viel Essen."], correct: 2, points: 10 },
+            { id: "a2-lv-6-3", question: "Warum werden Feste gefeiert?", options: ["A) Um Geld zu verdienen.", "B) Um die Kultur zu zeigen.", "C) Um alleine zu sein.", "D) Um zu reisen."], correct: 1, points: 10 },
+            { id: "a2-lv-6-4", question: "Welches Fest ist typisch f\u00fcr Deutschland?", options: ["A) Kirschbl\u00fctenfest", "B) Erntedankfest", "C) Fest der Toten", "D) Neujahrsfest"], correct: 1, points: 10 },
+            { id: "a2-lv-6-5", question: "Was bringen diese Feste?", options: ["A) Sie bringen die Menschen zusammen.", "B) Sie machen die Leute traurig.", "C) Sie kosten viel Geld.", "D) Sie sind immer im Winter."], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a2-gr-6-1", question: "Wie fragt man nach dem Weg?", options: ["A) Wo ist der Bahnhof?", "B) Der Bahnhof ist dort.", "C) Ich mag den Bahnhof.", "D) Bahnhof ist gro\u00df."], correct: 0, points: 10 },
+            { id: "a2-gr-6-2", question: "Was passt zu 'Ich gehe...'", options: ["A) gehen.", "B) gehen.", "C) gehe.", "D) geht."], correct: 2, points: 10 },
+            { id: "a2-gr-6-3", question: "Wie sagt man: 'Es gibt viele B\u00fccher.'?", options: ["A) Es gibt viel B\u00fccher.", "B) Es gibt viele Buch.", "C) Es gibt viele B\u00fccher.", "D) Es gibt Buch."], correct: 2, points: 10 },
+            { id: "a2-gr-6-4", question: "Wie fragt man, ob jemand etwas m\u00f6chte?", options: ["A) M\u00f6chtest du einen Apfel?", "B) Du m\u00f6chtest einen Apfel?", "C) Willst einen Apfel?", "D) M\u00f6chte Apfel?"], correct: 0, points: 10 },
+            { id: "a2-gr-6-5", question: "Was ist richtig: 'Ich habe Hunger.' oder 'Ich habe Hunger haben.'?", options: ["A) Ich habe Hunger.", "B) Ich Hunger haben.", "C) Hunger habe ich.", "D) Ich habe Hunger haben."], correct: 0, points: 10 },
           ],
         },
       ],
@@ -454,6 +514,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    6: {
+      title: "Aufgabe 6",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "K\u00fcnstliche Intelligenz (KI) ver\u00e4ndert unsere Welt in rasantem Tempo. Viele Menschen sind begeistert von den M\u00f6glichkeiten, die KI bietet, wie etwa personalisierte Empfehlungen in Online-Shops oder intelligente Assistenzsysteme im Alltag. Doch es gibt auch Bedenken: Experten warnen vor den ethischen Implikationen und der m\u00f6glichen Arbeitsplatzverdr\u00e4ngung. Der gesellschaftliche Diskurs \u00fcber die Vor- und Nachteile von KI wird immer intensiver, da viele sich fragen, wie viel Kontrolle wir \u00fcber diese Technologie haben sollten.",
+          questions: [
+            { id: "b1-lv-6-1", question: "Welche positiven Aspekte der KI werden im Text erw\u00e4hnt?", options: ["Ethische Implikationen", "Personalisierte Empfehlungen", "Arbeitsplatzverdr\u00e4ngung", "Intelligente Assistenzsysteme"], correct: 1, points: 10 },
+            { id: "b1-lv-6-2", question: "Was warnen Experten laut dem Text?", options: ["Vor der Digitalisierung", "Vor den ethischen Implikationen", "Vor neuen Technologien", "Vor der Nutzung im Alltag"], correct: 1, points: 10 },
+            { id: "b1-lv-6-3", question: "Wie ver\u00e4ndert KI unserer Welt?", options: ["Langsam", "Rasant", "Unbemerkt", "Negativ"], correct: 1, points: 10 },
+            { id: "b1-lv-6-4", question: "Was ist ein zentrales Thema im gesellschaftlichen Diskurs \u00fcber KI?", options: ["Die Geschichte der Technologie", "Die Kosten von KI", "Die Kontrolle \u00fcber die Technologie", "Die Verbreitung von KIs"], correct: 2, points: 10 },
+            { id: "b1-lv-6-5", question: "Was sorgt f\u00fcr eine zunehmende Diskussion \u00fcber KI?", options: ["Die Begeisterung der Menschen", "Die Arbeitsplatzverdr\u00e4ngung", "Die Risiken der Technologie", "Die M\u00f6glichkeiten der KI"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b1-gr-6-1", question: "W\u00e4hlen Sie die richtige Form des Verbs: 'Wenn ich mehr Zeit h\u00e4tte, _____ ich mehr lesen.'", options: ["w\u00fcrde", "werde", "wollte", "will"], correct: 0, points: 10 },
+            { id: "b1-gr-6-2", question: "Vervollst\u00e4ndigen Sie den Satz: 'Das Buch, _____ du mir empfohlen hast, war sehr spannend.'", options: ["die", "das", "den", "dem"], correct: 1, points: 10 },
+            { id: "b1-gr-6-3", question: "Welcher Satz ist grammatikalisch korrekt?", options: ["Ich habe keine Angst, dass er nicht kommt.", "Ich habe keine Angst, dass er kommt nicht.", "Ich habe keine Angst, nicht dass er kommt.", "Ich habe keine Angst das er nicht kommt."], correct: 0, points: 10 },
+            { id: "b1-gr-6-4", question: "W\u00e4hlen Sie die richtige Konjunktion: 'Sie wollte ins Kino gehen, _____ es regnete.'", options: ["aber", "und", "oder", "denn"], correct: 0, points: 10 },
+            { id: "b1-gr-6-5", question: "Wie lautet die richtige Form: 'Wenn er morgen kommt, _____ wir zusammen essen.'", options: ["gehen", "gingen", "geht", "gehe"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   b2: {
     1: {
@@ -601,6 +691,36 @@ export const exercises = {
             { id: "b2-gr-5-3", question: "W\u00e4hle die korrekte Konjunktivform: \"Ich w\u00fcnschte, ich ___ mehr Zeit.\"", options: ["habe", "h\u00e4tte", "hatte", "h\u00e4tte gehabt"], correct: 1, points: 10 },
             { id: "b2-gr-5-4", question: "Wie lautet die richtige Pr\u00e4position? \"Interessiert ___ die Quantenmechanik?\"", options: ["an", "f\u00fcr", "\u00fcber", "in"], correct: 0, points: 10 },
             { id: "b2-gr-5-5", question: "Welcher Satz ist grammatikalisch korrekt?", options: ["Er glaubt, dass die Quantenphysik komplex ist.", "Er glaubte, dass die Quantenphysik komplex ist.", "Er glaubt, die Quantenphysik ist komplex.", "Er glauben, dass die Quantenphysik komplex ist."], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    6: {
+      title: "Aufgabe 6",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In einer zunehmend digitalisierten Welt spielt die K\u00fcnstliche Intelligenz (KI) eine entscheidende Rolle in vielen Bereichen unseres Lebens. W\u00e4hrend einige Menschen die Vorteile von KI, wie Effizienzsteigerung und Datenanalyse, sch\u00e4tzen, gibt es auch berechtigte Bedenken hinsichtlich der ethischen Implikationen und der potenziellen Auswirkungen auf die Gesellschaft. Insbesondere die Frage, ob KI Entscheidungen trifft, die menschliche Moral und Ethik ber\u00fccksichtigen, wird intensiver diskutiert. Diese Debatten zeigen die Notwendigkeit eines verantwortungsvollen Umgangs mit dieser Technologie.",
+          questions: [
+            { id: "b2-lv-6-1", question: "Was sind die Vorteile von K\u00fcnstlicher Intelligenz?", options: ["Ethische Implikationen", "Effizienzsteigerung", "Datenanalyse", "Beide B und C"], correct: 3, points: 10 },
+            { id: "b2-lv-6-2", question: "Welche Bedenken gibt es hinsichtlich K\u00fcnstlicher Intelligenz?", options: ["Steigerung der Effizienz", "Ethische Implikationen", "Bessere Datenanalyse", "Keine Bedenken"], correct: 1, points: 10 },
+            { id: "b2-lv-6-3", question: "Was wird in den Debatten \u00fcber K\u00fcnstliche Intelligenz hervorgehoben?", options: ["Die Notwendigkeit von mehr KI", "Der verantwortungsvolle Umgang mit Technologie", "Die Abh\u00e4ngigkeit von Menschen", "Die Erschaffung von mehr Arbeitspl\u00e4tzen"], correct: 1, points: 10 },
+            { id: "b2-lv-6-4", question: "Welches Thema wird in der Diskussion um K\u00fcnstliche Intelligenz betont?", options: ["Technologische Entwicklungen", "Menschliche Moral und Ethik", "Globalisierung", "Umweltfragen"], correct: 1, points: 10 },
+            { id: "b2-lv-6-5", question: "Wie beeinflusst K\u00fcnstliche Intelligenz unser Leben?", options: ["Erh\u00f6ht die Arbeitslosigkeit", "Spielt keine Rolle", "Hat einen gro\u00dfen Einfluss", "Ver\u00e4ndert nichts"], correct: 2, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b2-gr-6-1", question: "Welcher Satz ist korrekt?", options: ["Es ist wichtig, dass man die ethischen Fragen ber\u00fccksichtigt.", "Es ist wichtig, dass man die ethischen Fragen ber\u00fccksicht.", "Es ist wichtig, dass man die ethischen Fragen ber\u00fccksichtige.", "Es ist wichtig, dass man die ethischen Fragen ber\u00fccksichtigt haben."], correct: 0, points: 10 },
+            { id: "b2-gr-6-2", question: "W\u00e4hlen Sie die richtige Form des Verbs: \u201eWenn ich mehr Zeit h\u00e4tte, __________ ich mehr lesen.\u201c", options: ["w\u00fcrde", "werde", "wollte", "h\u00e4tte"], correct: 0, points: 10 },
+            { id: "b2-gr-6-3", question: "Welches Wort ist ein Synonym f\u00fcr 'entscheidend'?", options: ["wichtig", "neutral", "unbedeutend", "unentschieden"], correct: 0, points: 10 },
+            { id: "b2-gr-6-4", question: "Welcher Satz enth\u00e4lt einen grammatikalischen Fehler?", options: ["Die Debatte \u00fcber K\u00fcnstliche Intelligenz ist komplex.", "Viele Menschen haben eine unterschiedliche Meinung.", "K\u00fcnstliche Intelligenz beeinflusst unsere Leben.", "Ethische Fragen m\u00fcssen ernst genommen werden."], correct: 2, points: 10 },
+            { id: "b2-gr-6-5", question: "W\u00e4hlen Sie die korrekte Pr\u00e4position: \u201eDie Diskussion _______ K\u00fcnstlicher Intelligenz ist aktuell.\u201c", options: ["\u00fcber", "mit", "von", "in"], correct: 0, points: 10 },
           ],
         },
       ],
