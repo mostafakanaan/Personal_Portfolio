@@ -144,15 +144,17 @@ export function AnimatedButton({ children, href, className, target, rel, delay =
   );
 }
 
+const FLOATING_PARTICLES = Array.from({ length: 8 }, (_, i) => ({
+  id: i,
+  x: Math.random() * 100,
+  y: Math.random() * 100,
+  size: 2 + Math.random() * 3,
+  duration: 20 + Math.random() * 15,
+  delay: Math.random() * 5,
+}));
+
 export function FloatingParticles() {
-  const particles = Array.from({ length: 8 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: 2 + Math.random() * 3,
-    duration: 20 + Math.random() * 15,
-    delay: Math.random() * 5,
-  }));
+  const particles = FLOATING_PARTICLES;
 
   return (
     <div className="floatingParticles" aria-hidden="true">

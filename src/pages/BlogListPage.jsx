@@ -15,7 +15,7 @@ function getInitialLang() {
 
 export default function BlogListPage() {
   const [lang, setLang] = useState(getInitialLang);
-  const meta = useMemo(() => LANGS.find((x) => x.code === lang) || LANGS[0], [lang]);
+  const _Meta = useMemo(() => LANGS.find((x) => x.code === lang) || LANGS[0], [lang]);
   const t = T[lang] || T.en;
 
   const allTags = [...new Set(blogPosts.flatMap((p) => p.tags))];

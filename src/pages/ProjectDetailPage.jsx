@@ -81,7 +81,7 @@ function StatusBadge({ status }) {
   );
 }
 
-export default function ProjectDetailPage({ t, lang, setLang, meta, profileView }) {
+export default function ProjectDetailPage({ t, lang, setLang, profileView }) {
   const { slug } = useParams();
 
   const project = useMemo(() => {

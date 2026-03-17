@@ -2,9 +2,22 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
+// Pre-generate particle data at module level to avoid impure calls during render
+const CARD_PARTICLE_SETS = Array.from({ length: 20 }, () =>
+  [...Array(5)].map((_, i) => ({
+    id: i,
+    initX: Math.random() * 100,
+    initY: 100 + Math.random() * 20,
+    animX: Math.random() * 100,
+    duration: 1.5 + Math.random(),
+  }))
+);
+
 export default function ProjectCardEnhanced({ p, index = 0 }) {
   const ref = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
+
+  const particleData = CARD_PARTICLE_SETS[index % CARD_PARTICLE_SETS.length];
 
   // Mouse position for 3D tilt effect
   const x = useMotionValue(0.5);
@@ -114,24 +127,24 @@ export default function ProjectCardEnhanced({ p, index = 0 }) {
           {/* Floating particles on hover */}
           {isHovered && (
             <>
-              {[...Array(5)].map((_, i) => (
+              {particleData.map((pd) => (
                 <motion.div
-                  key={i}
+                  key={pd.id}
                   className="cardParticle"
                   initial={{ 
-                    x: Math.random() * 100, 
-                    y: 100 + Math.random() * 20,
+                    x: pd.initX, 
+                    y: pd.initY,
                     opacity: 0 
                   }}
                   animate={{
                     y: -20,
                     opacity: [0, 1, 0],
-                    x: Math.random() * 100,
+                    x: pd.animX,
                   }}
                   transition={{
-                    duration: 1.5 + Math.random(),
+                    duration: pd.duration,
                     repeat: Infinity,
-                    delay: i * 0.2,
+                    delay: pd.id * 0.2,
                   }}
                 />
               ))}

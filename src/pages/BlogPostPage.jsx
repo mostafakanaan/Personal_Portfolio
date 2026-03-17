@@ -28,7 +28,7 @@ export default function BlogPostPage() {
   const navigate = useNavigate();
   const post = getPostBySlug(slug);
   const [lang, setLang] = useState(getInitialLang);
-  const meta = useMemo(() => LANGS.find((x) => x.code === lang) || LANGS[0], [lang]);
+  const _Meta = useMemo(() => LANGS.find((x) => x.code === lang) || LANGS[0], [lang]);
   const t = T[lang] || T.en;
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(true);
@@ -38,11 +38,11 @@ export default function BlogPostPage() {
     const key = Object.keys(markdownFiles).find((k) =>
       k.endsWith(`${slug}.md`)
     );
-    if (!key) { setContent("# Content not found"); setLoading(false); return; }
-    markdownFiles[key]().then((raw) => {
-      // Strip frontmatter
-      const stripped = raw.replace(/^---[\s\S]*?---\n?/, "");
-      setContent(stripped);
+    const loadContent = key
+      ? markdownFiles[key]().then((raw) => raw.replace(/^---[\s\S]*?---\n?/, ""))
+      : Promise.resolve("# Content not found");
+    loadContent.then((text) => {
+      setContent(text);
       setLoading(false);
     });
   }, [slug, post, navigate]);
@@ -99,7 +99,7 @@ export default function BlogPostPage() {
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  code({ node, inline, className, children, ...props }) {
+                  code({ inline, className, children, ...props }) {
                     const match = /language-(\w+)/.exec(className || "");
                     return !inline && match ? (
                       <SyntaxHighlighter
