@@ -11,6 +11,8 @@ import AufgabenPage from "./pages/AufgabenPage";
 import AufgabeDetailPage from "./pages/AufgabeDetailPage";
 import QuizPage from "./pages/QuizPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
+import BlogListPage from "./pages/BlogListPage";
+import BlogPostPage from "./pages/BlogPostPage";
 import Background from "./components/Background";
 import { AnimatedSkillGroup } from "./components/AnimatedSkillChip";
 import AnimatedExperienceCard from "./components/AnimatedExperienceCard";
@@ -166,6 +168,9 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
                   </AnimatedButton>
                   <AnimatedButton className="btn btnGhost" href={profileView.links.linkedin} target="_blank" rel="noreferrer" delay={1.4}>
                     LinkedIn
+                  </AnimatedButton>
+                  <AnimatedButton className="btn btnGhost" href="/blog" delay={1.5}>
+                    Blog
                   </AnimatedButton>
                 </motion.div>
               </div>
@@ -764,6 +769,8 @@ export default function App() {
           <ProjectDetailPage t={t} lang={lang} setLang={setLang} meta={meta} profileView={profileView} />
         }
       />
+      <Route path="/blog" element={<BlogListPage />} />
+      <Route path="/blog/:slug" element={<BlogPostPage />} />
       <Route path="/chat" element={<ChatPage />} />
       <Route path="/DfA/Aufgaben" element={<AufgabenPage />} />
       <Route path="/DfA/Aufgaben/:number" element={<AufgabeDetailPage />} />
