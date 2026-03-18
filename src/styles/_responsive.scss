@@ -75,13 +75,19 @@
     font-size: 13px;
   }
 
-  .heroActions {
+  /* Ensure all variants of hero action containers are centered */
+  .heroActions,
+  .hero .actions,
+  .hero .heroActions,
+  .actions {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .heroActions .btn {
+  .heroActions .btn,
+  .hero .actions .btn,
+  .actions .btn {
     margin: 0.5rem 0;
     width: auto;
     justify-content: center;
