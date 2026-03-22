@@ -210,6 +210,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    8: {
+      title: "Aufgabe 8",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In der Stadt gibt es einen gro\u00dfen Park. Der Park hat viele B\u00e4ume und Blumen. Kinder spielen hier am Nachmittag. Es gibt auch einen See mit Enten. Die Menschen gehen gerne spazieren und lesen B\u00fccher im Park. Der Park ist ein sch\u00f6ner Ort zum Entspannen.",
+          questions: [
+            { id: "a1-lv-8-1", question: "Was gibt es im Park?", options: ["B\u00e4ume", "Geb\u00e4ude", "Autos", "Schulen"], correct: 0, points: 10 },
+            { id: "a1-lv-8-2", question: "Was machen Kinder im Park?", options: ["Arbeiten", "Spielen", "Schlafen", "Essen"], correct: 1, points: 10 },
+            { id: "a1-lv-8-3", question: "Was schwimmt im See?", options: ["Fische", "Enten", "Schw\u00e4ne", "Katzen"], correct: 1, points: 10 },
+            { id: "a1-lv-8-4", question: "Was lesen die Menschen im Park?", options: ["Zeitungen", "B\u00fccher", "Briefe", "Men\u00fckarten"], correct: 1, points: 10 },
+            { id: "a1-lv-8-5", question: "Ist der Park ein Ort zum Entspannen?", options: ["Ja", "Nein", "Vielleicht", "Nie"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a1-gr-8-1", question: "Welches Wort ist richtig? Ich ___ im Park.", options: ["spiele", "spielst", "spielen", "spielen"], correct: 0, points: 10 },
+            { id: "a1-gr-8-2", question: "Was ist der Plural von 'Blume'?", options: ["Blumen", "Bl\u00fcmchen", "Blumenchen", "Blumens"], correct: 0, points: 10 },
+            { id: "a1-gr-8-3", question: "Welches Wort passt? Die Enten ___ am See.", options: ["schwimmt", "schwimmen", "schwimmst", "schwimm"], correct: 1, points: 10 },
+            { id: "a1-gr-8-4", question: "Welches Wort ist korrekt? Ich ____ im Park lese.", options: ["ein", "eine", "einen", "einem"], correct: 1, points: 10 },
+            { id: "a1-gr-8-5", question: "Was ist richtig? Der Park ist ___ sch\u00f6n.", options: ["eine", "einem", "ein", "einen"], correct: 2, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   a2: {
     1: {
@@ -417,6 +447,36 @@ export const exercises = {
             { id: "a2-gr-7-3", question: "Vervollst\u00e4ndige den Satz: Sie gehen ____ Caf\u00e9.", options: ["zu", "in", "an", "auf"], correct: 1, points: 10 },
             { id: "a2-gr-7-4", question: "Wie sagt man: Ich finde die Katzen s\u00fc\u00df.", options: ["Ich finde die Katzen s\u00fc\u00df.", "Ich finde die Katze s\u00fc\u00df.", "Ich finde die Katzen s\u00fc\u00dfe.", "Ich finde die Katzen s\u00fc\u00dfes."], correct: 0, points: 10 },
             { id: "a2-gr-7-5", question: "Was ist die richtige Frageform: ____ du Katzen?", options: ["Hast", "Haste", "Hast du", "Du hast"], correct: 2, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    8: {
+      title: "Aufgabe 8",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In der Stadt gibt es einen kleinen Park mit vielen bunten Blumen. Jeden Sonntag kommen die Menschen hierher, um zu entspannen und die Natur zu genie\u00dfen. Einige bringen ihre Kinder mit, andere lesen ein Buch oder essen ein Eis. Der Park hat auch einen Teich mit Enten, die oft nach Brot suchen. Viele Leute fotografieren die sch\u00f6nen Blumen und die fr\u00f6hlichen Enten.",
+          questions: [
+            { id: "a2-lv-8-1", question: "Was gibt es im Park?", options: ["B\u00e4ume", "Blumen", "Autos", "H\u00e4user"], correct: 1, points: 10 },
+            { id: "a2-lv-8-2", question: "Was machen die Menschen im Park?", options: ["Sie arbeiten", "Sie entspannen", "Sie spielen Fu\u00dfball", "Sie fahren Rad"], correct: 1, points: 10 },
+            { id: "a2-lv-8-3", question: "Was suchen die Enten im Teich?", options: ["Essen", "Spielzeuge", "Freunde", "B\u00fccher"], correct: 0, points: 10 },
+            { id: "a2-lv-8-4", question: "Wann kommen die Menschen in den Park?", options: ["Montag", "Freitag", "Sonntag", "Samstag"], correct: 2, points: 10 },
+            { id: "a2-lv-8-5", question: "Was fotografieren die Leute?", options: ["Enten", "Autos", "Menschen", "Geb\u00e4ude"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a2-gr-8-1", question: "Wie sagt man: 'Ich habe einen Hund' im Plural?", options: ["Wir haben einen Hund", "Ich habe Hunde", "Wir haben Hunde", "Sie haben einen Hund"], correct: 2, points: 10 },
+            { id: "a2-gr-8-2", question: "Was ist die richtige Form?: 'Er (spielen) Fu\u00dfball.'", options: ["spielt", "spiele", "spielen", "spielst"], correct: 0, points: 10 },
+            { id: "a2-gr-8-3", question: "Wie sagt man: 'Das ist mein Freund.' f\u00fcr mehrere Freunde?", options: ["Das sind meine Freunde.", "Das sind mein Freund.", "Das ist meine Freundinnen.", "Das ist mein Freunde."], correct: 0, points: 10 },
+            { id: "a2-gr-8-4", question: "Welche Form ist richtig?: 'Sie (gehen) ins Kino.'", options: ["gehst", "gehen", "gehe", "geht"], correct: 1, points: 10 },
+            { id: "a2-gr-8-5", question: "Vervollst\u00e4ndige den Satz: 'Ich mag (Eis) sehr.'", options: ["die Eis", "das Eis", "eis", "eises"], correct: 1, points: 10 },
           ],
         },
       ],
@@ -634,6 +694,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    8: {
+      title: "Aufgabe 8",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Zukunft der Nahrung ist ein spannendes Thema. Wissenschaftler erforschen alternative Proteinquellen, um die wachsende Weltbev\u00f6lkerung zu ern\u00e4hren. Insekten und pflanzliche Proteine sind vielversprechende Optionen, die weniger Ressourcen verbrauchen als traditionelle Fleischprodukte. W\u00e4hrend einige Menschen skeptisch sind, sehen andere in diesen Innovationen die L\u00f6sung f\u00fcr Umweltprobleme und Hunger weltweit.",
+          questions: [
+            { id: "b1-lv-8-1", question: "Was erforschen Wissenschaftler?", options: ["Alternative Proteinquellen", "Neue Kochrezepte", "Traditionelle Fleischgerichte", "Gem\u00fcsesorten"], correct: 0, points: 10 },
+            { id: "b1-lv-8-2", question: "Welche zwei alternativen Proteinquellen werden erw\u00e4hnt?", options: ["Fisch und Eier", "Insekten und pflanzliche Proteine", "Milch und K\u00e4se", "Reis und Bohnen"], correct: 1, points: 10 },
+            { id: "b1-lv-8-3", question: "Was ist ein Vorteil von Insekten und pflanzlichen Proteinen?", options: ["Sie sind teuer zu produzieren.", "Sie verursachen weniger Umweltsch\u00e4den.", "Sie sind schwer zu finden.", "Sie sind nicht gesund."], correct: 1, points: 10 },
+            { id: "b1-lv-8-4", question: "Wie reagieren die Menschen auf diese neuen Lebensmittel?", options: ["Alle sind begeistert.", "Die Meinungen sind gespalten.", "Niemand interessiert sich daf\u00fcr.", "Alle lehnen sie ab."], correct: 1, points: 10 },
+            { id: "b1-lv-8-5", question: "Worin sehen einige Menschen eine L\u00f6sung?", options: ["In traditionellen Lebensmittelproduktionen", "In Innovationen wie Insektenessen", "In der Erh\u00f6hung des Fleischkonsums", "In der Reduzierung der Bev\u00f6lkerung"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b1-gr-8-1", question: "Welches Wort bringt die Meinung des Autors am besten zum Ausdruck?", options: ["Vielleicht", "Sicher", "Unbedingt", "Wahrscheinlich"], correct: 3, points: 10 },
+            { id: "b1-gr-8-2", question: "Wie lautet die richtige Form des Verbs in folgendem Satz: 'Die neuen Produkte ___ (sein) sehr beliebt.'?", options: ["ist", "sind", "war", "waren"], correct: 1, points: 10 },
+            { id: "b1-gr-8-3", question: "Welche Pr\u00e4position ist korrekt: 'Sie interessiert sich ___ alternative Ern\u00e4hrung.'?", options: ["an", "f\u00fcr", "\u00fcber", "auf"], correct: 1, points: 10 },
+            { id: "b1-gr-8-4", question: "Welches Wort beschreibt die M\u00f6glichkeit: 'Es ___ sein, dass viele Menschen die Idee unterst\u00fctzen.'?", options: ["k\u00f6nnte", "wird", "sollte", "muss"], correct: 0, points: 10 },
+            { id: "b1-gr-8-5", question: "Wie lautet die richtige Vergangenheitsform: 'In der Zukunft ___ (essen) wir vielleicht anders.'?", options: ["a\u00dfen", "essen", "gegessen", "gegessen haben"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   b2: {
     1: {
@@ -841,6 +931,36 @@ export const exercises = {
             { id: "b2-gr-7-3", question: "Welcher Satz enth\u00e4lt ein Adverb?", options: ["Die Algorithmen handeln schnell.", "Die Entscheidungen sind eindeutig.", "Menschen m\u00fcssen Verantwortung \u00fcbernehmen.", "Die Maschinen arbeiten effizient."], correct: 0, points: 10 },
             { id: "b2-gr-7-4", question: "In welchem Satz ist die Grammatik fehlerhaft?", options: ["Die Entscheidung wurde getroffen von den Algorithmen.", "Die Maschinen lernen st\u00e4ndig dazu.", "K\u00fcnstliche Intelligenz ver\u00e4ndert unsere Welt.", "Wir m\u00fcssen die Risiken erkennen."], correct: 0, points: 10 },
             { id: "b2-gr-7-5", question: "Welcher Satz ist im Futur geschrieben?", options: ["Wir diskutieren \u00fcber die ethischen Fragen.", "Die Maschinen werden in Zukunft noch wichtiger sein.", "Es ist notwendig, Verantwortung zu \u00fcbernehmen.", "Die Menschen lernen von ihren Fehlern."], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    8: {
+      title: "Aufgabe 8",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Entwicklung von K\u00fcnstlicher Intelligenz (KI) hat nicht nur die Technologiebranche revolutioniert, sondern auch grundlegende ethische Fragen aufgeworfen. In vielen Bereichen, von der Medizin bis zur Kunst, zeigt sich, wie Maschinen menschliche Kreativit\u00e4t und Entscheidungsfindung imitieren k\u00f6nnen. Die Diskussion \u00fcber die Verantwortung f\u00fcr die Entscheidungen von KI-Systemen ist komplex, da sie oft auf Algorithmen basieren, die nicht immer transparent sind. W\u00e4hrend einige Experten die M\u00f6glichkeiten von KI loben, warnen andere vor den potenziellen Gefahren, die mit ihrer unkontrollierten Nutzung einhergehen.",
+          questions: [
+            { id: "b2-lv-8-1", question: "Welches Thema wird im Lesetext behandelt?", options: ["A) Die ethischen Fragen der K\u00fcnstlichen Intelligenz", "B) Die Geschichte der Technologie", "C) Die Vorteile von traditionellen Methoden", "D) Die Bedeutung der Kreativit\u00e4t"], correct: 0, points: 10 },
+            { id: "b2-lv-8-2", question: "Was ist ein zentrales Problem im Zusammenhang mit KI laut dem Text?", options: ["A) Transparente Algorithmen", "B) Menschliche Kreativit\u00e4t", "C) Die Kosten von KI-Systemen", "D) Einfache Entscheidungsfindung"], correct: 0, points: 10 },
+            { id: "b2-lv-8-3", question: "Welche Haltung nehmen die Experten zur Nutzung von KI ein?", options: ["A) Sie sind einhellig positiv", "B) Sie sind besorgt \u00fcber die Risiken", "C) Sie lehnen alle neuen Technologien ab", "D) Sie fordern mehr Schulungen"], correct: 1, points: 10 },
+            { id: "b2-lv-8-4", question: "In welchen Bereichen wird KI im Text erw\u00e4hnt?", options: ["A) Nur in der Medizin", "B) Nur in der Kunst", "C) In vielen Bereichen", "D) Nur in der Technologiebranche"], correct: 2, points: 10 },
+            { id: "b2-lv-8-5", question: "Was k\u00f6nnte eine m\u00f6gliche Gefahr im Zusammenhang mit KI sein?", options: ["A) Mangelnde Kreativit\u00e4t", "B) Unkontrollierte Nutzung", "C) \u00dcberm\u00e4\u00dfige Transparenz", "D) Hohe Kosten"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b2-gr-8-1", question: "Welcher Satz ist grammatikalisch korrekt?", options: ["A) Wenn ich Zeit h\u00e4tte, ich w\u00fcrde reisen.", "B) Ich w\u00fcnschte, ich h\u00e4tte nie das getan.", "C) Er h\u00e4tte kommen k\u00f6nnen, wenn er gewollt h\u00e4tte.", "D) Sie wusste, dass er kommt nicht."], correct: 2, points: 10 },
+            { id: "b2-gr-8-2", question: "Welche Form ist die richtige Konjunktiv II-Form von 'gehen'?", options: ["A) gehe", "B) geht", "C) ginge", "D) ging"], correct: 2, points: 10 },
+            { id: "b2-gr-8-3", question: "Welches Wort passt nicht in die Reihe?", options: ["A) w\u00e4hrend", "B) weil", "C) aber", "D) obwohl"], correct: 2, points: 10 },
+            { id: "b2-gr-8-4", question: "Wie lautet der richtige Superlativ von 'gut'?", options: ["A) besser", "B) am besten", "C) gutest", "D) gut"], correct: 1, points: 10 },
+            { id: "b2-gr-8-5", question: "Welcher Satz verwendet den richtigen Kasus?", options: ["A) Ich freue mich auf dein Besuch.", "B) Sie hilft dem alten Mann.", "C) Er denkt \u00fcber den Vorschlag nach.", "D) Wir warten auf die Ergebnisse."], correct: 1, points: 10 },
           ],
         },
       ],
