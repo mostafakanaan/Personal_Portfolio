@@ -240,6 +240,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    9: {
+      title: "Aufgabe 9",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In der Stadt gibt es einen gro\u00dfen Park. Im Park spielen viele Kinder. Es gibt auch einen sch\u00f6nen See. Viele Menschen kommen hierher, um zu entspannen. Im Park kann man auch Tiere sehen, zum Beispiel Enten und Eichh\u00f6rnchen.",
+          questions: [
+            { id: "a1-lv-9-1", question: "Was gibt es im Park?", options: ["Ein Kino", "Ein gro\u00dfer Park", "Ein Restaurant", "Ein Museum"], correct: 1, points: 10 },
+            { id: "a1-lv-9-2", question: "Was spielen die Kinder?", options: ["Fu\u00dfball", "Klavier", "Schach", "Tennis"], correct: 0, points: 10 },
+            { id: "a1-lv-9-3", question: "Was kann man im Park sehen?", options: ["Autos", "Enten", "Z\u00fcge", "H\u00e4user"], correct: 1, points: 10 },
+            { id: "a1-lv-9-4", question: "Warum kommen die Menschen in den Park?", options: ["Um zu arbeiten", "Um zu entspannen", "Um zu lernen", "Um einzukaufen"], correct: 1, points: 10 },
+            { id: "a1-lv-9-5", question: "Wie viele Tiere werden im Park erw\u00e4hnt?", options: ["Ein Tier", "Zwei Tiere", "Drei Tiere", "Keine Tiere"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a1-gr-9-1", question: "Wie sagt man: 'Ich ____ im Park.'?", options: ["spiele", "spielen", "spiel", "spielst"], correct: 0, points: 10 },
+            { id: "a1-gr-9-2", question: "Was ist die richtige Form?: 'Die Kinder _____ im Park.'", options: ["spielt", "spielen", "spielst", "spielen"], correct: 1, points: 10 },
+            { id: "a1-gr-9-3", question: "Wie fragt man: '_____ du im Park?'", options: ["Hast", "Gehen", "Bist", "Was"], correct: 2, points: 10 },
+            { id: "a1-gr-9-4", question: "Vervollst\u00e4ndige den Satz: 'Es gibt viele _____ im Park.'", options: ["Baum", "B\u00e4ume", "Baumes", "B\u00e4um"], correct: 1, points: 10 },
+            { id: "a1-gr-9-5", question: "Wie sagt man: 'Ich sehe _____ Enten.'?", options: ["die", "den", "das", "der"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   a2: {
     1: {
@@ -477,6 +507,36 @@ export const exercises = {
             { id: "a2-gr-8-3", question: "Wie sagt man: 'Das ist mein Freund.' f\u00fcr mehrere Freunde?", options: ["Das sind meine Freunde.", "Das sind mein Freund.", "Das ist meine Freundinnen.", "Das ist mein Freunde."], correct: 0, points: 10 },
             { id: "a2-gr-8-4", question: "Welche Form ist richtig?: 'Sie (gehen) ins Kino.'", options: ["gehst", "gehen", "gehe", "geht"], correct: 1, points: 10 },
             { id: "a2-gr-8-5", question: "Vervollst\u00e4ndige den Satz: 'Ich mag (Eis) sehr.'", options: ["die Eis", "das Eis", "eis", "eises"], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    9: {
+      title: "Aufgabe 9",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Stadt Berlin hat viele unentdeckte Orte. In einem kleinen Park im Stadtzentrum gibt es einen geheimen Garten. Dieser Garten hat bunte Blumen und eine kleine Bank. Viele Menschen wissen nicht, dass er existiert. Hier kann man in Ruhe lesen oder einfach die Natur genie\u00dfen.",
+          questions: [
+            { id: "a2-lv-9-1", question: "Was gibt es im geheimen Garten?", options: ["V\u00f6gel", "Bunte Blumen", "Ein Spielplatz", "Ein Caf\u00e9"], correct: 1, points: 10 },
+            { id: "a2-lv-9-2", question: "Wo befindet sich der geheime Garten?", options: ["In einem gro\u00dfen Park", "Im Stadtzentrum", "In einem Wohngebiet", "Neben einem Museum"], correct: 1, points: 10 },
+            { id: "a2-lv-9-3", question: "Was kann man im Garten machen?", options: ["Essen", "Schlafen", "Lesen oder die Natur genie\u00dfen", "Sport treiben"], correct: 2, points: 10 },
+            { id: "a2-lv-9-4", question: "Wissen viele Menschen von diesem Garten?", options: ["Ja, alle wissen es", "Nein, viele wissen es nicht", "Nur Touristen wissen es", "Die meisten wissen es"], correct: 1, points: 10 },
+            { id: "a2-lv-9-5", question: "Was ist besonders an diesem Garten?", options: ["Er ist sehr gro\u00df", "Er hat keine Blumen", "Er ist geheim", "Er ist kostenlos"], correct: 2, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a2-gr-9-1", question: "Wie sagt man richtig: 'Ich ... gern B\u00fccher.'?", options: ["lesen", "lebe", "liebe", "lerne"], correct: 2, points: 10 },
+            { id: "a2-gr-9-2", question: "Was ist die richtige Form: 'Das ist ... Hund.'?", options: ["mein", "meineren", "meinen", "meine"], correct: 0, points: 10 },
+            { id: "a2-gr-9-3", question: "Wie fragt man richtig: 'Wo ... du?'?", options: ["gehst", "geh", "gehst du", "geht"], correct: 2, points: 10 },
+            { id: "a2-gr-9-4", question: "Vervollst\u00e4ndige den Satz: 'Ich m\u00f6chte einen Kaffee, ...?'", options: ["willst du", "will", "muss", "kann"], correct: 0, points: 10 },
+            { id: "a2-gr-9-5", question: "Was ist die richtige Antwort: 'Wie alt bist du?' 'Ich ... Jahre alt.'", options: ["bin", "ist", "habe", "sehe"], correct: 0, points: 10 },
           ],
         },
       ],
@@ -724,6 +784,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    9: {
+      title: "Aufgabe 9",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In der heutigen Zeit gewinnt das Thema Urban Gardening immer mehr an Bedeutung. Immer mehr Menschen nutzen kleine Fl\u00e4chen in St\u00e4dten, um ihre eigenen Pflanzen anzubauen. Dies ist nicht nur eine M\u00f6glichkeit, frisches Gem\u00fcse zu ernten, sondern f\u00f6rdert auch die Gemeinschaft und das Bewusstsein f\u00fcr nachhaltige Ern\u00e4hrung. Durch Urban Gardening k\u00f6nnen Stadtbewohner ihre Umgebung begr\u00fcnen und gleichzeitig einen Beitrag zum Umweltschutz leisten. Viele Initiativen bieten Workshops an, um Interessierten die Grundlagen des G\u00e4rtnerns n\u00e4herzubringen.",
+          questions: [
+            { id: "b1-lv-9-1", question: "Was ist Urban Gardening?", options: ["A) Ein neuer Sport", "B) G\u00e4rtnern in St\u00e4dten", "C) Ein Restaurantkonzept", "D) Eine Art von Architektur"], correct: 1, points: 10 },
+            { id: "b1-lv-9-2", question: "Warum ist Urban Gardening wichtig?", options: ["A) Es schafft Arbeitspl\u00e4tze", "B) Es f\u00f6rdert Gemeinschaft und Umweltbewusstsein", "C) Es ist teuer", "D) Es ist nur f\u00fcr reiche Menschen"], correct: 1, points: 10 },
+            { id: "b1-lv-9-3", question: "Was k\u00f6nnen Menschen durch Urban Gardening lernen?", options: ["A) Kochen", "B) Gitarre spielen", "C) G\u00e4rtnern", "D) Programmieren"], correct: 2, points: 10 },
+            { id: "b1-lv-9-4", question: "Welche Vorteile hat Urban Gardening?", options: ["A) Weniger Verkehr", "B) Frisches Gem\u00fcse und mehr Gr\u00fcnfl\u00e4chen", "C) H\u00f6here Mieten", "D) Mehr L\u00e4rm"], correct: 1, points: 10 },
+            { id: "b1-lv-9-5", question: "Was bieten viele Initiativen an?", options: ["A) Workshops zum G\u00e4rtnern", "B) Kochkurse", "C) Fitnessprogramme", "D) Reisen"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b1-gr-9-1", question: "W\u00e4hle die richtige Form: 'Wenn ich mehr Zeit __________, w\u00fcrde ich \u00f6fter g\u00e4rtnern.'", options: ["A) habe", "B) hat", "C) hatte", "D) haben"], correct: 0, points: 10 },
+            { id: "b1-gr-9-2", question: "Vervollst\u00e4ndige den Satz: 'Es ist wichtig, dass wir __________ Umwelt sch\u00fctzen.'", options: ["A) die", "B) den", "C) das", "D) der"], correct: 0, points: 10 },
+            { id: "b1-gr-9-3", question: "W\u00e4hle die richtige Pr\u00e4position: 'Ich interessiere mich __________ G\u00e4rtnern.'", options: ["A) f\u00fcr", "B) an", "C) in", "D) \u00fcber"], correct: 0, points: 10 },
+            { id: "b1-gr-9-4", question: "W\u00e4hle die richtige Form: 'Die Pflanzen __________ gut gew\u00e4ssert werden m\u00fcssen.'", options: ["A) dass", "B) wo", "C) weil", "D) wenn"], correct: 2, points: 10 },
+            { id: "b1-gr-9-5", question: "Setze das Verb richtig ein: 'Wir __________ heute im Garten arbeiten.'", options: ["A) wird", "B) werden", "C) sind", "D) haben"], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   b2: {
     1: {
@@ -961,6 +1051,36 @@ export const exercises = {
             { id: "b2-gr-8-3", question: "Welches Wort passt nicht in die Reihe?", options: ["A) w\u00e4hrend", "B) weil", "C) aber", "D) obwohl"], correct: 2, points: 10 },
             { id: "b2-gr-8-4", question: "Wie lautet der richtige Superlativ von 'gut'?", options: ["A) besser", "B) am besten", "C) gutest", "D) gut"], correct: 1, points: 10 },
             { id: "b2-gr-8-5", question: "Welcher Satz verwendet den richtigen Kasus?", options: ["A) Ich freue mich auf dein Besuch.", "B) Sie hilft dem alten Mann.", "C) Er denkt \u00fcber den Vorschlag nach.", "D) Wir warten auf die Ergebnisse."], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    9: {
+      title: "Aufgabe 9",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Philosophie des Stoizismus hat in der modernen Welt an Bedeutung gewonnen, da sie Individuen lehrt, innere Ruhe und Gelassenheit zu finden. Stoiker glauben, dass das Gl\u00fcck nicht von \u00e4u\u00dferen Umst\u00e4nden abh\u00e4ngt, sondern von der eigenen Einstellung. In Zeiten von Stress und Unsicherheit bietet diese Denkweise wertvolle Werkzeuge, um mit Herausforderungen umzugehen. Durch Selbstreflexion und das Akzeptieren von Dingen, die au\u00dferhalb unserer Kontrolle liegen, k\u00f6nnen wir ein erf\u00fcllteres Leben f\u00fchren.",
+          questions: [
+            { id: "b2-lv-9-1", question: "Was ist ein zentrales Konzept des Stoizismus?", options: ["Das Streben nach Reichtum", "Innere Ruhe und Gelassenheit", "Der Einfluss von Schicksal", "Die Suche nach Anerkennung"], correct: 1, points: 10 },
+            { id: "b2-lv-9-2", question: "Wie k\u00f6nnen Menschen laut Stoikern Herausforderungen bew\u00e4ltigen?", options: ["Durch materielle Gewinne", "Indem sie ihre Anspr\u00fcche erh\u00f6hen", "Durch Selbstreflexion und Akzeptanz", "Indem sie andere verantwortlich machen"], correct: 2, points: 10 },
+            { id: "b2-lv-9-3", question: "Was h\u00e4ngt laut Stoikern nicht vom \u00e4u\u00dferen Umfeld ab?", options: ["Stress", "Gl\u00fcck", "Erfolg", "Freundschaft"], correct: 1, points: 10 },
+            { id: "b2-lv-9-4", question: "Welche F\u00e4higkeiten f\u00f6rdert der Stoizismus?", options: ["Materieller Erfolg", "Nervosit\u00e4t", "Innere St\u00e4rke", "\u00dcberheblichkeit"], correct: 2, points: 10 },
+            { id: "b2-lv-9-5", question: "In welcher Zeit gewinnt die Stoizismus-Philosophie an Bedeutung?", options: ["In der Antike", "Im modernen Kontext", "In der Zukunft", "In der Vergangenheit"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b2-gr-9-1", question: "Welcher Satz ist im Konjunktiv II formuliert?", options: ["Wenn ich mehr Zeit h\u00e4tte, w\u00fcrde ich reisen.", "Ich habe mehr Zeit als zuvor.", "Ich reise oft, wenn ich kann.", "Ich werde reisen, wenn ich Zeit habe."], correct: 0, points: 10 },
+            { id: "b2-gr-9-2", question: "Welches Wort ist ein Beispiel f\u00fcr eine h\u00e4ufige Pr\u00e4position im Deutschen?", options: ["schneller", "mit", "sch\u00f6n", "laufen"], correct: 1, points: 10 },
+            { id: "b2-gr-9-3", question: "Welcher Satz ist im Passiv formuliert?", options: ["Der Hund bei\u00dft den Mann.", "Der Mann wird vom Hund gebissen.", "Der Mann bei\u00dft den Hund.", "Der Hund l\u00e4uft schnell."], correct: 1, points: 10 },
+            { id: "b2-gr-9-4", question: "Welche Zeitform wird im folgenden Satz verwendet: 'Ich hatte gegessen'?", options: ["Pr\u00e4sens", "Perfekt", "Imperfekt", "Plusquamperfekt"], correct: 3, points: 10 },
+            { id: "b2-gr-9-5", question: "Welches Wort ist ein Adverb?", options: ["schnell", "schneller", "das schnelle", "die Schnelligkeit"], correct: 0, points: 10 },
           ],
         },
       ],
