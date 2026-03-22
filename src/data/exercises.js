@@ -270,6 +270,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    10: {
+      title: "Aufgabe 10",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Katze ist ein sehr interessantes Tier. Sie schl\u00e4ft viel und mag frisches Futter. Katzen spielen gerne mit kleinen B\u00e4llen. Manche Katzen sind schwarz, andere sind wei\u00df oder orange. Katzen haben einen sch\u00f6nen Schwanz und weiche Pfoten.",
+          questions: [
+            { id: "a1-lv-10-1", question: "Was macht die Katze viel?", options: ["Schlafen", "Essen", "Laufen", "Singen"], correct: 0, points: 10 },
+            { id: "a1-lv-10-2", question: "Was spielt die Katze gerne?", options: ["Mit Wasser", "Mit B\u00e4llen", "Mit anderen Katzen", "Mit Menschen"], correct: 1, points: 10 },
+            { id: "a1-lv-10-3", question: "Welche Farbe kann eine Katze haben?", options: ["Blau", "Gr\u00fcn", "Orange", "Lila"], correct: 2, points: 10 },
+            { id: "a1-lv-10-4", question: "Wie sind die Pfoten der Katze?", options: ["Hart", "Weich", "Gro\u00df", "Klein"], correct: 1, points: 10 },
+            { id: "a1-lv-10-5", question: "Was isst die Katze gerne?", options: ["Frisches Futter", "Gem\u00fcse", "Obst", "Brot"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a1-gr-10-1", question: "Wie sagt man: 'Ich ___ eine Katze.'?", options: ["habe", "hat", "ist", "sein"], correct: 0, points: 10 },
+            { id: "a1-gr-10-2", question: "Wie fragt man: 'Wo ist ___ Katze?'", options: ["mein", "mein", "dein", "euer"], correct: 0, points: 10 },
+            { id: "a1-gr-10-3", question: "Wie sagt man: 'Die Katze ___ schl\u00e4ft.'?", options: ["gerne", "mehr", "nicht", "schon"], correct: 0, points: 10 },
+            { id: "a1-gr-10-4", question: "Wie sagt man: 'Ich ___ mit der Katze.'?", options: ["spiele", "spielst", "spielen", "spielen"], correct: 0, points: 10 },
+            { id: "a1-gr-10-5", question: "Was ist die richtige Form: 'Die Katze ___ schnell.'?", options: ["l\u00e4uft", "lauf", "laufen", "l\u00e4ufts"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   a2: {
     1: {
@@ -537,6 +567,36 @@ export const exercises = {
             { id: "a2-gr-9-3", question: "Wie fragt man richtig: 'Wo ... du?'?", options: ["gehst", "geh", "gehst du", "geht"], correct: 2, points: 10 },
             { id: "a2-gr-9-4", question: "Vervollst\u00e4ndige den Satz: 'Ich m\u00f6chte einen Kaffee, ...?'", options: ["willst du", "will", "muss", "kann"], correct: 0, points: 10 },
             { id: "a2-gr-9-5", question: "Was ist die richtige Antwort: 'Wie alt bist du?' 'Ich ... Jahre alt.'", options: ["bin", "ist", "habe", "sehe"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    10: {
+      title: "Aufgabe 10",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Es gibt viele verschiedene Arten von B\u00e4umen auf der Welt. Einige B\u00e4ume sind sehr hoch, andere sind klein. Der \u00e4lteste Baum der Welt ist ein Methusalembaum in Kalifornien. Er ist mehr als 4.800 Jahre alt! B\u00e4ume sind wichtig f\u00fcr die Umwelt, weil sie Sauerstoff produzieren und Lebensraum f\u00fcr Tiere bieten.",
+          questions: [
+            { id: "a2-lv-10-1", question: "Wie alt ist der \u00e4lteste Baum der Welt?", options: ["A) 1.000 Jahre", "B) 2.500 Jahre", "C) 4.800 Jahre", "D) 5.500 Jahre"], correct: 2, points: 10 },
+            { id: "a2-lv-10-2", question: "Wo steht der Methusalembaum?", options: ["A) In Deutschland", "B) In Kalifornien", "C) In Australien", "D) In Brasilien"], correct: 1, points: 10 },
+            { id: "a2-lv-10-3", question: "Was produzieren B\u00e4ume?", options: ["A) Wasser", "B) Eisen", "C) Sauerstoff", "D) Gold"], correct: 2, points: 10 },
+            { id: "a2-lv-10-4", question: "Sind B\u00e4ume wichtig f\u00fcr die Umwelt?", options: ["A) Ja", "B) Nein", "C) Vielleicht", "D) Ich wei\u00df nicht"], correct: 0, points: 10 },
+            { id: "a2-lv-10-5", question: "Was bieten B\u00e4ume?", options: ["A) Lebensraum f\u00fcr Tiere", "B) Autos", "C) M\u00f6bel", "D) Kleidung"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a2-gr-10-1", question: "Wie sagt man: 'Ich _____ einen Apfel.'?", options: ["A) essen", "B) esse", "C) isst", "D) gegessen"], correct: 1, points: 10 },
+            { id: "a2-gr-10-2", question: "Was ist die richtige Form? 'Er _____ ins Kino.'", options: ["A) gehst", "B) gehe", "C) geht", "D) gehen"], correct: 2, points: 10 },
+            { id: "a2-gr-10-3", question: "Vervollst\u00e4ndige den Satz: 'Wir ____ ein Buch lesen.'", options: ["A) m\u00f6chte", "B) m\u00f6chten", "C) m\u00f6chtest", "D) mag"], correct: 1, points: 10 },
+            { id: "a2-gr-10-4", question: "Wie sagt man: 'Sie _____ sehr freundlich.'?", options: ["A) sind", "B) bist", "C) seid", "D) ist"], correct: 0, points: 10 },
+            { id: "a2-gr-10-5", question: "Was ist die richtige Form? 'Du _____ gut Englisch.'", options: ["A) spricht", "B) spreche", "C) sprichst", "D) sprechen"], correct: 2, points: 10 },
           ],
         },
       ],
@@ -814,6 +874,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    10: {
+      title: "Aufgabe 10",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In der heutigen Zeit greifen immer mehr Menschen zu alternativen Heilmethoden, um ihre Gesundheit zu f\u00f6rdern. Diese Methoden reichen von Akupunktur \u00fcber Hom\u00f6opathie bis hin zu Meditation und Yoga. Viele Menschen berichten von positiven Erfahrungen und einer h\u00f6heren Lebensqualit\u00e4t. Doch nicht alle sind von der Wirksamkeit dieser Methoden \u00fcberzeugt. Kritiker argumentieren, dass wissenschaftliche Beweise fehlen und warnen vor m\u00f6glichen Risiken.",
+          questions: [
+            { id: "b1-lv-10-1", question: "Welche Heilmethoden werden im Text erw\u00e4hnt?", options: ["A) Nur Akupunktur", "B) Akupunktur und Medikamente", "C) Akupunktur, Hom\u00f6opathie und Yoga", "D) Nur Meditation"], correct: 2, points: 10 },
+            { id: "b1-lv-10-2", question: "Was denken viele Menschen \u00fcber alternative Heilmethoden?", options: ["A) Sie sind teuer", "B) Sie haben negative Effekte", "C) Sie verbessern die Lebensqualit\u00e4t", "D) Sie sind gef\u00e4hrlich"], correct: 2, points: 10 },
+            { id: "b1-lv-10-3", question: "Was sagen Kritiker \u00fcber alternative Heilmethoden?", options: ["A) Sie sind sehr effektiv", "B) Sie k\u00f6nnen Risiken bergen", "C) Sie sind wissenschaftlich bewiesen", "D) Sie sind die einzige L\u00f6sung"], correct: 1, points: 10 },
+            { id: "b1-lv-10-4", question: "Was ist ein Beispiel f\u00fcr eine alternative Heilmethoden?", options: ["A) Chirurgie", "B) Physiotherapie", "C) Hom\u00f6opathie", "D) Chemotherapie"], correct: 2, points: 10 },
+            { id: "b1-lv-10-5", question: "Wie \u00e4u\u00dfern sich die Menschen \u00fcber ihre Erfahrungen?", options: ["A) Sie sind unzufrieden", "B) Sie sind skeptisch", "C) Sie berichten von positiven Erfahrungen", "D) Sie haben keine Meinung"], correct: 2, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b1-gr-10-1", question: "W\u00e4hlen Sie die richtige Form des Verbs: Viele Menschen _____ (glauben) an alternative Heilmethoden.", options: ["A) glaubt", "B) glauben", "C) glaubten", "D) geglaubt"], correct: 1, points: 10 },
+            { id: "b1-gr-10-2", question: "Setzen Sie den richtigen Artikel ein: _____ Akupunktur ist sehr beliebt.", options: ["A) Der", "B) Die", "C) Das", "D) Den"], correct: 1, points: 10 },
+            { id: "b1-gr-10-3", question: "W\u00e4hlen Sie die korrekte Pr\u00e4position: Viele Menschen berichten _____ positiven Erfahrungen.", options: ["A) in", "B) von", "C) \u00fcber", "D) an"], correct: 1, points: 10 },
+            { id: "b1-gr-10-4", question: "Vervollst\u00e4ndigen Sie den Satz: Wenn die Menschen _____ (informieren) sich gut, k\u00f6nnen sie bessere Entscheidungen treffen.", options: ["A) informierte", "B) informiert", "C) informiertet", "D) informieren"], correct: 1, points: 10 },
+            { id: "b1-gr-10-5", question: "W\u00e4hlen Sie die richtige Konjunktion: Viele Menschen glauben an alternative Heilmethoden, _____ sie skeptisch sind.", options: ["A) und", "B) aber", "C) oder", "D) denn"], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   b2: {
     1: {
@@ -1081,6 +1171,36 @@ export const exercises = {
             { id: "b2-gr-9-3", question: "Welcher Satz ist im Passiv formuliert?", options: ["Der Hund bei\u00dft den Mann.", "Der Mann wird vom Hund gebissen.", "Der Mann bei\u00dft den Hund.", "Der Hund l\u00e4uft schnell."], correct: 1, points: 10 },
             { id: "b2-gr-9-4", question: "Welche Zeitform wird im folgenden Satz verwendet: 'Ich hatte gegessen'?", options: ["Pr\u00e4sens", "Perfekt", "Imperfekt", "Plusquamperfekt"], correct: 3, points: 10 },
             { id: "b2-gr-9-5", question: "Welches Wort ist ein Adverb?", options: ["schnell", "schneller", "das schnelle", "die Schnelligkeit"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    10: {
+      title: "Aufgabe 10",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In den letzten Jahren hat die Wissenschaft bedeutende Fortschritte im Bereich der Neuro\u00e4sthetik gemacht, einem interdisziplin\u00e4ren Feld, das untersucht, wie das Gehirn Kunst und Sch\u00f6nheit wahrnimmt. Forscher haben herausgefunden, dass \u00e4sthetische Erfahrungen nicht nur emotionale Reaktionen hervorrufen, sondern auch kognitive Prozesse aktivieren, die unsere Wahrnehmung der Welt beeinflussen. Diese Erkenntnisse k\u00f6nnten weitreichende Folgen f\u00fcr die Therapie von psychischen Erkrankungen haben, da Kunst als Mittel zur Selbstreflexion und Heilung dienen kann. Die Verbindung zwischen Kunst und Neurowissenschaft er\u00f6ffnet neue Perspektiven auf die menschliche Kreativit\u00e4t und deren Rolle in unserer Existenz.",
+          questions: [
+            { id: "b2-lv-10-1", question: "Was untersucht die Neuro\u00e4sthetik?", options: ["Die Wirkung von Musik auf den Menschen", "Die Wahrnehmung von Kunst und Sch\u00f6nheit im Gehirn", "Die Geschichte der Kunst", "Die Techniken von K\u00fcnstlern"], correct: 1, points: 10 },
+            { id: "b2-lv-10-2", question: "Welche Folgen k\u00f6nnten die Erkenntnisse der Neuro\u00e4sthetik haben?", options: ["Verbesserung von Kunsttechniken", "Therapieans\u00e4tze f\u00fcr psychische Erkrankungen", "Steigerung der Verkaufszahlen von Kunstwerken", "Erh\u00f6hung der Zahl der Kunststudierenden"], correct: 1, points: 10 },
+            { id: "b2-lv-10-3", question: "Wie beeinflusst Kunst die menschliche Wahrnehmung?", options: ["Sie hat keinen Einfluss", "Sie beeinflusst emotionale Reaktionen und kognitive Prozesse", "Sie verwirrt die Menschen", "Sie f\u00fchrt zu einem Verlust an Kreativit\u00e4t"], correct: 1, points: 10 },
+            { id: "b2-lv-10-4", question: "Was k\u00f6nnte eine neue Perspektive der Neuro\u00e4sthetik sein?", options: ["Der Einfluss von Kunst auf die Politik", "Die Rolle der Kreativit\u00e4t in unserem Leben", "Die Entwicklung neuer Kunstformen", "Die Analyse von Kunsthistorikern"], correct: 1, points: 10 },
+            { id: "b2-lv-10-5", question: "Welche Disziplinen sind an der Neuro\u00e4sthetik beteiligt?", options: ["Nur Psychologie", "Kunst und Sport", "Kunst und Neurowissenschaften", "Musik und Theater"], correct: 2, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b2-gr-10-1", question: "W\u00e4hlen Sie den richtigen Satz: ___ die Kunst eine wichtige Rolle spielt, wird oft \u00fcbersehen.", options: ["Dass", "Das", "Das, dass", "Welches"], correct: 0, points: 10 },
+            { id: "b2-gr-10-2", question: "Setzen Sie das richtige Wort ein: Sie h\u00e4tte es ___________ wissen k\u00f6nnen.", options: ["konnte", "konnte", "gekonnt", "k\u00f6nnte"], correct: 3, points: 10 },
+            { id: "b2-gr-10-3", question: "Welche Form ist korrekt? Sie ist \u00fcberzeugt, dass es ___________ keine L\u00f6sung gibt.", options: ["wirklich", "wirklichen", "wirkliche", "wirklichste"], correct: 0, points: 10 },
+            { id: "b2-gr-10-4", question: "W\u00e4hlen Sie den richtigen Satz: W\u00e4re es nicht besser, wenn sie ___________ an dem Projekt arbeitet?", options: ["selber", "selbst", "selbstst\u00e4ndig", "selbst\u00e4ndig"], correct: 1, points: 10 },
+            { id: "b2-gr-10-5", question: "Wie lautet die korrekte Zeitform? Wenn ich mehr Zeit h\u00e4tte, ___________ ich das Buch lesen.", options: ["werde", "w\u00fcrde", "h\u00e4tte", "h\u00e4tte gewollt"], correct: 1, points: 10 },
           ],
         },
       ],
