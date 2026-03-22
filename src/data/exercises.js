@@ -180,6 +180,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    7: {
+      title: "Aufgabe 7",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Schildkr\u00f6te ist ein langsames Tier. Sie hat einen harten Panzer. Schildkr\u00f6ten k\u00f6nnen sehr alt werden. Einige Schildkr\u00f6ten leben mehr als 100 Jahre. Sie essen Pflanzen und manchmal auch kleine Tiere. Im Wasser schwimmen sie gut.",
+          questions: [
+            { id: "a1-lv-7-1", question: "Wie schnell ist die Schildkr\u00f6te?", options: ["Sehr schnell", "Langsam", "Mittel", "Nicht bekannt"], correct: 1, points: 10 },
+            { id: "a1-lv-7-2", question: "Was hat die Schildkr\u00f6te?", options: ["Einen weichen Panzer", "Einen harten Panzer", "Keine Beine", "Gro\u00dfe Fl\u00fcgel"], correct: 1, points: 10 },
+            { id: "a1-lv-7-3", question: "Wie alt kann eine Schildkr\u00f6te werden?", options: ["20 Jahre", "50 Jahre", "100 Jahre oder mehr", "5 Jahre"], correct: 2, points: 10 },
+            { id: "a1-lv-7-4", question: "Was frisst die Schildkr\u00f6te?", options: ["Nur Fleisch", "Nur Pflanzen", "Pflanzen und kleine Tiere", "Nichts"], correct: 2, points: 10 },
+            { id: "a1-lv-7-5", question: "Wo schwimmen Schildkr\u00f6ten gut?", options: ["Im Wasser", "Im Sand", "In der Luft", "In B\u00e4umen"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a1-gr-7-1", question: "Wie sagt man: Ich (essen) einen Apfel?", options: ["esse", "esst", "essen", "isst"], correct: 0, points: 10 },
+            { id: "a1-gr-7-2", question: "Welches Wort ist richtig: Sie (sein) freundlich.", options: ["sind", "bin", "ist", "seid"], correct: 0, points: 10 },
+            { id: "a1-gr-7-3", question: "Wie sagt man: Wir (haben) ein Buch?", options: ["habt", "haben", "hat", "habe"], correct: 1, points: 10 },
+            { id: "a1-gr-7-4", question: "Was ist der richtige Satz: Er (gehen) zur Schule.", options: ["gehe", "geht", "gehen", "gehtet"], correct: 1, points: 10 },
+            { id: "a1-gr-7-5", question: "Wie sagt man: Du (haben) einen Ball?", options: ["hast", "hab", "hat", "haben"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   a2: {
     1: {
@@ -357,6 +387,36 @@ export const exercises = {
             { id: "a2-gr-6-3", question: "Wie sagt man: 'Es gibt viele B\u00fccher.'?", options: ["A) Es gibt viel B\u00fccher.", "B) Es gibt viele Buch.", "C) Es gibt viele B\u00fccher.", "D) Es gibt Buch."], correct: 2, points: 10 },
             { id: "a2-gr-6-4", question: "Wie fragt man, ob jemand etwas m\u00f6chte?", options: ["A) M\u00f6chtest du einen Apfel?", "B) Du m\u00f6chtest einen Apfel?", "C) Willst einen Apfel?", "D) M\u00f6chte Apfel?"], correct: 0, points: 10 },
             { id: "a2-gr-6-5", question: "Was ist richtig: 'Ich habe Hunger.' oder 'Ich habe Hunger haben.'?", options: ["A) Ich habe Hunger.", "B) Ich Hunger haben.", "C) Hunger habe ich.", "D) Ich habe Hunger haben."], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    7: {
+      title: "Aufgabe 7",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In vielen St\u00e4dten gibt es spezielle Caf\u00e9s f\u00fcr Katzenliebhaber. Diese Caf\u00e9s hei\u00dfen Katzen-Caf\u00e9s und sind sehr beliebt. Die G\u00e4ste k\u00f6nnen Kaffee trinken und gleichzeitig mit Katzen spielen. Die Katzen sind oft gerettet und warten auf ein neues Zuhause. In vielen L\u00e4ndern gibt es bereits solche Caf\u00e9s, und die Besucher lieben die entspannte Atmosph\u00e4re.",
+          questions: [
+            { id: "a2-lv-7-1", question: "Was sind Katzen-Caf\u00e9s?", options: ["Caf\u00e9s mit Hunden", "Caf\u00e9s mit Katzen", "Caf\u00e9s ohne Tiere", "Caf\u00e9s f\u00fcr B\u00fccher"], correct: 1, points: 10 },
+            { id: "a2-lv-7-2", question: "Was k\u00f6nnen die G\u00e4ste dort machen?", options: ["Essen kochen", "Katzen streicheln", "Arbeiten", "Schlafen"], correct: 1, points: 10 },
+            { id: "a2-lv-7-3", question: "Woher kommen die Katzen in den Caf\u00e9s?", options: ["Sie sind teuer gekauft", "Sie sind gerettet", "Sie sind im Zoo", "Sie sind im Park"], correct: 1, points: 10 },
+            { id: "a2-lv-7-4", question: "Warum sind Katzen-Caf\u00e9s beliebt?", options: ["Weil es laut ist", "Weil man dort rauchen kann", "Weil die Atmosph\u00e4re entspannt ist", "Weil es keine Tiere gibt"], correct: 2, points: 10 },
+            { id: "a2-lv-7-5", question: "Gibt es Katzen-Caf\u00e9s in vielen L\u00e4ndern?", options: ["Ja", "Nein", "Nur in Deutschland", "Nur in Asien"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a2-gr-7-1", question: "Welches Wort passt in den Satz: Ich ____ gerne Kaffee.", options: ["trinken", "trinkst", "trinke", "trink"], correct: 2, points: 10 },
+            { id: "a2-gr-7-2", question: "Was ist die richtige Form: Du ____ die Katzen.", options: ["liebst", "liebe", "liebt", "lieben"], correct: 0, points: 10 },
+            { id: "a2-gr-7-3", question: "Vervollst\u00e4ndige den Satz: Sie gehen ____ Caf\u00e9.", options: ["zu", "in", "an", "auf"], correct: 1, points: 10 },
+            { id: "a2-gr-7-4", question: "Wie sagt man: Ich finde die Katzen s\u00fc\u00df.", options: ["Ich finde die Katzen s\u00fc\u00df.", "Ich finde die Katze s\u00fc\u00df.", "Ich finde die Katzen s\u00fc\u00dfe.", "Ich finde die Katzen s\u00fc\u00dfes."], correct: 0, points: 10 },
+            { id: "a2-gr-7-5", question: "Was ist die richtige Frageform: ____ du Katzen?", options: ["Hast", "Haste", "Hast du", "Du hast"], correct: 2, points: 10 },
           ],
         },
       ],
@@ -544,6 +604,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    7: {
+      title: "Aufgabe 7",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In den letzten Jahren hat das Thema Urban Gardening an Bedeutung gewonnen. Immer mehr Menschen nutzen kleine Fl\u00e4chen in St\u00e4dten, um ihre eigenen Obst- und Gem\u00fcsepflanzen anzubauen. Dies f\u00f6rdert nicht nur die Nachhaltigkeit, sondern verbessert auch die Lebensqualit\u00e4t in urbanen Gebieten. Die Idee, Pflanzen in Gemeinschaftsg\u00e4rten zu ziehen, bringt Nachbarn zusammen und f\u00f6rdert den sozialen Austausch. Urban Gardening ist nicht nur ein Trend, sondern ein Weg, um frische Lebensmittel direkt vor der Haust\u00fcr zu haben.",
+          questions: [
+            { id: "b1-lv-7-1", question: "Was ist ein Hauptvorteil von Urban Gardening?", options: ["A) Verbesserung der Luftqualit\u00e4t", "B) F\u00f6rderung der Nachbarschaft", "C) Erh\u00f6hung der Mieten", "D) Verringerung der Freizeitaktivit\u00e4ten"], correct: 1, points: 10 },
+            { id: "b1-lv-7-2", question: "Was sollen Menschen in st\u00e4dtischen Gebieten anbauen?", options: ["A) Blumen", "B) Gem\u00fcse und Obst", "C) Str\u00e4ucher", "D) B\u00e4ume"], correct: 1, points: 10 },
+            { id: "b1-lv-7-3", question: "Wie beeinflusst Urban Gardening die Lebensqualit\u00e4t?", options: ["A) Es hat keinen Einfluss", "B) Es verbessert sie", "C) Es verschlechtert sie", "D) Es macht die St\u00e4dte lauter"], correct: 1, points: 10 },
+            { id: "b1-lv-7-4", question: "Was wird durch gemeinsames G\u00e4rtnern gef\u00f6rdert?", options: ["A) Einsamkeit", "B) Soziale Isolation", "C) Sozialer Austausch", "D) Konkurrenz"], correct: 2, points: 10 },
+            { id: "b1-lv-7-5", question: "Ist Urban Gardening nur ein vor\u00fcbergehender Trend?", options: ["A) Ja", "B) Nein", "C) Vielleicht", "D) Nur in bestimmten St\u00e4dten"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b1-gr-7-1", question: "W\u00e4hlen Sie die korrekte Form des Verbs: Ich ___ (m\u00f6gen) frisches Gem\u00fcse.", options: ["A) m\u00f6gen", "B) mag", "C) mochte", "D) m\u00f6ge"], correct: 1, points: 10 },
+            { id: "b1-gr-7-2", question: "Wie lautet der korrekte Satz: Wenn ich Zeit h\u00e4tte, ___ (gehen) ich ins Fitnessstudio.", options: ["A) gehe", "B) gegangen", "C) ging", "D) gehen"], correct: 3, points: 10 },
+            { id: "b1-gr-7-3", question: "W\u00e4hlen Sie die richtige Pr\u00e4position: Ich interessiere mich ___ G\u00e4rtnern.", options: ["A) f\u00fcr", "B) an", "C) mit", "D) \u00fcber"], correct: 0, points: 10 },
+            { id: "b1-gr-7-4", question: "Welche Form des Adjektivs ist korrekt: Das ist ein ___ (sch\u00f6n) Garten.", options: ["A) sch\u00f6ne", "B) sch\u00f6ner", "C) sch\u00f6nes", "D) sch\u00f6nerer"], correct: 0, points: 10 },
+            { id: "b1-gr-7-5", question: "W\u00e4hlen Sie die richtige Zeitform: Er ___ (arbeiten) schon seit zwei Jahren im Garten.", options: ["A) arbeitet", "B) arbeitete", "C) hat gearbeitet", "D) arbeite"], correct: 2, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   b2: {
     1: {
@@ -721,6 +811,36 @@ export const exercises = {
             { id: "b2-gr-6-3", question: "Welches Wort ist ein Synonym f\u00fcr 'entscheidend'?", options: ["wichtig", "neutral", "unbedeutend", "unentschieden"], correct: 0, points: 10 },
             { id: "b2-gr-6-4", question: "Welcher Satz enth\u00e4lt einen grammatikalischen Fehler?", options: ["Die Debatte \u00fcber K\u00fcnstliche Intelligenz ist komplex.", "Viele Menschen haben eine unterschiedliche Meinung.", "K\u00fcnstliche Intelligenz beeinflusst unsere Leben.", "Ethische Fragen m\u00fcssen ernst genommen werden."], correct: 2, points: 10 },
             { id: "b2-gr-6-5", question: "W\u00e4hlen Sie die korrekte Pr\u00e4position: \u201eDie Diskussion _______ K\u00fcnstlicher Intelligenz ist aktuell.\u201c", options: ["\u00fcber", "mit", "von", "in"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    7: {
+      title: "Aufgabe 7",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In der heutigen digitalen Welt stellt die zunehmende Automatisierung von Entscheidungen eine bedeutende Herausforderung dar. Algorithmen werden oft eingesetzt, um komplexe Probleme zu l\u00f6sen, doch ihre Intransparenz kann zu einem Verlust an Vertrauen f\u00fchren. Die Frage, wie viel Entscheidungsfreiheit wir Menschen den Maschinen \u00fcberlassen sollten, ist zentral f\u00fcr die ethische Diskussion \u00fcber k\u00fcnstliche Intelligenz. In diesem Kontext wird auch die Verantwortung f\u00fcr Fehlentscheidungen immer wieder neu verhandelt.",
+          questions: [
+            { id: "b2-lv-7-1", question: "Was ist eine der zentralen Herausforderungen der Automatisierung?", options: ["Verlust an Vertrauen", "Erh\u00f6hung der Effizienz", "Verringerung der Kosten", "Einfache Probleml\u00f6sung"], correct: 0, points: 10 },
+            { id: "b2-lv-7-2", question: "Welches Thema wird in der ethischen Diskussion \u00fcber k\u00fcnstliche Intelligenz behandelt?", options: ["Die Rolle der Menschen", "Die Programmierung der Algorithmen", "Die Intransparenz von Entscheidungen", "Die Entwicklung neuer Technologien"], correct: 2, points: 10 },
+            { id: "b2-lv-7-3", question: "Was wird als Folge der Intransparenz von Entscheidungen angesehen?", options: ["Mehr Vertrauen in Algorithmen", "Weniger Verantwortung f\u00fcr Menschen", "Verlust an Vertrauen", "Bessere Kontrolle \u00fcber Prozesse"], correct: 2, points: 10 },
+            { id: "b2-lv-7-4", question: "Wie wird die Verantwortung f\u00fcr Fehlentscheidungen beschrieben?", options: ["Sie bleibt unver\u00e4ndert", "Sie wird neu verhandelt", "Sie wird an die Algorithmen \u00fcbertragen", "Sie wird nicht anerkannt"], correct: 1, points: 10 },
+            { id: "b2-lv-7-5", question: "Was ist ein m\u00f6gliches Ergebnis der Diskussion \u00fcber Automatisierung?", options: ["Erh\u00f6hung des menschlichen Einflusses", "Einschr\u00e4nkung der Maschinen", "Vollst\u00e4ndige Automatisierung aller Entscheidungen", "Verdr\u00e4ngung traditioneller Berufe"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b2-gr-7-1", question: "Welcher Satz ist im Passiv geschrieben?", options: ["Die Maschinen \u00fcbernehmen die Entscheidungen.", "Die Entscheidungen werden von Maschinen \u00fcbernommen.", "Menschen sollten die Kontrolle behalten.", "Die Verantwortung wird neu verhandelt."], correct: 1, points: 10 },
+            { id: "b2-gr-7-2", question: "Welcher Satz verwendet den Konjunktiv II?", options: ["Wenn ich die Wahl h\u00e4tte, w\u00fcrde ich mehr Transparenz verlangen.", "Die Algorithmen sind sehr komplex.", "Es gibt viele verschiedene Meinungen dar\u00fcber.", "Die Verantwortung bleibt bei den Menschen."], correct: 0, points: 10 },
+            { id: "b2-gr-7-3", question: "Welcher Satz enth\u00e4lt ein Adverb?", options: ["Die Algorithmen handeln schnell.", "Die Entscheidungen sind eindeutig.", "Menschen m\u00fcssen Verantwortung \u00fcbernehmen.", "Die Maschinen arbeiten effizient."], correct: 0, points: 10 },
+            { id: "b2-gr-7-4", question: "In welchem Satz ist die Grammatik fehlerhaft?", options: ["Die Entscheidung wurde getroffen von den Algorithmen.", "Die Maschinen lernen st\u00e4ndig dazu.", "K\u00fcnstliche Intelligenz ver\u00e4ndert unsere Welt.", "Wir m\u00fcssen die Risiken erkennen."], correct: 0, points: 10 },
+            { id: "b2-gr-7-5", question: "Welcher Satz ist im Futur geschrieben?", options: ["Wir diskutieren \u00fcber die ethischen Fragen.", "Die Maschinen werden in Zukunft noch wichtiger sein.", "Es ist notwendig, Verantwortung zu \u00fcbernehmen.", "Die Menschen lernen von ihren Fehlern."], correct: 1, points: 10 },
           ],
         },
       ],
