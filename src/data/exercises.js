@@ -300,6 +300,49 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    11: {
+      title: "Aufgabe 11",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Anna ist acht Jahre alt. Sie geht in die Schule. In der Schule hat sie viele Freunde. Jeden Montag spielt sie mit ihren Freunden im Park. Anna liebt Tiere. Ihr Lieblingstier ist der Hund. Am Sonntag geht sie mit ihrer Familie in den Zoo. Dort sieht sie viele Tiere: Elefanten, L\u00f6wen und V\u00f6gel. Anna mag den Zoo sehr.",
+          questions: [
+            { id: "a1-lv-11-1", question: "Wie alt ist Anna?", options: ["6 Jahre", "7 Jahre", "8 Jahre", "9 Jahre"], correct: 2, points: 10 },
+            { id: "a1-lv-11-2", question: "Was macht Anna am Montag?", options: ["Sie geht ins Kino", "Sie spielt im Park", "Sie bleibt zu Hause", "Sie geht in die Bibliothek"], correct: 1, points: 10 },
+            { id: "a1-lv-11-3", question: "Was ist Annas Lieblingstier?", options: ["Katze", "Hund", "Vogel", "Kaninchen"], correct: 1, points: 10 },
+            { id: "a1-lv-11-4", question: "Mit wem geht Anna in den Zoo?", options: ["Mit ihrer Freundin", "Mit ihrer Familie", "Mit ihren Lehrern", "Mit ihren Nachbarn"], correct: 1, points: 10 },
+            { id: "a1-lv-11-5", question: "Welche Tiere sieht Anna im Zoo?", options: ["Hunde und Katzen", "Elefanten und L\u00f6wen", "Fische und Schildkr\u00f6ten", "Pferde und K\u00fche"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a1-gr-11-1", question: "Welches Wort ist richtig? Anna ____ acht Jahre alt.", options: ["ist", "sind", "hast", "haben"], correct: 0, points: 10 },
+            { id: "a1-gr-11-2", question: "Wie sagt man: 'Ich liebe Tiere' auf Deutsch?", options: ["Ich mag Tiere", "Ich liebe Tiere", "Ich hasse Tiere", "Ich sehe Tiere"], correct: 1, points: 10 },
+            { id: "a1-gr-11-3", question: "Welches Wort fehlt? Anna geht ____ Zoo.", options: ["zu", "ins", "in", "nach"], correct: 1, points: 10 },
+            { id: "a1-gr-11-4", question: "W\u00e4hle das richtige Verb: Sie ____ mit ihren Freunden.", options: ["spielt", "spielen", "spiel", "gespielt"], correct: 0, points: 10 },
+            { id: "a1-gr-11-5", question: "Was ist der Plural von 'Hund'?", options: ["Hunde", "Hundes", "Hunder", "Hundeschen"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "hoerverstehen",
+          title: "Hörverstehen",
+          audioSrc: "/audio/aufgabe11/a1.mp3",
+          text: null,
+          questions: [
+            { id: "a1-hv-11-1", question: "Wie alt ist Max?", options: ["8 Jahre", "9 Jahre", "10 Jahre", "11 Jahre"], correct: 2, points: 10 },
+            { id: "a1-hv-11-2", question: "Wie hei\u00dft Max' Hund?", options: ["Miau", "Bello", "Luna", "Rex"], correct: 1, points: 10 },
+            { id: "a1-hv-11-3", question: "Geht Max am Wochenende ins Schwimmbad?", options: ["Ja", "Nein", "Vielleicht", "Ich wei\u00df nicht"], correct: 0, points: 10 },
+            { id: "a1-hv-11-4", question: "Miau ist Max' Hund.", options: ["Wahr", "Falsch"], correct: 1, points: 10 },
+            { id: "a1-hv-11-5", question: "Max spielt im Garten mit seiner Katze.", options: ["Wahr", "Falsch"], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 150,
+    },
   },
   a2: {
     1: {
@@ -601,6 +644,49 @@ export const exercises = {
         },
       ],
       maxPoints: 100,
+    },
+    11: {
+      title: "Aufgabe 11",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In einer kleinen Stadt in Deutschland gibt es einen besonderen Zoo. Dieser Zoo hat viele Tiere, die man nicht oft sieht. Zum Beispiel gibt es dort einen Albino-K\u00e4nguru namens Max. Max ist ganz wei\u00df und sehr beliebt bei den Besuchern. Die Tiere leben in gro\u00dfen Gehegen und die Menschen k\u00f6nnen sie gut beobachten. Der Zoo hat auch einen sch\u00f6nen Park mit vielen Blumen. Jeden Sonntag gibt es eine F\u00fctterung der Tiere. Die Kinder k\u00f6nnen dabei helfen und lernen, wie man sich um die Tiere k\u00fcmmert. Der Zoo ist ein toller Ort f\u00fcr Familien und Freunde, um einen sch\u00f6nen Tag zu verbringen.",
+          questions: [
+            { id: "a2-lv-11-1", question: "Wie hei\u00dft das Albino-K\u00e4nguru?", options: ["Leo", "Max", "Tom", "Benny"], correct: 1, points: 10 },
+            { id: "a2-lv-11-2", question: "Was k\u00f6nnen die Kinder im Zoo machen?", options: ["Essen kaufen", "Tiere f\u00fcttern", "Spielen", "Schlafen"], correct: 1, points: 10 },
+            { id: "a2-lv-11-3", question: "Wo leben die Tiere im Zoo?", options: ["In kleinen K\u00e4figen", "In gro\u00dfen Gehegen", "In einem Haus", "Auf der Stra\u00dfe"], correct: 1, points: 10 },
+            { id: "a2-lv-11-4", question: "Wann findet die F\u00fctterung der Tiere statt?", options: ["Jeden Tag", "Jeden Sonntag", "Jeden Montag", "Jeden Freitag"], correct: 1, points: 10 },
+            { id: "a2-lv-11-5", question: "Was gibt es im Zoo neben den Tieren?", options: ["Ein Restaurant", "Ein Kino", "Einen Park mit Blumen", "Ein Schwimmbad"], correct: 2, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a2-gr-11-1", question: "Was ist die richtige Form? \"Ich ____ ins Kino.\" ", options: ["geht", "gehe", "gehst", "geh"], correct: 1, points: 10 },
+            { id: "a2-gr-11-2", question: "Was ist korrekt? \"Er ___ ein Buch.\" ", options: ["lesen", "liest", "liest du", "liest er"], correct: 1, points: 10 },
+            { id: "a2-gr-11-3", question: "Was ist die richtige Antwort? \"Wo ___ du?\" ", options: ["bin", "ist", "bist", "sehe"], correct: 2, points: 10 },
+            { id: "a2-gr-11-4", question: "Vervollst\u00e4ndige den Satz: \"Wir haben einen Hund, ___ ist sehr s\u00fc\u00df.\" ", options: ["der", "die", "das", "und"], correct: 0, points: 10 },
+            { id: "a2-gr-11-5", question: "Was sagt man in der Vergangenheit? \"Ich ___ ein Buch lesen.\" ", options: ["lese", "gelesen", "las", "lesen"], correct: 2, points: 10 },
+          ],
+        },
+        {
+          id: "hoerverstehen",
+          title: "Hörverstehen",
+          audioSrc: "/audio/aufgabe11/a2.mp3",
+          text: null,
+          questions: [
+            { id: "a2-hv-11-1", question: "Welche Tiere werden zuerst gezeigt?", options: ["Giraffen", "Ziegen", "K\u00e4ngurus", "Schweine"], correct: 1, points: 10 },
+            { id: "a2-hv-11-2", question: "Welches Essen m\u00f6gen die Giraffen?", options: ["Brot", "Fleisch", "Salat und \u00c4pfel", "Pizza"], correct: 2, points: 10 },
+            { id: "a2-hv-11-3", question: "Um wie viel Uhr ist die F\u00fchrung?", options: ["15 Uhr", "14 Uhr", "16 Uhr", "13 Uhr"], correct: 0, points: 10 },
+            { id: "a2-hv-11-4", question: "Die Kinder k\u00f6nnen keine Fragen stellen. ", options: ["Wahr", "Falsch"], correct: 1, points: 10 },
+            { id: "a2-hv-11-5", question: "Es gibt keine neuen Tiere im Zoo. ", options: ["Wahr", "Falsch"], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 150,
     },
   },
   b1: {
@@ -904,6 +990,49 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    11: {
+      title: "Aufgabe 11",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In den letzten Jahren hat sich das Interesse an nachhaltiger Mode stark erh\u00f6ht. Immer mehr Menschen m\u00f6chten beim Kauf von Kleidung darauf achten, dass diese umweltfreundlich und sozial verantwortlich hergestellt wird. Die Modeindustrie geh\u00f6rt zu den gr\u00f6\u00dften Umweltverschmutzern, und viele Verbraucher sind sich dessen bewusst geworden. Daher entscheiden sie sich f\u00fcr Marken, die recycelte Materialien verwenden oder faire Arbeitsbedingungen garantieren. Gleichzeitig gibt es auch viele Second-Hand-L\u00e4den, die immer beliebter werden. Diese Gesch\u00e4fte bieten eine Vielzahl von einzigartigen Kleidungsst\u00fccken und tragen zur Reduzierung von Abfall bei. Die Zukunft der Mode k\u00f6nnte in einer Kombination aus Nachhaltigkeit und Kreativit\u00e4t liegen, wo Designer innovative Ideen entwickeln, um mit weniger Ressourcen mehr zu erreichen.",
+          questions: [
+            { id: "b1-lv-11-1", question: "Was sind die Hauptmerkmale nachhaltiger Mode?", options: ["Umweltfreundlich und sozial verantwortlich", "Teuer und unpraktisch", "Modisch und schnelllebig", "Einzigartig und schwer zu finden"], correct: 0, points: 10 },
+            { id: "b1-lv-11-2", question: "Warum entscheiden sich viele Verbraucher f\u00fcr Second-Hand-Kleidung?", options: ["Weil sie neu und teuer ist", "Um zur Abfallreduzierung beizutragen", "Weil es keine anderen Optionen gibt", "Um den neuesten Trends zu folgen"], correct: 1, points: 10 },
+            { id: "b1-lv-11-3", question: "Was ist ein Problem der Modeindustrie?", options: ["Hohe Qualit\u00e4t der Kleidung", "Faire Arbeitsbedingungen", "Umweltverschmutzung", "Geringe Nachfrage nach Kleidung"], correct: 2, points: 10 },
+            { id: "b1-lv-11-4", question: "Was k\u00f6nnten Designer in der Zukunft tun?", options: ["Nur traditionelle Kleidung herstellen", "Innovative Ideen entwickeln", "Nur recycelte Materialien verwenden", "Kleidung schneller produzieren"], correct: 1, points: 10 },
+            { id: "b1-lv-11-5", question: "Wie hat sich das Interesse an nachhaltiger Mode ver\u00e4ndert?", options: ["Es ist gesunken", "Es ist gleich geblieben", "Es hat sich stark erh\u00f6ht", "Es ist nur in gro\u00dfen St\u00e4dten gewachsen"], correct: 2, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b1-gr-11-1", question: "Welches Wort passt hier? 'Die Modeindustrie geh\u00f6rt zu den gr\u00f6\u00dften ___ der Welt.'", options: ["Umweltverschmutzern", "Umweltverschmutzen", "Umweltverschmutz", "Umweltverschmutzung"], correct: 0, points: 10 },
+            { id: "b1-gr-11-2", question: "Wie lautet der korrekte Satz? 'Immer mehr Menschen ___ auf nachhaltige Mode.'", options: ["achtet", "achten", "achtetet", "achtenen"], correct: 1, points: 10 },
+            { id: "b1-gr-11-3", question: "Welche Form ist richtig? 'Die Kleidung, die ich kaufe, ___ umweltfreundlich sein.'", options: ["muss", "m\u00fcssen", "mu\u00df", "m\u00fcsse"], correct: 0, points: 10 },
+            { id: "b1-gr-11-4", question: "Was ist die richtige Endung? 'Die Designer entwickelten innovative ___.'", options: ["Idee", "Ideen", "Ideen'", "Ideens"], correct: 1, points: 10 },
+            { id: "b1-gr-11-5", question: "Wie sagt man es richtig? 'Die L\u00e4den bieten viele ___ Kleidungsst\u00fccke.'", options: ["einzigartig", "einzigartige", "einzigartiges", "einzigartiger"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "hoerverstehen",
+          title: "Hörverstehen",
+          audioSrc: "/audio/aufgabe11/b1.mp3",
+          text: null,
+          questions: [
+            { id: "b1-hv-11-1", question: "Wo leben die Schafe?", options: ["In der Stadt", "In den Alpen", "Am Meer", "In einem Wald"], correct: 1, points: 10 },
+            { id: "b1-hv-11-2", question: "Die Schafe helfen dabei, die Landschaft zu pflegen. Wahr oder Falsch?", options: ["Wahr", "Falsch"], correct: 0, points: 10 },
+            { id: "b1-hv-11-3", question: "Was machen die Schafe im Winter?", options: ["Sie bleiben auf der Wiese", "Sie ziehen in die St\u00e4lle", "Sie gehen nach Hause", "Sie laufen in den Bergen"], correct: 1, points: 10 },
+            { id: "b1-hv-11-4", question: "Die Schafe sind unfreundlich zu den Kindern. Wahr oder Falsch?", options: ["Wahr", "Falsch"], correct: 1, points: 10 },
+            { id: "b1-hv-11-5", question: "Die Schafhaltung ist eine neue Tradition im Dorf. Wahr oder Falsch?", options: ["Wahr", "Falsch"], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 150,
+    },
   },
   b2: {
     1: {
@@ -1205,6 +1334,49 @@ export const exercises = {
         },
       ],
       maxPoints: 100,
+    },
+    11: {
+      title: "Aufgabe 11",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In der heutigen Zeit sind soziale Medien omnipr\u00e4sent. Sie beeinflussen nicht nur unsere Kommunikation, sondern auch unsere Wahrnehmung von Realit\u00e4t und Identit\u00e4t. Viele Menschen nutzen Plattformen wie Instagram, Facebook und Twitter, um ihre Meinungen zu teilen und sich mit anderen zu vernetzen. Doch w\u00e4hrend soziale Medien viele Vorteile bieten, gibt es auch Schattenseiten. Ein \u00fcberm\u00e4\u00dfiger Fokus auf Likes und Follower kann zu einem verzerrten Selbstbild f\u00fchren. Studien zeigen, dass Nutzer, die h\u00e4ufig soziale Medien konsumieren, m\u00f6glicherweise anf\u00e4lliger f\u00fcr Depressionen und Angstzust\u00e4nde sind. Dar\u00fcber hinaus tr\u00e4gt die st\u00e4ndige Verf\u00fcgbarkeit von Informationen zur Informations\u00fcberflutung bei, die es schwierig macht, zwischen Fakten und Fiktion zu unterscheiden. Dies wirft die Frage auf: Wie k\u00f6nnen wir ein gesundes Gleichgewicht im Umgang mit sozialen Medien finden? Es ist wichtig, sich der eigenen Nutzung bewusst zu sein und regelm\u00e4\u00dfig digitale Pausen einzulegen, um das Wohlbefinden zu f\u00f6rdern.",
+          questions: [
+            { id: "b2-lv-11-1", question: "Was ist eine m\u00f6gliche negative Folge der Nutzung sozialer Medien?", options: ["A) Erh\u00f6hte Kreativit\u00e4t", "B) Verzerrtes Selbstbild", "C) Bessere Kommunikation", "D) Mehr Freundschaften"], correct: 1, points: 10 },
+            { id: "b2-lv-11-2", question: "Was wird als eine Ma\u00dfnahme vorgeschlagen, um mit sozialen Medien umzugehen?", options: ["A) Mehr Zeit in sozialen Medien verbringen", "B) Digitale Pausen einlegen", "C) Alle Informationen ungefiltert konsumieren", "D) Die Nutzung einstellen"], correct: 1, points: 10 },
+            { id: "b2-lv-11-3", question: "Welche Plattformen werden im Text erw\u00e4hnt?", options: ["A) LinkedIn und Snapchat", "B) Instagram, Facebook und Twitter", "C) Tumblr und Reddit", "D) YouTube und TikTok"], correct: 1, points: 10 },
+            { id: "b2-lv-11-4", question: "Wor\u00fcber wird im Text nicht gesprochen?", options: ["A) Vorteile sozialer Medien", "B) Historische Entwicklung sozialer Medien", "C) Auswirkungen auf die psychische Gesundheit", "D) Informations\u00fcberflutung"], correct: 1, points: 10 },
+            { id: "b2-lv-11-5", question: "Welche Art von Studien wird im Text erw\u00e4hnt?", options: ["A) Wirtschaftliche Studien", "B) Psychologische Studien", "C) Soziologische Studien", "D) Technologische Studien"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b2-gr-11-1", question: "Welcher Satz ist grammatikalisch korrekt?", options: ["A) Ich gehe oft ins Kino, weil ich Filme mag.", "B) Ich gehe oft ins Kino weil ich Filme mag.", "C) Ich gehe oft ins Kino, weil ich Filme mag", "D) Ich gehe oft ins Kino weil, ich Filme mag."], correct: 0, points: 10 },
+            { id: "b2-gr-11-2", question: "Wie lautet die korrekte Form des Verbs im folgenden Satz? 'Wenn ich mehr Zeit h\u00e4tte, ______ ich mehr B\u00fccher lesen.'", options: ["A) w\u00fcrde", "B) werde", "C) haben", "D) w\u00fcrde haben"], correct: 0, points: 10 },
+            { id: "b2-gr-11-3", question: "Welches Wort passt nicht in die Reihe? 'schnell, langsamer, ______, am langsamsten'", options: ["A) schnellster", "B) schneller", "C) schnellste", "D) Schnelligkeit"], correct: 1, points: 10 },
+            { id: "b2-gr-11-4", question: "W\u00e4hlen Sie die richtige Pr\u00e4position: 'Er interessiert sich ______ Kunst.'", options: ["A) f\u00fcr", "B) an", "C) in", "D) \u00fcber"], correct: 0, points: 10 },
+            { id: "b2-gr-11-5", question: "Was ist der richtige Relativsatz: 'Das ist der Mann, ______ ich gestern getroffen habe.'", options: ["A) den", "B) der", "C) dem", "D) dessen"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "hoerverstehen",
+          title: "Hörverstehen",
+          audioSrc: "/audio/aufgabe11/b2.mp3",
+          text: null,
+          questions: [
+            { id: "b2-hv-11-1", question: "Was ist ein positiver Aspekt sozialer Medien?", options: ["A) Perfekte Online-Pr\u00e4senz", "B) Kontakt zu Freunden und Familie", "C) Druck und Stress", "D) Psychische Gesundheitsprobleme"], correct: 1, points: 10 },
+            { id: "b2-hv-11-2", question: "Soziale Medien haben keine negativen Aspekte. ", options: ["Wahr", "Falsch"], correct: 1, points: 10 },
+            { id: "b2-hv-11-3", question: "Aktivismus kann durch soziale Medien unterst\u00fctzt werden.", options: ["Wahr", "Falsch"], correct: 0, points: 10 },
+            { id: "b2-hv-11-4", question: "Sind soziale Medien nur negativ?", options: ["A) Ja, absolut", "B) Nein, sie haben auch Vorteile", "C) Kommt darauf an", "D) Nur f\u00fcr bestimmte Nutzer"], correct: 1, points: 10 },
+            { id: "b2-hv-11-5", question: "Das Finden eines Gleichgewichts bei der Nutzung sozialer Medien ist wichtig.", options: ["Wahr", "Falsch"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 150,
     },
   },
 };

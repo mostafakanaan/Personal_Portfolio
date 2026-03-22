@@ -324,3 +324,15 @@
 .quiz__btn--full {
   width: 100%;
 }
+
+/* Hörverstehen audio player */
+.quiz__passage--audio {
+  text-align: center;
+}
+
+.quiz__audio {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 0.75rem;
+  border-radius: 8px;
+}

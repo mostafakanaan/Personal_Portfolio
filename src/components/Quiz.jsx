@@ -115,6 +115,16 @@ export default function Quiz({ exercise, onBack }) {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
               >
+                {sections[activeSection].audioSrc && (
+                  <div className="quiz__passage quiz__passage--audio">
+                    <div className="quiz__passage-label">🎧 Hörtext</div>
+                    <audio controls className="quiz__audio">
+                      <source src={sections[activeSection].audioSrc} type="audio/mpeg" />
+                      Dein Browser unterstützt kein Audio.
+                    </audio>
+                  </div>
+                )}
+
                 {sections[activeSection].text && (
                   <div className="quiz__passage">
                     <div className="quiz__passage-label">📖 Lesetext</div>
