@@ -109,8 +109,8 @@
 
 /* Icon buttons */
 .iconBtn {
-  width: 42px;
-  height: 42px;
+  width: var(--touch-min);
+  height: var(--touch-min);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -119,12 +119,20 @@
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(20, 24, 40, 0.6);
   color: #fff;
-  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-out), 
+              background var(--duration-fast) var(--ease-out), 
+              border-color var(--duration-fast) var(--ease-out);
 
   &:hover {
     transform: translateY(-1px);
     background: rgba(255, 122, 24, 0.16);
     border-color: rgba(255, 122, 24, 0.35);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--focus-ring);
+    outline: none;
   }
 
   svg {
@@ -161,8 +169,8 @@
 /* Burger (mobile) */
 .navBurger {
   display: none;
-  width: 42px;
-  height: 42px;
+  width: var(--touch-min);
+  height: var(--touch-min);
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(20, 24, 40, 0.6);
@@ -172,6 +180,11 @@
   &:hover {
     background: rgba(255, 122, 24, 0.16);
     border-color: rgba(255, 122, 24, 0.35);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--focus-ring);
+    outline: none;
   }
 
   svg {

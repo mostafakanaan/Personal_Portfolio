@@ -240,15 +240,28 @@
   align-items: center;
   justify-content: center;
   padding: 11px 14px;
+  min-height: var(--touch-min);
+  min-width: var(--touch-min);
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, .12);
   background: rgba(255, 255, 255, .04);
   color: var(--text);
   cursor: pointer;
-  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+  transition: transform var(--duration-fast) var(--ease-out), 
+              box-shadow var(--duration-fast) var(--ease-out), 
+              border-color var(--duration-fast) var(--ease-out);
 
   &:hover {
     transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--focus-ring);
+    outline: none;
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 }
 

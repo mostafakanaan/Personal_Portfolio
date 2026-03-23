@@ -193,7 +193,7 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
         </div>
       </header>
 
-      <main className="container">
+      <main className="container" id="main-content">
         <AnimatedSection 
           id="about" 
           eyebrow={t.about.eyebrow} 
@@ -265,6 +265,7 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
                 src="/img/myaistack.png"
                 alt="My AI Stack Preview"
                 className="aiStackPreviewImg"
+                loading="lazy"
               />
               <div className="aiStackPreviewOverlay">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -337,6 +338,7 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
                 src="/img/myaistack.png"
                 alt="My AI Stack - AI workflow diagram"
                 className="aiStackImage"
+                loading="lazy"
               />
               <div className="aiStackHoverOverlay">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

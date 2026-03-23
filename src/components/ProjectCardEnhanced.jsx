@@ -91,8 +91,9 @@ export default function ProjectCardEnhanced({ p, index = 0 }) {
         <div className="cardImageWrapEnhanced">
           <motion.img
             src={p.image}
-            alt=""
+            alt={`${p.name} project screenshot`}
             className="cardImageEnhanced"
+            loading="lazy"
             animate={{
               scale: isHovered ? 1.08 : 1,
             }}

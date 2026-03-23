@@ -63,7 +63,7 @@ export default function Navbar({ t, lang, setLang }) {
 
   return (
     <div ref={navWrapRef} className={`navWrap ${scrolled ? "navWrap--scrolled" : ""}`}>
-      <nav className="nav">
+      <nav className="nav" role="navigation" aria-label="Main navigation">
         <button
           className="brand"
           onClick={handleBrandClick}
@@ -95,7 +95,7 @@ export default function Navbar({ t, lang, setLang }) {
 
         <div className="navRight">
           <LanguageSwitcher lang={lang} setLang={setLang} />
-          <a href="/blog" onClick={() => setMenuOpen(false)} title="Blog" className="navIconBtn">
+          <a href="/blog" onClick={() => setMenuOpen(false)} title="Blog" aria-label="Blog" className="navIconBtn">
             <svg
               width="22"
               height="22"
@@ -112,7 +112,7 @@ export default function Navbar({ t, lang, setLang }) {
               <line x1="8" y1="11" x2="14" y2="11" />
             </svg>
           </a>
-          <a href="/chat" onClick={() => setMenuOpen(false)} title="KanaanChat" className="navRobot">
+          <a href="/chat" onClick={() => setMenuOpen(false)} title="KanaanChat" aria-label="Chat with AI assistant" className="navRobot">
             <svg
               width="24"
               height="24"
