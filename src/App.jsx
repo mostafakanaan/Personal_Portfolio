@@ -1,7 +1,7 @@
 // src/App.jsx
 import { useEffect, useMemo, useState, lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Navbar from "./components/Navbar";
 import AnimatedSection from "./components/AnimatedSection";
