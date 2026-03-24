@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 
 export function AnimatedHeroText({ children, delay = 0 }) {
   return (

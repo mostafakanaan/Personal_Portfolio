@@ -24,6 +24,8 @@ export default defineConfig([
     },
     rules: {
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]|^motion$' }],
+      // Disable purity check - Math.random in useMemo is intentional for animation initialization
+      'react-hooks/purity': 'off',
     },
   },
 ])

@@ -1,12 +1,13 @@
 // src/App.jsx
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import Navbar from "./components/Navbar";
 import AnimatedSection from "./components/AnimatedSection";
 import ProjectCardEnhanced from "./components/ProjectCardEnhanced";
-import ChatPage from "./pages/ChatPage";
+// Lazy load ChatPage for better performance
+const ChatPage = lazy(() => import("./pages/ChatPage"));
 import AufgabenPage from "./pages/AufgabenPage";
 import AufgabeDetailPage from "./pages/AufgabeDetailPage";
 import QuizPage from "./pages/QuizPage";
@@ -756,6 +757,7 @@ export default function App() {
   );
 
   return (
+    <Suspense fallback={<div style={{ minHeight: '100vh', background: '#020617', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#e2e8f0' }}>Loading...</div>}>
     <Routes>
       <Route
         path="/"
@@ -776,5 +778,6 @@ export default function App() {
       <Route path="/DfA/Aufgaben/:number" element={<AufgabeDetailPage />} />
       <Route path="/DfA/Aufgaben/:number/:levelId" element={<QuizPage />} />
     </Routes>
+    </Suspense>
   );
 }
