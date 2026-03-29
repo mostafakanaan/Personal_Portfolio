@@ -343,6 +343,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    12: {
+      title: "Aufgabe 12",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Stadtbibliothek hat viele B\u00fccher. Es gibt Romane, Kinderb\u00fccher und Kochb\u00fccher. Jeden Mittwoch ist Lesestunde f\u00fcr Kinder. Ein Bibliothekar liest eine Geschichte vor. Die Kinder sitzen im Kreis und h\u00f6ren gut zu.",
+          questions: [
+            { id: "a1-lv-12-1", question: "Was hat die Stadtbibliothek?", options: ["Viele B\u00fccher", "Viele Filme", "Viele Spiele", "Viele St\u00fchle"], correct: 0, points: 10 },
+            { id: "a1-lv-12-2", question: "Wann ist die Lesestunde f\u00fcr Kinder?", options: ["Montag", "Dienstag", "Mittwoch", "Donnerstag"], correct: 2, points: 10 },
+            { id: "a1-lv-12-3", question: "Wer liest die Geschichte vor?", options: ["Ein Lehrer", "Ein Bibliothekar", "Ein Kind", "Ein Freund"], correct: 1, points: 10 },
+            { id: "a1-lv-12-4", question: "Was f\u00fcr B\u00fccher gibt es?", options: ["Nur Romane", "Nur Kinderb\u00fccher", "Kochb\u00fccher und Romane", "Kein Buch"], correct: 2, points: 10 },
+            { id: "a1-lv-12-5", question: "Wo sitzen die Kinder w\u00e4hrend der Lesestunde?", options: ["Am Tisch", "Im Kreis", "Auf dem Boden", "In der Ecke"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a1-gr-12-1", question: "Welcher Satz ist korrekt?", options: ["Ich habe ein Buch.", "Ich ein Buch habe.", "Habe ich ein Buch.", "Buch habe ich ein."], correct: 0, points: 10 },
+            { id: "a1-gr-12-2", question: "Wie fragt man nach einem Ort?", options: ["Wo ist das Buch?", "Das Buch ist wo?", "Wo das Buch ist?", "Ist das Buch wo?"], correct: 0, points: 10 },
+            { id: "a1-gr-12-3", question: "Welches Wort ist kein Nomen?", options: ["Hund", "laufen", "Katze", "Haus"], correct: 1, points: 10 },
+            { id: "a1-gr-12-4", question: "Wie sagt man \"Ich sehe den Film\" im Plural?", options: ["Wir sehen die Filme.", "Wir sieht die Filme.", "Wir sehen der Film.", "Wir sehen Film."], correct: 0, points: 10 },
+            { id: "a1-gr-12-5", question: "Was ist die richtige Form von \"sein\" f\u00fcr \"ich\"?", options: ["bist", "bin", "sind", "ist"], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   a2: {
     1: {
@@ -683,6 +713,36 @@ export const exercises = {
             { id: "a2-hv-11-3", question: "Um wie viel Uhr ist die F\u00fchrung?", options: ["15 Uhr", "14 Uhr", "16 Uhr", "13 Uhr"], correct: 0, points: 6 },
             { id: "a2-hv-11-4", question: "Die Kinder k\u00f6nnen keine Fragen stellen. ", options: ["Wahr", "Falsch"], correct: 1, points: 6 },
             { id: "a2-hv-11-5", question: "Es gibt keine neuen Tiere im Zoo. ", options: ["Wahr", "Falsch"], correct: 1, points: 6 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    12: {
+      title: "Aufgabe 12",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In der Stadt gibt es einen ungew\u00f6hnlichen Park. In diesem Park k\u00f6nnen die Besucher verschiedene Pflanzen und Blumen riechen. Es gibt auch einen Bereich, in dem man Kr\u00e4uter pflanzen kann. Viele Menschen kommen hierher, um sich zu entspannen und die Natur zu genie\u00dfen. Der Park ist besonders sch\u00f6n im Fr\u00fchling.",
+          questions: [
+            { id: "a2-lv-12-1", question: "Was kann man im Park riechen?", options: ["A) Tiere", "B) Pflanzen und Blumen", "C) Essen", "D) Parfum"], correct: 1, points: 10 },
+            { id: "a2-lv-12-2", question: "Was kann man im Kr\u00e4uterbereich machen?", options: ["A) Blumen gie\u00dfen", "B) Kr\u00e4uter pflanzen", "C) Tiere f\u00fcttern", "D) Spiele spielen"], correct: 1, points: 10 },
+            { id: "a2-lv-12-3", question: "Wann ist der Park besonders sch\u00f6n?", options: ["A) Im Winter", "B) Im Herbst", "C) Im Sommer", "D) Im Fr\u00fchling"], correct: 3, points: 10 },
+            { id: "a2-lv-12-4", question: "Warum kommen viele Menschen in den Park?", options: ["A) Um zu arbeiten", "B) Um sich zu entspannen", "C) Um zu essen", "D) Um Sport zu machen"], correct: 1, points: 10 },
+            { id: "a2-lv-12-5", question: "Was gibt es im Park?", options: ["A) Eiskunstlauf", "B) Pflanzen und Blumen", "C) Sportger\u00e4te", "D) Tiere"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a2-gr-12-1", question: "Welches Wort ist richtig? 'Ich _____ im Park.'", options: ["A) sein", "B) bin", "C) bist", "D) seid"], correct: 1, points: 10 },
+            { id: "a2-gr-12-2", question: "Welche Form ist richtig? 'Sie _____ einen sch\u00f6nen Tag.'", options: ["A) haben", "B) hat", "C) habe", "D) habt"], correct: 0, points: 10 },
+            { id: "a2-gr-12-3", question: "Was sagt man? 'Ich _____ in die Stadt gehen.'", options: ["A) will", "B) willst", "C) wollen", "D) wollt"], correct: 0, points: 10 },
+            { id: "a2-gr-12-4", question: "Wie lautet die korrekte Frage? '_____ du gern schwimmen?'", options: ["A) Mag", "B) Magst", "C) M\u00f6gen", "D) M\u00f6gt"], correct: 1, points: 10 },
+            { id: "a2-gr-12-5", question: "Welches Wort passt nicht? 'Das ist ein _____ Park.'", options: ["A) sch\u00f6n", "B) sch\u00f6ne", "C) sch\u00f6nes", "D) sch\u00f6ner"], correct: 0, points: 10 },
           ],
         },
       ],
@@ -1033,6 +1093,36 @@ export const exercises = {
       ],
       maxPoints: 100,
     },
+    12: {
+      title: "Aufgabe 12",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Zukunft der Nahrungsmittelproduktion k\u00f6nnte in vertikalen Farmen liegen. Diese innovativen Anlagen nutzen den Raum in St\u00e4dten, um Pflanzen in mehreren Schichten anzubauen. Durch moderne Technologien wie LED-Licht und pr\u00e4zise Bew\u00e4sserung k\u00f6nnen diese Farmen das ganze Jahr \u00fcber frische Lebensmittel liefern. Au\u00dferdem ben\u00f6tigen sie weniger Wasser und landwirtschaftliche Fl\u00e4chen als traditionelle Farmen. Dies k\u00f6nnte nicht nur die Nahrungsmittelversorgung verbessern, sondern auch einen positiven Einfluss auf die Umwelt haben.",
+          questions: [
+            { id: "b1-lv-12-1", question: "Was ist ein Vorteil vertikaler Farmen?", options: ["A) Sie produzieren Lebensmittel in l\u00e4ndlichen Gebieten.", "B) Sie ben\u00f6tigen weniger Wasser und Fl\u00e4che.", "C) Sie sind teurer als traditionelle Farmen.", "D) Sie verwenden keine Technologie."], correct: 1, points: 10 },
+            { id: "b1-lv-12-2", question: "Welches Element wird in vertikalen Farmen verwendet, um Pflanzen zu beleuchten?", options: ["A) Sonnenlicht", "B) Gl\u00fchbirnen", "C) LED-Licht", "D) Kerzen"], correct: 2, points: 10 },
+            { id: "b1-lv-12-3", question: "In welchem Bereich k\u00f6nnten vertikale Farmen besonders n\u00fctzlich sein?", options: ["A) In l\u00e4ndlichen Regionen", "B) In St\u00e4dten", "C) In W\u00e4ldern", "D) An K\u00fcsten"], correct: 1, points: 10 },
+            { id: "b1-lv-12-4", question: "Wie beeinflussen vertikale Farmen die Umwelt?", options: ["A) Sie sch\u00e4digen sie.", "B) Sie haben keinen Einfluss.", "C) Sie k\u00f6nnten einen positiven Einfluss haben.", "D) Sie sind umweltsch\u00e4dlich."], correct: 2, points: 10 },
+            { id: "b1-lv-12-5", question: "Wann k\u00f6nnen vertikale Farmen frische Lebensmittel liefern?", options: ["A) Nur im Sommer", "B) Das ganze Jahr \u00fcber", "C) Nur im Winter", "D) Nur im Fr\u00fchling"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b1-gr-12-1", question: "Welches Wort ist richtig? \"Die vertikale Farm, ___ in der Stadt steht, ist sehr modern.\"", options: ["A) die", "B) das", "C) der", "D) den"], correct: 0, points: 10 },
+            { id: "b1-gr-12-2", question: "W\u00e4hlen Sie die richtige Form: \"Wenn ich mehr Zeit h\u00e4tte, ___ ich \u00f6fter in die vertikale Farm gehen.\"", options: ["A) w\u00fcrde", "B) werde", "C) bin", "D) habe"], correct: 0, points: 10 },
+            { id: "b1-gr-12-3", question: "Welche Form ist korrekt? \"Vertikale Farmen ___ viel weniger Wasser als traditionelle Farmen.\"", options: ["A) ben\u00f6tigt", "B) ben\u00f6tigen", "C) ben\u00f6tigte", "D) ben\u00f6tigen werden"], correct: 1, points: 10 },
+            { id: "b1-gr-12-4", question: "Wie lautet der korrekte Satz? \"Ich finde, dass vertikale Farmen ___ die L\u00f6sung f\u00fcr die Nahrungsmittelkrise sein k\u00f6nnten.\"", options: ["A) kann", "B) k\u00f6nnte", "C) k\u00f6nnte auch", "D) k\u00f6nnte nicht"], correct: 1, points: 10 },
+            { id: "b1-gr-12-5", question: "W\u00e4hlen Sie die richtige Pr\u00e4position: \"Die Vorteile ___ vertikalen Farmen sind vielf\u00e4ltig.\"", options: ["A) von", "B) f\u00fcr", "C) mit", "D) an"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   b2: {
     1: {
@@ -1373,6 +1463,36 @@ export const exercises = {
             { id: "b2-hv-11-3", question: "Aktivismus kann durch soziale Medien unterst\u00fctzt werden.", options: ["Wahr", "Falsch"], correct: 0, points: 6 },
             { id: "b2-hv-11-4", question: "Sind soziale Medien nur negativ?", options: ["A) Ja, absolut", "B) Nein, sie haben auch Vorteile", "C) Kommt darauf an", "D) Nur f\u00fcr bestimmte Nutzer"], correct: 1, points: 6 },
             { id: "b2-hv-11-5", question: "Das Finden eines Gleichgewichts bei der Nutzung sozialer Medien ist wichtig.", options: ["Wahr", "Falsch"], correct: 0, points: 6 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
+    12: {
+      title: "Aufgabe 12",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Philosophie des Minimalismus gewinnt zunehmend an Beliebtheit, da viele Menschen nach einem einfacheren und erf\u00fcllteren Leben streben. Minimalisten glauben, dass die Reduktion von materiellen Besitzt\u00fcmern zu mehr Freiheit und Klarheit im Denken f\u00fchrt. Diese Lebensweise erfordert nicht nur physische Ver\u00e4nderungen, sondern auch eine tiefgreifende Neubewertung der eigenen Werte und Priorit\u00e4ten. Kritiker hingegen warnen vor einer \u00fcbertriebenen Vereinfachung, die wichtige kulturelle und emotionale Aspekte des Lebens ignorieren k\u00f6nnte.",
+          questions: [
+            { id: "b2-lv-12-1", question: "Was ist das Hauptziel der Minimalisten?", options: ["A) Mehr materielle Besitzt\u00fcmer", "B) Ein einfacheres Leben", "C) H\u00f6here gesellschaftliche Anerkennung", "D) Reisen um die Welt"], correct: 1, points: 10 },
+            { id: "b2-lv-12-2", question: "Welches Konzept wird mit Minimalismus verbunden?", options: ["A) \u00dcberfluss", "B) Freiheit", "C) Komplexit\u00e4t", "D) Stress"], correct: 1, points: 10 },
+            { id: "b2-lv-12-3", question: "Was fordern Kritiker des Minimalismus?", options: ["A) Mehr materielle G\u00fcter", "B) Mehr Freiheit", "C) Ber\u00fccksichtigung kultureller Werte", "D) Eine neue Lebensweise"], correct: 2, points: 10 },
+            { id: "b2-lv-12-4", question: "In welchem Bereich fordert Minimalismus eine Neubewertung?", options: ["A) Technologischer Fortschritt", "B) Materielle Werte", "C) Bildende Kunst", "D) Naturwissenschaften"], correct: 1, points: 10 },
+            { id: "b2-lv-12-5", question: "Wie wirkt sich Minimalismus auf das Denken aus?", options: ["A) Es f\u00fchrt zu mehr Klarheit", "B) Es macht verwirrt", "C) Es ist irrelevant", "D) Es hat keine Auswirkungen"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b2-gr-12-1", question: "Welcher Satz ist grammatikalisch korrekt?", options: ["A) Ich w\u00fcrde, wenn ich Zeit habe, kommen.", "B) Wenn ich Zeit habe, ich w\u00fcrde kommen.", "C) Ich w\u00fcrde kommen, wenn ich Zeit habe.", "D) Wenn habe ich Zeit, ich w\u00fcrde kommen."], correct: 2, points: 10 },
+            { id: "b2-gr-12-2", question: "W\u00e4hlen Sie die richtige Form des Verbs: Wenn er die M\u00f6glichkeit ______, wird er reisen.", options: ["A) hat", "B) haben", "C) hatte", "D) hat gehabt"], correct: 0, points: 10 },
+            { id: "b2-gr-12-3", question: "Welcher Satz enth\u00e4lt einen Fehler in der Zeitform?", options: ["A) Ich habe das Buch gelesen.", "B) Er geht oft ins Kino.", "C) Sie hat gestern eine neue Idee entwickelt.", "D) Als ich ankam, haben sie schon gegessen."], correct: 3, points: 10 },
+            { id: "b2-gr-12-4", question: "Welche Pr\u00e4position passt hier richtig: Er interessiert sich ______ Kunst.", options: ["A) f\u00fcr", "B) an", "C) mit", "D) \u00fcber"], correct: 0, points: 10 },
+            { id: "b2-gr-12-5", question: "Welches Wort ist der richtige Konjunktiv?", options: ["A) Wenn ich reich w\u00e4re, w\u00fcrde ich reisen.", "B) Wenn ich reich bin, w\u00fcrde ich reisen.", "C) Wenn ich reich gewesen w\u00e4re, w\u00fcrde ich reisen.", "D) Wenn ich reich werde, w\u00fcrde ich reisen."], correct: 0, points: 10 },
           ],
         },
       ],
