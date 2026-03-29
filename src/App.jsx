@@ -777,6 +777,7 @@ export default function App() {
       <Route path="/DfA/Aufgaben" element={<AufgabenPage />} />
       <Route path="/DfA/Aufgaben/:number" element={<AufgabeDetailPage />} />
       <Route path="/DfA/Aufgaben/:number/:levelId" element={<QuizPage />} />
+      <Route path="/DfA/Aufgaben/Test/:levelId" element={<QuizPage />} />
     </Routes>
     </Suspense>
   );

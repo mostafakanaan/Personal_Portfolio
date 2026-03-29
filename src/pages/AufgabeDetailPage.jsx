@@ -17,18 +17,19 @@ const cardVariants = {
 
 export default function AufgabeDetailPage() {
   const { number } = useParams();
-  const num = parseInt(number, 10);
+  const isTest = number === "Test";
+  const num = isTest ? "Test" : parseInt(number, 10);
   const [showPopup, setShowPopup] = useState(false);
 
   // Collect every level that contains this Aufgabe
   const matches = levels
     .map((level) => {
-      const aufgabe = level.aufgaben.find((a) => a.number === num);
+      const aufgabe = level.aufgaben.find((a) => String(a.number) === String(num));
       return aufgabe ? { level, aufgabe } : null;
     })
     .filter(Boolean);
 
-  const notFound = isNaN(num) || matches.length === 0;
+  const notFound = (!isTest && isNaN(num)) || matches.length === 0;
 
   const handleLinkClick = (e, link) => {
     if (!link || link === "#") {
@@ -88,7 +89,7 @@ export default function AufgabeDetailPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {notFound ? "Aufgabe nicht gefunden" : `Aufgabe ${num}`}
+          {notFound ? "Aufgabe nicht gefunden" : isTest ? "Test-Aufgabe 🧪" : `Aufgabe ${num}`}
         </motion.h1>
         {!notFound && (
           <motion.p
