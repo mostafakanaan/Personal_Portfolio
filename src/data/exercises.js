@@ -514,6 +514,36 @@ export const exercises = {
       maxPoints: 100,
       bonusPoints: 10,
     },
+    14: {
+      title: "Aufgabe 14",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Papierflieger sind sehr beliebt. Viele Kinder und Erwachsene machen sie. Man braucht nur ein Blatt Papier. Man kann fliegen lassen und tolle Tricks machen. Der beste Papierflieger fliegt am weitesten. Es macht Spa\u00df, verschiedene Flieger zu bauen.",
+          questions: [
+            { id: "a1-lv-14-1", question: "Was braucht man f\u00fcr einen Papierflieger?", options: ["Ein Blatt Papier", "Eine Schere", "Kleber", "Ein Buch"], correct: 0, points: 10 },
+            { id: "a1-lv-14-2", question: "Wer macht Papierflieger?", options: ["Nur Erwachsene", "Nur Kinder", "Kinder und Erwachsene", "Tiere"], correct: 2, points: 10 },
+            { id: "a1-lv-14-3", question: "Was kann man mit Papierfliegern machen?", options: ["Essen", "Fliegen lassen", "Schreiben", "Malen"], correct: 1, points: 10 },
+            { id: "a1-lv-14-4", question: "Was ist wichtig f\u00fcr den besten Papierflieger?", options: ["Das Papier", "Die Farbe", "Die Form", "Die Gr\u00f6\u00dfe"], correct: 2, points: 10 },
+            { id: "a1-lv-14-5", question: "Macht es Spa\u00df, Papierflieger zu bauen?", options: ["Ja", "Nein", "Vielleicht", "Ich wei\u00df nicht"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a1-gr-14-1", question: "Was ist die richtige Form? Ich __________ ein Papierflieger.", options: ["mache", "machst", "machen", "macht"], correct: 0, points: 10 },
+            { id: "a1-gr-14-2", question: "Wann fliegen die Papierflieger?", options: ["Jetzt", "Gestern", "Morgen", "Niemals"], correct: 0, points: 10 },
+            { id: "a1-gr-14-3", question: "Wie viele Papierflieger __________ du machen?", options: ["kann", "kannst", "k\u00f6nnte", "k\u00f6nnen"], correct: 1, points: 10 },
+            { id: "a1-gr-14-4", question: "Das Papier ist __________.", options: ["weiss", "weisse", "weissen", "weisseh"], correct: 0, points: 10 },
+            { id: "a1-gr-14-5", question: "Wir __________ viele Tricks.", options: ["machen", "macht", "machst", "gemacht"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   a2: {
     1: {
@@ -1029,6 +1059,36 @@ export const exercises = {
       ],
       maxPoints: 100,
       bonusPoints: 10,
+    },
+    14: {
+      title: "Aufgabe 14",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Welt der Pflanzen ist faszinierend. Wusstest du, dass es Pflanzen gibt, die nachts leuchten? Diese Pflanzen produzieren Licht durch einen Prozess namens Biolumineszenz. Auch die Titanenwurz ist sehr besonders. Sie hat die gr\u00f6\u00dfte Bl\u00fcte der Welt und riecht nach faulen Eiern. Viele Menschen kommen, um sie zu sehen, weil sie nur einmal im Jahr bl\u00fcht.",
+          questions: [
+            { id: "a2-lv-14-1", question: "Welche Pflanzen leuchten nachts?", options: ["Kaktusse", "Pflanzen mit Biolumineszenz", "Rosen", "B\u00e4ume"], correct: 1, points: 10 },
+            { id: "a2-lv-14-2", question: "Was ist die Titanenwurz?", options: ["Eine gro\u00dfe Blume", "Ein Baum", "Ein Gem\u00fcse", "Ein Strauch"], correct: 0, points: 10 },
+            { id: "a2-lv-14-3", question: "Wie riecht die Bl\u00fcte der Titanenwurz?", options: ["Nach Blumen", "Nach frischem Brot", "Nach faulen Eiern", "Nach Schokolade"], correct: 2, points: 10 },
+            { id: "a2-lv-14-4", question: "Wie oft bl\u00fcht die Titanenwurz?", options: ["Jeden Monat", "Einmal im Jahr", "Jeden Tag", "Nie"], correct: 1, points: 10 },
+            { id: "a2-lv-14-5", question: "Warum kommen viele Menschen zur Titanenwurz?", options: ["Um sie zu kaufen", "Um das Licht zu sehen", "Um sie einmal im Jahr zu sehen", "Um den Duft zu riechen"], correct: 2, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a2-gr-14-1", question: "Was ist die korrekte Form: 'Ich ____ ein Buch lesen.'?", options: ["will", "wollen", "wollte", "willst"], correct: 0, points: 10 },
+            { id: "a2-gr-14-2", question: "Was ist die richtige Antwort: 'Hast du Zeit?' - 'Ja, ich ____ Zeit.'?", options: ["habe", "hat", "hatte", "hast"], correct: 0, points: 10 },
+            { id: "a2-gr-14-3", question: "Was ist die richtige Form: 'Er ____ nach K\u00f6ln fahren.'?", options: ["will", "willst", "wollen", "wollte"], correct: 0, points: 10 },
+            { id: "a2-gr-14-4", question: "Vervollst\u00e4ndige den Satz: 'Wir gehen ins Kino, ____ du mitkommen.'?", options: ["wenn", "aber", "oder", "und"], correct: 0, points: 10 },
+            { id: "a2-gr-14-5", question: "Was ist die korrekte Form: 'Sie ____ ein Haus kaufen.'?", options: ["m\u00f6chte", "m\u00f6chten", "m\u00f6chtest", "m\u00f6chte ich"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
     },
   },
   b1: {
@@ -1546,6 +1606,36 @@ export const exercises = {
       maxPoints: 100,
       bonusPoints: 10,
     },
+    14: {
+      title: "Aufgabe 14",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Bedeutung der Stille in unserer lauten Welt wird oft untersch\u00e4tzt. Viele Menschen suchen Ruhe, um ihre Gedanken zu ordnen und neue Energie zu tanken. Stille kann helfen, den Stress des Alltags abzubauen und kreative Prozesse zu f\u00f6rdern. In einer Zeit, in der wir st\u00e4ndig von Ger\u00e4uschen umgeben sind, ist es wichtig, Momente der Stille bewusst zu erleben, um uns selbst besser kennenzulernen.",
+          questions: [
+            { id: "b1-lv-14-1", question: "Was wird im Text als oft untersch\u00e4tzt beschrieben?", options: ["A) L\u00e4rm", "B) Musik", "C) Stille", "D) Technologie"], correct: 2, points: 10 },
+            { id: "b1-lv-14-2", question: "Wie kann Stille laut dem Text helfen?", options: ["A) Stress abzubauen", "B) Geld zu sparen", "C) Freunde zu finden", "D) Reisen zu planen"], correct: 0, points: 10 },
+            { id: "b1-lv-14-3", question: "Was sollte man laut Text bewusst erleben?", options: ["A) L\u00e4rm", "B) Stille", "C) Arbeit", "D) Unterhaltung"], correct: 1, points: 10 },
+            { id: "b1-lv-14-4", question: "Welche Zeit beschreibt der Text?", options: ["A) Eine Zeit des Wandels", "B) Eine Zeit der Stille", "C) Eine Zeit der Technologie", "D) Eine laute Zeit"], correct: 3, points: 10 },
+            { id: "b1-lv-14-5", question: "Was ist eine m\u00f6gliche Folge von Stille?", options: ["A) Kreativit\u00e4t f\u00f6rdern", "B) Ablenkung erh\u00f6hen", "C) Zeit verschwenden", "D) Stress verst\u00e4rken"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b1-gr-14-1", question: "W\u00e4hlen Sie die richtige Form des Verbs: 'Ich _____ (denken) oft an die Stille.'", options: ["A) denken", "B) denke", "C) dacht", "D) gedacht"], correct: 1, points: 10 },
+            { id: "b1-gr-14-2", question: "Vervollst\u00e4ndigen Sie den Satz: 'Es ist wichtig, _____ (haben) Momente der Ruhe.'", options: ["A) hat", "B) hatten", "C) haben", "D) hatte"], correct: 2, points: 10 },
+            { id: "b1-gr-14-3", question: "W\u00e4hlen Sie die richtige Pr\u00e4position: 'Kreativit\u00e4t entsteht _____ Stille.'", options: ["A) f\u00fcr", "B) in", "C) mit", "D) an"], correct: 1, points: 10 },
+            { id: "b1-gr-14-4", question: "Vervollst\u00e4ndigen Sie den Satz mit dem passenden Adjektiv: 'Die Welt ist manchmal sehr _____ (laut).'", options: ["A) leise", "B) laut", "C) ruhiger", "D) ruhend"], correct: 1, points: 10 },
+            { id: "b1-gr-14-5", question: "W\u00e4hlen Sie die passende Frageform: '_____ (du/h\u00f6ren) gern Musik in der Stille?'", options: ["A) Du h\u00f6rst", "B) H\u00f6rst du", "C) H\u00f6rst", "D) Du h\u00f6ren"], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   b2: {
     1: {
@@ -2061,6 +2151,36 @@ export const exercises = {
       ],
       maxPoints: 100,
       bonusPoints: 10,
+    },
+    14: {
+      title: "Aufgabe 14",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Philosophie der Farben ist ein faszinierendes Studienfeld, das sich mit der emotionalen und psychologischen Wirkung von Farben auf den Menschen besch\u00e4ftigt. Farben beeinflussen nicht nur unsere Stimmung, sondern auch unsere Entscheidungsfindung und Wahrnehmung der Umwelt. In verschiedenen Kulturen haben Farben unterschiedliche Bedeutungen und k\u00f6nnen sogar das soziale Verhalten einer Person beeinflussen. So wird zum Beispiel Blau oft mit Ruhe und Vertrauen assoziiert, w\u00e4hrend Rot als Symbol f\u00fcr Leidenschaft und Gefahr gilt.",
+          questions: [
+            { id: "b2-lv-14-1", question: "Was untersucht die Philosophie der Farben?", options: ["Die chemische Zusammensetzung von Farben", "Die emotionale Wirkung von Farben", "Die Geschichte der Farbkunde", "Die Technik des Farbens"], correct: 1, points: 10 },
+            { id: "b2-lv-14-2", question: "Wie beeinflussen Farben unsere Entscheidungen?", options: ["Sie haben keinen Einfluss", "Sie beeinflussen die Stimmung und die Wahrnehmung", "Sie ver\u00e4ndern physische Eigenschaften", "Sie bestimmen die Lebensdauer von Produkten"], correct: 1, points: 10 },
+            { id: "b2-lv-14-3", question: "Welche Farbe wird mit Ruhe assoziiert?", options: ["Rot", "Blau", "Gr\u00fcn", "Gelb"], correct: 1, points: 10 },
+            { id: "b2-lv-14-4", question: "Was bedeutet die Farbe Rot laut dem Text?", options: ["Ruhe", "Intelligenz", "Leidenschaft und Gefahr", "Natur"], correct: 2, points: 10 },
+            { id: "b2-lv-14-5", question: "Inwiefern variieren die Bedeutungen von Farben?", options: ["Sie sind universell gleich", "Sie \u00e4ndern sich je nach Kultur", "Sie sind nur subjektiv", "Sie sind immer gleich"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b2-gr-14-1", question: "Identifizieren Sie den grammatikalisch korrekten Satz: ", options: ["Wenn ich Zeit habe, gehe ich ins Kino.", "Wenn ich Zeit habe gehe ich ins Kino.", "Ich gehe ins Kino wenn ich Zeit habe.", "Ich gehe ins Kino, wenn ich Zeit habe."], correct: 3, points: 10 },
+            { id: "b2-gr-14-2", question: "Welches Wort ist ein Adverb in folgendem Satz: 'Er spricht leise.'?", options: ["Er", "spricht", "leise", "nicht"], correct: 2, points: 10 },
+            { id: "b2-gr-14-3", question: "W\u00e4hlen Sie den Satz mit dem richtigen Gebrauch des Konjunktivs II: ", options: ["Wenn ich mehr Geld h\u00e4tte, w\u00fcrde ich reisen.", "Wenn ich mehr Geld habe, w\u00fcrde ich reisen.", "Wenn ich mehr Geld h\u00e4tte, ich w\u00fcrde reisen.", "Wenn ich mehr Geld, ich w\u00fcrde reisen."], correct: 0, points: 10 },
+            { id: "b2-gr-14-4", question: "Welches dieser W\u00f6rter ist ein Relativpronomen?", options: ["der", "schnell", "sch\u00f6n", "und"], correct: 0, points: 10 },
+            { id: "b2-gr-14-5", question: "Was ist die korrekte Form des Verbs im Pr\u00e4sens: 'Sie (laufen) jeden Morgen.'?", options: ["l\u00e4ufst", "laufe", "laufen", "l\u00e4uft"], correct: 3, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
     },
   },
 };
