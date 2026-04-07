@@ -571,6 +571,36 @@ export const exercises = {
       maxPoints: 100,
       bonusPoints: 10,
     },
+    15: {
+      title: "Aufgabe 15",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Das Wetter ist wichtig f\u00fcr die Pflanzen. Ohne Sonne k\u00f6nnen die Blumen nicht wachsen. Im Fr\u00fchling bl\u00fchen die Blumen sch\u00f6n und bunt. Viele Menschen gehen in den Park und genie\u00dfen die Sonne. Der Sommer ist warm und die Tage sind lang. Im Winter schneit es manchmal und die Landschaft wird wei\u00df.",
+          questions: [
+            { id: "a1-lv-15-1", question: "Warum ist das Wetter wichtig f\u00fcr die Pflanzen?", options: ["Weil sie Sonne brauchen.", "Weil sie Wasser brauchen.", "Weil sie Schatten brauchen.", "Weil sie Erde brauchen."], correct: 0, points: 10 },
+            { id: "a1-lv-15-2", question: "Was passiert im Fr\u00fchling?", options: ["Die Blumen bl\u00fchen.", "Es schneit.", "Die Tage sind kurz.", "Es regnet viel."], correct: 0, points: 10 },
+            { id: "a1-lv-15-3", question: "Was machen viele Menschen im Sommer?", options: ["Sie gehen ins Kino.", "Sie gehen in den Park.", "Sie bleiben zu Hause.", "Sie lesen B\u00fccher."], correct: 1, points: 10 },
+            { id: "a1-lv-15-4", question: "Wie ist das Wetter im Sommer?", options: ["Es ist kalt.", "Es ist warm.", "Es ist windig.", "Es ist neblig."], correct: 1, points: 10 },
+            { id: "a1-lv-15-5", question: "Welche Farbe hat die Landschaft im Winter?", options: ["Gr\u00fcn", "Blau", "Wei\u00df", "Rot"], correct: 2, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a1-gr-15-1", question: "Was ist die richtige Form? Ich ___ ein Buch.", options: ["lese", "liebe", "sehen", "h\u00f6re"], correct: 0, points: 10 },
+            { id: "a1-gr-15-2", question: "Welches Wort ist ein Tier?", options: ["Baum", "Hund", "Haus", "Tisch"], correct: 1, points: 10 },
+            { id: "a1-gr-15-3", question: "Wie sagt man: 'Es ist kalt'?", options: ["Es ist hei\u00df.", "Es ist k\u00fchl.", "Es ist warm.", "Es ist sonnig."], correct: 1, points: 10 },
+            { id: "a1-gr-15-4", question: "Was ist die Pluralform von 'Auto'?", options: ["Autos", "Autoe", "Auten", "Autoes"], correct: 0, points: 10 },
+            { id: "a1-gr-15-5", question: "Was ist die richtige Frage? Wo ___ du?", options: ["bin", "sind", "bist", "ist"], correct: 2, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   a2: {
     1: {
@@ -1143,6 +1173,36 @@ export const exercises = {
       ],
       maxPoints: 100,
       bonusPoints: 10,
+    },
+    15: {
+      title: "Aufgabe 15",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Es gibt einen interessanten Wettbewerb in Deutschland, der \"Weltmeisterschaft im Steinwerfen\" hei\u00dft. Jedes Jahr kommen viele Menschen zusammen, um ihre F\u00e4higkeiten zu zeigen. Die Teilnehmer werfen gro\u00dfe Steine so weit wie m\u00f6glich. Der Gewinner erh\u00e4lt einen besonderen Preis und viel Anerkennung. Viele Zuschauer kommen, um die aufregenden Wurfk\u00fcnste zu sehen und mitzufiebern.",
+          questions: [
+            { id: "a2-lv-15-1", question: "Was ist das Thema des Wettbewerbs?", options: ["Wurfkunst", "Laufen", "Schwimmen", "Tanzen"], correct: 0, points: 10 },
+            { id: "a2-lv-15-2", question: "Was wird bei diesem Wettbewerb geworfen?", options: ["B\u00e4lle", "Steine", "Frisbees", "\u00c4pfel"], correct: 1, points: 10 },
+            { id: "a2-lv-15-3", question: "Was bekommen die Gewinner?", options: ["Medaljen", "Geldpreise", "Anerkennung", "Geschenke"], correct: 2, points: 10 },
+            { id: "a2-lv-15-4", question: "Wer kommt zu dem Wettbewerb?", options: ["Nur Teilnehmer", "Nur Kinder", "Zuschauer", "Nur Erwachsene"], correct: 2, points: 10 },
+            { id: "a2-lv-15-5", question: "Wo findet dieser Wettbewerb statt?", options: ["In der Stadt", "In einem Park", "In Deutschland", "In der Schule"], correct: 2, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a2-gr-15-1", question: "Wie sagt man: 'Ich ___ gerne Sport.'?", options: ["spielt", "spiele", "spielen", "spielte"], correct: 1, points: 10 },
+            { id: "a2-gr-15-2", question: "Vervollst\u00e4ndige: 'Wir ___ ins Kino.'", options: ["gehst", "gehen", "geht", "gehe"], correct: 1, points: 10 },
+            { id: "a2-gr-15-3", question: "Welches Wort ist richtig: 'Er ___ ein Buch.'?", options: ["liest", "lesen", "liestest", "lese"], correct: 0, points: 10 },
+            { id: "a2-gr-15-4", question: "Wie fragt man: 'Was ___ du heute machen?'", options: ["will", "wollte", "willst", "m\u00f6chten"], correct: 2, points: 10 },
+            { id: "a2-gr-15-5", question: "Vervollst\u00e4ndige: 'Ich ___ morgen arbeiten.'", options: ["werde", "wirst", "wird", "werden"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
     },
   },
   b1: {
@@ -1717,6 +1777,36 @@ export const exercises = {
       maxPoints: 100,
       bonusPoints: 10,
     },
+    15: {
+      title: "Aufgabe 15",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In den letzten Jahren hat sich ein neues Ph\u00e4nomen entwickelt: die Urban Gardening Bewegung. Immer mehr Menschen in St\u00e4dten nutzen freie Fl\u00e4chen, um Gem\u00fcse und Kr\u00e4uter anzubauen. Dies f\u00f6rdert nicht nur die Selbstversorgung, sondern auch den sozialen Zusammenhalt in der Nachbarschaft. Urban Gardening kann zudem einen positiven Einfluss auf die Umwelt haben, indem es die Luftqualit\u00e4t verbessert und die Artenvielfalt erh\u00f6ht.",
+          questions: [
+            { id: "b1-lv-15-1", question: "Was ist das Hauptziel der Urban Gardening Bewegung?", options: ["A) Selbstversorgung", "B) Gewinnmaximierung", "C) Umweltschutz", "D) Freizeitgestaltung"], correct: 0, points: 10 },
+            { id: "b1-lv-15-2", question: "Wie beeinflusst Urban Gardening die Nachbarschaft?", options: ["A) Es sorgt f\u00fcr mehr L\u00e4rm.", "B) Es f\u00f6rdert den sozialen Zusammenhalt.", "C) Es f\u00fchrt zu Konflikten.", "D) Es hat keine Auswirkungen."], correct: 1, points: 10 },
+            { id: "b1-lv-15-3", question: "Welche Vorteile hat Urban Gardening f\u00fcr die Umwelt?", options: ["A) Es verringert die Artenvielfalt.", "B) Es verbessert die Luftqualit\u00e4t.", "C) Es ben\u00f6tigt viel Wasser.", "D) Es ist sch\u00e4dlich f\u00fcr die Natur."], correct: 1, points: 10 },
+            { id: "b1-lv-15-4", question: "Was nutzen Menschen in St\u00e4dten f\u00fcr Urban Gardening?", options: ["A) Nur eigene G\u00e4rten.", "B) Freie Fl\u00e4chen.", "C) Superm\u00e4rkte.", "D) Parkpl\u00e4tze."], correct: 1, points: 10 },
+            { id: "b1-lv-15-5", question: "Wie hat sich Urban Gardening in den letzten Jahren entwickelt?", options: ["A) Es ist weniger popul\u00e4r geworden.", "B) Es hat sich nicht ver\u00e4ndert.", "C) Es hat zugenommen.", "D) Es wird nur von \u00e4lteren Menschen praktiziert."], correct: 2, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b1-gr-15-1", question: "Welches Wort fehlt in diesem Satz: 'Wenn es regnet, _____ ich nicht ins Freie.'?", options: ["A) gehe", "B) gehen", "C) ging", "D) gegangen"], correct: 0, points: 10 },
+            { id: "b1-gr-15-2", question: "Wie lautet die korrekte Form von 'essen' im Perfekt: 'Wir _____ Pizza gegessen.'?", options: ["A) haben", "B) ist", "C) wurden", "D) sind"], correct: 0, points: 10 },
+            { id: "b1-gr-15-3", question: "Welcher Satz ist grammatikalisch korrekt?", options: ["A) Ich habe eine Idee, die ich gerne teile.", "B) Ich habe eine Idee, die ich gerne teilen.", "C) Ich habe ein Idee, die ich gerne teile.", "D) Ich habe ein Idee, die ich gerne teilen."], correct: 0, points: 10 },
+            { id: "b1-gr-15-4", question: "Welches Wort passt am besten: 'Ich interessiere mich _____ Geschichte.'?", options: ["A) f\u00fcr", "B) an", "C) mit", "D) in"], correct: 0, points: 10 },
+            { id: "b1-gr-15-5", question: "Wie fragt man korrekt nach einem Grund?: 'Warum hast du das gemacht _____?'?", options: ["A) weshalb", "B) weil", "C) dass", "D) wenn"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   b2: {
     1: {
@@ -2289,6 +2379,36 @@ export const exercises = {
       ],
       maxPoints: 100,
       bonusPoints: 10,
+    },
+    15: {
+      title: "Aufgabe 15",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Entstehung von Mythologien hat fasziniert, weil sie tief in die menschliche Psyche eindringen. Viele Kulturen schaffen Geschichten, die nicht nur Erkl\u00e4rungen f\u00fcr Naturph\u00e4nomene bieten, sondern auch moralische und ethische Werte vermitteln. Diese Erz\u00e4hlungen sind oft ein Spiegelbild der gesellschaftlichen Normen und \u00c4ngste ihrer Zeit. So k\u00f6nnen wir durch die Analyse von Mythologien nicht nur die Vergangenheit, sondern auch die kulturellen Identit\u00e4ten der Menschen verstehen.",
+          questions: [
+            { id: "b2-lv-15-1", question: "Was ist ein zentraler Grund f\u00fcr die Entstehung von Mythologien?", options: ["A) Um gesellschaftliche Normen abzubilden", "B) Um historische Ereignisse festzuhalten", "C) Um pers\u00f6nliche Geschichten zu erz\u00e4hlen", "D) Um wissenschaftliche Ph\u00e4nomene zu erkl\u00e4ren"], correct: 0, points: 10 },
+            { id: "b2-lv-15-2", question: "Was vermittelt die Mythologie laut dem Text?", options: ["A) Politische Ansichten", "B) Moralische und ethische Werte", "C) Wirtschaftliche Strategien", "D) Technische Innovationen"], correct: 1, points: 10 },
+            { id: "b2-lv-15-3", question: "Was spiegelt die Mythologie wider?", options: ["A) Die Naturgesetze", "B) Die gesellschaftlichen Normen und \u00c4ngste", "C) Die wirtschaftlichen Bedingungen", "D) Die geografischen Gegebenheiten"], correct: 1, points: 10 },
+            { id: "b2-lv-15-4", question: "Was erm\u00f6glicht die Analyse von Mythologien?", options: ["A) Das Verstehen der Geschichte", "B) Die Entwicklung wissenschaftlicher Konzepte", "C) Die Vorhersage k\u00fcnftiger Ereignisse", "D) Die Schaffung neuer Mythen"], correct: 0, points: 10 },
+            { id: "b2-lv-15-5", question: "Wie wird die menschliche Psyche in Bezug auf Mythologien beschrieben?", options: ["A) Als uninteressant", "B) Als komplex und tiefgehend", "C) Als einfach und klar", "D) Als unver\u00e4nderlich"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b2-gr-15-1", question: "Welcher Satz ist grammatikalisch korrekt?", options: ["A) Er sagte, dass er morgen kommt.", "B) Er hat gesagt, dass er morgen kommt.", "C) Er hat gesagt, dass er morgen kam.", "D) Er sagte, dass er morgen kam."], correct: 0, points: 10 },
+            { id: "b2-gr-15-2", question: "Welche Form des Verbs ist hier korrekt?", options: ["A) Ich kann, dass ich es tue.", "B) Ich kann, dass ich es tun.", "C) Ich kann, dass ich es tat.", "D) Ich kann, dass ich es getan habe."], correct: 1, points: 10 },
+            { id: "b2-gr-15-3", question: "W\u00e4hlen Sie die richtige Pr\u00e4position:", options: ["A) Ich interessiere mich f\u00fcr Kunst.", "B) Ich interessiere mich an Kunst.", "C) Ich interessiere mich in Kunst.", "D) Ich interessiere mich mit Kunst."], correct: 0, points: 10 },
+            { id: "b2-gr-15-4", question: "Welcher Satz ist im Konjunktiv I korrekt?", options: ["A) Er sagt, dass er morgen kommt.", "B) Er sagte, dass er morgen komme.", "C) Er sagt, dass er morgen kam.", "D) Er sagte, dass er morgen kommt."], correct: 1, points: 10 },
+            { id: "b2-gr-15-5", question: "Welche Form ist im Passiv korrekt?", options: ["A) Das Buch wurde von ihm geschrieben.", "B) Das Buch ist von ihm geschrieben worden.", "C) Das Buch wurde geschrieben von ihm.", "D) Das Buch war geschrieben von ihm."], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
     },
   },
 };
