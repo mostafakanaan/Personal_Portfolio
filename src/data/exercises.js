@@ -571,6 +571,36 @@ export const exercises = {
       maxPoints: 100,
       bonusPoints: 10,
     },
+    15: {
+      title: "Aufgabe 15",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "Die Wolken sind sehr wichtig f\u00fcr das Wetter. Sie bringen Regen und Schnee. Wolken k\u00f6nnen wei\u00df, grau oder schwarz sein. Manchmal sieht man lustige Formen in den Wolken. Kinder machen oft Spiele, um die Formen zu erraten.",
+          questions: [
+            { id: "a1-lv-15-1", question: "Was bringen die Wolken?", options: ["Sonne", "Regen", "Wind", "W\u00e4rme"], correct: 1, points: 10 },
+            { id: "a1-lv-15-2", question: "Welche Farben haben Wolken?", options: ["Rot", "Blau", "Schwarz", "Gr\u00fcn"], correct: 2, points: 10 },
+            { id: "a1-lv-15-3", question: "Wer sieht lustige Formen in den Wolken?", options: ["Erwachsene", "Tiere", "Kinder", "Pflanzen"], correct: 2, points: 10 },
+            { id: "a1-lv-15-4", question: "Was machen Kinder mit den Wolken?", options: ["Singen", "Spiele", "Malen", "Tanzt"], correct: 1, points: 10 },
+            { id: "a1-lv-15-5", question: "Sind Wolken wichtig f\u00fcr das Wetter?", options: ["Ja", "Nein", "Manchmal", "Ich wei\u00df nicht"], correct: 0, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a1-gr-15-1", question: "Was ist die richtige Form? Ich ___ ein Buch.", options: ["spiel", "spiele", "spielst", "spielen"], correct: 1, points: 10 },
+            { id: "a1-gr-15-2", question: "Wie fragt man nach dem Wetter? Wie ist ___ Wetter?", options: ["das", "den", "die", "dem"], correct: 0, points: 10 },
+            { id: "a1-gr-15-3", question: "Was ist der richtige Satz? Er ___ in der Schule.", options: ["lernen", "lernt", "lerne", "lernst"], correct: 1, points: 10 },
+            { id: "a1-gr-15-4", question: "Was ist richtig? Wir ___ nach Hause.", options: ["geh", "geht", "gehen", "gehst"], correct: 2, points: 10 },
+            { id: "a1-gr-15-5", question: "Wie sagt man, dass es regnet? Es ___ regnet.", options: ["heute", "morgen", "gestern", "jetzt"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   a2: {
     1: {
@@ -1143,6 +1173,36 @@ export const exercises = {
       ],
       maxPoints: 100,
       bonusPoints: 10,
+    },
+    15: {
+      title: "Aufgabe 15",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In der Stadt gibt es einen kleinen Park, der besonders im Fr\u00fchling sch\u00f6n ist. Dort wachsen viele bunte Blumen und die V\u00f6gel singen. Jeden Sonntag treffen sich die Menschen im Park, um zu entspannen oder zu lesen. Kinder spielen oft auf dem Spielplatz und die Erwachsenen machen Picknicks. Viele Leute bringen Essen und Getr\u00e4nke mit, um die Zeit gemeinsam zu genie\u00dfen.",
+          questions: [
+            { id: "a2-lv-15-1", question: "Was passiert jeden Sonntag im Park?", options: ["Die Menschen gehen joggen.", "Die Menschen treffen sich.", "Die Menschen arbeiten.", "Die Menschen kaufen Essen."], correct: 1, points: 10 },
+            { id: "a2-lv-15-2", question: "Was w\u00e4chst im Park?", options: ["B\u00e4ume", "Blumen", "Gem\u00fcse", "Kr\u00e4uter"], correct: 1, points: 10 },
+            { id: "a2-lv-15-3", question: "Was machen die Kinder im Park?", options: ["Sie essen.", "Sie spielen.", "Sie lernen.", "Sie arbeiten."], correct: 1, points: 10 },
+            { id: "a2-lv-15-4", question: "Was bringen die Leute zum Park mit?", options: ["B\u00fccher", "Essen und Getr\u00e4nke", "Spielzeuge", "Hunde"], correct: 1, points: 10 },
+            { id: "a2-lv-15-5", question: "Wie ist der Park im Fr\u00fchling?", options: ["Langweilig", "Sch\u00f6n", "Klein", "Schmutzig"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "a2-gr-15-1", question: "Wie sagt man: 'Ich gehe ins Kino' in der Vergangenheit?", options: ["Ich gehe ins Kino.", "Ich ging ins Kino.", "Ich gehe ins Kinos.", "Ich ging ins Kinos."], correct: 1, points: 10 },
+            { id: "a2-gr-15-2", question: "Wie fragt man h\u00f6flich nach dem Weg?", options: ["Wo ist der Weg?", "Kann ich den Weg haben?", "Wie komme ich zum Weg?", "K\u00f6nnten Sie mir bitte den Weg zeigen?"], correct: 3, points: 10 },
+            { id: "a2-gr-15-3", question: "Welches Wort ist ein Adjektiv?", options: ["Laufen", "Schnell", "Haus", "Essen"], correct: 1, points: 10 },
+            { id: "a2-gr-15-4", question: "Wie bildet man den Plural von 'Buch'?", options: ["B\u00fcch", "B\u00fccher", "Buchs", "B\u00fccheres"], correct: 1, points: 10 },
+            { id: "a2-gr-15-5", question: "Was bedeutet 'Ich mag \u00c4pfel'?", options: ["Ich hasse \u00c4pfel.", "Ich liebe \u00c4pfel.", "Ich mag \u00c4pfel nicht.", "Ich esse \u00c4pfel."], correct: 1, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
     },
   },
   b1: {
@@ -1717,6 +1777,36 @@ export const exercises = {
       maxPoints: 100,
       bonusPoints: 10,
     },
+    15: {
+      title: "Aufgabe 15",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In den letzten Jahren hat das Interesse an Urban Gardening stark zugenommen. Viele Menschen leben in gro\u00dfen St\u00e4dten und m\u00f6chten trotzdem die Vorteile von frischem Gem\u00fcse und Kr\u00e4utern genie\u00dfen. Urban Gardening f\u00f6rdert nicht nur die Selbstversorgung, sondern auch die Gemeinschaft zwischen Nachbarn. Viele Stadtbewohner nutzen Balkone, Dachfl\u00e4chen oder sogar \u00f6ffentliche Pl\u00e4tze, um ihre eigenen kleinen G\u00e4rten anzulegen. Diese Bewegung tr\u00e4gt auch zur Verbesserung der Luftqualit\u00e4t und zur Versch\u00f6nerung des Stadtbildes bei.",
+          questions: [
+            { id: "b1-lv-15-1", question: "Was ist eine der Hauptmotivationen f\u00fcr Urban Gardening?", options: ["A) Frisches Gem\u00fcse", "B) G\u00fcnstige Mieten", "C) Schneller Wachstum", "D) Wenig Arbeit"], correct: 0, points: 10 },
+            { id: "b1-lv-15-2", question: "Wie f\u00f6rdert Urban Gardening die Nachbarschaft?", options: ["A) Durch Wettbewerb", "B) Durch Gemeinschaftsprojekte", "C) Durch Anonymit\u00e4t", "D) Durch Einzelprojekte"], correct: 1, points: 10 },
+            { id: "b1-lv-15-3", question: "Welche Fl\u00e4che wird h\u00e4ufig f\u00fcr Urban Gardening genutzt?", options: ["A) Untergrund", "B) Balkone", "C) Keller", "D) Garagen"], correct: 1, points: 10 },
+            { id: "b1-lv-15-4", question: "Welchen positiven Effekt hat Urban Gardening auf die Stadt?", options: ["A) Mehr Verkehr", "B) H\u00f6here Mieten", "C) Verbesserung der Luftqualit\u00e4t", "D) Geringere Lebensqualit\u00e4t"], correct: 2, points: 10 },
+            { id: "b1-lv-15-5", question: "Was bringt Urban Gardening den Stadtbewohnern?", options: ["A) Mehr Ruhe", "B) Gemeinschaftsgef\u00fchl", "C) Bessere Bildung", "D) Mehr Freizeit"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b1-gr-15-1", question: "Welcher Satz ist grammatikalisch korrekt?", options: ["A) Ich wollte gehen, aber es regnet.", "B) Ich wollte gehen, aber es regnetet.", "C) Ich wollte gehen, aber es hat geregnet.", "D) Ich wollte gehen, aber es war geregnet."], correct: 0, points: 10 },
+            { id: "b1-gr-15-2", question: "W\u00e4hlen Sie die richtige Form des Verbs: \u201eWenn ich Zeit habe, ...\u201c", options: ["A) ich gehe", "B) ich ging", "C) ich gegangen bin", "D) ich gehe gegangen"], correct: 0, points: 10 },
+            { id: "b1-gr-15-3", question: "Welches Pronomen ist korrekt?: \u201eDas ist die Blume, ... ich gekauft habe.\u201c", options: ["A) die", "B) das", "C) welcher", "D) wen"], correct: 0, points: 10 },
+            { id: "b1-gr-15-4", question: "Wie lautet die richtige Frageform?: \u201e... du schon gegessen?\u201c", options: ["A) Hast", "B) Hast du", "C) Hast du schon", "D) Du hast"], correct: 1, points: 10 },
+            { id: "b1-gr-15-5", question: "W\u00e4hlen Sie den richtigen Satz: \u201eIch kann nicht kommen, ... ich krank bin.\u201c", options: ["A) weil", "B) dass", "C) oder", "D) und"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
+    },
   },
   b2: {
     1: {
@@ -2289,6 +2379,36 @@ export const exercises = {
       ],
       maxPoints: 100,
       bonusPoints: 10,
+    },
+    15: {
+      title: "Aufgabe 15",
+      sections: [
+        {
+          id: "leseverstehen",
+          title: "Leseverstehen",
+          text: "In den letzten Jahren hat die Forschung \u00fcber das Ph\u00e4nomen der 'Digitalen Entfremdung' stark zugenommen. Immer mehr Menschen berichten von einem Gef\u00fchl der Isolation, trotz der st\u00e4ndigen Vernetzung durch soziale Medien. Psychologen warnen, dass diese Art der Beziehung mit anderen gef\u00e4hrliche Auswirkungen auf das Wohlbefinden haben kann. Es stellt sich die Frage, ob die virtuelle Interaktion die pers\u00f6nliche Verbindung ersetzen kann oder ob sie letztlich mehr schadet als n\u00fctzt.",
+          questions: [
+            { id: "b2-lv-15-1", question: "Was ist das Hauptthema des Textes?", options: ["Digitale Entfremdung", "Soziale Medien", "Isolation", "Wohlbefinden"], correct: 0, points: 10 },
+            { id: "b2-lv-15-2", question: "Was berichten immer mehr Menschen?", options: ["Sie f\u00fchlen sich weniger isoliert.", "Sie f\u00fchlen sich trotz Vernetzung isoliert.", "Sie nutzen keine sozialen Medien.", "Sie haben mehr pers\u00f6nliche Beziehungen."], correct: 1, points: 10 },
+            { id: "b2-lv-15-3", question: "Welche Warnung geben Psychologen?", options: ["Digitale Interaktion ist immer positiv.", "Digitale Interaktion kann sch\u00e4dlich sein.", "Soziale Medien f\u00f6rdern das Wohlbefinden.", "Isolation ist nicht existent."], correct: 1, points: 10 },
+            { id: "b2-lv-15-4", question: "Was wird im Text als m\u00f6gliche Folge der digitalen Entfremdung erw\u00e4hnt?", options: ["Steigendes Wohlbefinden", "Weniger Isolation", "Gef\u00e4hrliche Auswirkungen", "Mehr soziale Interaktionen"], correct: 2, points: 10 },
+            { id: "b2-lv-15-5", question: "Was wird als Frage im Text aufgeworfen?", options: ["Sind soziale Medien sch\u00e4dlich?", "Ersetzt virtuelle Interaktion pers\u00f6nliche Verbindung?", "Sind Menschen gl\u00fccklich?", "Wie viele nutzen soziale Medien?"], correct: 1, points: 10 },
+          ],
+        },
+        {
+          id: "grammatik",
+          title: "Grammatik",
+          text: null,
+          questions: [
+            { id: "b2-gr-15-1", question: "Welcher Satz ist grammatikalisch korrekt?", options: ["Ich habe viele Freunden.", "Ich habe viele Freunde.", "Ich habe viel Freunde.", "Ich habe viele Freund."], correct: 1, points: 10 },
+            { id: "b2-gr-15-2", question: "W\u00e4hlen Sie die richtige Form des Verbs: 'Wenn er mehr Zeit h\u00e4tte, _____ er das Projekt abschlie\u00dfen.'", options: ["w\u00fcrde", "wird", "hat", "w\u00e4re"], correct: 0, points: 10 },
+            { id: "b2-gr-15-3", question: "Welches Wort passt nicht in die Reihe?", options: ["obwohl", "trotzdem", "dennoch", "aber"], correct: 3, points: 10 },
+            { id: "b2-gr-15-4", question: "Wie lautet die korrekte Steigerungsform von 'gut'?", options: ["guter", "besser", "am gutesten", "gutster"], correct: 1, points: 10 },
+            { id: "b2-gr-15-5", question: "W\u00e4hlen Sie die richtige Pr\u00e4position: 'Ich interessiere mich _____ Kunst.'", options: ["f\u00fcr", "an", "in", "mit"], correct: 0, points: 10 },
+          ],
+        },
+      ],
+      maxPoints: 100,
     },
   },
 };
