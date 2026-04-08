@@ -26,7 +26,6 @@ export const levels = [
       { number: 14, title: "Aufgabe 14", link: "/DfA/Aufgaben/14" },
 
       { number: 15, title: "Aufgabe 15", link: "/DfA/Aufgaben/15" },
-      { number: 15, title: "Aufgabe 15", link: "/DfA/Aufgaben/15" },
     ],
   },
   {
@@ -50,7 +49,6 @@ export const levels = [
       { number: 13, title: "Aufgabe 13", link: "/DfA/Aufgaben/13" },
       { number: 14, title: "Aufgabe 14", link: "/DfA/Aufgaben/14" },
 
-      { number: 15, title: "Aufgabe 15", link: "/DfA/Aufgaben/15" },
       { number: 15, title: "Aufgabe 15", link: "/DfA/Aufgaben/15" },
     ],
   },
@@ -76,7 +74,6 @@ export const levels = [
       { number: 14, title: "Aufgabe 14", link: "/DfA/Aufgaben/14" },
 
       { number: 15, title: "Aufgabe 15", link: "/DfA/Aufgaben/15" },
-      { number: 15, title: "Aufgabe 15", link: "/DfA/Aufgaben/15" },
     ],
   },
   {
@@ -100,7 +97,6 @@ export const levels = [
       { number: 13, title: "Aufgabe 13", link: "/DfA/Aufgaben/13" },
       { number: 14, title: "Aufgabe 14", link: "/DfA/Aufgaben/14" },
 
-      { number: 15, title: "Aufgabe 15", link: "/DfA/Aufgaben/15" },
       { number: 15, title: "Aufgabe 15", link: "/DfA/Aufgaben/15" },
     ],
   },
