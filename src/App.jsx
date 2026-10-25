@@ -1,7 +1,6 @@
 // src/App.jsx
 import { useEffect, useMemo, useState, lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { MotionConfig } from "framer-motion";
 
 import HomePage from "./pages/HomePage";
 import { profile } from "./data/portfolio";
@@ -13,6 +12,7 @@ const ProjectDetailPage = lazy(() => import("./pages/ProjectDetailPage"));
 const BlogListPage = lazy(() => import("./pages/BlogListPage"));
 const BlogPostPage = lazy(() => import("./pages/BlogPostPage"));
 const ChatPage = lazy(() => import("./pages/ChatPage"));
+const CvPage = lazy(() => import("./pages/CvPage"));
 
 function getLangMeta(code) {
   return LANGS.find((x) => x.code === code) || LANGS[0];
@@ -66,17 +66,16 @@ export default function App() {
   const pageProps = { t, lang, setLang, meta, profileView };
 
   return (
-    <MotionConfig reducedMotion="user">
-      <Suspense fallback={<div className="pageLoading" />}>
-        <Routes>
-          <Route path="/" element={<HomePage {...pageProps} />} />
-          <Route path="/project/:slug" element={<ProjectDetailPage {...pageProps} />} />
-          <Route path="/blog" element={<BlogListPage />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
-          <Route path="/chat" element={FEATURES.chat ? <ChatPage /> : <Navigate to="/" replace />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </Suspense>
-    </MotionConfig>
+    <Suspense fallback={<div className="pageLoading" />}>
+      <Routes>
+        <Route path="/" element={<HomePage {...pageProps} />} />
+        <Route path="/cv" element={<CvPage {...pageProps} />} />
+        <Route path="/project/:slug" element={<ProjectDetailPage {...pageProps} />} />
+        <Route path="/blog" element={<BlogListPage {...pageProps} />} />
+        <Route path="/blog/:slug" element={<BlogPostPage {...pageProps} />} />
+        <Route path="/chat" element={FEATURES.chat ? <ChatPage /> : <Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Suspense>
   );
 }

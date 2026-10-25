@@ -8,8 +8,46 @@ export const LANGS = [
 
 export const T = {
   en: {
+    cv: {
+      "title": "CV",
+      "back": "Back to site",
+      "savePdf": "Save as PDF",
+      "hint": "Opens the print dialog — choose “Save as PDF”.",
+      "summary": "Profile",
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "languages": "Languages",
+      "projects": "Selected projects",
+    },
     home: {
+      "showMore": "+{n} more",
+      "showLess": "Show less",
+      "skip": "Skip to content",
+      "ctaCvView": "View CV",
+      "aboutEyebrow": "About",
+      "aboutTitle": "At a glance",
+      "facts": {
+        "location": "Location",
+        "locationValue": "Zürich, Switzerland",
+        "availability": "Availability",
+        "availabilityValue": "Open to backend & fullstack roles · Switzerland or remote",
+        "focus": "Focus",
+        "focusValue": "Backend & integration — .NET, C#, Azure · React on the front",
+        "languages": "Languages",
+        "permit": "Work permit",
+        "notice": "Notice period"
+      },
+      "yearsPlus": "{n}+ years",
+      "current": "Current",
+      "caseStudy": "Case study",
+      "copyEmail": "Copy email",
+      "copied": "Copied!",
+      "cvRow": "CV / résumé",
+      "cvRowValue": "View or save as PDF",
       "nav": {
+        "about": "About",
+        "cv": "CV",
         "work": "Work",
         "experience": "Experience",
         "skills": "Skills",
@@ -143,6 +181,17 @@ export const T = {
     },
     projects: { eyebrow: "Work", title: "Selected projects", comingSoon: "Coming soon", viewDetails: "View Details", academicTitle: "Academic & Learning Projects" },
     projectDetail: {
+      "facts": {
+        "role": "Role",
+        "type": "Type",
+        "status": "Status"
+      },
+      "types": {
+        "main": "Side project",
+        "academic": "University project",
+        "learning": "Learning project"
+      },
+      "next": "Next project",
       techStack: "Technology Stack",
       why: "Why this stack:",
       problem: "Problem Statement",
@@ -192,8 +241,46 @@ export const T = {
   },
 
   de: {
+    cv: {
+      "title": "Lebenslauf",
+      "back": "Zurück zur Website",
+      "savePdf": "Als PDF speichern",
+      "hint": "Öffnet den Druckdialog – wähle „Als PDF speichern“.",
+      "summary": "Profil",
+      "experience": "Berufserfahrung",
+      "education": "Ausbildung",
+      "skills": "Kenntnisse",
+      "languages": "Sprachen",
+      "projects": "Ausgewählte Projekte",
+    },
     home: {
+      "showMore": "+{n} weitere",
+      "showLess": "Weniger anzeigen",
+      "skip": "Zum Inhalt springen",
+      "ctaCvView": "Lebenslauf ansehen",
+      "aboutEyebrow": "Über mich",
+      "aboutTitle": "Auf einen Blick",
+      "facts": {
+        "location": "Standort",
+        "locationValue": "Zürich, Schweiz",
+        "availability": "Verfügbarkeit",
+        "availabilityValue": "Offen für Backend- & Fullstack-Rollen · Schweiz oder remote",
+        "focus": "Schwerpunkt",
+        "focusValue": "Backend & Integration — .NET, C#, Azure · React im Frontend",
+        "languages": "Sprachen",
+        "permit": "Arbeitsbewilligung",
+        "notice": "Kündigungsfrist"
+      },
+      "yearsPlus": "{n}+ Jahre",
+      "current": "Aktuell",
+      "caseStudy": "Case Study",
+      "copyEmail": "E-Mail kopieren",
+      "copied": "Kopiert!",
+      "cvRow": "Lebenslauf",
+      "cvRowValue": "Ansehen oder als PDF speichern",
       "nav": {
+        "about": "Über mich",
+        "cv": "Lebenslauf",
         "work": "Projekte",
         "experience": "Erfahrung",
         "skills": "Skills",
@@ -326,6 +413,17 @@ export const T = {
     },
     projects: { eyebrow: "Arbeit", title: "Ausgewählte Projekte", comingSoon: "Kommt bald", viewDetails: "Details ansehen", academicTitle: "Akademische & Lernprojekte" },
     projectDetail: {
+      "facts": {
+        "role": "Rolle",
+        "type": "Art",
+        "status": "Status"
+      },
+      "types": {
+        "main": "Side-Project",
+        "academic": "Studienprojekt",
+        "learning": "Lernprojekt"
+      },
+      "next": "Nächstes Projekt",
       techStack: "Technologie-Stack",
       why: "Warum dieser Stack:",
       problem: "Problemstellung",
@@ -375,8 +473,46 @@ export const T = {
   },
 
   ar: {
+    cv: {
+      "title": "السيرة الذاتية",
+      "back": "العودة إلى الموقع",
+      "savePdf": "حفظ كملف PDF",
+      "hint": "يفتح نافذة الطباعة — اختر «حفظ كملف PDF».",
+      "summary": "نبذة",
+      "experience": "الخبرة المهنية",
+      "education": "التعليم",
+      "skills": "المهارات",
+      "languages": "اللغات",
+      "projects": "مشاريع مختارة",
+    },
     home: {
+      "showMore": "+{n} المزيد",
+      "showLess": "عرض أقل",
+      "skip": "انتقل إلى المحتوى",
+      "ctaCvView": "عرض السيرة الذاتية",
+      "aboutEyebrow": "نبذة",
+      "aboutTitle": "لمحة سريعة",
+      "facts": {
+        "location": "الموقع",
+        "locationValue": "زيورخ، سويسرا",
+        "availability": "التوفر",
+        "availabilityValue": "منفتح على أدوار Backend و Fullstack · في سويسرا أو عن بُعد",
+        "focus": "التركيز",
+        "focusValue": "Backend وتكامل الأنظمة — ‎.NET و C# و Azure · و React للواجهات",
+        "languages": "اللغات",
+        "permit": "تصريح العمل",
+        "notice": "فترة الإشعار"
+      },
+      "yearsPlus": "+{n} سنوات",
+      "current": "حالياً",
+      "caseStudy": "دراسة الحالة",
+      "copyEmail": "نسخ البريد",
+      "copied": "تم النسخ!",
+      "cvRow": "السيرة الذاتية",
+      "cvRowValue": "عرض أو حفظ كملف PDF",
       "nav": {
+        "about": "نبذة",
+        "cv": "السيرة الذاتية",
         "work": "المشاريع",
         "experience": "الخبرة",
         "skills": "المهارات",
@@ -509,6 +645,17 @@ export const T = {
     },
     projects: { eyebrow: "العمل", title: "مشاريع مختارة", comingSoon: "قريبًا", viewDetails: "عرض التفاصيل", academicTitle: "مشاريع أكاديمية وتعليمية" },
     projectDetail: {
+      "facts": {
+        "role": "الدور",
+        "type": "النوع",
+        "status": "الحالة"
+      },
+      "types": {
+        "main": "مشروع جانبي",
+        "academic": "مشروع جامعي",
+        "learning": "مشروع تعليمي"
+      },
+      "next": "المشروع التالي",
       techStack: "التقنيات المستخدمة",
       why: "لماذا هذه التقنيات:",
       problem: "المشكلة",
@@ -558,8 +705,46 @@ export const T = {
   },
 
   tr: {
+    cv: {
+      "title": "Özgeçmiş",
+      "back": "Siteye dön",
+      "savePdf": "PDF olarak kaydet",
+      "hint": "Yazdırma penceresini açar — “PDF olarak kaydet”i seçin.",
+      "summary": "Profil",
+      "experience": "İş deneyimi",
+      "education": "Eğitim",
+      "skills": "Yetenekler",
+      "languages": "Diller",
+      "projects": "Seçilmiş projeler",
+    },
     home: {
+      "showMore": "+{n} daha",
+      "showLess": "Daha az göster",
+      "skip": "İçeriğe geç",
+      "ctaCvView": "CV'yi görüntüle",
+      "aboutEyebrow": "Hakkımda",
+      "aboutTitle": "Bir bakışta",
+      "facts": {
+        "location": "Konum",
+        "locationValue": "Zürih, İsviçre",
+        "availability": "Uygunluk",
+        "availabilityValue": "Backend ve fullstack pozisyonlarına açığım · İsviçre'de veya uzaktan",
+        "focus": "Odak",
+        "focusValue": "Backend ve entegrasyon — .NET, C#, Azure · ön yüzde React",
+        "languages": "Diller",
+        "permit": "Çalışma izni",
+        "notice": "İhbar süresi"
+      },
+      "yearsPlus": "{n}+ yıl",
+      "current": "Güncel",
+      "caseStudy": "Vaka çalışması",
+      "copyEmail": "E-postayı kopyala",
+      "copied": "Kopyalandı!",
+      "cvRow": "CV",
+      "cvRowValue": "Görüntüle veya PDF olarak kaydet",
       "nav": {
+        "about": "Hakkımda",
+        "cv": "CV",
         "work": "Projeler",
         "experience": "Deneyim",
         "skills": "Yetenekler",
@@ -692,6 +877,17 @@ export const T = {
     },
     projects: { eyebrow: "Çalışmalar", title: "Seçilmiş projeler", comingSoon: "Yakında", viewDetails: "Detayları gör", academicTitle: "Akademik & Öğrenme Projeleri" },
     projectDetail: {
+      "facts": {
+        "role": "Rol",
+        "type": "Tür",
+        "status": "Durum"
+      },
+      "types": {
+        "main": "Yan proje",
+        "academic": "Üniversite projesi",
+        "learning": "Öğrenme projesi"
+      },
+      "next": "Sonraki proje",
       techStack: "Teknoloji Stack",
       why: "Neden bu stack:",
       problem: "Problem Tanımı",

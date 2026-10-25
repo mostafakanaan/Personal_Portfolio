@@ -221,3 +221,161 @@ img {
   color: var(--muted);
   font-size: 13px;
 }
+
+/* Scroll-in reveal (components/Reveal.jsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity .6s var(--ease) var(--reveal-delay, 0s),
+    transform .6s var(--ease) var(--reveal-delay, 0s);
+
+  &.isVisible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Accessibility helpers */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skipLink {
+  position: fixed;
+  top: 12px;
+  inset-inline-start: 12px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #170b03;
+  font-weight: 600;
+  transform: translateY(-150%);
+  transition: transform .2s var(--ease);
+
+  &:focus-visible {
+    transform: none;
+  }
+}
+
+/* Reading progress (components/ScrollProgress.jsx) */
+.scrollProgress {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 2px;
+  z-index: 70;
+  pointer-events: none;
+
+  i {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-soft), var(--accent), #ff5e3a);
+    transform: scaleX(0);
+    transform-origin: left center;
+    box-shadow: 0 0 12px rgba(255, 138, 61, .6);
+  }
+}
+
+html[dir="rtl"] .scrollProgress i {
+  transform-origin: right center;
+}
+
+/* Back to top (components/BackToTop.jsx) */
+.backToTop {
+  position: fixed;
+  bottom: 22px;
+  inset-inline-end: 22px;
+  z-index: 40;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  border: 1px solid var(--border2);
+  background: rgba(12, 16, 25, .85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity .3s, transform .3s var(--ease), visibility .3s, border-color .2s;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &.isVisible {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  &:hover {
+    border-color: rgba(255, 138, 61, .5);
+  }
+}
+
+/* Copy-to-clipboard button (components/CopyEmailButton.jsx) */
+.copyBtn {
+  cursor: pointer;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+  }
+
+  &.isCopied {
+    color: var(--success);
+    border-color: rgba(74, 222, 128, .4);
+  }
+}
+
+/* Mouse-follow highlight for .spotlight cards (useSpotlight in HomePage).
+   Drawn on ::after behind the content so it never fights the card's own background. */
+.spotlight {
+  position: relative;
+  isolation: isolate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), rgba(255, 138, 61, .1), transparent 45%);
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+@media print {
+  .scrollProgress,
+  .backToTop,
+  .skipLink {
+    display: none !important;
+  }
+}

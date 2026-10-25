@@ -1,0 +1,363 @@
+/* Résumé page (/cv): a paper sheet on screen, a clean A4 document in print. */
+.cvPage {
+  min-height: 100vh;
+  padding: 20px 16px 64px;
+  background:
+    radial-gradient(900px 500px at 80% -10%, rgba(255, 138, 61, .12), transparent 60%),
+    var(--bg);
+}
+
+.cvToolbar {
+  position: sticky;
+  top: 12px;
+  z-index: 20;
+  width: min(210mm, 100%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(10, 13, 20, .8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+}
+
+.cvToolbarRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cvHint {
+  width: min(210mm, 100%);
+  margin: 10px auto 14px;
+  text-align: end;
+  font-size: 12.5px;
+  color: var(--muted2);
+}
+
+.cvSheet {
+  --ink: #14171f;
+  --ink-muted: #5a6170;
+  --rule: #e4e6eb;
+  --cv-accent: #e8641c;
+
+  width: min(210mm, 100%);
+  min-height: 297mm;
+  margin: 0 auto;
+  padding: 16mm 16mm 14mm;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 6px;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, .7);
+  font-size: 10.5pt;
+  line-height: 1.5;
+
+  a {
+    color: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  ul {
+    margin: 0;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.cvHeader {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--ink);
+
+  h1 {
+    font-size: 24pt;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+  }
+}
+
+.cvPhoto {
+  width: 26mm;
+  height: auto;
+  aspect-ratio: 720 / 792;
+  object-fit: cover;
+  border-radius: 6px;
+  flex: none;
+}
+
+.cvSheet .cvRole {
+  margin-top: 4px;
+  font-size: 12pt;
+  font-weight: 600;
+  color: var(--cv-accent);
+}
+
+.cvSheet .cvContact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+  margin-top: 8px;
+  font-size: 9.5pt;
+  color: var(--ink-muted);
+
+  li:not(:last-child)::after {
+    content: "·";
+    margin-inline-start: 14px;
+    color: #b5bac4;
+  }
+}
+
+.cvSection {
+  margin-top: 14px;
+
+  h2 {
+    break-after: avoid;
+    font-size: 9pt;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--cv-accent);
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  h3 {
+    font-size: 11pt;
+    line-height: 1.3;
+  }
+
+  > p {
+    color: #2c313c;
+  }
+}
+
+.cvMuted {
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.cvJob {
+  break-inside: avoid;
+
+  & + & {
+    margin-top: 10px;
+  }
+
+  ul {
+    margin-top: 4px;
+  }
+
+  li {
+    position: relative;
+    padding-inline-start: 12px;
+    color: #2c313c;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 2px;
+      top: .65em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--cv-accent);
+    }
+  }
+}
+
+.cvJobHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.cvEdu + .cvEdu {
+  margin-top: 6px;
+}
+
+.cvDates {
+  flex: none;
+  text-align: end;
+  font-size: 9.5pt;
+  color: var(--ink-muted);
+  white-space: nowrap;
+
+  span {
+    display: block;
+    font-size: 8.5pt;
+  }
+}
+
+.cvColumns {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 0 24px;
+}
+
+.cvSkills {
+  margin: 0;
+
+  div {
+    break-inside: avoid;
+    display: grid;
+    grid-template-columns: 34mm 1fr;
+    gap: 8px;
+    padding: 2px 0;
+  }
+
+  dt {
+    font-weight: 600;
+  }
+
+  dd {
+    margin: 0;
+    color: #2c313c;
+  }
+}
+
+.cvLangs li {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 0;
+  border-bottom: 1px dotted var(--rule);
+}
+
+.cvProject {
+  break-inside: avoid;
+
+  & + & {
+    margin-top: 6px;
+  }
+
+  h3 {
+    font-size: 10.5pt;
+  }
+
+  p {
+    color: #2c313c;
+  }
+}
+
+@media (max-width: 720px) {
+  .cvPage {
+    padding: 12px 0 40px;
+  }
+
+  .cvToolbar {
+    width: calc(100% - 24px);
+    top: 8px;
+
+    .lang {
+      display: none;
+    }
+  }
+
+  .cvToolbar .btn {
+    font-size: 13px;
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .cvHint {
+    width: calc(100% - 24px);
+  }
+
+  .cvSheet {
+    min-height: 0;
+    padding: 22px 18px;
+    border-radius: 0;
+    font-size: 10pt;
+  }
+
+  .cvHeader {
+    align-items: flex-start;
+
+    h1 {
+      font-size: 20pt;
+    }
+  }
+
+  .cvPhoto {
+    width: 64px;
+  }
+
+  .cvJobHead {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .cvDates {
+    text-align: start;
+
+    span {
+      display: inline;
+      margin-inline-start: 8px;
+    }
+  }
+
+  .cvColumns,
+  .cvSkills div {
+    grid-template-columns: 1fr;
+  }
+
+  .cvSkills div {
+    gap: 0;
+    padding: 4px 0;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm 14mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+  }
+
+  .cvPage {
+    padding: 0;
+    background: none;
+  }
+
+  .cvToolbar,
+  .cvHint,
+  .ambientBg {
+    display: none !important;
+  }
+
+  .cvSheet {
+    width: auto;
+    min-height: 0;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cvSheet a {
+    text-decoration: none;
+  }
+}
