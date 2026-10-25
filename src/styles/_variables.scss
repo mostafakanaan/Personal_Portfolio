@@ -1,15 +1,25 @@
 :root {
-  --bg: #070b14;
-  --panel: rgba(255,255,255,.07);
-  --panel2: rgba(255,255,255,.04);
-  --border: rgba(255,255,255,.12);
-  --text: rgba(255,255,255,.92);
-  --muted: rgba(255,255,255,.72);
-  --muted2: rgba(255,255,255,.55);
-  --accent: #ff7a18;
-  --accent2: #21d4b4;
-  --accent3: #3b82f6;
-  --shadow: 0 24px 70px rgba(2,8,20,.55);
-  --radius: 18px;
-  --glow: 0 0 40px rgba(33,212,180,.18);
+  --bg: #07090f;
+  --bg2: #0c1019;
+  --panel: rgba(255, 255, 255, .045);
+  --panel2: rgba(255, 255, 255, .025);
+  --surface: rgba(255, 255, 255, .035);
+  --surface2: rgba(255, 255, 255, .06);
+  --border: rgba(255, 255, 255, .08);
+  --border2: rgba(255, 255, 255, .14);
+  --text: #eef1f6;
+  --muted: #9aa3b2;
+  --muted2: #6b7383;
+  --accent: #ff8a3d;
+  --accent-soft: #ffb36b;
+  --accent2: #2dd4bf;
+  --accent3: #93c5fd;
+  --success: #4ade80;
+  --shadow: 0 30px 80px -20px rgba(0, 0, 0, .7);
+  --radius: 16px;
+  --radius-lg: 22px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --nav-h: 76px;
 }

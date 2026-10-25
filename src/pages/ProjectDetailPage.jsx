@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Background from "../components/Background";
 import Navbar from "../components/Navbar";
-import AnimatedSection from "../components/AnimatedSection";
+import ProjectVisual from "../components/ProjectVisual";
 import { profile } from "../data/portfolio";
 
 // SEO helper — updates document head
@@ -101,7 +101,7 @@ export default function ProjectDetailPage({ t, lang, setLang, profileView }) {
         <Navbar t={t} lang={lang} setLang={setLang} />
         <main className="container projectDetailNotFound">
           <h1 className="h2">Project not found</h1>
-          <Link to="/#projects" className="btn btnPrimary">
+          <Link to="/#work" className="btn btnPrimary">
             ← Back to projects
           </Link>
         </main>
@@ -124,7 +124,7 @@ export default function ProjectDetailPage({ t, lang, setLang, profileView }) {
         >
           <Link to="/">{t.nav.home}</Link>
           <span className="breadcrumbSep">/</span>
-          <Link to="/#projects">{t.nav.projects}</Link>
+          <Link to="/#work">{t.nav.projects}</Link>
           <span className="breadcrumbSep">/</span>
           <span className="breadcrumbCurrent">{project.name}</span>
         </motion.nav>
@@ -179,7 +179,7 @@ export default function ProjectDetailPage({ t, lang, setLang, profileView }) {
           </div>
 
           <div className="projectDetailImage">
-            <img src={project.image} alt={`${project.name} project preview`} loading="lazy" />
+            <ProjectVisual slug={project.slug} />
           </div>
         </motion.header>
 
@@ -340,7 +340,7 @@ export default function ProjectDetailPage({ t, lang, setLang, profileView }) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <Link to="/#projects" className="btn btnGhost">
+          <Link to="/#work" className="btn btnGhost">
             ← {t.projectDetail?.backToProjects || "Back to all projects"}
           </Link>
         </motion.div>

@@ -7,7 +7,7 @@ export const blogPosts = [
     title: "From Syria to Switzerland: A Developer's Journey",
     date: "2026-01-20",
     excerpt: "Moving countries, learning a new language, and rebuilding a career from scratch — what it taught me about resilience, and about code.",
-    coverImage: "/img/projects/coming-soon.png",
+    coverImage: "/img/projects/coming-soon.webp",
     tags: ["Personal", "Career", "Switzerland", "Story"],
   },
   {
@@ -15,7 +15,7 @@ export const blogPosts = [
     title: "My AI Stack in 2025: Tools I Actually Use Every Day",
     date: "2025-12-15",
     excerpt: "I've tried every AI tool under the sun. Here's what survived my ruthless curation process — and why these specific tools made the cut.",
-    coverImage: "/img/myaistack.png",
+    coverImage: "/img/myaistack.webp",
     tags: ["AI", "Productivity", "Tools", "LLM", "Workflow"],
   },
   {
@@ -23,7 +23,7 @@ export const blogPosts = [
     title: "Building a Personal Portfolio with React & Vite",
     date: "2025-11-10",
     excerpt: "A deep dive into how I built my personal portfolio site using React 19, Vite, Framer Motion, and SCSS — and the design decisions behind it.",
-    coverImage: "/img/projects/coming-soon.png",
+    coverImage: "/img/projects/coming-soon.webp",
     tags: ["React", "Vite", "Frontend", "SCSS", "Framer Motion"],
   },
 ];

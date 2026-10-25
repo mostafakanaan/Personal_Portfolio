@@ -1,194 +1,125 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { FEATURES } from "../config/features";
 
-function scrollToId(id) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+const SECTIONS = ["work", "experience", "skills"];
 
 export default function Navbar({ t, lang, setLang }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const navWrapRef = useRef(null);
+  const [active, setActive] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const onHome = location.pathname === "/";
+  const labels = t.home.nav;
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 8);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Highlight the section currently in view (home page only).
+  useEffect(() => {
+    if (!onHome) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => e.isIntersecting && setActive(e.target.id));
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    SECTIONS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [onHome]);
+
   useEffect(() => {
     if (!menuOpen) return;
-
-    function handleClickOutside(e) {
-      if (navWrapRef.current && !navWrapRef.current.contains(e.target)) {
-        setMenuOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("touchstart", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("touchstart", handleClickOutside);
-    };
+    const onKey = (e) => e.key === "Escape" && setMenuOpen(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
   }, [menuOpen]);
 
-  function handleBrandClick() {
-    if (window.innerWidth <= 720) {
-      setMenuOpen((prev) => !prev);
-      return;
-    }
-    scrollToId("top");
-  }
-
-  function handleNavClick(id) {
-    scrollToId(id);
+  function goTo(id) {
     setMenuOpen(false);
+    if (onHome) {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      navigate(`/#${id}`);
+    }
   }
 
-  const items = [
-    { id: "about", label: t.nav.about },
-    { id: "skills", label: t.nav.skills },
-    { id: "ai-stack", label: t.nav.ai },
-    { id: "experience", label: t.nav.experience },
-    { id: "projects", label: t.nav.projects },
-    { id: "contact", label: t.nav.contact },
-  ];
+  const items = SECTIONS.map((id) => ({ id, label: labels[id] }));
 
   return (
-    <div ref={navWrapRef} className={`navWrap ${scrolled ? "navWrap--scrolled" : ""}`}>
-      <nav className="nav">
-        <button
-          className="brand"
-          onClick={handleBrandClick}
-          aria-label="Open navigation"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-nav"
-        >
-          <img src="/img/logo.png" alt="Logo" className="brandLogo" />
-          <span className="brandMenu" aria-hidden="true">
-            <span />
-            <span />
-            <span />
+    <header className={`siteNav ${scrolled ? "isScrolled" : ""} ${menuOpen ? "isOpen" : ""}`}>
+      <nav className="siteNavInner" aria-label="Main">
+        <Link to="/" className="siteBrand" onClick={() => setMenuOpen(false)}>
+          <img src="/img/logo-64.webp" alt="" width="28" height="28" />
+          <span>
+            mkanaan<span className="accentDot">.</span>
           </span>
-        </button>
+        </Link>
 
-        <div className="navLinks">
+        <div className="siteNavLinks">
           {items.map((x) => (
-            <button 
-              key={x.id} 
-              className={`navLink ${x.id === 'ai-stack' ? 'navLinkAI' : ''}`} 
-              onClick={() => handleNavClick(x.id)}
+            <button
+              key={x.id}
+              type="button"
+              className={`siteNavLink ${onHome && active === x.id ? "isActive" : ""}`}
+              onClick={() => goTo(x.id)}
             >
-              {x.id === 'ai-stack' && <span className="aiSparkle aiSparkle1">✦</span>}
               {x.label}
-              {x.id === 'ai-stack' && <span className="aiSparkle aiSparkle2">✦</span>}
             </button>
           ))}
+          <Link to="/blog" className={`siteNavLink ${location.pathname.startsWith("/blog") ? "isActive" : ""}`}>
+            {labels.blog}
+          </Link>
+          {FEATURES.chat && (
+            <Link to="/chat" className="siteNavLink">
+              AI Chat
+            </Link>
+          )}
         </div>
 
-        <div className="navRight">
+        <div className="siteNavRight">
           <LanguageSwitcher lang={lang} setLang={setLang} />
-          <a href="/blog" onClick={() => setMenuOpen(false)} title="Blog" className="navIconBtn">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-              <line x1="8" y1="7" x2="16" y2="7" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg>
-          </a>
-          <a href="/chat" onClick={() => setMenuOpen(false)} title="KanaanChat" className="navRobot">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect x="3" y="11" width="18" height="10" rx="2" />
-              <circle cx="12" cy="5" r="2" />
-              <path d="M12 7v4" />
-              <line x1="8" y1="16" x2="8" y2="16" />
-              <line x1="16" y1="16" x2="16" y2="16" />
-            </svg>
-          </a>
+          <button type="button" className="siteNavCta" onClick={() => goTo("contact")}>
+            {labels.contact}
+          </button>
+          <button
+            type="button"
+            className="siteNavBurger"
+            aria-label={labels.menu}
+            aria-expanded={menuOpen}
+            aria-controls="site-nav-mobile"
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <span />
+          </button>
         </div>
       </nav>
 
-      <div id="mobile-nav" className={`navMobile ${menuOpen ? "open" : ""}`}>
-        <div className="navMobileInner">
-          {items.map((x) => (
-            <button 
-              key={x.id} 
-              className={`navMobileLink ${x.id === 'ai-stack' ? 'navMobileLinkAI' : ''}`} 
-              onClick={() => handleNavClick(x.id)}
-            >
-              {x.id === 'ai-stack' && <span className="aiSparkle aiSparkle1">✦</span>}
-              {x.label}
-              {x.id === 'ai-stack' && <span className="aiSparkle aiSparkle2">✦</span>}
-            </button>
-          ))}
-          <p className="navMobileText">
-            {t.hero.mobileRobotText}
-          </p>
-          <div className="navMobileActions">
-            <LanguageSwitcher lang={lang} setLang={setLang} />
-            <a className="navMobileLink navIconBtn" href="/blog" onClick={() => setMenuOpen(false)}>
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-                <line x1="8" y1="7" x2="16" y2="7" />
-                <line x1="8" y1="11" x2="14" y2="11" />
-              </svg>
-            </a>
-            <a className="navMobileLink navRobot" href="/chat" onClick={() => setMenuOpen(false)}>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x="3" y="11" width="18" height="10" rx="2" />
-                <circle cx="12" cy="5" r="2" />
-                <path d="M12 7v4" />
-                <line x1="8" y1="16" x2="8" y2="16" />
-                <line x1="16" y1="16" x2="16" y2="16" />
-              </svg>
-            </a>
-          </div>
+      <div id="site-nav-mobile" className="siteNavMobile" hidden={!menuOpen}>
+        {items.map((x) => (
+          <button key={x.id} type="button" className="siteNavMobileLink" onClick={() => goTo(x.id)}>
+            {x.label}
+          </button>
+        ))}
+        <Link to="/blog" className="siteNavMobileLink" onClick={() => setMenuOpen(false)}>
+          {labels.blog}
+        </Link>
+        <button type="button" className="siteNavMobileLink" onClick={() => goTo("contact")}>
+          {labels.contact}
+        </button>
+        <div className="siteNavMobileLang">
+          <LanguageSwitcher lang={lang} setLang={setLang} />
         </div>
       </div>
-    </div>
+    </header>
   );
 }

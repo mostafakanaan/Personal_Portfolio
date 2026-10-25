@@ -3,8 +3,21 @@ import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import bash from "react-syntax-highlighter/dist/esm/languages/prism/bash";
+import csharp from "react-syntax-highlighter/dist/esm/languages/prism/csharp";
+import javascript from "react-syntax-highlighter/dist/esm/languages/prism/javascript";
+import json from "react-syntax-highlighter/dist/esm/languages/prism/json";
+import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
+import python from "react-syntax-highlighter/dist/esm/languages/prism/python";
+import scss from "react-syntax-highlighter/dist/esm/languages/prism/scss";
+import typescript from "react-syntax-highlighter/dist/esm/languages/prism/typescript";
+
+// Register only the languages the posts use; the full Prism build is ~700 kB.
+Object.entries({ bash, csharp, javascript, json, jsx, python, scss, typescript }).forEach(([name, lang]) =>
+  SyntaxHighlighter.registerLanguage(name, lang)
+);
 import { getPostBySlug, formatDate, estimateReadingTime } from "../data/blogPosts";
 import Navbar from "../components/Navbar";
 import Background from "../components/Background";

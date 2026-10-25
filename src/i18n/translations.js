@@ -8,6 +8,54 @@ export const LANGS = [
 
 export const T = {
   en: {
+    home: {
+      "nav": {
+        "work": "Work",
+        "experience": "Experience",
+        "skills": "Skills",
+        "blog": "Blog",
+        "contact": "Contact",
+        "menu": "Menu"
+      },
+      "status": "Open to new opportunities · Zürich / Remote",
+      "roleAccent": "Backend-first",
+      "roleRest": "fullstack engineer.",
+      "lead": [
+        "I design ",
+        ".NET & Azure systems",
+        " that move business-critical data — APIs, integrations and automation for ",
+        "process-critical workflows",
+        " in production."
+      ],
+      "ctaWork": "View my work",
+      "ctaCv": "Download CV",
+      "ctaContact": "Get in touch",
+      "stats": {
+        "years": "years building production software",
+        "automated": "manual process steps automated",
+        "companies": "companies · CH & DE",
+        "languages": "languages, fluent"
+      },
+      "workEyebrow": "Selected work",
+      "workTitle": "Things I've built",
+      "workSub": "Side projects built like production systems — self-hosted on my own Raspberry Pi behind a Cloudflare Tunnel.",
+      "moreTitle": "Academic & learning projects",
+      "details": "Details",
+      "code": "Code",
+      "xpEyebrow": "Experience",
+      "xpTitle": "Where I've worked",
+      "xpSub": "From tutoring at FH Aachen to owning core systems in Switzerland.",
+      "education": "Education",
+      "skillsEyebrow": "Toolbox",
+      "skillsTitle": "What I work with",
+      "languagesTitle": "Languages",
+      "contactEyebrow": "Contact",
+      "contactTitle": "Let's build something reliable.",
+      "contactSub": "Open to backend and fullstack roles in Switzerland or remote.",
+      "emailMe": "Email me",
+      "footer": "Self-hosted on a Raspberry Pi 5 · React + Vite",
+      "backToTop": "Back to top"
+    },
     nav: {
       home: "Home",
       about: "About",
@@ -144,6 +192,54 @@ export const T = {
   },
 
   de: {
+    home: {
+      "nav": {
+        "work": "Projekte",
+        "experience": "Erfahrung",
+        "skills": "Skills",
+        "blog": "Blog",
+        "contact": "Kontakt",
+        "menu": "Menü"
+      },
+      "status": "Offen für neue Möglichkeiten · Zürich / Remote",
+      "roleAccent": "Backend-fokussierter",
+      "roleRest": "Fullstack-Engineer.",
+      "lead": [
+        "Ich entwickle ",
+        ".NET- & Azure-Systeme",
+        ", die geschäftskritische Daten bewegen — APIs, Integrationen und Automatisierung für ",
+        "prozesskritische Workflows",
+        " im Produktivbetrieb."
+      ],
+      "ctaWork": "Projekte ansehen",
+      "ctaCv": "Lebenslauf herunterladen",
+      "ctaContact": "Kontakt aufnehmen",
+      "stats": {
+        "years": "Jahre Erfahrung mit Produktivsoftware",
+        "automated": "weniger manuelle Prozessschritte",
+        "companies": "Unternehmen · CH & DE",
+        "languages": "Sprachen fließend"
+      },
+      "workEyebrow": "Ausgewählte Projekte",
+      "workTitle": "Was ich gebaut habe",
+      "workSub": "Side-Projects, gebaut wie Produktivsysteme — selbst gehostet auf meinem Raspberry Pi hinter einem Cloudflare Tunnel.",
+      "moreTitle": "Studien- & Lernprojekte",
+      "details": "Details",
+      "code": "Code",
+      "xpEyebrow": "Erfahrung",
+      "xpTitle": "Wo ich gearbeitet habe",
+      "xpSub": "Vom Tutor an der FH Aachen zur Verantwortung für Kernsysteme in der Schweiz.",
+      "education": "Ausbildung",
+      "skillsEyebrow": "Toolbox",
+      "skillsTitle": "Womit ich arbeite",
+      "languagesTitle": "Sprachen",
+      "contactEyebrow": "Kontakt",
+      "contactTitle": "Lass uns etwas Zuverlässiges bauen.",
+      "contactSub": "Offen für Backend- und Fullstack-Rollen in der Schweiz oder remote.",
+      "emailMe": "E-Mail schreiben",
+      "footer": "Selbst gehostet auf einem Raspberry Pi 5 · React + Vite",
+      "backToTop": "Nach oben"
+    },
     nav: {
       home: "Start",
       about: "Profil",
@@ -279,6 +375,54 @@ export const T = {
   },
 
   ar: {
+    home: {
+      "nav": {
+        "work": "المشاريع",
+        "experience": "الخبرة",
+        "skills": "المهارات",
+        "blog": "المدونة",
+        "contact": "تواصل",
+        "menu": "القائمة"
+      },
+      "status": "منفتح على فرص جديدة · زيورخ / عن بُعد",
+      "roleAccent": "مهندس Fullstack",
+      "roleRest": "بتركيز على الـ Backend.",
+      "lead": [
+        "أصمّم ",
+        "أنظمة ‎.NET و Azure",
+        " تنقل بيانات حيوية للأعمال — واجهات برمجية وتكاملات وأتمتة لـ ",
+        "سير عمل حرج",
+        " في بيئة الإنتاج."
+      ],
+      "ctaWork": "استعرض أعمالي",
+      "ctaCv": "تحميل السيرة الذاتية",
+      "ctaContact": "تواصل معي",
+      "stats": {
+        "years": "سنوات في تطوير برمجيات الإنتاج",
+        "automated": "خطوات يدوية تمت أتمتتها",
+        "companies": "شركات · سويسرا وألمانيا",
+        "languages": "لغات بطلاقة"
+      },
+      "workEyebrow": "أعمال مختارة",
+      "workTitle": "ما قمت ببنائه",
+      "workSub": "مشاريع جانبية مبنية كأنظمة إنتاج — مستضافة ذاتياً على Raspberry Pi خلف Cloudflare Tunnel.",
+      "moreTitle": "مشاريع أكاديمية وتعليمية",
+      "details": "التفاصيل",
+      "code": "الكود",
+      "xpEyebrow": "الخبرة",
+      "xpTitle": "أين عملت",
+      "xpSub": "من التدريس في FH Aachen إلى مسؤولية الأنظمة الأساسية في سويسرا.",
+      "education": "التعليم",
+      "skillsEyebrow": "الأدوات",
+      "skillsTitle": "ما أعمل به",
+      "languagesTitle": "اللغات",
+      "contactEyebrow": "تواصل",
+      "contactTitle": "لنبنِ شيئاً موثوقاً.",
+      "contactSub": "منفتح على أدوار Backend و Fullstack في سويسرا أو عن بُعد.",
+      "emailMe": "راسلني",
+      "footer": "مستضاف ذاتياً على Raspberry Pi 5 · React + Vite",
+      "backToTop": "العودة للأعلى"
+    },
     nav: {
       home: "الرئيسية",
       about: "نبذة",
@@ -414,6 +558,54 @@ export const T = {
   },
 
   tr: {
+    home: {
+      "nav": {
+        "work": "Projeler",
+        "experience": "Deneyim",
+        "skills": "Yetenekler",
+        "blog": "Blog",
+        "contact": "İletişim",
+        "menu": "Menü"
+      },
+      "status": "Yeni fırsatlara açığım · Zürih / Uzaktan",
+      "roleAccent": "Backend odaklı",
+      "roleRest": "fullstack mühendis.",
+      "lead": [
+        "İş açısından kritik verileri taşıyan ",
+        ".NET & Azure sistemleri",
+        " tasarlıyorum — üretimdeki ",
+        "süreç açısından kritik iş akışları",
+        " için API'ler, entegrasyonlar ve otomasyon."
+      ],
+      "ctaWork": "Projelerime göz at",
+      "ctaCv": "CV'yi indir",
+      "ctaContact": "İletişime geç",
+      "stats": {
+        "years": "yıl üretim yazılımı geliştirme",
+        "automated": "daha az manuel süreç adımı",
+        "companies": "şirket · İsviçre & Almanya",
+        "languages": "akıcı konuşulan dil"
+      },
+      "workEyebrow": "Seçilmiş projeler",
+      "workTitle": "Neler geliştirdim",
+      "workSub": "Üretim sistemi gibi kurgulanmış yan projeler — Cloudflare Tunnel arkasında kendi Raspberry Pi'mde barındırılıyor.",
+      "moreTitle": "Akademik ve öğrenme projeleri",
+      "details": "Detaylar",
+      "code": "Kod",
+      "xpEyebrow": "Deneyim",
+      "xpTitle": "Nerelerde çalıştım",
+      "xpSub": "FH Aachen'deki asistanlıktan İsviçre'de çekirdek sistemlerin sorumluluğuna.",
+      "education": "Eğitim",
+      "skillsEyebrow": "Araç kutusu",
+      "skillsTitle": "Neylerle çalışıyorum",
+      "languagesTitle": "Diller",
+      "contactEyebrow": "İletişim",
+      "contactTitle": "Güvenilir bir şeyler inşa edelim.",
+      "contactSub": "İsviçre'de veya uzaktan backend ve fullstack pozisyonlarına açığım.",
+      "emailMe": "E-posta gönder",
+      "footer": "Raspberry Pi 5 üzerinde barındırılıyor · React + Vite",
+      "backToTop": "Yukarı dön"
+    },
     nav: {
       home: "Ana Sayfa",
       about: "Hakkımda",

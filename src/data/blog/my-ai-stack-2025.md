@@ -2,7 +2,7 @@
 title: "My AI Stack in 2025: Tools I Actually Use Every Day"
 date: "2025-12-15"
 excerpt: "I've tried every AI tool under the sun. Here's what survived my ruthless curation process — and why these specific tools made the cut."
-coverImage: "/img/myaistack.png"
+coverImage: "/img/myaistack.webp"
 tags: ["AI", "Productivity", "Tools", "LLM", "Workflow"]
 ---
 

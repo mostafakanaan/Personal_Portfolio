@@ -11,6 +11,31 @@ This portfolio follows security best practices to protect user data and maintain
 - API keys with `VITE_` prefix are exposed in the client bundle - only use for non-sensitive configuration
 - Sensitive operations should always be handled server-side
 
+### Chat assistant (KanaanChat)
+
+The chat used to send the LLM key from the browser (`VITE_LLM_KEY` → `X-LLM-Key`),
+which put the key in the public JS bundle. The chat is now disabled
+(`FEATURES.chat` in `src/config/features.js`) and the client no longer sends a key.
+
+To turn it back on:
+
+1. Rotate `LLM_KEY` on the LLM wrapper and update the `LLM_KEY` GitHub secret.
+   The old key was public and must be treated as compromised.
+2. Make nginx add the key when proxying (the deploy workflow already writes
+   `/etc/nginx/snippets/llm_key.conf`):
+
+   ```nginx
+   location /api/llm/ {
+       include /etc/nginx/snippets/llm_key.conf;
+       proxy_set_header X-LLM-Key $llm_key;
+       limit_req zone=llm burst=5 nodelay;   # optional rate limit
+       proxy_pass http://127.0.0.1:<wrapper-port>/;
+   }
+   ```
+
+   Until then you can block the endpoint with `location /api/llm/ { return 503; }`.
+3. Set `FEATURES.chat = true` and redeploy.
+
 ### 2. Content Security Policy (CSP)
 
 When deploying, consider adding these security headers in your web server configuration:
