@@ -1,9 +1,10 @@
 import { useEffect, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { MotionConfig, motion } from "framer-motion";
 import Background from "../components/Background";
 import Navbar from "../components/Navbar";
 import ProjectVisual from "../components/ProjectVisual";
+import SiteFooter from "../components/SiteFooter";
 import { profile } from "../data/portfolio";
 
 // SEO helper — updates document head
@@ -94,6 +95,13 @@ export default function ProjectDetailPage({ t, lang, setLang, profileView }) {
     window.scrollTo({ top: 0 });
   }, [slug]);
 
+  // Case-study order: featured side projects first, then the rest, looping around.
+  const next = useMemo(() => {
+    const order = [...profile.projects.filter((p) => p.category === "main"), ...profile.projects.filter((p) => p.category !== "main")];
+    const i = order.findIndex((p) => p.slug === slug);
+    return i === -1 ? null : order[(i + 1) % order.length];
+  }, [slug]);
+
   if (!project) {
     return (
       <div className="page">
@@ -109,242 +117,265 @@ export default function ProjectDetailPage({ t, lang, setLang, profileView }) {
     );
   }
 
+  const pd = t.projectDetail || {};
+  // "Solo developer — designed the API…" → "Solo developer"
+  const roleShort = project.role?.split(" — ")[0];
+
   return (
-    <div className="page projectDetailPage">
-      <Background />
-      <Navbar t={t} lang={lang} setLang={setLang} />
+    <MotionConfig reducedMotion="user">
+      <div className="page projectDetailPage">
+        <Background />
+        <Navbar t={t} lang={lang} setLang={setLang} />
 
-      <main className="container projectDetailMain">
-        {/* Breadcrumb */}
-        <motion.nav
-          className="breadcrumb"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          <Link to="/">{t.nav.home}</Link>
-          <span className="breadcrumbSep">/</span>
-          <Link to="/#work">{t.nav.projects}</Link>
-          <span className="breadcrumbSep">/</span>
-          <span className="breadcrumbCurrent">{project.name}</span>
-        </motion.nav>
+        <main id="main" className="container projectDetailMain">
+          {/* Breadcrumb */}
+          <motion.nav
+            className="breadcrumb"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <Link to="/">{t.nav.home}</Link>
+            <span className="breadcrumbSep">/</span>
+            <Link to="/#work">{t.nav.projects}</Link>
+            <span className="breadcrumbSep">/</span>
+            <span className="breadcrumbCurrent">{project.name}</span>
+          </motion.nav>
 
-        {/* Hero Section */}
-        <motion.header
-          className="projectDetailHero"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="projectDetailHeroContent">
-            <div className="projectDetailMeta">
-              <StatusBadge status={project.status} />
-              {project.category && (
-                <span className="projectDetailCategory">{project.category}</span>
-              )}
+          {/* Hero Section */}
+          <motion.header
+            className="projectDetailHero"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="projectDetailHeroContent">
+              <div className="projectDetailMeta">
+                <StatusBadge status={project.status} />
+                {project.category && (
+                  <span className="projectDetailCategory">{pd.types?.[project.category] || project.category}</span>
+                )}
+              </div>
+              <h1 className="projectDetailTitle">{project.name}</h1>
+              <p className="projectDetailDesc">{project.description}</p>
+
+              <dl className="projectFacts">
+                {roleShort && (
+                  <div>
+                    <dt>{pd.facts?.role}</dt>
+                    <dd>{roleShort}</dd>
+                  </div>
+                )}
+                <div>
+                  <dt>{pd.facts?.type}</dt>
+                  <dd>{pd.types?.[project.category] || project.category}</dd>
+                </div>
+                <div>
+                  <dt>{pd.techStack || "Stack"}</dt>
+                  <dd>{project.tech.slice(0, 3).join(" · ")}</dd>
+                </div>
+              </dl>
+
+              <div className="projectDetailActions">
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btnPrimary"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.2.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.9 1.3 3.6 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.8 4 18.8 4.3 18.8 4.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.3.8 1 .8 2.1v3.1c0 .4.2.7.8.6A11.5 11.5 0 0 0 12 .5Z" />
+                    </svg>
+                    GitHub
+                  </a>
+                )}
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btnGhost"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    Live Demo
+                  </a>
+                )}
+              </div>
             </div>
-            <h1 className="projectDetailTitle">{project.name}</h1>
-            <p className="projectDetailDesc">{project.description}</p>
 
-            <div className="projectDetailActions">
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btnPrimary"
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.2.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.9 1.3 3.6 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.8 4 18.8 4.3 18.8 4.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.3.8 1 .8 2.1v3.1c0 .4.2.7.8.6A11.5 11.5 0 0 0 12 .5Z" />
-                  </svg>
-                  GitHub
-                </a>
-              )}
-              {project.demo && (
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btnGhost"
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
-                  </svg>
-                  Live Demo
-                </a>
-              )}
+            <div className="projectDetailImage">
+              <ProjectVisual slug={project.slug} />
             </div>
-          </div>
+          </motion.header>
 
-          <div className="projectDetailImage">
-            <ProjectVisual slug={project.slug} />
-          </div>
-        </motion.header>
-
-        {/* Tech Stack */}
-        <motion.section className="projectDetailSection" {...fadeUp}>
-          <h2 className="projectDetailSectionTitle">
-            <span className="sectionIcon">⚙️</span>
-            {t.projectDetail?.techStack || "Technology Stack"}
-          </h2>
-          <div className="projectDetailChips">
-            {project.tech.map((t, i) => (
-              <motion.span
-                key={t}
-                className="chipEnhanced chipLarge"
-                {...stagger}
-                transition={{ delay: i * 0.05, duration: 0.3 }}
-              >
-                {t}
-              </motion.span>
-            ))}
-          </div>
-          {project.techReasoning && (
-            <p className="projectDetailBody techReasoning">
-              <strong>{t.projectDetail?.why || "Why this stack:"}</strong> {project.techReasoning}
-            </p>
-          )}
-        </motion.section>
-
-        {/* Problem */}
-        {project.problem && (
+          {/* Tech Stack */}
           <motion.section className="projectDetailSection" {...fadeUp}>
             <h2 className="projectDetailSectionTitle">
-              <span className="sectionIcon">🎯</span>
-              {t.projectDetail?.problem || "Problem Statement"}
+              {t.projectDetail?.techStack || "Technology Stack"}
             </h2>
-            <p className="projectDetailBody">{project.problem}</p>
-          </motion.section>
-        )}
-
-        {/* Architecture & Solution */}
-        {project.architecture && (
-          <motion.section className="projectDetailSection" {...fadeUp}>
-            <h2 className="projectDetailSectionTitle">
-              <span className="sectionIcon">🏗️</span>
-              {t.projectDetail?.architecture || "Architecture & Solution"}
-            </h2>
-            <p className="projectDetailBody">{project.architecture}</p>
-          </motion.section>
-        )}
-
-        {/* My Role */}
-        {project.role && (
-          <motion.section className="projectDetailSection" {...fadeUp}>
-            <h2 className="projectDetailSectionTitle">
-              <span className="sectionIcon">👤</span>
-              {t.projectDetail?.role || "My Role & Contribution"}
-            </h2>
-            <p className="projectDetailBody">{project.role}</p>
-          </motion.section>
-        )}
-
-        {/* Technical Highlights */}
-        {project.highlights && project.highlights.length > 0 && (
-          <motion.section className="projectDetailSection" {...fadeUp}>
-            <h2 className="projectDetailSectionTitle">
-              <span className="sectionIcon">✨</span>
-              {t.projectDetail?.highlights || "Technical Highlights"}
-            </h2>
-            <ul className="projectDetailHighlights">
-              {project.highlights.map((h, i) => (
-                <motion.li
-                  key={i}
+            <div className="projectDetailChips">
+              {project.tech.map((t, i) => (
+                <motion.span
+                  key={t}
+                  className="chipEnhanced chipLarge"
                   {...stagger}
-                  transition={{ delay: i * 0.08, duration: 0.4 }}
+                  transition={{ delay: i * 0.05, duration: 0.3 }}
                 >
-                  <span className="highlightCheck">▸</span>
-                  {h}
-                </motion.li>
+                  {t}
+                </motion.span>
               ))}
-            </ul>
-          </motion.section>
-        )}
-
-        {/* Challenges & Learnings */}
-        {project.challenges && (
-          <motion.section className="projectDetailSection" {...fadeUp}>
-            <h2 className="projectDetailSectionTitle">
-              <span className="sectionIcon">🧩</span>
-              {t.projectDetail?.challenges || "Challenges & Learnings"}
-            </h2>
-            <p className="projectDetailBody">{project.challenges}</p>
-          </motion.section>
-        )}
-
-        {/* Result / Impact */}
-        {project.result && (
-          <motion.section className="projectDetailSection projectDetailResult" {...fadeUp}>
-            <h2 className="projectDetailSectionTitle">
-              <span className="sectionIcon">🏆</span>
-              {t.projectDetail?.result || "Result & Impact"}
-            </h2>
-            <p className="projectDetailBody">{project.result}</p>
-          </motion.section>
-        )}
-
-        {/* CTA Section */}
-        <motion.section
-          className="projectDetailCTA"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="panel glassPanel projectDetailCTAPanel">
-            <h2 className="projectDetailCTATitle">
-              {t.projectDetail?.ctaTitle || "Interested in collaboration or technical details?"}
-            </h2>
-            <p className="projectDetailCTADesc">
-              {t.projectDetail?.ctaDesc || "Let's connect — I'm happy to discuss architecture decisions, technical challenges, or potential collaboration."}
-            </p>
-            <div className="projectDetailCTAActions">
-              {profileView?.links?.email && (
-                <a href={profileView.links.email} className="btn btnPrimary">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8" />
-                  </svg>
-                  {t.contact?.emailMe || "Email me"}
-                </a>
-              )}
-              {profileView?.links?.linkedin && (
-                <a
-                  href={profileView.links.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btnGhost"
-                >
-                  LinkedIn
-                </a>
-              )}
-              {profileView?.links?.github && (
-                <a
-                  href={profileView.links.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btnGhost"
-                >
-                  GitHub
-                </a>
-              )}
             </div>
-          </div>
-        </motion.section>
+            {project.techReasoning && (
+              <p className="projectDetailBody techReasoning">
+                <strong>{t.projectDetail?.why || "Why this stack:"}</strong> {project.techReasoning}
+              </p>
+            )}
+          </motion.section>
 
-        {/* Back to projects */}
-        <motion.div
-          className="projectDetailBack"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <Link to="/#work" className="btn btnGhost">
-            ← {t.projectDetail?.backToProjects || "Back to all projects"}
-          </Link>
-        </motion.div>
-      </main>
-    </div>
+          {/* Problem */}
+          {project.problem && (
+            <motion.section className="projectDetailSection" {...fadeUp}>
+              <h2 className="projectDetailSectionTitle">
+                {t.projectDetail?.problem || "Problem Statement"}
+              </h2>
+              <p className="projectDetailBody">{project.problem}</p>
+            </motion.section>
+          )}
+
+          {/* Architecture & Solution */}
+          {project.architecture && (
+            <motion.section className="projectDetailSection" {...fadeUp}>
+              <h2 className="projectDetailSectionTitle">
+                {t.projectDetail?.architecture || "Architecture & Solution"}
+              </h2>
+              <p className="projectDetailBody">{project.architecture}</p>
+            </motion.section>
+          )}
+
+          {/* My Role */}
+          {project.role && (
+            <motion.section className="projectDetailSection" {...fadeUp}>
+              <h2 className="projectDetailSectionTitle">
+                {t.projectDetail?.role || "My Role & Contribution"}
+              </h2>
+              <p className="projectDetailBody">{project.role}</p>
+            </motion.section>
+          )}
+
+          {/* Technical Highlights */}
+          {project.highlights && project.highlights.length > 0 && (
+            <motion.section className="projectDetailSection" {...fadeUp}>
+              <h2 className="projectDetailSectionTitle">
+                {t.projectDetail?.highlights || "Technical Highlights"}
+              </h2>
+              <ul className="projectDetailHighlights">
+                {project.highlights.map((h, i) => (
+                  <motion.li
+                    key={i}
+                    {...stagger}
+                    transition={{ delay: i * 0.08, duration: 0.4 }}
+                  >
+                    <span className="highlightCheck">▸</span>
+                    {h}
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.section>
+          )}
+
+          {/* Challenges & Learnings */}
+          {project.challenges && (
+            <motion.section className="projectDetailSection" {...fadeUp}>
+              <h2 className="projectDetailSectionTitle">
+                {t.projectDetail?.challenges || "Challenges & Learnings"}
+              </h2>
+              <p className="projectDetailBody">{project.challenges}</p>
+            </motion.section>
+          )}
+
+          {/* Result / Impact */}
+          {project.result && (
+            <motion.section className="projectDetailSection projectDetailResult" {...fadeUp}>
+              <h2 className="projectDetailSectionTitle">
+                {t.projectDetail?.result || "Result & Impact"}
+              </h2>
+              <p className="projectDetailBody">{project.result}</p>
+            </motion.section>
+          )}
+
+          {/* CTA Section */}
+          <motion.section
+            className="projectDetailCTA"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="panel glassPanel projectDetailCTAPanel">
+              <h2 className="projectDetailCTATitle">
+                {t.projectDetail?.ctaTitle || "Interested in collaboration or technical details?"}
+              </h2>
+              <p className="projectDetailCTADesc">
+                {t.projectDetail?.ctaDesc || "Let's connect — I'm happy to discuss architecture decisions, technical challenges, or potential collaboration."}
+              </p>
+              <div className="projectDetailCTAActions">
+                {profileView?.links?.email && (
+                  <a href={profileView.links.email} className="btn btnPrimary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8" />
+                    </svg>
+                    {t.contact?.emailMe || "Email me"}
+                  </a>
+                )}
+                {profileView?.links?.linkedin && (
+                  <a
+                    href={profileView.links.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btnGhost"
+                  >
+                    LinkedIn
+                  </a>
+                )}
+                {profileView?.links?.github && (
+                  <a
+                    href={profileView.links.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btnGhost"
+                  >
+                    GitHub
+                  </a>
+                )}
+              </div>
+            </div>
+          </motion.section>
+
+          {/* Back to projects + next case study */}
+          <motion.div
+            className="projectDetailBack"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <Link to="/#work" className="btn btnGhost">
+              ← {t.projectDetail?.backToProjects || "Back to all projects"}
+            </Link>
+            {next && next.slug !== project.slug && (
+              <Link to={`/project/${next.slug}`} className="projectNext">
+                <span className="mono">{pd.next}</span>
+                <strong>{next.name} →</strong>
+              </Link>
+            )}
+          </motion.div>
+        </main>
+        <SiteFooter t={t} name={profileView.name} />
+      </div>
+    </MotionConfig>
   );
 }

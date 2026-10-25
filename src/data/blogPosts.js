@@ -7,7 +7,7 @@ export const blogPosts = [
     title: "From Syria to Switzerland: A Developer's Journey",
     date: "2026-01-20",
     excerpt: "Moving countries, learning a new language, and rebuilding a career from scratch — what it taught me about resilience, and about code.",
-    coverImage: "/img/projects/coming-soon.webp",
+    coverImage: null, // generated cover (BlogCover)
     tags: ["Personal", "Career", "Switzerland", "Story"],
   },
   {
@@ -23,7 +23,7 @@ export const blogPosts = [
     title: "Building a Personal Portfolio with React & Vite",
     date: "2025-11-10",
     excerpt: "A deep dive into how I built my personal portfolio site using React 19, Vite, Framer Motion, and SCSS — and the design decisions behind it.",
-    coverImage: "/img/projects/coming-soon.webp",
+    coverImage: null, // generated cover (BlogCover)
     tags: ["React", "Vite", "Frontend", "SCSS", "Framer Motion"],
   },
 ];

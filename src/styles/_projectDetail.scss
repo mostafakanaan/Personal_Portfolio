@@ -9,6 +9,7 @@
   padding-bottom: 60px;
   max-width: 900px;
   margin: 0 auto;
+  counter-reset: pdSection;
 }
 
 .projectDetailNotFound {
@@ -178,7 +179,49 @@
   margin: 0 0 16px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+
+  /* Numbered like the home page sections (replaces emoji icons). */
+  &::before {
+    counter-increment: pdSection;
+    content: counter(pdSection, decimal-leading-zero);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    padding: 3px 8px;
+    border-radius: 8px;
+    background: rgba(255, 138, 61, .1);
+    border: 1px solid rgba(255, 138, 61, .25);
+  }
+}
+
+/* Quick facts under the case-study title */
+.projectFacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  margin: 18px 0 22px;
+  padding: 14px 0;
+  border-block: 1px solid var(--border);
+
+  div {
+    display: grid;
+    gap: 2px;
+  }
+
+  dt {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted2);
+  }
+
+  dd {
+    margin: 0;
+    font-size: 14px;
+  }
 }
 
 .sectionIcon {
@@ -293,8 +336,40 @@
 
 /* Back link */
 .projectDetailBack {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
   margin-bottom: 40px;
+}
+
+.projectNext {
+  display: grid;
+  gap: 2px;
+  text-align: end;
+  padding: 12px 18px;
+  border: 1px solid var(--border2);
+  border-radius: 14px;
+  background: var(--surface);
+  transition: border-color .25s, background .25s, transform .25s var(--ease);
+
+  span {
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted2);
+  }
+
+  strong {
+    font-size: 15px;
+  }
+
+  &:hover {
+    border-color: rgba(255, 138, 61, .4);
+    background: var(--surface2);
+    transform: translateY(-2px);
+  }
 }
 
 /* Card link */

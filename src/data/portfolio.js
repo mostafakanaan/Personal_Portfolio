@@ -16,6 +16,10 @@ export const profile = {
   },
   // Shows the "Open to new opportunities" badge and contact line.
   openToWork: true,
+  // Optional recruiter facts, shown in "At a glance" only when filled in,
+  // e.g. workPermit: "Swiss B permit", noticePeriod: "3 months".
+  workPermit: null,
+  noticePeriod: null,
   // First full-time role; drives the "years building production software" stat.
   careerStart: "2021-04-01",
   quote: "“Das Geheimnis des Könnens liegt im Wollen.” — Giuseppe Mazzini",
@@ -50,6 +54,11 @@ export const profile = {
       role: "Software Engineer",
       location: "Bubikon, Switzerland",
       period: "Feb 2024 – Present",
+      // start/end (YYYY-MM, end null = today) and stack are shared by all
+      // languages; translated entries in i18n are matched by position.
+      start: "2024-02",
+      end: null,
+      stack: [".NET", "Azure", "REST APIs", "System integration", "Monitoring"],
       bullets: [
         "Architecture and further development of internal core systems in the .NET/Azure environment",
         "Definition of API standards and integration architecture across multiple systems",
@@ -64,6 +73,9 @@ export const profile = {
       role: "Fullstack Developer",
       location: "Bielefeld, Germany",
       period: "Apr 2021 – Apr 2023",
+      start: "2021-04",
+      end: "2023-04",
+      stack: [".NET", "Azure", "Data Factory", "MSSQL", "CosmosDB", "CI/CD"],
       bullets: [
         "Implementation of integration projects in enterprise environments (.NET, Azure)",
         "Development of REST APIs and data pipelines (Azure Data Factory)",
@@ -76,6 +88,9 @@ export const profile = {
       role: "Working Student and Tutor",
       location: "Aachen, Germany",
       period: "Oct 2018 – Mar 2021",
+      start: "2018-10",
+      end: "2021-03",
+      stack: ["C#", "ASP.NET", "Web Forms", "Blazor WebAssembly"],
       bullets: [
         "Backend and frontend development with C# and ASP.NET",
         "Contribution to Web Forms and Blazor WebAssembly projects",

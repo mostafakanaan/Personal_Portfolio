@@ -2,7 +2,6 @@
 title: "Building a Personal Portfolio with React & Vite"
 date: "2025-11-10"
 excerpt: "A deep dive into how I built my personal portfolio site using React 19, Vite, Framer Motion, and SCSS — and the design decisions behind it."
-coverImage: "/img/projects/coming-soon.webp"
 tags: ["React", "Vite", "Frontend", "SCSS", "Framer Motion"]
 ---
 

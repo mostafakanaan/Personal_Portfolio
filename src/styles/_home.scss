@@ -69,9 +69,38 @@
   margin-top: 32px;
 }
 
+.homeEmail {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  .copyBtn {
+    display: inline-grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    color: var(--muted);
+    transition: color .2s, border-color .2s, background .2s;
+
+    svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    &:hover {
+      color: var(--text);
+      background: var(--surface2);
+    }
+  }
+}
+
 .homeSocial {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 8px 18px;
   margin-top: 28px;
   color: var(--muted2);
@@ -91,6 +120,7 @@
   justify-self: end;
   width: 100%;
   max-width: 360px;
+  animation: photoIn .9s var(--ease) both;
 
   &::before {
     content: "";
@@ -104,6 +134,31 @@
     mask-composite: exclude;
     pointer-events: none;
   }
+}
+
+@keyframes photoIn {
+  from { opacity: 0; transform: scale(.96); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Slow-drifting glow behind the portrait */
+.homePhoto::after {
+  content: "";
+  position: absolute;
+  inset: 8% -12% -6% -10%;
+  z-index: -1;
+  border-radius: 50%;
+  background:
+    radial-gradient(closest-side at 30% 35%, rgba(255, 138, 61, .35), transparent),
+    radial-gradient(closest-side at 72% 70%, rgba(45, 212, 191, .22), transparent);
+  filter: blur(40px);
+  animation: aurora 14s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes aurora {
+  from { transform: translate3d(-4%, -2%, 0) rotate(0deg) scale(1); }
+  to { transform: translate3d(4%, 3%, 0) rotate(12deg) scale(1.08); }
 }
 
 .homePhotoFrame {
@@ -194,7 +249,7 @@
 /* ---------- Sections ---------- */
 .homeSection {
   padding-block: 88px 0;
-  scroll-margin-top: calc(var(--nav-h) + 8px);
+  /* Offset for the sticky nav comes from html { scroll-padding-top } in _base.scss. */
 }
 
 .homeHead {
@@ -206,10 +261,28 @@
 }
 
 .homeEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 12px;
   color: var(--accent);
   letter-spacing: .14em;
   text-transform: uppercase;
+}
+
+.homeIndex {
+  color: var(--muted2);
+  letter-spacing: .04em;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 22px;
+    height: 1px;
+    margin-inline-start: 10px;
+    vertical-align: middle;
+    background: var(--border2);
+  }
 }
 
 .homeH2 {
@@ -278,9 +351,43 @@
     margin: 0 0 16px;
   }
 
-  .tagList {
-    margin-top: auto;
+}
+
+.homeCardFoot {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.homeCardMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-soft);
+  white-space: nowrap;
+
+  svg {
+    width: 14px;
+    height: 14px;
+    transition: transform .3s var(--ease);
   }
+}
+
+.homeCard:hover .homeCardMore svg {
+  transform: translateX(3px);
+}
+
+html[dir="rtl"] .homeCardMore svg {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .homeCard:hover .homeCardMore svg {
+  transform: scaleX(-1) translateX(3px);
 }
 
 .homeCardThumb {
@@ -396,6 +503,97 @@
   transition: transform .3s var(--ease), color .3s;
 }
 
+/* ---------- About / at a glance ---------- */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+
+  .homeHead {
+    margin-bottom: 20px;
+  }
+}
+
+.aboutText {
+  margin: 0;
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 520px;
+}
+
+.facts {
+  margin: 0;
+  padding: 8px 26px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .015));
+}
+
+.factRow {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 16px;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px dashed var(--border);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  dt {
+    font-size: 11.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted2);
+  }
+
+  dd {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+
+    img {
+      vertical-align: -2px;
+      border-radius: 3px;
+    }
+  }
+}
+
+.factDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-inline-end: 4px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, .18);
+  vertical-align: 1px;
+}
+
+.factLangs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  > span {
+    padding: 3px 10px;
+    border-radius: 8px;
+    background: var(--surface2);
+    font-size: 13.5px;
+    white-space: nowrap;
+  }
+
+  em {
+    font-style: normal;
+    font-size: 11.5px;
+    color: var(--accent-soft);
+    margin-inline-start: 2px;
+  }
+}
+
 /* ---------- Experience ---------- */
 .xpGrid {
   display: grid;
@@ -494,6 +692,11 @@
     font-size: 14.5px;
     padding-inline-start: 18px;
 
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
     &::before {
       content: "→";
       position: absolute;
@@ -512,20 +715,58 @@ html[dir="rtl"] .job li::before {
 .jobTop {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  gap: 4px 12px;
+  align-items: flex-start;
+  gap: 6px 16px;
   flex-wrap: wrap;
+}
+
+.jobWhen {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  text-align: end;
 
   time {
     font-size: 12.5px;
-    color: var(--muted2);
+    color: var(--muted);
   }
+}
+
+.jobDuration {
+  font-size: 12px;
+  color: var(--muted2);
+}
+
+.nowBadge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 999px;
+  color: var(--accent-soft);
+  background: rgba(255, 138, 61, .12);
+  border: 1px solid rgba(255, 138, 61, .3);
+  margin-bottom: 4px;
+}
+
+.jobStack {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.jobTop {
+  margin-bottom: 14px;
+}
+
+.jobMore {
+  display: none;
 }
 
 .jobCompany {
   color: var(--accent-soft);
   font-size: 14px;
-  margin: 2px 0 12px;
+  margin-top: 2px;
 
   span {
     color: var(--muted2);
@@ -535,8 +776,15 @@ html[dir="rtl"] .job li::before {
 /* ---------- Skills ---------- */
 .skillGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+}
+
+.skillDesc {
+  margin: -6px 0 14px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--muted2);
 }
 
 .skillCard {
@@ -568,30 +816,6 @@ html[dir="rtl"] .job li::before {
   &.skill-frontend h3 i { background: var(--accent2); }
   &.skill-devops h3 i { background: var(--accent3); }
   &.skill-security h3 i { background: #c4b5fd; }
-  &.skill-languages h3 i { background: var(--success); }
-}
-
-.skill-languages {
-  grid-column: span 2;
-}
-
-.langList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 6px 24px;
-}
-
-.langRow {
-  display: flex;
-  justify-content: space-between;
-  padding: 6px 0;
-  border-bottom: 1px dashed var(--border);
-  font-size: 14px;
-
-  .mono {
-    color: var(--muted2);
-    font-size: 12px;
-  }
 }
 
 /* ---------- Contact ---------- */
@@ -649,22 +873,50 @@ html[dir="rtl"] .job li::before {
 }
 
 .siteFooter {
+  margin-top: 88px;
+  padding-block: 32px 48px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.siteFooterTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.siteFooterLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  color: var(--muted);
+  font-size: 14px;
+
+  a {
+    transition: color .2s;
+
+    &:hover {
+      color: var(--text);
+    }
+  }
+}
+
+.siteFooterBottom {
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  padding-block: 40px 56px;
+  margin-top: 20px;
   color: var(--muted2);
-  font-size: 13px;
+  font-size: 12.5px;
 }
 
 /* ---------- Tablet ---------- */
 @media (max-width: 1024px) {
-  .skillGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .skill-languages {
-    grid-column: span 2;
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 }
 
@@ -825,10 +1077,6 @@ html[dir="rtl"] .job li::before {
     gap: 10px;
   }
 
-  .skill-languages {
-    grid-column: auto;
-  }
-
   .skillCard {
     padding: 18px;
   }
@@ -845,6 +1093,64 @@ html[dir="rtl"] .job li::before {
   }
 
   .siteFooter {
+    margin-top: 64px;
+  }
+
+  .siteFooterBottom {
     flex-direction: column;
+  }
+
+  .homePhoto::after {
+    display: none;
+  }
+
+  .factRow {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 14px 0;
+  }
+
+  .facts {
+    padding: 4px 18px;
+  }
+
+  .jobWhen {
+    align-items: flex-start;
+    text-align: start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+  }
+
+  .nowBadge {
+    margin-bottom: 0;
+  }
+
+  .job ul.isCollapsed li:nth-child(n + 4) {
+    display: none;
+  }
+
+  .jobMore {
+    display: inline-flex;
+    margin-top: 10px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .homeCardFoot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homePhoto,
+  .homePhoto::after {
+    animation: none;
   }
 }
