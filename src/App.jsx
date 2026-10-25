@@ -1,6 +1,6 @@
 // src/App.jsx
 import { useEffect, useMemo, useState, lazy, Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 import Navbar from "./components/Navbar";
@@ -26,6 +26,7 @@ import {
 } from "./components/AnimatedHero";
 
 import { profile } from "./data/portfolio";
+import { FEATURES } from "./config/features";
 import photo from "./assets/cv-photo.jpg";
 import heroBg from "./assets/hero-bg.png";
 import { LANGS, T /*, tr */ } from "./i18n/translations";
@@ -226,6 +227,7 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
                   </svg>
                 </a>
               </p>
+              {FEATURES.chat && (
               <p className="body aboutCTA">
                 {t.about.chatCTA}
                 <a
@@ -254,6 +256,7 @@ function PortfolioPage({ t, lang, setLang, meta, profileView }) {
                   </motion.svg>
                 </a>
               </p>
+              )}
             </div>
             <motion.button
               className="aiStackPreview"
@@ -773,7 +776,7 @@ export default function App() {
       />
       <Route path="/blog" element={<BlogListPage />} />
       <Route path="/blog/:slug" element={<BlogPostPage />} />
-      <Route path="/chat" element={<ChatPage />} />
+      <Route path="/chat" element={FEATURES.chat ? <ChatPage /> : <Navigate to="/" replace />} />
       <Route path="/DfA/Aufgaben" element={<AufgabenPage />} />
       <Route path="/DfA/Aufgaben/:number" element={<AufgabeDetailPage />} />
       <Route path="/DfA/Aufgaben/:number/:levelId" element={<QuizPage />} />

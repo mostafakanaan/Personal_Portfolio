@@ -16,11 +16,9 @@ function getInitialLang() {
   return match || "en";
 }
 
-const LLM_KEY = import.meta.env.VITE_LLM_KEY;
-const headers = {
-  "Content-Type": "application/json",
-  ...(LLM_KEY ? { "X-LLM-Key": LLM_KEY } : {}),
-};
+// The LLM key must never ship to the browser. nginx adds the X-LLM-Key header
+// when proxying /api/llm/ (see SECURITY.md → "Chat assistant").
+const headers = { "Content-Type": "application/json" };
 
 function buildPrompt(userText, langHint) {
   // Keep it SIMPLE.
