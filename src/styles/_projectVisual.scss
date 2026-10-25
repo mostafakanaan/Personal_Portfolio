@@ -1,0 +1,142 @@
+/* Code-drawn project thumbnails (ProjectVisual.jsx) */
+.pv {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  overflow: hidden;
+  background: #0b0f18;
+}
+
+.pvPhone {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: radial-gradient(300px 200px at 50% 110%, rgba(45, 212, 191, .25), transparent), #0b0f18;
+}
+
+.pvPhoneDevice {
+  width: 124px;
+  height: 180px;
+  border-radius: 20px 20px 0 0;
+  border: 1px solid var(--border2);
+  border-bottom: 0;
+  background: #0f1522;
+  padding: 14px 12px;
+  transform: translateY(8px);
+}
+
+.pvPhoneBack {
+  transform: translateY(32px);
+  margin-inline-start: -20px;
+  opacity: .6;
+}
+
+.pvLabel {
+  font-size: 10px;
+  color: var(--muted2);
+}
+
+.pvAmount {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.pvBar {
+  height: 6px;
+  border-radius: 4px;
+  background: var(--surface2);
+  margin: 8px 0;
+
+  i {
+    display: block;
+    height: 100%;
+    border-radius: 4px;
+    background: var(--accent2);
+  }
+
+  .pvBarAccent {
+    background: var(--accent);
+  }
+}
+
+.pvTerm,
+.pvCode {
+  padding: 22px 24px;
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: var(--muted);
+  direction: ltr;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.pvCode {
+  color: #7b8496;
+  background: radial-gradient(400px 200px at 80% 0%, rgba(255, 138, 61, .22), transparent), #0b0f18;
+}
+
+.pvPrompt { color: var(--accent); }
+.pvOk { color: var(--success); }
+.pvKw { color: #ff9e5e; }
+.pvStr { color: #5eead4; }
+.pvFn { color: var(--accent3); }
+.pvComment { color: #4b5363; }
+
+.pvSite {
+  padding: 22px;
+  background: linear-gradient(135deg, #140d08, #0b0f18);
+}
+
+.pvWindow {
+  height: 100%;
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, .02);
+
+  i {
+    display: block;
+  }
+}
+
+.pvWindowBar {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 14px;
+
+  i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--border2);
+  }
+}
+
+.pvLine {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--surface2);
+  margin-bottom: 8px;
+}
+
+.pvLineHead {
+  height: 14px;
+  width: 55%;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.pvTiles {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+
+  i {
+    flex: 1;
+    height: 46px;
+    border-radius: 6px;
+    background: var(--surface2);
+  }
+}
