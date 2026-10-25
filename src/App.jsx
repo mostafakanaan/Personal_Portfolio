@@ -8,9 +8,6 @@ import AnimatedSection from "./components/AnimatedSection";
 import ProjectCardEnhanced from "./components/ProjectCardEnhanced";
 // Lazy load ChatPage for better performance
 const ChatPage = lazy(() => import("./pages/ChatPage"));
-import AufgabenPage from "./pages/AufgabenPage";
-import AufgabeDetailPage from "./pages/AufgabeDetailPage";
-import QuizPage from "./pages/QuizPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import BlogListPage from "./pages/BlogListPage";
 import BlogPostPage from "./pages/BlogPostPage";
@@ -777,10 +774,6 @@ export default function App() {
       <Route path="/blog" element={<BlogListPage />} />
       <Route path="/blog/:slug" element={<BlogPostPage />} />
       <Route path="/chat" element={FEATURES.chat ? <ChatPage /> : <Navigate to="/" replace />} />
-      <Route path="/DfA/Aufgaben" element={<AufgabenPage />} />
-      <Route path="/DfA/Aufgaben/:number" element={<AufgabeDetailPage />} />
-      <Route path="/DfA/Aufgaben/:number/:levelId" element={<QuizPage />} />
-      <Route path="/DfA/Aufgaben/Test/:levelId" element={<QuizPage />} />
     </Routes>
     </Suspense>
   );
