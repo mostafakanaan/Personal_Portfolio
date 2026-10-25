@@ -2,7 +2,7 @@
 title: "From Syria to Switzerland: A Developer's Journey"
 date: "2026-01-20"
 excerpt: "Moving countries, learning a new language, and rebuilding a career from scratch — what it taught me about resilience, and about code."
-coverImage: "/img/projects/coming-soon.png"
+coverImage: "/img/projects/coming-soon.webp"
 tags: ["Personal", "Career", "Switzerland", "Story"]
 ---
 

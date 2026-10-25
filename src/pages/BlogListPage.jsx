@@ -91,7 +91,7 @@ export default function BlogListPage() {
               {post.coverImage && (
                 <Link to={`/blog/${post.slug}`} className="blogCardCoverLink">
                   <div className="blogCardCover">
-                    <img src={post.coverImage} alt={post.title} />
+                    <img src={post.coverImage} alt={post.title} loading="lazy" />
                     <div className="blogCardCoverOverlay" />
                   </div>
                 </Link>
